@@ -1,0 +1,2453 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "#%@" : {
+      "shouldTranslate" : false
+    },
+    "32pt visual size, padded to a 44pt hit target." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "見た目は32pt、タップ領域は44ptまで拡張しています。"
+          }
+        }
+      }
+    },
+    "48pt." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "48pt。"
+          }
+        }
+      }
+    },
+    "72%" : {
+      "shouldTranslate" : false
+    },
+    "A confirmation dialog (action sheet) offers choices related to an action the person started, such as discarding changes." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認ダイアログ（アクションシート）は、変更の破棄など、ユーザーが始めた操作に関する選択肢を表示します。"
+          }
+        }
+      }
+    },
+    "A full-screen cover is for immersive or multi-step tasks, such as onboarding or capturing media. Always give a clear way out." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フルスクリーンカバーは、オンボーディングや撮影など、没入型または複数ステップの作業に使います。必ず分かりやすい閉じる手段を用意してください。"
+          }
+        }
+      }
+    },
+    "A full-screen, immersive step." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フルスクリーンの没入型ステップです。"
+          }
+        }
+      }
+    },
+    "A native DisclosureGroup with the design-system style." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デザインシステムのスタイルを適用した標準のDisclosureGroupです。"
+          }
+        }
+      }
+    },
+    "A tab bar switches between top-level sections. Keep tabs to five or fewer and never use them for actions." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タブバーは最上位のセクションを切り替えます。タブは5つまでにし、操作のためには使わないでください。"
+          }
+        }
+      }
+    },
+    "A toggle switches a setting on or off and takes effect immediately." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "トグルは設定のオン／オフを切り替え、すぐに反映されます。"
+          }
+        }
+      }
+    },
+    "Accordion" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アコーディオン"
+          }
+        }
+      }
+    },
+    "Action" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクション"
+          }
+        }
+      }
+    },
+    "Actions" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクション"
+          }
+        }
+      }
+    },
+    "Add" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
+          }
+        }
+      }
+    },
+    "Add item" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目を追加"
+          }
+        }
+      }
+    },
+    "Advanced options" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詳細オプション"
+          }
+        }
+      }
+    },
+    "Ai" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AI"
+          }
+        }
+      }
+    },
+    "Alert" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アラート"
+          }
+        }
+      }
+    },
+    "Alerts deliver important information that needs a decision. Use them sparingly, keep the title short, and mark destructive actions." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アラートは判断が必要な重要な情報を伝えます。使いすぎず、タイトルは短くし、破壊的な操作は明示してください。"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外観"
+          }
+        }
+      }
+    },
+    "Apple's built-in components" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple標準のコンポーネント"
+          }
+        }
+      }
+    },
+    "Archive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブ"
+          }
+        }
+      }
+    },
+    "As it appears on your ID" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "身分証明書の表記どおりに入力"
+          }
+        }
+      }
+    },
+    "Auto-renew" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動更新"
+          }
+        }
+      }
+    },
+    "Background" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "背景"
+          }
+        }
+      }
+    },
+    "Badge" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バッジ"
+          }
+        }
+      }
+    },
+    "Battery" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バッテリー"
+          }
+        }
+      }
+    },
+    "Bluetooth" : {
+      "shouldTranslate" : false
+    },
+    "Border" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "枠線"
+          }
+        }
+      }
+    },
+    "Bordered" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "枠線付き"
+          }
+        }
+      }
+    },
+    "Bordered prominent" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "強調（枠線付き）"
+          }
+        }
+      }
+    },
+    "Borderless" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "枠線なし"
+          }
+        }
+      }
+    },
+    "Brand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブランド"
+          }
+        }
+      }
+    },
+    "Browse" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "見つける"
+          }
+        }
+      }
+    },
+    "Built on the native TextField. Tap a field to see Focus." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標準のTextFieldをもとにしています。フィールドをタップするとフォーカス状態を確認できます。"
+          }
+        }
+      }
+    },
+    "Button" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボタン"
+          }
+        }
+      }
+    },
+    "Buttons" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボタン"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
+    },
+    "Cancelled" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセルしました"
+          }
+        }
+      }
+    },
+    "Card title" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードのタイトル"
+          }
+        }
+      }
+    },
+    "Chocolate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チョコレート"
+          }
+        }
+      }
+    },
+    "City" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "都市"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "消去"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        }
+      }
+    },
+    "Collapsed" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "折りたたみ"
+          }
+        }
+      }
+    },
+    "Color picker" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カラーピッカー"
+          }
+        }
+      }
+    },
+    "Colors" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カラー"
+          }
+        }
+      }
+    },
+    "Common icons" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "よく使うアイコン"
+          }
+        }
+      }
+    },
+    "Compact" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンパクト"
+          }
+        }
+      }
+    },
+    "Components" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンポーネント"
+          }
+        }
+      }
+    },
+    "Components use the Figma Tokens library and the iOS typography (SF Pro, Dynamic Type). Change theme and density from the menu." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンポーネントはFigmaのTokensライブラリとiOSのタイポグラフィ（SF Pro、Dynamic Type）を使用しています。テーマと密度はメニューから変更できます。"
+          }
+        }
+      }
+    },
+    "Components use the Figma Tokens library and the iOS typography (SF Pro, Dynamic Type). Change theme and density on the Home screen." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンポーネントはFigmaのTokensライブラリとiOSのタイポグラフィ（SF Pro、Dynamic Type）を使用しています。テーマと密度はホーム画面で変更できます。"
+          }
+        }
+      }
+    },
+    "Confirmation dialog" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認ダイアログ"
+          }
+        }
+      }
+    },
+    "Content" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテンツ"
+          }
+        }
+      }
+    },
+    "Content unavailable" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテンツなし"
+          }
+        }
+      }
+    },
+    "Context menu" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテキストメニュー"
+          }
+        }
+      }
+    },
+    "Context menus give quick access to actions for an item. Touch and hold the rows below. Never put the only way to do something in a context menu." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテキストメニューは項目に対する操作へすばやくアクセスできます。下の行を長押ししてください。唯一の操作手段をコンテキストメニューだけに置かないでください。"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "続ける"
+          }
+        }
+      }
+    },
+    "Controls" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コントロール"
+          }
+        }
+      }
+    },
+    "Daily" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "毎日"
+          }
+        }
+      }
+    },
+    "Date" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付"
+          }
+        }
+      }
+    },
+    "Date picker" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付ピッカー"
+          }
+        }
+      }
+    },
+    "Date pickers let people choose dates and times. The compact style fits forms; graphical shows a full calendar." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付ピッカーで日付と時刻を選択できます。コンパクトスタイルはフォーム向き、グラフィカルスタイルはカレンダー全体を表示します。"
+          }
+        }
+      }
+    },
+    "Day" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日"
+          }
+        }
+      }
+    },
+    "Default" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標準"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        }
+      }
+    },
+    "Delete draft" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下書きを削除"
+          }
+        }
+      }
+    },
+    "Delete draft?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下書きを削除しますか？"
+          }
+        }
+      }
+    },
+    "Deleted" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除しました"
+          }
+        }
+      }
+    },
+    "Density" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "密度"
+          }
+        }
+      }
+    },
+    "Design system components and tokens" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デザインシステムのコンポーネントとトークン"
+          }
+        }
+      }
+    },
+    "Detail" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詳細"
+          }
+        }
+      }
+    },
+    "Detail content" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詳細の内容"
+          }
+        }
+      }
+    },
+    "Disabled" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効"
+          }
+        }
+      }
+    },
+    "Discard changes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更を破棄"
+          }
+        }
+      }
+    },
+    "Disclosure group" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクロージャグループ"
+          }
+        }
+      }
+    },
+    "Disclosure groups hide and show related content. The design-system Accordion is this same control with a custom style." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクロージャグループは関連するコンテンツを表示／非表示にします。デザインシステムのアコーディオンは、このコントロールに独自のスタイルを適用したものです。"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        }
+      }
+    },
+    "Drafts" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下書き"
+          }
+        }
+      }
+    },
+    "Drag the grabber to switch between medium and large." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グラバーをドラッグして、中サイズと大サイズを切り替えます。"
+          }
+        }
+      }
+    },
+    "Duplicate" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複製"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "編集"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メール"
+          }
+        }
+      }
+    },
+    "Email notifications" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メール通知"
+          }
+        }
+      }
+    },
+    "Emphasized: The quick brown fox" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "強調：あのイーハトーヴォのすきとおった風"
+          }
+        }
+      }
+    },
+    "English" : {
+      "shouldTranslate" : false
+    },
+    "Enter an email like name@company.com" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "name@company.com の形式でメールアドレスを入力してください"
+          }
+        }
+      }
+    },
+    "Error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラー"
+          }
+        }
+      }
+    },
+    "EVA" : {
+      "extractionState" : "manual",
+      "shouldTranslate" : false
+    },
+    "Expanded" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "展開"
+          }
+        }
+      }
+    },
+    "Favorite" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        }
+      }
+    },
+    "Fixed 36pt height." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高さは36pt固定です。"
+          }
+        }
+      }
+    },
+    "Flavor" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フレーバー"
+          }
+        }
+      }
+    },
+    "Foreground" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前景"
+          }
+        }
+      }
+    },
+    "Form" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォーム"
+          }
+        }
+      }
+    },
+    "Forms group related settings into sections with headers and footers, like the Settings app." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォームは「設定」アプリのように、関連する設定をヘッダとフッタ付きのセクションにまとめます。"
+          }
+        }
+      }
+    },
+    "Foundations" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "基礎"
+          }
+        }
+      }
+    },
+    "Free returns within 30 days. Items must be unused and in their original packaging." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "30日以内なら返品無料です。未使用で購入時の梱包のままである必要があります。"
+          }
+        }
+      }
+    },
+    "Fruits" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "果物"
+          }
+        }
+      }
+    },
+    "Full-screen cover" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フルスクリーンカバー"
+          }
+        }
+      }
+    },
+    "Gift cards" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ギフトカード"
+          }
+        }
+      }
+    },
+    "Glass" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ガラス"
+          }
+        }
+      }
+    },
+    "Glass prominent" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "強調（ガラス）"
+          }
+        }
+      }
+    },
+    "Group" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループ"
+          }
+        }
+      }
+    },
+    "Height comes from padding: 12 + line height + 12." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高さはパディングで決まります：12 + 行の高さ + 12。"
+          }
+        }
+      }
+    },
+    "Heritage Luxury" : {
+      "extractionState" : "manual",
+      "shouldTranslate" : false
+    },
+    "Home" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ホーム"
+          }
+        }
+      }
+    },
+    "Horizontal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "横"
+          }
+        }
+      }
+    },
+    "Human Interface Guidelines" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ヒューマンインターフェイスガイドライン"
+          }
+        }
+      }
+    },
+    "Icon Button" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコンボタン"
+          }
+        }
+      }
+    },
+    "Icons" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコン"
+          }
+        }
+      }
+    },
+    "Icons inside a button are display only." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボタン内のアイコンは表示専用です。"
+          }
+        }
+      }
+    },
+    "Image Card" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画像カード"
+          }
+        }
+      }
+    },
+    "Inbox" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "受信"
+          }
+        }
+      }
+    },
+    "Info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "情報"
+          }
+        }
+      }
+    },
+    "Input" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力フィールド"
+          }
+        }
+      }
+    },
+    "iOS System" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOSシステム"
+          }
+        }
+      }
+    },
+    "Items you mark as favorite appear here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りに追加した項目がここに表示されます。"
+          }
+        }
+      }
+    },
+    "Junk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "迷惑メール"
+          }
+        }
+      }
+    },
+    "Labels and SF Symbols" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ラベルとSF Symbols"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "言語"
+          }
+        }
+      }
+    },
+    "Large" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大"
+          }
+        }
+      }
+    },
+    "Large control" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きいコントロール"
+          }
+        }
+      }
+    },
+    "Large title" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "大きいタイトル"
+          }
+        }
+      }
+    },
+    "Last choice" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最後の選択"
+          }
+        }
+      }
+    },
+    "Light / Dark (System)" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライト／ダーク（システム）"
+          }
+        }
+      }
+    },
+    "Link and share" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リンクと共有"
+          }
+        }
+      }
+    },
+    "Links open URLs in the right app; the share sheet lets people send content anywhere." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リンクはURLを適切なアプリで開き、共有シートはコンテンツをどこへでも送信できます。"
+          }
+        }
+      }
+    },
+    "List" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リスト"
+          }
+        }
+      }
+    },
+    "Lists show rows of data. Swipe a row for actions, pull to refresh, and use Edit to reorder." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リストはデータを行で表示します。行をスワイプして操作、引っ張って更新、「編集」で並べ替えができます。"
+          }
+        }
+      }
+    },
+    "Loading" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "読み込み中"
+          }
+        }
+      }
+    },
+    "Locked by your admin" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "管理者によってロックされています"
+          }
+        }
+      }
+    },
+    "Loose" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゆったり"
+          }
+        }
+      }
+    },
+    "Low data mode" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "省データモード"
+          }
+        }
+      }
+    },
+    "Mailboxes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メールボックス"
+          }
+        }
+      }
+    },
+    "Medium" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中"
+          }
+        }
+      }
+    },
+    "Menu" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニュー"
+          }
+        }
+      }
+    },
+    "Menus reveal a list of actions or options from a button, saving space. Group related items and use SF Symbols." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニューはボタンから操作や選択肢の一覧を表示し、スペースを節約します。関連する項目をまとめ、SF Symbolsを使ってください。"
+          }
+        }
+      }
+    },
+    "Mode: %@. Values come from the Tokens library, collection 02 Semantics." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モード：%@。値はTokensライブラリのコレクション「02 Semantics」から取得しています。"
+          }
+        }
+      }
+    },
+    "Month" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "月"
+          }
+        }
+      }
+    },
+    "More" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前"
+          }
+        }
+      }
+    },
+    "name@company.com" : {
+      "shouldTranslate" : false
+    },
+    "Navigation" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ナビゲーション"
+          }
+        }
+      }
+    },
+    "Navigation bar" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ナビゲーションバー"
+          }
+        }
+      }
+    },
+    "Never" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "なし"
+          }
+        }
+      }
+    },
+    "New" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規"
+          }
+        }
+      }
+    },
+    "New reminder" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規リマインダー"
+          }
+        }
+      }
+    },
+    "No favorites" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りはありません"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "なし"
+          }
+        }
+      }
+    },
+    "Notes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メモ"
+          }
+        }
+      }
+    },
+    "Notifications" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知"
+          }
+        }
+      }
+    },
+    "On iOS the Figma Toggle is the native switch, tinted with action/primary. Do not redraw it." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOSではFigmaのトグルは標準のスイッチで、action/primaryで色付けします。独自に描き直さないでください。"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パスワード"
+          }
+        }
+      }
+    },
+    "Pay with card, Apple Pay or bank transfer." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カード、Apple Pay、銀行振込でお支払いいただけます。"
+          }
+        }
+      }
+    },
+    "Payment options" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お支払い方法"
+          }
+        }
+      }
+    },
+    "Picker" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピッカー"
+          }
+        }
+      }
+    },
+    "Pickers choose one value from a list. Use segmented for 2–5 options that switch a view, menu for compact forms, wheel for long ranges." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピッカーは一覧から1つの値を選びます。表示を切り替える2〜5個の選択肢にはセグメント、コンパクトなフォームにはメニュー、長い範囲にはホイールを使います。"
+          }
+        }
+      }
+    },
+    "Plan" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プラン"
+          }
+        }
+      }
+    },
+    "Popover" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ポップオーバー"
+          }
+        }
+      }
+    },
+    "Popover content" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ポップオーバーの内容"
+          }
+        }
+      }
+    },
+    "Popovers show a small amount of related content. On iPhone they normally become sheets; here the compact popover is requested explicitly." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ポップオーバーは少量の関連コンテンツを表示します。iPhoneでは通常シートになりますが、ここではコンパクトなポップオーバーを明示的に指定しています。"
+          }
+        }
+      }
+    },
+    "Presentation" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレゼンテーション"
+          }
+        }
+      }
+    },
+    "Primary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プライマリ"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロフィール"
+          }
+        }
+      }
+    },
+    "Progress and gauge" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プログレスとゲージ"
+          }
+        }
+      }
+    },
+    "Promote" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロモーション"
+          }
+        }
+      }
+    },
+    "Push a detail screen" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詳細画面を表示"
+          }
+        }
+      }
+    },
+    "Quantity: %lld" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数量：%lld"
+          }
+        }
+      }
+    },
+    "Radius" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "角丸"
+          }
+        }
+      }
+    },
+    "Read more" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "続きを読む"
+          }
+        }
+      }
+    },
+    "Regular: The quick brown fox" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標準：あのイーハトーヴォのすきとおった風"
+          }
+        }
+      }
+    },
+    "Rename" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前を変更"
+          }
+        }
+      }
+    },
+    "Rendering modes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "レンダリングモード"
+          }
+        }
+      }
+    },
+    "Roles and sizes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "役割とサイズ"
+          }
+        }
+      }
+    },
+    "Save draft" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下書きを保存"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検索"
+          }
+        }
+      }
+    },
+    "Secondary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "セカンダリ"
+          }
+        }
+      }
+    },
+    "Sent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "送信済み"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        }
+      }
+    },
+    "SF Pro with Dynamic Type. Sizes below are at the default size (Large); the Density menu previews Compact (Medium) and Loose (xLarge)." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dynamic Type対応のSF Pro（日本語はヒラギノ角ゴシック）です。下のサイズは標準サイズ（大）での値で、密度メニューでコンパクト（中）とゆったり（特大）を確認できます。"
+          }
+        }
+      }
+    },
+    "SF Symbols match the system font, scale with Dynamic Type and support rendering modes. Prefer them to custom icons." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SF Symbolsはシステムフォントと調和し、Dynamic Typeに合わせて拡大縮小し、レンダリングモードに対応します。独自アイコンより優先して使ってください。"
+          }
+        }
+      }
+    },
+    "Share" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共有"
+          }
+        }
+      }
+    },
+    "Share a link" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リンクを共有"
+          }
+        }
+      }
+    },
+    "Sheet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シート"
+          }
+        }
+      }
+    },
+    "Sheets show a focused task that relates to the current context. Use detents so people can see the content underneath." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シートは現在の状況に関連する作業を集中して表示します。下のコンテンツが見えるようにディテントを使ってください。"
+          }
+        }
+      }
+    },
+    "Shipping and returns" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配送と返品"
+          }
+        }
+      }
+    },
+    "Short supporting description that explains the card content in a line or two." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードの内容を1〜2行で説明する短い補足文です。"
+          }
+        }
+      }
+    },
+    "Show a tab bar example" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タブバーの例を表示"
+          }
+        }
+      }
+    },
+    "Show determinate progress when you know how long a task takes; use the spinner only for short, unknown waits." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "所要時間が分かる場合は進捗を表示し、スピナーは短く不明な待ち時間にのみ使います。"
+          }
+        }
+      }
+    },
+    "Show full-screen cover" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フルスクリーンカバーを表示"
+          }
+        }
+      }
+    },
+    "Show popover" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ポップオーバーを表示"
+          }
+        }
+      }
+    },
+    "Show sheet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シートを表示"
+          }
+        }
+      }
+    },
+    "Size" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイズ"
+          }
+        }
+      }
+    },
+    "Slider and stepper" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スライダーとステッパー"
+          }
+        }
+      }
+    },
+    "Sliders pick a value from a continuous range; steppers change a value in small, exact steps." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スライダーは連続した範囲から値を選び、ステッパーは値を正確に少しずつ変更します。"
+          }
+        }
+      }
+    },
+    "Small" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小"
+          }
+        }
+      }
+    },
+    "Small control" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "小さいコントロール"
+          }
+        }
+      }
+    },
+    "Solid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ソリッド"
+          }
+        }
+      }
+    },
+    "Sort by" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "並べ替え"
+          }
+        }
+      }
+    },
+    "Spacing" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スペーシング"
+          }
+        }
+      }
+    },
+    "Spacing and radius" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スペーシングと角丸"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始"
+          }
+        }
+      }
+    },
+    "States" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "状態"
+          }
+        }
+      }
+    },
+    "Strawberry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "いちご"
+          }
+        }
+      }
+    },
+    "Styles" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スタイル"
+          }
+        }
+      }
+    },
+    "Subtle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サトル"
+          }
+        }
+      }
+    },
+    "Success" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "成功"
+          }
+        }
+      }
+    },
+    "Summaries arrive at 9:00 AM." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まとめは午前9時に届きます。"
+          }
+        }
+      }
+    },
+    "Summary" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まとめ"
+          }
+        }
+      }
+    },
+    "System" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システム"
+          }
+        }
+      }
+    },
+    "System button styles adapt to Dynamic Type, accessibility settings and the platform. Use a prominent style for the one most likely action." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システムのボタンスタイルはDynamic Type、アクセシビリティ設定、プラットフォームに適応します。最も可能性の高い1つの操作に強調スタイルを使ってください。"
+          }
+        }
+      }
+    },
+    "System follows your device language. You can also set it in Settings > App Work > Language." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「システム」はデバイスの言語に従います。「設定」>「App Work」>「言語」でも変更できます。"
+          }
+        }
+      }
+    },
+    "System switch" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システムスイッチ"
+          }
+        }
+      }
+    },
+    "Tab bar" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タブバー"
+          }
+        }
+      }
+    },
+    "Tag color" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タグの色"
+          }
+        }
+      }
+    },
+    "Tertiary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ターシャリ"
+          }
+        }
+      }
+    },
+    "Text input" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テキスト入力"
+          }
+        }
+      }
+    },
+    "The bottom bar below is a toolbar with three actions." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下部のバーは3つの操作があるツールバーです。"
+          }
+        }
+      }
+    },
+    "The navigation bar shows the title and lets people go back. Use a large title at the top of a hierarchy and an inline title deeper in." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ナビゲーションバーはタイトルを表示し、前の画面に戻れるようにします。階層の最上位では大きいタイトル、下の階層ではインラインタイトルを使います。"
+          }
+        }
+      }
+    },
+    "The system color picker includes a grid, spectrum, sliders and an eyedropper." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システムのカラーピッカーには、グリッド、スペクトル、スライダー、スポイトがあります。"
+          }
+        }
+      }
+    },
+    "Theme" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テーマ"
+          }
+        }
+      }
+    },
+    "Theme and density apply to the whole app. Light / Dark follows your device appearance; language System follows your device language (also in Settings > App Work > Language)." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テーマと密度はアプリ全体に適用されます。「ライト／ダーク」はデバイスの外観に、言語の「システム」はデバイスの言語に従います（「設定」>「App Work」>「言語」でも変更できます）。"
+          }
+        }
+      }
+    },
+    "This draft will be removed from all your devices." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この下書きはすべてのデバイスから削除されます。"
+          }
+        }
+      }
+    },
+    "Toggle" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "トグル"
+          }
+        }
+      }
+    },
+    "Toolbar" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ツールバー"
+          }
+        }
+      }
+    },
+    "Toolbars hold frequently used actions for the current screen. Use SF Symbols for common actions and keep to a few items." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ツールバーには現在の画面でよく使う操作を置きます。一般的な操作にはSF Symbolsを使い、項目は少なくしてください。"
+          }
+        }
+      }
+    },
+    "Typography" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイポグラフィ"
+          }
+        }
+      }
+    },
+    "Unavailable for this order." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このご注文ではご利用いただけません。"
+          }
+        }
+      }
+    },
+    "Uploading" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップロード中"
+          }
+        }
+      }
+    },
+    "Use cellular data" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "モバイルデータ通信を使用"
+          }
+        }
+      }
+    },
+    "Use the right keyboard and content type so autofill and suggestions work." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動入力や候補が機能するよう、適切なキーボードとコンテンツタイプを指定してください。"
+          }
+        }
+      }
+    },
+    "Utility Icons are display only. Figma uses Material Symbols Rounded; iOS uses the matching SF Symbol." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ユーティリティアイコンは表示専用です。FigmaではMaterial Symbols Rounded、iOSでは対応するSF Symbolを使います。"
+          }
+        }
+      }
+    },
+    "Vanilla" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バニラ"
+          }
+        }
+      }
+    },
+    "Vertical" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "縦"
+          }
+        }
+      }
+    },
+    "View" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示"
+          }
+        }
+      }
+    },
+    "Volume" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "音量"
+          }
+        }
+      }
+    },
+    "Warning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告"
+          }
+        }
+      }
+    },
+    "Week" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "週"
+          }
+        }
+      }
+    },
+    "Weekly" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "毎週"
+          }
+        }
+      }
+    },
+    "Welcome" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ようこそ"
+          }
+        }
+      }
+    },
+    "Wi-Fi" : {
+      "shouldTranslate" : false
+    },
+    "With icons" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコン付き"
+          }
+        }
+      }
+    },
+    "You have unsaved changes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存されていない変更があります"
+          }
+        }
+      }
+    },
+    "Your full name" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "氏名"
+          }
+        }
+      }
+    },
+    "yuanhhou - DS" : {
+      "shouldTranslate" : false
+    },
+    "日本語" : {
+      "shouldTranslate" : false
+    }
+  },
+  "version" : "1.0"
+}
