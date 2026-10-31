@@ -1,0 +1,74 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+}
+
+.toggle__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.toggle__track {
+  display: flex;
+  flex: none;
+  align-items: center;
+  width: 44px;
+  height: 24px;
+  padding: var(--spacing-2xs);
+  border-radius: var(--radius-full);
+  /* Off track must reach 3:1 against the surface (WCAG 1.4.11): border/tertiary, not action/secondary. */
+  background: var(--color-border-tertiary);
+}
+
+.toggle__knob {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  /* Off knob follows the surface color so it stays visible on the track in every theme. */
+  background: var(--color-background-primary);
+}
+
+.toggle__input:checked + .toggle__track {
+  background: var(--color-action-primary);
+}
+
+/* The knob keeps the surface color when On: action/primary is lime in EVA, where a white knob would vanish. */
+.toggle__input:checked + .toggle__track .toggle__knob {
+  transform: translateX(20px);
+}
+
+.toggle__label {
+  color: var(--color-foreground-primary);
+}
+
+.toggle__input:focus-visible + .toggle__track {
+  outline: var(--border-width-focus) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.toggle:has(.toggle__input:disabled) {
+  cursor: not-allowed;
+}
+
+.toggle__input:disabled + .toggle__track {
+  background: var(--color-border-primary);
+}
+
+.toggle__input:disabled:checked + .toggle__track {
+  background: var(--color-background-disabled);
+}
+
+.toggle__input:disabled + .toggle__track .toggle__knob {
+  background: var(--color-background-primary);
+}
+
+.toggle__input:disabled ~ .toggle__label {
+  color: var(--color-foreground-disabled);
+}

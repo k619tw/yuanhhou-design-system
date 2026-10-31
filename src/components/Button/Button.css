@@ -1,0 +1,108 @@
+.btn {
+  --btn-bg: transparent;
+  --btn-bg-pressed: transparent;
+  --btn-border: transparent;
+  --btn-border-pressed: transparent;
+  --btn-fg: var(--color-foreground-brand);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  position: relative;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-weight: var(--typography-weight-emphasized);
+  letter-spacing: var(--typography-letter-spacing);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Outline is a pseudo-element border: it never changes the box size (Figma draws it inside the frame),
+   and a real border snaps evenly on all four sides, unlike an inset box-shadow, which can look
+   thinner on one edge at fractional zoom or positions. */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--border-width-default) solid var(--btn-border);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.btn:active:not(:disabled, [aria-disabled='true']) {
+  background: var(--btn-bg-pressed);
+}
+
+.btn:active:not(:disabled, [aria-disabled='true'])::after {
+  border-color: var(--btn-border-pressed);
+}
+
+/* Large height comes from padding, not a fixed height: 12 + 24 line-height + 12 = 48. */
+.btn--large {
+  padding: var(--spacing-md) var(--spacing-xl);
+  gap: var(--space-gap-tight);
+  font-size: var(--typography-button-1-size);
+  line-height: var(--typography-button-1-line-height);
+}
+
+.btn--small {
+  min-height: 36px;
+  padding: 0 var(--spacing-lg);
+  font-size: var(--typography-button-2-size);
+  line-height: var(--typography-button-2-line-height);
+}
+
+.btn--full {
+  display: flex;
+  width: 100%;
+}
+
+.btn--primary {
+  --btn-bg: var(--color-background-brand-primary);
+  --btn-bg-pressed: var(--color-background-brand-primary-pressed);
+  --btn-fg: var(--color-foreground-brand-on-primary);
+}
+
+.btn--secondary {
+  --btn-border: var(--color-border-brand);
+  --btn-border-pressed: var(--color-border-brand-pressed);
+  --btn-bg-pressed: var(--color-background-overlay);
+}
+
+.btn--tertiary {
+  --btn-bg-pressed: var(--color-background-overlay);
+}
+
+.btn--alert {
+  --btn-bg: var(--color-background-error-secondary);
+  --btn-bg-pressed: var(--color-background-error-secondary-pressed);
+  --btn-fg: var(--color-foreground-error-on-secondary);
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
+.btn--primary:disabled,
+.btn--primary[aria-disabled='true'],
+.btn--alert:disabled,
+.btn--alert[aria-disabled='true'] {
+  background: var(--color-background-disabled);
+  color: var(--color-foreground-on-disabled);
+}
+
+.btn--secondary:disabled,
+.btn--secondary[aria-disabled='true'],
+.btn--tertiary:disabled,
+.btn--tertiary[aria-disabled='true'] {
+  color: var(--color-foreground-disabled);
+}
+
+.btn--secondary:disabled,
+.btn--secondary[aria-disabled='true'] {
+  --btn-border: var(--color-foreground-disabled);
+}

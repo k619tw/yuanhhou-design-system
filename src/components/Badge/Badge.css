@@ -1,0 +1,36 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-weight: var(--typography-weight-emphasized);
+  letter-spacing: var(--typography-letter-spacing);
+  white-space: nowrap;
+}
+
+.badge--medium {
+  font-size: var(--typography-caption-1-size);
+  line-height: var(--typography-caption-1-line-height);
+}
+
+.badge--small {
+  padding-block: var(--spacing-2xs);
+  font-size: var(--typography-caption-2-size);
+  line-height: var(--typography-caption-2-line-height);
+}
+
+/* Solid: <type>/primary fill with <type>/on/primary text. Subtle: secondary pair. */
+.badge--brand.badge--solid { background: var(--color-background-brand-primary); color: var(--color-foreground-brand-on-primary); }
+.badge--brand.badge--subtle { background: var(--color-background-brand-secondary); color: var(--color-foreground-brand-on-secondary); }
+.badge--info.badge--solid { background: var(--color-background-info-primary); color: var(--color-foreground-info-on-primary); }
+.badge--info.badge--subtle { background: var(--color-background-info-secondary); color: var(--color-foreground-info-on-secondary); }
+.badge--success.badge--solid { background: var(--color-background-success-primary); color: var(--color-foreground-success-on-primary); }
+.badge--success.badge--subtle { background: var(--color-background-success-secondary); color: var(--color-foreground-success-on-secondary); }
+.badge--warning.badge--solid { background: var(--color-background-warning-primary); color: var(--color-foreground-warning-on-primary); }
+.badge--warning.badge--subtle { background: var(--color-background-warning-secondary); color: var(--color-foreground-warning-on-secondary); }
+.badge--error.badge--solid { background: var(--color-background-error-primary); color: var(--color-foreground-error-on-primary); }
+.badge--error.badge--subtle { background: var(--color-background-error-secondary); color: var(--color-foreground-error-on-secondary); }
+.badge--promote.badge--solid { background: var(--color-background-promote-primary); color: var(--color-foreground-promote-on-primary); }
+.badge--promote.badge--subtle { background: var(--color-background-promote-secondary); color: var(--color-foreground-promote-on-secondary); }

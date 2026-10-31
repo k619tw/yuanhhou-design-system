@@ -1,0 +1,90 @@
+/*
+ * Text styles from Figma (<Style>/Regular|Emphasized). Each style reads the
+ * --typography-* variables, so density (data-density) changes line-height and tracking.
+ * Headings map to real h1/h2/h3, body to p; Button, Caption and Headline are utility classes.
+ */
+h1,
+h2,
+h3,
+p {
+  letter-spacing: var(--typography-letter-spacing);
+}
+
+h1,
+.text-title-1 {
+  font-size: var(--typography-title-1-size);
+  line-height: var(--typography-title-1-line-height);
+  font-weight: var(--typography-weight-emphasized);
+}
+
+h2,
+.text-title-2 {
+  font-size: var(--typography-title-2-size);
+  line-height: var(--typography-title-2-line-height);
+  font-weight: var(--typography-weight-emphasized);
+}
+
+h3,
+.text-title-3 {
+  font-size: var(--typography-title-3-size);
+  line-height: var(--typography-title-3-line-height);
+  font-weight: var(--typography-weight-emphasized);
+}
+
+.text-large-title {
+  font-size: var(--typography-large-title-size);
+  line-height: var(--typography-large-title-line-height);
+}
+
+.text-headline {
+  font-size: var(--typography-headline-size);
+  line-height: var(--typography-headline-line-height);
+}
+
+p,
+.text-body-1 {
+  font-size: var(--typography-body-1-size);
+  line-height: var(--typography-body-1-line-height);
+}
+
+.text-body-2 {
+  font-size: var(--typography-body-2-size);
+  line-height: var(--typography-body-2-line-height);
+}
+
+.text-button-1 {
+  font-size: var(--typography-button-1-size);
+  line-height: var(--typography-button-1-line-height);
+}
+
+.text-button-2 {
+  font-size: var(--typography-button-2-size);
+  line-height: var(--typography-button-2-line-height);
+}
+
+.text-caption-1 {
+  font-size: var(--typography-caption-1-size);
+  line-height: var(--typography-caption-1-line-height);
+}
+
+.text-caption-2 {
+  font-size: var(--typography-caption-2-size);
+  line-height: var(--typography-caption-2-line-height);
+}
+
+/* Weight modifiers: Regular is the default, Emphasized adds semibold. */
+.text-large-title,
+.text-headline,
+.text-body-1,
+.text-body-2,
+.text-button-1,
+.text-button-2,
+.text-caption-1,
+.text-caption-2 {
+  font-weight: var(--typography-weight-regular);
+  letter-spacing: var(--typography-letter-spacing);
+}
+
+.text-emphasized {
+  font-weight: var(--typography-weight-emphasized);
+}
