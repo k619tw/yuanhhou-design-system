@@ -34,7 +34,7 @@ Brand and Info currently share the same colors in the Tokens library, so they lo
 |---|---|---|
 | Height | 24 | 20 |
 | Padding | 8 horizontal, 4 vertical | 8 horizontal, 2 vertical |
-| Gap (icon to label) | 4 (`spacing/xs`) | 4 |
+| Gap (icon to label) | 4 (`spacing/50`) | 4 |
 | Text style | `Caption 1/Emphasized` (12) | `Caption 2/Emphasized` (11) |
 | Corner radius | full (`radius/full`) | full |
 

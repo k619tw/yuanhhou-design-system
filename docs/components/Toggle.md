@@ -19,7 +19,7 @@ An on/off switch for a setting that takes effect immediately. Figma: page `Toggl
 |---|---|
 | Track | 44 × 24, radius full (`radius/full`), padding 2 |
 | Knob | 20 circle, left when Off, right when On |
-| Gap to label | 8 (`spacing/sm`) |
+| Gap to label | 8 (`spacing/100`) |
 | Label | `Body 1/Regular` |
 
 ## Color tokens

@@ -35,8 +35,8 @@ Triggers an action or submits a form. Figma: page `Button`, component set `Butto
 | | Large | Small |
 |---|---|---|
 | Height | 48 (hugs: 12 vertical padding + 24 line height) | 36 (fixed) |
-| Padding (horizontal / vertical) | 24 (`spacing/xl`) / 12 (`spacing/md`) | 16 (`spacing/lg`) / 0 |
-| Icon gap | 4 (`space/gap/tight`) | 8 (`spacing/sm`) |
+| Padding (horizontal / vertical) | 24 (`spacing/300`) / 12 (`spacing/150`) | 16 (`spacing/200`) / 0 |
+| Icon gap | 4 (`space/gap/tight`) | 8 (`spacing/100`) |
 | Icon size | Medium 20 | Small 16 |
 | Text style | `Button 1/Emphasized` (16/24) | `Button 2/Emphasized` (14/20) |
 | Corner radius | pill (`radius/pill`) | pill |

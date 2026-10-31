@@ -33,9 +33,9 @@ A single-line text field with a label and helper text. Figma: page `Input`, comp
 |---|---|
 | Width | 320 (fill in code) |
 | Field height | 40 (Medium) or 48 (Large) |
-| Field padding | 12 horizontal (`spacing/md`) |
-| Gap inside field | 8 (`spacing/sm`) |
-| Gap label, field, helper | 4 (`spacing/xs`) |
+| Field padding | 12 horizontal (`spacing/150`) |
+| Gap inside field | 8 (`spacing/100`) |
+| Gap label, field, helper | 4 (`spacing/50`) |
 | Corner radius | 12 (`radius/md`) |
 | Label | `Body 2/Emphasized` |
 | Value | `Body 1/Regular` |

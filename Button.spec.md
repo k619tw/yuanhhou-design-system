@@ -72,7 +72,7 @@ Figma collections: Tokens library `01 Primitives` and `02 Semantics` (Light, Dar
 | `color/foreground/error/on/secondary` | `ColorToken.Foreground.error.onSecondary` |
 | `color/foreground/on-disabled`, `disabled` | `ColorToken.Foreground.onDisabled`, `.disabled` |
 | `color/border/brand`, `brand/pressed` | `ColorToken.Border.brand`, `.brand.pressed` |
-| `spacing/sm, lg, xl`, `space/gap/tight` | `Spacing.sm/lg/xl` = 8 / 16 / 24, tight = 4 |
+| `spacing/100, lg, xl`, `space/gap/tight` | `Spacing.sm/lg/xl` = 8 / 16 / 24, tight = 4 |
 | `radius/pill` | `Radius.pill` = 9999 |
 | `border/width/default` | `BorderWidth.default` = 1.5 |
 

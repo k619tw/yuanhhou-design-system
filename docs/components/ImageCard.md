@@ -30,8 +30,8 @@ A content card with media, a title, a description, an optional badge and optiona
 |---|---|---|
 | Width | 320 (fill in code) | 520 (fill in code) |
 | Image | full width, 180 high | 200 wide, full height |
-| Body padding | 16 (`spacing/lg`) | 16 |
-| Gap in body | 8 (`spacing/sm`) | 8 |
+| Body padding | 16 (`spacing/200`) | 16 |
+| Gap in body | 8 (`spacing/100`) | 8 |
 | Corner radius | 16 (`radius/lg`) | 16 |
 | Elevation | `shadow/sm` | `shadow/sm` |
 | Border | 1px `border/primary` | same |

@@ -26,8 +26,8 @@ The chevron is an Icon Button because it triggers the expand. It shows `expand_m
 | | |
 |---|---|
 | Width | 480 (fill in code) |
-| Header padding | 16 left (`spacing/lg`), 8 right and vertical (`spacing/sm`) |
-| Gap title to button | 12 (`spacing/md`) |
+| Header padding | 16 left (`spacing/200`), 8 right and vertical (`spacing/100`) |
+| Gap title to button | 12 (`spacing/150`) |
 | Title | `Body 1/Emphasized` |
 | Content padding | 16 left, right and bottom |
 | Content text (default) | `Body 2/Regular` |
