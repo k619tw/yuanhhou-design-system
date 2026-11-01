@@ -158,3 +158,106 @@ struct LinkShareDemo: View {
         .navigationTitle("Link and share")
     }
 }
+
+/// How selection works in SwiftUI. There is no checkbox or radio control: the platform patterns are a
+/// switch for a setting, a `Picker` for one-of-many, and a checkmark row (or `List(selection:)`) for many.
+struct SelectionDemo: View {
+    private enum Speed: String, CaseIterable, Identifiable {
+        case standard = "Standard", express = "Express", pickup = "Store pickup"
+        var id: Self { self }
+    }
+
+    @State private var autoRenew = true
+    @State private var speed: Speed = .standard
+    @State private var menuSpeed: Speed = .express
+    @State private var segment: Speed = .standard
+    @State private var toppings: Set<String> = ["Cheese"]
+    private let allToppings = ["Cheese", "Mushroom", "Olives", "Basil"]
+
+    var body: some View {
+        List {
+            HIGNote("SwiftUI has no checkbox or radio control. Use a switch for a setting that applies at once, a Picker to choose one option, and a list with checkmarks to choose several. Selection is always a binding: a single value for one, a Set for many.")
+
+            Section {
+                Toggle("Auto-renew", isOn: $autoRenew)
+            } header: {
+                Text("One setting: Toggle")
+            } footer: {
+                Text("Bound to a Bool. Takes effect immediately.")
+            }
+
+            Section {
+                Picker("Delivery speed", selection: $speed) {
+                    ForEach(Speed.allCases) { Text(LocalizedStringKey($0.rawValue)).tag($0) }
+                }
+                .pickerStyle(.inline)
+            } header: {
+                Text("One of many: inline Picker")
+            } footer: {
+                Text("The radio-group equivalent: every option is visible and the selected row shows a checkmark. Bound to a single value; tag each option with that value.")
+            }
+
+            Section {
+                Picker("Delivery speed", selection: $menuSpeed) {
+                    ForEach(Speed.allCases) { Text(LocalizedStringKey($0.rawValue)).tag($0) }
+                }
+                Picker("Delivery speed", selection: $segment) {
+                    ForEach(Speed.allCases.prefix(2)) { Text(LocalizedStringKey($0.rawValue)).tag($0) }
+                }
+                .pickerStyle(.segmented)
+            } header: {
+                Text("One of many: menu and segmented")
+            } footer: {
+                Text("Menu keeps a form compact; segmented switches between 2 to 5 short options.")
+            }
+
+            Section {
+                ForEach(allToppings, id: \.self) { topping in
+                    Button {
+                        if toppings.contains(topping) { toppings.remove(topping) } else { toppings.insert(topping) }
+                    } label: {
+                        HStack {
+                            Text(LocalizedStringKey(topping)).foregroundStyle(.primary)
+                            Spacer()
+                            if toppings.contains(topping) {
+                                Image(systemName: "checkmark").foregroundStyle(.tint)
+                            }
+                        }
+                    }
+                    .accessibilityAddTraits(toppings.contains(topping) ? .isSelected : [])
+                }
+            } header: {
+                Text("Many: checkmark rows")
+            } footer: {
+                Text("The checkbox equivalent. Bound to a Set; tapping a row adds or removes the value, and VoiceOver reads the Selected trait.")
+            }
+
+            Section {
+                NavigationLink("Select several rows") { ListSelectionDemo() }
+            } header: {
+                Text("Many: List(selection:)")
+            } footer: {
+                Text("A list in edit mode shows the system selection circles. Use it for bulk actions such as delete or move, not for form answers.")
+            }
+        }
+        .navigationTitle("Selection")
+    }
+}
+
+struct ListSelectionDemo: View {
+    @State private var selection: Set<String> = ["Mushroom"]
+    private let items = ["Cheese", "Mushroom", "Olives", "Basil"]
+
+    var body: some View {
+        List(items, id: \.self, selection: $selection) { item in
+            Text(LocalizedStringKey(item))
+        }
+        .environment(\.editMode, .constant(.active))
+        .navigationTitle("List selection")
+        .toolbar {
+            ToolbarItem(placement: .bottomBar) {
+                Text("\(selection.count) selected")
+            }
+        }
+    }
+}

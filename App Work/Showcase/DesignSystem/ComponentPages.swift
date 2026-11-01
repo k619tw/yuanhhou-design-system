@@ -155,3 +155,76 @@ struct AccordionPage: View {
         }
     }
 }
+
+struct CheckboxPage: View {
+    private enum Channel: String, Hashable { case email, sms, push }
+
+    @State private var unchecked = false
+    @State private var checked = true
+    @State private var channels: Set<Channel> = [.email]
+
+    private var allChannels: [Channel] { [.email, .sms, .push] }
+    private var selectAll: Binding<Bool> {
+        Binding(
+            get: { channels.count == allChannels.count },
+            set: { channels = $0 ? Set(allChannels) : [] }
+        )
+    }
+
+    var body: some View {
+        DSShowcasePage(title: "Checkbox") {
+            DSShowcaseSection(title: "States", note: "iOS has no checkbox control. The design-system checkbox is a style for the native Toggle: .toggleStyle(.dsCheckbox). For a setting that applies at once, use the switch instead.") {
+                VStack(alignment: .leading, spacing: 0) {
+                    Toggle("Unchecked", isOn: $unchecked)
+                    Toggle("Checked", isOn: $checked)
+                    Toggle("Mixed", isOn: .constant(false)).dsMixed()
+                    Toggle("Error", isOn: .constant(false)).dsInvalid()
+                    Toggle("Disabled", isOn: .constant(false)).disabled(true)
+                    Toggle("Disabled checked", isOn: .constant(true)).disabled(true)
+                }
+                .toggleStyle(.dsCheckbox)
+            }
+            DSShowcaseSection(title: "Group", note: "A Set binding. The parent checkbox shows Mixed while only some children are selected.") {
+                Toggle("Select all", isOn: selectAll)
+                    .toggleStyle(.dsCheckbox)
+                    .dsMixed(!channels.isEmpty && channels.count < allChannels.count)
+                DSCheckboxGroup("Notifications", selection: $channels, options: [
+                    DSChoice("Email", value: Channel.email),
+                    DSChoice("Text message", value: Channel.sms),
+                    DSChoice("Push", value: Channel.push),
+                ], helper: "Choose any that apply")
+            }
+        }
+    }
+}
+
+struct RadioPage: View {
+    private enum Speed: String, Hashable { case standard, express, pickup, drone }
+
+    @State private var speed: Speed = .standard
+    @State private var none: Speed = .drone
+
+    var body: some View {
+        DSShowcasePage(title: "Radio") {
+            DSShowcaseSection(title: "Group", note: "Pick exactly one. SwiftUI's own pattern is Picker with .pickerStyle(.inline); DSRadioGroup is the design-system look with the same single-value binding.") {
+                DSRadioGroup("Delivery speed", selection: $speed, options: [
+                    DSChoice("Standard", value: Speed.standard),
+                    DSChoice("Express", value: Speed.express),
+                    DSChoice("Store pickup", value: Speed.pickup),
+                    DSChoice("Drone (unavailable)", value: Speed.drone, isDisabled: true),
+                ], helper: "Choose one")
+            }
+            DSShowcaseSection(title: "Error and disabled") {
+                DSRadioGroup("Delivery speed", selection: $none, options: [
+                    DSChoice("Standard", value: Speed.standard),
+                    DSChoice("Express", value: Speed.express),
+                ], errorMessage: "Select a delivery speed")
+                DSRadioGroup("Disabled group", selection: .constant(Speed.standard), options: [
+                    DSChoice("Standard", value: Speed.standard),
+                    DSChoice("Express", value: Speed.express),
+                ])
+                .disabled(true)
+            }
+        }
+    }
+}

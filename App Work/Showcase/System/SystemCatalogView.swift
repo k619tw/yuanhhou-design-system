@@ -33,6 +33,7 @@ struct SystemCatalogView: View {
                 NavigationLink("Toggle") { ToggleDemo() }
                 NavigationLink("Slider and stepper") { SliderStepperDemo() }
                 NavigationLink("Picker") { PickerDemo() }
+                NavigationLink("Selection") { SelectionDemo() }
                 NavigationLink("Date picker") { DatePickerDemo() }
                 NavigationLink("Color picker") { ColorPickerDemo() }
                 NavigationLink("Text input") { TextInputDemo() }

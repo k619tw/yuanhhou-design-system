@@ -19,6 +19,8 @@ struct DesignSystemCatalogView: View {
                 NavigationLink("Image Card") { ImageCardPage() }
                 NavigationLink("Input") { InputPage() }
                 NavigationLink("Toggle") { TogglePage() }
+                NavigationLink("Checkbox") { CheckboxPage() }
+                NavigationLink("Radio") { RadioPage() }
                 NavigationLink("Accordion") { AccordionPage() }
             } header: {
                 Text("Components")
