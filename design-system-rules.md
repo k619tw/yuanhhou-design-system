@@ -56,7 +56,7 @@ Other rules:
 2. Use semantic tokens (CSS variables), never hex or raw px for spacing and radius.
 3. Pressed and Disabled map to `:active` and `:disabled` / `aria-disabled`, not props.
 4. Heading styles map to real `h1/h2/h3`; Body to `p`; Button, Caption and Headline are utility classes.
-5. Every component gets `docs/components/<Component>.md`, and a row in `docs/ios.md`. Figma is the only source of truth: when code, docs and Figma disagree, read the Figma variables and update the docs to match.
+5. Every component gets a section in `docs/components.md`, and a row in `docs/ios.md`. Figma is the only source of truth: when code, docs and Figma disagree, read the Figma variables and update the docs to match.
 
 ## Platform rule: follow the native pattern first
 A Figma component is a design, not an order to redraw it on every platform. On each platform, check what the platform already provides before building a custom control.

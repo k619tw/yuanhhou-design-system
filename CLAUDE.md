@@ -5,12 +5,12 @@ React + TypeScript + Vite implementation of the Figma design system **DS - Compo
 ## Sources of truth
 | What | Where |
 |---|---|
-| Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components). Pages `01 — Accordion` … `10 — Radio`, then `Foundation` and `Typography`. Component set node ids are in `docs/components/*.md` |
+| Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components). Pages `01 — Accordion` … `10 — Radio`, then `Foundation` and `Typography`. Component set node ids are in `docs/components.md` |
 | Colors | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), library collection `02 Semantics` (modes Light, Dark, EVA, Heritage Luxury). Primitives in `01 Primitives` |
 | Spacing, radius, size, border width | `Dimension` collection in DS - Components, plus semantic `radius/*` and `space/*` in the Tokens library |
 | Typography | Text styles `<Style>/Regular|Emphasized`; mode axes: collection `Platform` (Web, iOS) and `Typography` (density Compact, Default, Loose) |
 | Rules and color pairing | `design-system-rules.md` |
-| Per-component docs | `docs/components/<Component>.md` (also shown on each Figma page in a frame named `Component documentation`) |
+| Per-component docs | `docs/components.md`, one section per component (also shown on each Figma page in a frame named `Component documentation`) |
 | iOS (SwiftUI) | `docs/ios.md` (component map, selection patterns, tokens) |
 
 ## Code layout
@@ -34,7 +34,7 @@ React + TypeScript + Vite implementation of the Figma design system **DS - Compo
 ## Workflow: a change in Figma
 1. Read the current Figma values (use the Figma MCP `use_figma` read-only, or `get_design_context`). Do not trust earlier docs over Figma.
 2. Update the component CSS/TSX and `tokens.css` if a token changed.
-3. Update `docs/components/<Component>.md`, `design-system-rules.md` and `docs/ios.md` if the iOS usage changes.
+3. Update the component's section in `docs/components.md`, `design-system-rules.md` and `docs/ios.md` if the iOS usage changes.
 4. Update the `Component documentation` frame on that Figma page so it matches the markdown.
 5. `npm run build` and `npm run lint`; for visual changes, check the demo in the browser.
 
