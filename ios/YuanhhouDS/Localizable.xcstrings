@@ -2480,13 +2480,13 @@
         }
       }
     },
-    "System follows your device language. You can also set it in Settings > App Work > Language." : {
+    "System follows your device language. You can also set it in Settings > yuanhhou DS > Language." : {
       "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「システム」はデバイスの言語に従います。「設定」>「App Work」>「言語」でも変更できます。"
+            "value" : "「システム」はデバイスの言語に従います。「設定」>「yuanhhou DS」>「言語」でも変更できます。"
           }
         }
       }
@@ -2846,12 +2846,12 @@
     "日本語" : {
       "shouldTranslate" : false
     },
-    "Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > App Work > Language." : {
+    "Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "テーマと密度はアプリ全体に適用されます。「システム」はデバイスの設定（外観、文字サイズ、言語）に従い、それ以外の選択肢はそれを上書きします。言語は「設定」>「App Work」>「言語」でも変更できます。"
+            "value" : "テーマと密度はアプリ全体に適用されます。「システム」はデバイスの設定（外観、文字サイズ、言語）に従い、それ以外の選択肢はそれを上書きします。言語は「設定」>「yuanhhou DS」>「言語」でも変更できます。"
           }
         }
       }

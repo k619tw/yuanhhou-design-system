@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct AppWorkApp: App {
+struct YuanhhouDSApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
@@ -78,7 +78,7 @@ struct RootView: View {
                 } header: {
                     Text("Settings")
                 } footer: {
-                    Text("Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > App Work > Language.")
+                    Text("Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language.")
                 }
                 .dsListRowBackground()
             }

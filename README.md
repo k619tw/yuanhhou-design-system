@@ -18,7 +18,7 @@ cd web
 npm install
 npm run dev
 ```
-iOS: open `ios/App Work.xcodeproj` in Xcode and run the `App Work` scheme on a simulator.
+iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on a simulator.
 
 ## What is in it
 - Tokens from a Figma library: primitives plus semantic colors in four themes (Light, Dark, EVA, Heritage Luxury), spacing on an 8 pt scale, radius, sizes and typography with Web and iOS modes.

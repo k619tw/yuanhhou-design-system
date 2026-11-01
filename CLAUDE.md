@@ -17,8 +17,8 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 - **Native first on every platform:** before building a control, use what the platform already provides (SwiftUI and the HIG on iOS, the semantic HTML element on web) and style it with tokens. Build custom only when there is no native equivalent, and say why in `docs/ios.md`. iOS has no checkbox or radio, so use `Toggle`, `Picker` and checkmark rows first.
 - **Icon rule:** a Utility Icon is display only. An icon that triggers an action is an Icon Button (with an accessible label). Icons inside Button, Badge and Input are display only.
 - **Color pairing:** follow the table in `design-system-rules.md`. Never put a foreground on a surface it was not designed for. All text pairs were audited at 4.5:1 and borders at 3:1.
-- **No hardcoded colors** on either platform. If a color is missing, add it to the Tokens file, publish the library, then add it to `web/src/styles/tokens.css` and `ios/App Work/DesignSystem/Tokens/DSColor+Tokens.swift`.
-- **Every UI string in English and Japanese** (`web/src/i18n/messages.ts`, `ios/App Work/Localizable.xcstrings`).
+- **No hardcoded colors** on either platform. If a color is missing, add it to the Tokens file, publish the library, then add it to `web/src/styles/tokens.css` and `ios/YuanhhouDS/DesignSystem/Tokens/DSColor+Tokens.swift`.
+- **Every UI string in English and Japanese** (`web/src/i18n/messages.ts`, `ios/YuanhhouDS/Localizable.xcstrings`).
 
 ## One command
 The workflows below are packaged as the skill `/sync-component <Component|tokens> [figma|code]` (`.claude/skills/sync-component`), which runs them for React and SwiftUI together. Start Claude in this folder so the skill is found.
