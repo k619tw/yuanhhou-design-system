@@ -1,6 +1,6 @@
 # Design system rules (Figma to code)
 
-Source of truth: Figma file `DS - Components` (key `GLymoPHNnAmM4irCifF2Ei`). Targets: web first (React + CSS custom properties), iOS/SwiftUI in sync (`App Work/docs/ios.md` in the iOS repo).
+Source of truth: Figma file `DS - Components` (key `GLymoPHNnAmM4irCifF2Ei`). Targets: web first (React + CSS custom properties), iOS/SwiftUI in sync (`ios/`, usage in `docs/ios.md`).
 
 ## Token layers
 
@@ -11,7 +11,7 @@ Source of truth: Figma file `DS - Components` (key `GLymoPHNnAmM4irCifF2Ei`). Ta
 4. **Typography** and text styles `<Style>/Regular|Emphasized`, driven by two independent mode axes on a frame: collection **Platform** (`Web` = Figtree, `iOS` = SF Pro) and collection **Typography** (density `Compact` / `Default` / `Loose`). Text styles bind to `typography/*` variables, which alias the hidden `platform/<style>/<prop>/<density>` variables. Web values are the web scale; iOS values come from Apple's HIG Dynamic Type tables: Compact = Medium, Default = Large (default), Loose = xLarge (size, leading, and SF Pro tracking). Mapping to SwiftUI (also in each variable's iOS code syntax and the style description): Large Title `.largeTitle`, Title 1 `.title`, Title 2 `.title2`, Title 3 `.title3`, Headline and Button 1 `.headline`, Body 1 `.body`, Body 2 and Button 2 `.subheadline`, Caption 1 `.caption`, Caption 2 `.caption2`; Emphasized adds `.fontWeight(.semibold)`. The semantic set is not 1:1 with iOS, so Body 2 and the Button styles share iOS styles.
 5. **Effect styles**: `shadow/sm|md|lg`.
 
-Code: `src/styles/tokens.css` is generated from these variables (all four themes via `data-theme`, density via `data-density`); component CSS uses only those variables. Each variable has WEB code syntax (`var(--color-background-brand-primary)`) and, for Color/Dimension, iOS syntax (`ColorToken.Background.brand.primary`). Use `get_variable_defs` to read the exact names.
+Code: `web/src/styles/tokens.css` is generated from these variables (all four themes via `data-theme`, density via `data-density`); component CSS uses only those variables. Each variable has WEB code syntax (`var(--color-background-brand-primary)`) and, for Color/Dimension, iOS syntax (`ColorToken.Background.brand.primary`). Use `get_variable_defs` to read the exact names.
 
 ## Color pairing
 
@@ -56,7 +56,7 @@ Other rules:
 2. Use semantic tokens (CSS variables), never hex or raw px for spacing and radius.
 3. Pressed and Disabled map to `:active` and `:disabled` / `aria-disabled`, not props.
 4. Heading styles map to real `h1/h2/h3`; Body to `p`; Button, Caption and Headline are utility classes.
-5. Every component gets a section in `docs/components.md`, and a row in the iOS repo's `docs/ios.md`. Figma is the only source of truth: when code, docs and Figma disagree, read the Figma variables and update the docs to match.
+5. Every component gets a section in `docs/components.md`, and a row in `docs/ios.md`. Figma is the only source of truth: when code, docs and Figma disagree, read the Figma variables and update the docs to match.
 
 ## Platform rule: follow the native pattern first
 A Figma component is a design, not an order to redraw it on every platform. On each platform, check what the platform already provides before building a custom control.
@@ -64,7 +64,7 @@ A Figma component is a design, not an order to redraw it on every platform. On e
 1. **Look for the native control or pattern first** (Apple HIG and SwiftUI on iOS, semantic HTML elements on web). If it fits the job, use it and style it with tokens (tint, fonts, colors). Do not redraw it.
 2. **Build a custom control only when there is no native equivalent** or the native one cannot meet the Figma design in a way users would accept. Say why in the component spec.
 3. **Prefer styling over replacing:** a `ToggleStyle`, `ButtonStyle` or `DisclosureGroupStyle` on the native view, `.tint(...)`, token fonts and colors.
-4. **A Figma component without a native iOS twin is web-first.** the iOS repo's `docs/ios.md` lists the native pattern to use instead, and the DS control, if one exists, is optional and documented as such.
+4. **A Figma component without a native iOS twin is web-first.** `docs/ios.md` lists the native pattern to use instead, and the DS control, if one exists, is optional and documented as such.
 5. **Keep what the platform gives for free:** VoiceOver, Dynamic Type, Voice Control, minimum 44 pt hit target, keyboard operation on web. A custom control must reproduce them or it must not ship.
 
-Per-component choices for iOS are in `/Users/yuanhou/Desktop/App Work/docs/ios.md`.
+Per-component choices for iOS are in `docs/ios.md`.

@@ -1,6 +1,6 @@
 # Components
 
-Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF2Ei`) and its React implementation in `src/components`. One section per component; the Figma pages carry the same content in a `Component documentation` frame. iOS usage is in [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md). Foundations and global rules live in [design-system-rules.md](../design-system-rules.md); size tokens in [src/styles/tokens.css](../src/styles/tokens.css).
+Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF2Ei`) and its React implementation in `web/src/components`. One section per component; the Figma pages carry the same content in a `Component documentation` frame. iOS usage is in [ios.md](ios.md). Foundations and global rules live in [design-system-rules.md](../design-system-rules.md); size tokens in [src/styles/tokens.css](../web/src/styles/tokens.css).
 
 | Component | Purpose | Interactive | Figma page |
 |---|---|---|---|
@@ -28,7 +28,7 @@ Each component section has: When to use, Anatomy, Properties, Layout, Color toke
 
 ## Button
 
-Triggers an action or submits a form. Figma: page `Button`, component set `Button` (node `4:94`), 24 variants. iOS: see [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md).
+Triggers an action or submits a form. Figma: page `Button`, component set `Button` (node `4:94`), 24 variants. iOS: see [ios.md](ios.md).
 
 ### When to use
 - Use a Button for actions ("Save", "Continue", "Delete account").
@@ -107,7 +107,7 @@ Width hugs the label. Large's height comes from padding plus the line height (12
 - Label contrast passes 4.5:1 in all Tokens modes (audited).
 
 ### Code mapping
-Source: `src/components/Button`.
+Source: `web/src/components/Button`.
 ```tsx
 import { Button } from '../components'
 
@@ -187,7 +187,7 @@ An interactive button that shows only an icon. Figma: page `Icon Button`, compon
 - Visible focus ring using `--color-border-focus`.
 
 ### Code mapping
-Source: `src/components/IconButton`.
+Source: `web/src/components/IconButton`.
 ```tsx
 import { IconButton } from '../components'
 
@@ -246,7 +246,7 @@ Button, Badge, Input and Icon Button expose an **instance swap** property. Selec
 - Icons that carry meaning on their own need a text alternative (visually hidden text or `aria-label` on the parent).
 
 ### Code mapping
-Source: `src/components/Icon`.
+Source: `web/src/components/Icon`.
 ```tsx
 import { Icon } from '../components'
 
@@ -325,7 +325,7 @@ Replace `<type>` with brand, info, success, warning, error or promote.
 - Contrast: all Type and Style combinations pass 4.5:1 (audited).
 
 ### Code mapping
-Source: `src/components/Badge`.
+Source: `web/src/components/Badge`.
 ```tsx
 import { Badge } from '../components'
 
@@ -398,7 +398,7 @@ Colors: surface `background/primary`, title `foreground/primary`, description `f
 - Heading level for the title should fit the page outline (`h2` or `h3`).
 
 ### Code mapping
-Source: `src/components/ImageCard`.
+Source: `web/src/components/ImageCard`.
 ```tsx
 import { Badge, Button, ImageCard } from '../components'
 
@@ -491,7 +491,7 @@ The Default outline uses `border/tertiary` (not `secondary`) so the field bounda
 - Focus ring is 2px `border/focus`; do not remove it.
 
 ### Code mapping
-Source: `src/components/Input`.
+Source: `web/src/components/Input`.
 ```tsx
 import { IconButton, Input } from '../components'
 
@@ -561,7 +561,7 @@ An on/off switch for a setting that takes effect immediately. Figma: page `Toggl
 - Track contrast against the surface: both Off (`border/tertiary`) and On (`action/primary`) pass 3:1 in all four themes. Do not use `action/secondary` for the Off track; it is 1.8:1 in Light.
 
 ### Code mapping
-Source: `src/components/Toggle`.
+Source: `web/src/components/Toggle`.
 ```tsx
 import { Toggle } from '../components'
 
@@ -633,7 +633,7 @@ Group helper: `foreground/secondary`; in Error `foreground/error`.
 - Visible focus ring: `outline: 2px solid var(--color-border-focus)` around the box (not yet in Figma).
 
 ### Code mapping
-Source: `src/components/Checkbox`, `src/components/CheckboxGroup`.
+Source: `web/src/components/Checkbox`, `web/src/components/CheckboxGroup`.
 ```tsx
 import { Checkbox, CheckboxGroup } from '../components'
 
@@ -657,7 +657,7 @@ Toggle("Email", isOn: $email).toggleStyle(.dsCheckbox)
 Toggle("Select all", isOn: selectAll).toggleStyle(.dsCheckbox).dsMixed(someSelected)
 DSCheckboxGroup("Notifications", selection: $channels, options: [DSChoice("Email", value: Channel.email)])
 ```
-For settings that apply at once use the system switch; for many choices in a list use checkmark rows. Both patterns are shown in the app under iOS System > Selection. See [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md).
+For settings that apply at once use the system switch; for many choices in a list use checkmark rows. Both patterns are shown in the app under iOS System > Selection. See [ios.md](ios.md).
 
 ### Related
 [Radio](#radio) · [Toggle](#toggle)
@@ -722,7 +722,7 @@ Group helper: `foreground/secondary`; in Error `foreground/error`.
 - Visible focus ring: `outline: 2px solid var(--color-border-focus)` around the circle (not yet in Figma).
 
 ### Code mapping
-Source: `src/components/Radio`, `src/components/RadioGroup`.
+Source: `web/src/components/Radio`, `web/src/components/RadioGroup`.
 ```tsx
 import { RadioGroup } from '../components'
 
@@ -748,7 +748,7 @@ DSRadioGroup("Delivery speed", selection: $speed, options: [
     DSChoice("Express", value: Speed.express),
 ], helper: "Choose one")
 ```
-Selection examples for every pattern are in the app under iOS System > Selection. See [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md).
+Selection examples for every pattern are in the app under iOS System > Selection. See [ios.md](ios.md).
 
 ### Related
 [Checkbox](#checkbox) · [Toggle](#toggle)
@@ -815,7 +815,7 @@ The chevron is an Icon Button because it triggers the expand. It shows `expand_m
 - If the full header is the button, the chevron Icon Button should be `aria-hidden` and not focusable, so there is one tab stop.
 
 ### Code mapping
-Source: `src/components/Accordion`.
+Source: `web/src/components/Accordion`.
 ```tsx
 import { Accordion } from '../components'
 
