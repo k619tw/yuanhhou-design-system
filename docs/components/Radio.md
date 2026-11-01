@@ -84,7 +84,7 @@ DSRadioGroup("Delivery speed", selection: $speed, options: [
     DSChoice("Express", value: Speed.express),
 ], helper: "Choose one")
 ```
-Selection examples for every pattern are in the app under iOS System > Selection. See `Checkbox-Radio.spec.md`.
+Selection examples for every pattern are in the app under iOS System > Selection. See [../ios.md](../ios.md).
 
 ## Related
 [Checkbox](Checkbox.md) · [Toggle](Toggle.md)

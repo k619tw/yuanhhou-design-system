@@ -1,6 +1,6 @@
 # Button
 
-Triggers an action or submits a form. Figma: page `Button`, component set `Button` (node `4:94`), 24 variants. iOS notes: see [../../Button.spec.md](../../Button.spec.md).
+Triggers an action or submits a form. Figma: page `Button`, component set `Button` (node `4:94`), 24 variants. iOS: see [../ios.md](../ios.md).
 
 ## When to use
 - Use a Button for actions ("Save", "Continue", "Delete account").

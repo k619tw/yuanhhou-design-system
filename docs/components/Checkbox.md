@@ -83,7 +83,7 @@ Toggle("Email", isOn: $email).toggleStyle(.dsCheckbox)
 Toggle("Select all", isOn: selectAll).toggleStyle(.dsCheckbox).dsMixed(someSelected)
 DSCheckboxGroup("Notifications", selection: $channels, options: [DSChoice("Email", value: Channel.email)])
 ```
-For settings that apply at once use the system switch; for many choices in a list use checkmark rows. Both patterns are shown in the app under iOS System > Selection. See `Checkbox-Radio.spec.md`.
+For settings that apply at once use the system switch; for many choices in a list use checkmark rows. Both patterns are shown in the app under iOS System > Selection. See [../ios.md](../ios.md).
 
 ## Related
 [Radio](Radio.md) · [Toggle](Toggle.md)
