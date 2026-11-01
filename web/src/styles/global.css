@@ -1,0 +1,19 @@
+@import './reset.css';
+@import './primitives.css';
+@import './tokens.css';
+@import './typography.css';
+
+body {
+  font-family: var(--typography-font-family);
+  font-size: var(--typography-body-1-size);
+  line-height: var(--typography-body-1-line-height);
+  letter-spacing: var(--typography-letter-spacing);
+  color: var(--color-foreground-primary);
+  background: var(--color-background-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-border-focus);
+  outline-offset: 2px;
+}

@@ -1,0 +1,79 @@
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-height: var(--size-control-md);
+  cursor: pointer;
+}
+
+.radio__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.radio__circle {
+  display: grid;
+  flex: none;
+  place-items: center;
+  box-sizing: border-box;
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+  border-radius: var(--radius-full);
+  /* Unselected ring must reach 3:1 against the surface (WCAG 1.4.11). */
+  border: var(--border-width-default) solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+}
+
+.radio__dot {
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
+  border-radius: var(--radius-full);
+  background: var(--color-action-primary);
+  visibility: hidden;
+}
+
+.radio__input:checked + .radio__circle {
+  border-color: var(--color-action-primary);
+}
+
+.radio__input:checked + .radio__circle .radio__dot {
+  visibility: visible;
+}
+
+.radio__label {
+  color: var(--color-foreground-primary);
+}
+
+.radio__input:focus-visible + .radio__circle {
+  outline: var(--border-width-focus) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.radio--invalid .radio__input:not(:checked) + .radio__circle {
+  border-color: var(--color-border-error);
+}
+
+.radio:has(.radio__input:disabled) {
+  cursor: not-allowed;
+}
+
+.radio__input:disabled + .radio__circle {
+  border-color: var(--color-border-primary);
+}
+
+.radio__input:disabled:checked + .radio__circle {
+  border-color: var(--color-background-disabled);
+}
+
+.radio__input:disabled + .radio__circle .radio__dot {
+  background: var(--color-background-disabled);
+}
+
+.radio__input:disabled ~ .radio__label {
+  color: var(--color-foreground-disabled);
+}

@@ -1,0 +1,95 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-height: var(--size-control-md);
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.checkbox__box {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  box-sizing: border-box;
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+  /* 4px corner: smaller than radius/sm so a 24px box stays a square, not a squircle. */
+  border-radius: var(--spacing-xs);
+  /* Unchecked outline must reach 3:1 against the surface (WCAG 1.4.11). */
+  border: var(--border-width-default) solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+}
+
+.checkbox__mark {
+  grid-area: 1 / 1;
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
+  fill: none;
+  /* Drawn on action/primary, which is lime in EVA: use the surface color, never white. */
+  stroke: var(--color-background-primary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  visibility: hidden;
+}
+
+.checkbox__input:checked + .checkbox__box,
+.checkbox__input:indeterminate + .checkbox__box {
+  border-color: var(--color-action-primary);
+  background: var(--color-action-primary);
+}
+
+.checkbox__input:checked + .checkbox__box .checkbox__mark--check {
+  visibility: visible;
+}
+
+.checkbox__input:indeterminate + .checkbox__box .checkbox__mark--check {
+  visibility: hidden;
+}
+
+.checkbox__input:indeterminate + .checkbox__box .checkbox__mark--dash {
+  visibility: visible;
+}
+
+.checkbox__label {
+  color: var(--color-foreground-primary);
+}
+
+.checkbox__input:focus-visible + .checkbox__box {
+  outline: var(--border-width-focus) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.checkbox--invalid .checkbox__input:not(:checked):not(:indeterminate) + .checkbox__box {
+  border-color: var(--color-border-error);
+}
+
+.checkbox:has(.checkbox__input:disabled) {
+  cursor: not-allowed;
+}
+
+.checkbox__input:disabled + .checkbox__box {
+  border-color: var(--color-border-primary);
+  background: var(--color-background-primary);
+}
+
+.checkbox__input:disabled:checked + .checkbox__box,
+.checkbox__input:disabled:indeterminate + .checkbox__box {
+  border-color: var(--color-background-disabled);
+  background: var(--color-background-disabled);
+}
+
+.checkbox__input:disabled ~ .checkbox__label {
+  color: var(--color-foreground-disabled);
+}
