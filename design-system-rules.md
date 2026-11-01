@@ -58,3 +58,22 @@ Other rules:
 4. Heading styles map to real `h1/h2/h3`; Body to `p`; Button, Caption and Headline are utility classes.
 5. Every component gets a `<Component>.spec.md` in this folder. Figma is the only source of truth: when code, a spec and Figma disagree, read the Figma variables and update the spec to match.
 6. Specs: `Button.spec.md`, `Input-Toggle-Accordion.spec.md`, `Checkbox-Radio.spec.md`, `Icon-IconButton-Badge-ImageCard.spec.md`.
+
+## Platform rule: follow the native pattern first
+A Figma component is a design, not an order to redraw it on every platform. On each platform, check what the platform already provides before building a custom control.
+
+1. **Look for the native control or pattern first** (Apple HIG and SwiftUI on iOS, semantic HTML elements on web). If it fits the job, use it and style it with tokens (tint, fonts, colors). Do not redraw it.
+2. **Build a custom control only when there is no native equivalent** or the native one cannot meet the Figma design in a way users would accept. Say why in the component spec.
+3. **Prefer styling over replacing:** a `ToggleStyle`, `ButtonStyle` or `DisclosureGroupStyle` on the native view, `.tint(...)`, token fonts and colors.
+4. **A Figma component without a native iOS twin is web-first.** The iOS spec lists the native pattern to use instead, and the DS control, if one exists, is optional and documented as such.
+5. **Keep what the platform gives for free:** VoiceOver, Dynamic Type, Voice Control, minimum 44 pt hit target, keyboard operation on web. A custom control must reproduce them or it must not ship.
+
+Known cases:
+| Figma | iOS (use first) | Custom DS control |
+|---|---|---|
+| Toggle | `Toggle` switch, `.tint(actionPrimary)` | none |
+| Checkbox | no native control (iOS has none): switch for a setting, checkmark rows with a `Set` for several choices | `.toggleStyle(.dsCheckbox)`, only for form consent and similar |
+| Radio Group | `Picker` (`.inline`, `.menu`, `.segmented`) | `DSRadioGroup`, optional |
+| Accordion | `DisclosureGroup` | `.disclosureGroupStyle(.dsAccordion)` (a style, not a new control) |
+| Input | `TextField` | `DSTextField` wraps the native field |
+| Button | `Button` | `ButtonStyle` |

@@ -14,7 +14,9 @@ SwiftUI has no checkbox or radio control (macOS has a checkbox `Toggle` style; i
 
 The app shows all of these under **iOS System > Selection**. Use them first; use the design-system controls only when the Figma look is required (forms, branded flows).
 
-## Design-system controls
+## Design-system controls (optional, native first)
+These follow the rule in `design-system-rules.md`: use the native patterns above first. `.dsCheckbox` is for form consent and similar cases where a switch reads wrongly; `DSRadioGroup` is optional because an inline `Picker` already does the job. Radio and Checkbox are web-first components.
+
 | Figma | SwiftUI |
 |---|---|
 | Checkbox | `Toggle("Email", isOn: $on).toggleStyle(.dsCheckbox)`; Mixed: `.dsMixed(true)`; Error: `.dsInvalid()`; Disabled: `.disabled(true)` |

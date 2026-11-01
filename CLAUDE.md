@@ -28,6 +28,7 @@ React + TypeScript + Vite implementation of the Figma design system **DS - Compo
 - **Color pairing:** follow the table in `design-system-rules.md`. Never put a foreground on a surface it was not designed for. All text pairs were audited at 4.5:1 and borders at 3:1.
 - **Button Large is 48px from padding** (12 + 24 line height), not a fixed height. Button outlines are drawn with a pseudo-element border, so they never change the button's size and render evenly on all four edges.
 - Pressed and Disabled are `:active` and `:disabled`, not props. Hover and Focus are not in Figma yet: focus is a 2px `--color-border-focus` outline.
+- **Native first on every platform:** before building a control, check what the platform already provides (on iOS the SwiftUI/HIG control; on web the semantic HTML element). Use it and style it with tokens; build custom only when there is no native equivalent, and say why in the spec. iOS has no checkbox or radio, so use `Toggle`, `Picker` and checkmark rows first. Details and the per-component table are in `design-system-rules.md` (Platform rule).
 - No hardcoded colors. If a color is missing, add it to the Tokens file, publish the library, then add the CSS variable.
 
 ## Workflow: a change in Figma
