@@ -42,10 +42,10 @@ private struct DSButtonBody: View {
             .labelStyle(DSButtonLabelStyle(spacing: size == .large ? DSSpace.gapTight : DSSpacing.sm))
             .lineLimit(1)
             .foregroundStyle(foreground)
-            // Large: height comes from padding (12 + line height + 12), like Figma. Small: fixed 36.
+            // Height comes from padding, like Figma: Large 12 + line height + 12, Small 8 + line height + 8.
+            // Both grow with Dynamic Type.
             .padding(.horizontal, size == .large ? DSSpacing.xl : DSSpacing.lg)
-            .padding(.vertical, size == .large ? DSSpacing.md : 0)
-            .frame(minHeight: size == .small ? 36 : nil)
+            .padding(.vertical, size == .large ? DSSpacing.md : DSSpacing.sm)
             .background(Capsule().fill(fill(pressed: pressed)))
             .overlay {
                 if kind == .secondary {

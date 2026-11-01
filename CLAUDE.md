@@ -41,6 +41,6 @@ Apply the same edit to the Figma component (variants, properties, bound variable
 
 ## Known gaps
 - Hover and Focus states are not drawn in Figma.
-- Button Small (36), Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
+- Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
 - Accordion: Figma shows the chevron as an Icon Button instance; web draws the same look but not a nested button (invalid HTML inside a button).
 - Not built: Select, Tabs, Modal.

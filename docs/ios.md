@@ -8,7 +8,7 @@ Before building a control, use what SwiftUI and the HIG already provide, and sty
 ## Component map
 | Figma | Use this on iOS | Notes |
 |---|---|---|
-| [Button](components.md#button) | `Button("Save") {}.buttonStyle(.ds(.primary, size: .large))` | `ButtonStyle`; Pressed is `isPressed`, Disabled is `.disabled()`. Large is 46 pt at the default Dynamic Type |
+| [Button](components.md#button) | `Button("Save") {}.buttonStyle(.ds(.primary, size: .large))` | `ButtonStyle`; Pressed is `isPressed`, Disabled is `.disabled()`. Height comes from padding on both sizes: Large is 46 pt and Small 36 pt at the default Dynamic Type, and both grow with it |
 | [Icon Button](components.md#icon-button) | `DSIconButton(.close, label: "Close", kind: .tertiary, size: .small) { }` | `label` is the accessibility label; Small gets a 44 pt hit area |
 | [Utility Icon](components.md#utility-icon) | `DSIcon.search.image` | Maps each Material icon to an SF Symbol |
 | [Badge](components.md#badge) | `DSBadge("Paid", type: .success, style: .subtle, icon: .check)` | Display only |

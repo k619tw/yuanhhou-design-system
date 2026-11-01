@@ -62,14 +62,14 @@ Triggers an action or submits a form. Figma: page `Button`, component set `Butto
 ### Sizes and layout
 | | Large | Small |
 |---|---|---|
-| Height | 48 (hugs: 12 vertical padding + 24 line height) | 36 (fixed) |
-| Padding (horizontal / vertical) | 24 (`spacing/300`) / 12 (`spacing/150`) | 16 (`spacing/200`) / 0 |
+| Height | 48 (hugs: 12 vertical padding + 24 line height) | 36 (hugs: 8 vertical padding + 20 line height) |
+| Padding (horizontal / vertical) | 24 (`spacing/300`) / 12 (`spacing/150`) | 16 (`spacing/200`) / 8 (`spacing/100`) |
 | Icon gap | 4 (`space/gap/tight`) | 8 (`spacing/100`) |
 | Icon size | Medium 20 | Small 16 |
 | Text style | `Button 1/Emphasized` (16/24) | `Button 2/Emphasized` (14/20) |
 | Corner radius | pill (`radius/pill`) | pill |
 
-Width hugs the label. Large's height comes from padding plus the line height (12 + 24 + 12 = 48), so it follows the text style: it is 46 under the iOS typography mode (Platform = iOS, Default density). Small keeps a fixed 36. Full-width is a layout decision in code, not a variant.
+Width hugs the label. Both sizes get their height from padding plus the line height (Large 12 + 24 + 12 = 48, Small 8 + 20 + 8 = 36), so they follow the text style: Large is 46 under the iOS typography mode (Platform = iOS, Default density), Small stays 36. Full-width is a layout decision in code, not a variant.
 
 ### Color tokens (Tokens library, `02 Semantics`)
 | Type / State | Fill | Outline | Label and icon |
