@@ -52,7 +52,7 @@
 .image-card__title {
   color: var(--color-foreground-primary);
   font-weight: var(--typography-headline-weight-emphasized);
-  letter-spacing: var(--typography-letter-spacing);
+  letter-spacing: var(--typography-headline-letter-spacing);
 }
 
 .image-card__description {

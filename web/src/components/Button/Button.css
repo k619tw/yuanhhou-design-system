@@ -15,7 +15,7 @@
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-weight: var(--typography-button-1-weight-emphasized);
-  letter-spacing: var(--typography-letter-spacing);
+  letter-spacing: var(--typography-button-1-letter-spacing);
   white-space: nowrap;
   cursor: pointer;
 }
@@ -50,6 +50,7 @@
 
 .btn--small {
   font-weight: var(--typography-button-2-weight-emphasized);
+  letter-spacing: var(--typography-button-2-letter-spacing);
   padding: var(--spacing-sm) var(--spacing-lg);
   font-size: var(--typography-button-2-size);
   line-height: var(--typography-button-2-line-height);

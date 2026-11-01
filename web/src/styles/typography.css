@@ -2,19 +2,21 @@
  * Text styles from Figma (<Style>/Regular|Emphasized). Each style reads the
  * --typography-* variables, so density (data-density) changes line-height and tracking.
  * Headings map to real h1/h2/h3, body to p; Button, Caption and Headline are utility classes.
- * Each style sets its own weights (--_weight-regular / --_weight-emphasized) from the per-style tokens.
+ * Each style sets its own weights (--_weight-regular / --_weight-emphasized) and tracking (--_tracking)
+ * from the per-style tokens.
  */
 h1,
 h2,
 h3,
 p {
-  letter-spacing: var(--typography-letter-spacing);
+  letter-spacing: var(--_tracking);
 }
 
 h1,
 .text-title-1 {
   --_weight-regular: var(--typography-title-1-weight-regular);
   --_weight-emphasized: var(--typography-title-1-weight-emphasized);
+  --_tracking: var(--typography-title-1-letter-spacing);
   font-size: var(--typography-title-1-size);
   line-height: var(--typography-title-1-line-height);
   font-weight: var(--_weight-emphasized);
@@ -24,6 +26,7 @@ h2,
 .text-title-2 {
   --_weight-regular: var(--typography-title-2-weight-regular);
   --_weight-emphasized: var(--typography-title-2-weight-emphasized);
+  --_tracking: var(--typography-title-2-letter-spacing);
   font-size: var(--typography-title-2-size);
   line-height: var(--typography-title-2-line-height);
   font-weight: var(--_weight-emphasized);
@@ -33,6 +36,7 @@ h3,
 .text-title-3 {
   --_weight-regular: var(--typography-title-3-weight-regular);
   --_weight-emphasized: var(--typography-title-3-weight-emphasized);
+  --_tracking: var(--typography-title-3-letter-spacing);
   font-size: var(--typography-title-3-size);
   line-height: var(--typography-title-3-line-height);
   font-weight: var(--_weight-emphasized);
@@ -41,6 +45,7 @@ h3,
 .text-large-title {
   --_weight-regular: var(--typography-large-title-weight-regular);
   --_weight-emphasized: var(--typography-large-title-weight-emphasized);
+  --_tracking: var(--typography-large-title-letter-spacing);
   font-size: var(--typography-large-title-size);
   line-height: var(--typography-large-title-line-height);
 }
@@ -48,6 +53,7 @@ h3,
 .text-headline {
   --_weight-regular: var(--typography-headline-weight-regular);
   --_weight-emphasized: var(--typography-headline-weight-emphasized);
+  --_tracking: var(--typography-headline-letter-spacing);
   font-size: var(--typography-headline-size);
   line-height: var(--typography-headline-line-height);
 }
@@ -56,6 +62,7 @@ p,
 .text-body-1 {
   --_weight-regular: var(--typography-body-1-weight-regular);
   --_weight-emphasized: var(--typography-body-1-weight-emphasized);
+  --_tracking: var(--typography-body-1-letter-spacing);
   font-size: var(--typography-body-1-size);
   line-height: var(--typography-body-1-line-height);
 }
@@ -63,6 +70,7 @@ p,
 .text-body-2 {
   --_weight-regular: var(--typography-body-2-weight-regular);
   --_weight-emphasized: var(--typography-body-2-weight-emphasized);
+  --_tracking: var(--typography-body-2-letter-spacing);
   font-size: var(--typography-body-2-size);
   line-height: var(--typography-body-2-line-height);
 }
@@ -70,6 +78,7 @@ p,
 .text-button-1 {
   --_weight-regular: var(--typography-button-1-weight-regular);
   --_weight-emphasized: var(--typography-button-1-weight-emphasized);
+  --_tracking: var(--typography-button-1-letter-spacing);
   font-size: var(--typography-button-1-size);
   line-height: var(--typography-button-1-line-height);
 }
@@ -77,6 +86,7 @@ p,
 .text-button-2 {
   --_weight-regular: var(--typography-button-2-weight-regular);
   --_weight-emphasized: var(--typography-button-2-weight-emphasized);
+  --_tracking: var(--typography-button-2-letter-spacing);
   font-size: var(--typography-button-2-size);
   line-height: var(--typography-button-2-line-height);
 }
@@ -84,6 +94,7 @@ p,
 .text-caption-1 {
   --_weight-regular: var(--typography-caption-1-weight-regular);
   --_weight-emphasized: var(--typography-caption-1-weight-emphasized);
+  --_tracking: var(--typography-caption-1-letter-spacing);
   font-size: var(--typography-caption-1-size);
   line-height: var(--typography-caption-1-line-height);
 }
@@ -91,6 +102,7 @@ p,
 .text-caption-2 {
   --_weight-regular: var(--typography-caption-2-weight-regular);
   --_weight-emphasized: var(--typography-caption-2-weight-emphasized);
+  --_tracking: var(--typography-caption-2-letter-spacing);
   font-size: var(--typography-caption-2-size);
   line-height: var(--typography-caption-2-line-height);
 }
@@ -105,7 +117,7 @@ p,
 .text-caption-1,
 .text-caption-2 {
   font-weight: var(--_weight-regular);
-  letter-spacing: var(--typography-letter-spacing);
+  letter-spacing: var(--_tracking);
 }
 
 .text-emphasized {

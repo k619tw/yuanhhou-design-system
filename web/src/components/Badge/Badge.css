@@ -6,7 +6,7 @@
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-full);
   font-weight: var(--typography-caption-1-weight-emphasized);
-  letter-spacing: var(--typography-letter-spacing);
+  letter-spacing: var(--typography-caption-1-letter-spacing);
   white-space: nowrap;
 }
 
@@ -19,6 +19,7 @@
   padding-block: var(--spacing-2xs);
   font-size: var(--typography-caption-2-size);
   font-weight: var(--typography-caption-2-weight-emphasized);
+  letter-spacing: var(--typography-caption-2-letter-spacing);
   line-height: var(--typography-caption-2-line-height);
 }
 

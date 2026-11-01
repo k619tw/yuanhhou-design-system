@@ -179,7 +179,18 @@
   --typography-button-2-size: 14px;
   --typography-caption-1-size: 12px;
   --typography-caption-2-size: 11px;
-  --typography-letter-spacing: 0em;
+  /* Letter spacing per style, in px like the Figma variables (Figma binds tracking in px only) */
+  --typography-large-title-letter-spacing: 0px;
+  --typography-title-1-letter-spacing: 0px;
+  --typography-title-2-letter-spacing: 0px;
+  --typography-title-3-letter-spacing: 0px;
+  --typography-headline-letter-spacing: 0px;
+  --typography-body-1-letter-spacing: 0px;
+  --typography-body-2-letter-spacing: 0px;
+  --typography-button-1-letter-spacing: 0px;
+  --typography-button-2-letter-spacing: 0px;
+  --typography-caption-1-letter-spacing: 0px;
+  --typography-caption-2-letter-spacing: 0px;
   --typography-large-title-line-height: 48px;
   --typography-title-1-line-height: 40px;
   --typography-title-2-line-height: 32px;
@@ -434,7 +445,18 @@
 }
 
 [data-density='compact'] {
-  --typography-letter-spacing: -0.01em;
+  /* Compact: -1px tracking */
+  --typography-large-title-letter-spacing: -1px;
+  --typography-title-1-letter-spacing: -1px;
+  --typography-title-2-letter-spacing: -1px;
+  --typography-title-3-letter-spacing: -1px;
+  --typography-headline-letter-spacing: -1px;
+  --typography-body-1-letter-spacing: -1px;
+  --typography-body-2-letter-spacing: -1px;
+  --typography-button-1-letter-spacing: -1px;
+  --typography-button-2-letter-spacing: -1px;
+  --typography-caption-1-letter-spacing: -1px;
+  --typography-caption-2-letter-spacing: -1px;
   --typography-large-title-line-height: 48px;
   --typography-title-1-line-height: 38px;
   --typography-title-2-line-height: 29px;
@@ -449,7 +471,18 @@
 }
 
 [data-density='default'] {
-  --typography-letter-spacing: 0em;
+  /* Letter spacing per style, in px like the Figma variables (Figma binds tracking in px only) */
+  --typography-large-title-letter-spacing: 0px;
+  --typography-title-1-letter-spacing: 0px;
+  --typography-title-2-letter-spacing: 0px;
+  --typography-title-3-letter-spacing: 0px;
+  --typography-headline-letter-spacing: 0px;
+  --typography-body-1-letter-spacing: 0px;
+  --typography-body-2-letter-spacing: 0px;
+  --typography-button-1-letter-spacing: 0px;
+  --typography-button-2-letter-spacing: 0px;
+  --typography-caption-1-letter-spacing: 0px;
+  --typography-caption-2-letter-spacing: 0px;
   --typography-large-title-line-height: 48px;
   --typography-title-1-line-height: 40px;
   --typography-title-2-line-height: 32px;
@@ -464,7 +497,18 @@
 }
 
 [data-density='loose'] {
-  --typography-letter-spacing: 0.01em;
+  /* Loose: +1px tracking */
+  --typography-large-title-letter-spacing: 1px;
+  --typography-title-1-letter-spacing: 1px;
+  --typography-title-2-letter-spacing: 1px;
+  --typography-title-3-letter-spacing: 1px;
+  --typography-headline-letter-spacing: 1px;
+  --typography-body-1-letter-spacing: 1px;
+  --typography-body-2-letter-spacing: 1px;
+  --typography-button-1-letter-spacing: 1px;
+  --typography-button-2-letter-spacing: 1px;
+  --typography-caption-1-letter-spacing: 1px;
+  --typography-caption-2-letter-spacing: 1px;
   --typography-large-title-line-height: 64px;
   --typography-title-1-line-height: 51px;
   --typography-title-2-line-height: 38px;

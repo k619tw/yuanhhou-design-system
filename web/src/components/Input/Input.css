@@ -37,7 +37,7 @@
   color: var(--color-foreground-primary);
   font-size: var(--typography-body-1-size);
   line-height: var(--typography-body-1-line-height);
-  letter-spacing: var(--typography-letter-spacing);
+  letter-spacing: var(--typography-body-1-letter-spacing);
 }
 
 .input__control::placeholder {
