@@ -1,6 +1,6 @@
 # Components
 
-Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF2Ei`) and its React implementation in `src/components`. One section per component; the Figma pages carry the same content in a `Component documentation` frame. iOS usage is in [ios.md](ios.md). Foundations and global rules live in [design-system-rules.md](../design-system-rules.md); size tokens in [src/styles/tokens.css](../src/styles/tokens.css).
+Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF2Ei`) and its React implementation in `src/components`. One section per component; the Figma pages carry the same content in a `Component documentation` frame. iOS usage is in [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md). Foundations and global rules live in [design-system-rules.md](../design-system-rules.md); size tokens in [src/styles/tokens.css](../src/styles/tokens.css).
 
 | Component | Purpose | Interactive | Figma page |
 |---|---|---|---|
@@ -28,7 +28,7 @@ Each component section has: When to use, Anatomy, Properties, Layout, Color toke
 
 ## Button
 
-Triggers an action or submits a form. Figma: page `Button`, component set `Button` (node `4:94`), 24 variants. iOS: see [ios.md](ios.md).
+Triggers an action or submits a form. Figma: page `Button`, component set `Button` (node `4:94`), 24 variants. iOS: see [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md).
 
 ### When to use
 - Use a Button for actions ("Save", "Continue", "Delete account").
@@ -657,7 +657,7 @@ Toggle("Email", isOn: $email).toggleStyle(.dsCheckbox)
 Toggle("Select all", isOn: selectAll).toggleStyle(.dsCheckbox).dsMixed(someSelected)
 DSCheckboxGroup("Notifications", selection: $channels, options: [DSChoice("Email", value: Channel.email)])
 ```
-For settings that apply at once use the system switch; for many choices in a list use checkmark rows. Both patterns are shown in the app under iOS System > Selection. See [ios.md](ios.md).
+For settings that apply at once use the system switch; for many choices in a list use checkmark rows. Both patterns are shown in the app under iOS System > Selection. See [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md).
 
 ### Related
 [Radio](#radio) · [Toggle](#toggle)
@@ -748,7 +748,7 @@ DSRadioGroup("Delivery speed", selection: $speed, options: [
     DSChoice("Express", value: Speed.express),
 ], helper: "Choose one")
 ```
-Selection examples for every pattern are in the app under iOS System > Selection. See [ios.md](ios.md).
+Selection examples for every pattern are in the app under iOS System > Selection. See [ios.md](/Users/yuanhou/Desktop/App%20Work/docs/ios.md).
 
 ### Related
 [Checkbox](#checkbox) · [Toggle](#toggle)

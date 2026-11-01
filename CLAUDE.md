@@ -11,7 +11,7 @@ React + TypeScript + Vite implementation of the Figma design system **DS - Compo
 | Typography | Text styles `<Style>/Regular|Emphasized`; mode axes: collection `Platform` (Web, iOS) and `Typography` (density Compact, Default, Loose) |
 | Rules and color pairing | `design-system-rules.md` |
 | Per-component docs | `docs/components.md`, one section per component (also shown on each Figma page in a frame named `Component documentation`) |
-| iOS (SwiftUI) | `docs/ios.md` (component map, selection patterns, tokens) |
+| iOS (SwiftUI) | `/Users/yuanhou/Desktop/App Work/docs/ios.md` (component map, selection patterns, tokens; lives in the iOS repo next to the Swift code) |
 
 ## Code layout
 - `src/styles/primitives.css`: the 201 primitives from the Tokens file as CSS variables (`--yuanhhouColorBlue100`, `--yuanhhouSpacing150`, spacing on the 8pt rule: 100 = 8px). Components never use them directly; they use the semantic variables below. The iOS twin is `DSPrimitive.swift`.
@@ -28,13 +28,13 @@ React + TypeScript + Vite implementation of the Figma design system **DS - Compo
 - **Color pairing:** follow the table in `design-system-rules.md`. Never put a foreground on a surface it was not designed for. All text pairs were audited at 4.5:1 and borders at 3:1.
 - **Button Large is 48px from padding** (12 + 24 line height), not a fixed height. Button outlines are drawn with a pseudo-element border, so they never change the button's size and render evenly on all four edges.
 - Pressed and Disabled are `:active` and `:disabled`, not props. Hover and Focus are not in Figma yet: focus is a 2px `--color-border-focus` outline.
-- **Native first on every platform:** before building a control, check what the platform already provides (on iOS the SwiftUI/HIG control; on web the semantic HTML element). Use it and style it with tokens; build custom only when there is no native equivalent, and say why in `docs/ios.md`. iOS has no checkbox or radio, so use `Toggle`, `Picker` and checkmark rows first. Details and the per-component table are in `design-system-rules.md` (Platform rule).
+- **Native first on every platform:** before building a control, check what the platform already provides (on iOS the SwiftUI/HIG control; on web the semantic HTML element). Use it and style it with tokens; build custom only when there is no native equivalent, and say why in the iOS repo's `docs/ios.md`. iOS has no checkbox or radio, so use `Toggle`, `Picker` and checkmark rows first. Details and the per-component table are in `design-system-rules.md` (Platform rule).
 - No hardcoded colors. If a color is missing, add it to the Tokens file, publish the library, then add the CSS variable.
 
 ## Workflow: a change in Figma
 1. Read the current Figma values (use the Figma MCP `use_figma` read-only, or `get_design_context`). Do not trust earlier docs over Figma.
 2. Update the component CSS/TSX and `tokens.css` if a token changed.
-3. Update the component's section in `docs/components.md`, `design-system-rules.md` and `docs/ios.md` if the iOS usage changes.
+3. Update the component's section in `docs/components.md`, `design-system-rules.md` and the iOS repo's `docs/ios.md` if the iOS usage changes.
 4. Update the `Component documentation` frame on that Figma page so it matches the markdown.
 5. `npm run build` and `npm run lint`; for visual changes, check the demo in the browser.
 
