@@ -50,7 +50,7 @@ nonisolated enum DSDensity: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .system: "System"
         case .compact: "Compact"
-        case .standard: "Default"
+        case .standard: "Default (Large)"
         case .loose: "Loose"
         }
     }
