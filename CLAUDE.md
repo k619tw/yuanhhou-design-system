@@ -1,6 +1,6 @@
 # App Work (iOS, SwiftUI)
 
-SwiftUI showcase of Apple's system components and the design system from the Figma file `DS - Components` (key `GLymoPHNnAmM4irCifF2Ei`). The web twin and the shared rules live in `/Users/yuanhou/Desktop/ds-web` (`design-system-rules.md`, `docs/components/*.md`, and `docs/ios.md`, which maps each Figma component to its SwiftUI use).
+SwiftUI showcase of Apple's system components and the design system from the Figma file `DS - Components` (key `GLymoPHNnAmM4irCifF2Ei`). The web twin and the shared rules live in `/Users/yuanhou/Desktop/ds-web` (`design-system-rules.md`, `docs/components.md`, and `docs/ios.md`, which maps each Figma component to its SwiftUI use).
 
 ## Rule: native pattern first
 Before building any control, check what SwiftUI and the HIG already provide. Use the native control and style it with design tokens (`.tint`, `DSColor`, `.ds(...)` fonts, a `ToggleStyle`/`ButtonStyle`/`DisclosureGroupStyle`). Build a custom control only when there is no native equivalent, and say why in `docs/ios.md` (ds-web).
