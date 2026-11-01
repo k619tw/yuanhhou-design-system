@@ -31,6 +31,8 @@ React + TypeScript + Vite implementation of the Figma design system **DS - Compo
 - **Native first on every platform:** before building a control, check what the platform already provides (on iOS the SwiftUI/HIG control; on web the semantic HTML element). Use it and style it with tokens; build custom only when there is no native equivalent, and say why in the iOS repo's `docs/ios.md`. iOS has no checkbox or radio, so use `Toggle`, `Picker` and checkmark rows first. Details and the per-component table are in `design-system-rules.md` (Platform rule).
 - No hardcoded colors. If a color is missing, add it to the Tokens file, publish the library, then add the CSS variable.
 
+The two workflows below are packaged as the skill `/sync-component <Component|tokens> [figma|code]` (`.claude/skills/sync-component`), which runs them for React and SwiftUI together.
+
 ## Workflow: a change in Figma
 1. Read the current Figma values (use the Figma MCP `use_figma` read-only, or `get_design_context`). Do not trust earlier docs over Figma.
 2. Update the component CSS/TSX and `tokens.css` if a token changed.
