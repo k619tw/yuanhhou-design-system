@@ -51,7 +51,7 @@
 
 .image-card__title {
   color: var(--color-foreground-primary);
-  font-weight: var(--typography-weight-emphasized);
+  font-weight: var(--typography-headline-weight-emphasized);
   letter-spacing: var(--typography-letter-spacing);
 }
 

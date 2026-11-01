@@ -144,8 +144,29 @@
   /* Typography: Web platform, Default density */
   /* Figtree has no Japanese glyphs: Japanese text falls back to the platform's Japanese UI font. */
   --typography-font-family: 'Figtree', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic UI', Meiryo, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --typography-weight-regular: 400;
-  --typography-weight-emphasized: 600;
+  /* Weights per style, as in Figma (typography/<style>/weight/*). On Web every style is Regular 400 / Emphasized SemiBold 600; iOS follows Apple per style. */
+  --typography-large-title-weight-regular: 400;
+  --typography-large-title-weight-emphasized: 600;
+  --typography-title-1-weight-regular: 400;
+  --typography-title-1-weight-emphasized: 600;
+  --typography-title-2-weight-regular: 400;
+  --typography-title-2-weight-emphasized: 600;
+  --typography-title-3-weight-regular: 400;
+  --typography-title-3-weight-emphasized: 600;
+  --typography-headline-weight-regular: 400;
+  --typography-headline-weight-emphasized: 600;
+  --typography-body-1-weight-regular: 400;
+  --typography-body-1-weight-emphasized: 600;
+  --typography-body-2-weight-regular: 400;
+  --typography-body-2-weight-emphasized: 600;
+  --typography-button-1-weight-regular: 400;
+  --typography-button-1-weight-emphasized: 600;
+  --typography-button-2-weight-regular: 400;
+  --typography-button-2-weight-emphasized: 600;
+  --typography-caption-1-weight-regular: 400;
+  --typography-caption-1-weight-emphasized: 600;
+  --typography-caption-2-weight-regular: 400;
+  --typography-caption-2-weight-emphasized: 600;
 
   --typography-large-title-size: 40px;
   --typography-title-1-size: 32px;

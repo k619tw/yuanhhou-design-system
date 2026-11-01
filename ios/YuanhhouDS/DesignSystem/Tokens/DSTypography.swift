@@ -57,6 +57,24 @@ nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
         }
     }
 
+    /// Apple's Dynamic Type weights (HIG typography tables): Headline is Semibold by default, and the
+    /// emphasized weight is Bold for Large Title, Title 1 and Title 2, Semibold for the rest.
+    /// Mirrors the Figma variables `typography/<style>/weight/regular|emphasized` in the iOS mode.
+    func weight(_ variant: DSFontWeight) -> Font.Weight {
+        switch variant {
+        case .regular:
+            switch self {
+            case .headline, .button1: .semibold
+            default: .regular
+            }
+        case .emphasized:
+            switch self {
+            case .largeTitle, .title1, .title2: .bold
+            default: .semibold
+            }
+        }
+    }
+
     /// Accessibility heading role, mirroring the web HTML tags (h1, h2, h3).
     var isHeading: Bool {
         switch self {
@@ -66,22 +84,16 @@ nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
-/// `Regular` or `Emphasized` (semibold) variant of a text style.
+/// `Regular` or `Emphasized` variant of a text style. The actual weight depends on the style:
+/// see ``DSTextStyle/weight(_:)``.
 nonisolated enum DSFontWeight: String, CaseIterable, Sendable {
     case regular, emphasized
-
-    var weight: Font.Weight {
-        switch self {
-        case .regular: .regular
-        case .emphasized: .semibold
-        }
-    }
 }
 
 extension Font {
     /// Design-system font: `.font(.ds(.body1, .emphasized))`.
     static func ds(_ style: DSTextStyle, _ weight: DSFontWeight = .regular) -> Font {
-        .system(style.appleTextStyle, weight: weight.weight)
+        .system(style.appleTextStyle, weight: style.weight(weight))
     }
 }
 
