@@ -5,13 +5,13 @@ React + TypeScript + Vite implementation of the Figma design system **DS - Compo
 ## Sources of truth
 | What | Where |
 |---|---|
-| Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components). Pages `01 — Accordion` … `10 — Typography`. Component set node ids are in `docs/components/*.md` |
+| Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components). Pages `01 — Accordion` … `10 — Radio`, then `Foundation` and `Typography`. Component set node ids are in `docs/components/*.md` |
 | Colors | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), library collection `02 Semantics` (modes Light, Dark, EVA, Heritage Luxury). Primitives in `01 Primitives` |
 | Spacing, radius, size, border width | `Dimension` collection in DS - Components, plus semantic `radius/*` and `space/*` in the Tokens library |
 | Typography | Text styles `<Style>/Regular|Emphasized`; mode axes: collection `Platform` (Web, iOS) and `Typography` (density Compact, Default, Loose) |
 | Rules and color pairing | `design-system-rules.md` |
 | Per-component docs | `docs/components/<Component>.md` (also shown on each Figma page in a frame named `Component documentation`) |
-| iOS (SwiftUI) specs | `Button.spec.md`, `Icon-IconButton-Badge-ImageCard.spec.md`, `Input-Toggle-Accordion.spec.md` |
+| iOS (SwiftUI) specs | `Button.spec.md`, `Icon-IconButton-Badge-ImageCard.spec.md`, `Input-Toggle-Accordion.spec.md`, `Checkbox-Radio.spec.md` |
 
 ## Code layout
 - `src/styles/primitives.css`: the 201 primitives from the Tokens file as CSS variables (`--yuanhhouColorBlue100`, `--yuanhhouSpacing150`, spacing on the 8pt rule: 100 = 8px). Components never use them directly; they use the semantic variables below. The iOS twin is `DSPrimitive.swift`.
@@ -50,4 +50,4 @@ Apply the same edit to the Figma component (variants, properties, bound variable
 - Hover and Focus states are not drawn in Figma.
 - Button Small (36), Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
 - Accordion: Figma shows the chevron as an Icon Button instance; code draws the same look but not a nested button (invalid HTML inside a button).
-- Not built: Checkbox, Radio, Select, Tabs, Modal.
+- Not built: Select, Tabs, Modal.

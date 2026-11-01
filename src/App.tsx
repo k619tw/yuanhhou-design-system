@@ -3,9 +3,13 @@ import {
   Accordion,
   Badge,
   Button,
+  Checkbox,
+  CheckboxGroup,
   IconButton,
   ImageCard,
   Input,
+  Radio,
+  RadioGroup,
   Toggle,
 } from '@/components'
 import { languageNames, languages, useI18n } from '@/i18n/i18n'
@@ -21,6 +25,8 @@ function App() {
   const { t, language, setLanguage } = useI18n()
   const [theme, setTheme] = useState<(typeof themes)[number]>('light')
   const [density, setDensity] = useState<(typeof densities)[number]>('default')
+  const [channels, setChannels] = useState<string[]>(['email'])
+  const channelValues = ['email', 'sms', 'push'] as const
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -153,6 +159,64 @@ function App() {
           <Toggle label={t('toggle.on')} defaultChecked />
           <Toggle label={t('toggle.disabledOff')} disabled />
           <Toggle label={t('toggle.disabledOn')} disabled defaultChecked />
+        </div>
+      </section>
+
+      <section>
+        <h2>{t('section.checkbox')}</h2>
+        <div className="showcase__row">
+          <Checkbox label={t('checkbox.unchecked')} />
+          <Checkbox label={t('checkbox.checked')} defaultChecked />
+          <Checkbox label={t('checkbox.indeterminate')} indeterminate />
+          <Checkbox label={t('checkbox.disabled')} disabled />
+          <Checkbox label={t('checkbox.disabledChecked')} disabled defaultChecked />
+          <Checkbox label={t('checkbox.error')} invalid />
+        </div>
+        <div className="showcase__row showcase__row--top">
+          <div className="showcase__stack">
+            <Checkbox
+              label={t('checkboxGroup.selectAll')}
+              checked={channels.length === channelValues.length}
+              indeterminate={channels.length > 0 && channels.length < channelValues.length}
+              onChange={(e) => setChannels(e.target.checked ? [...channelValues] : [])}
+            />
+            <CheckboxGroup
+              legend={t('checkboxGroup.legend')}
+              helper={t('checkboxGroup.helper')}
+              value={channels}
+              onValueChange={setChannels}
+              options={channelValues.map((v) => ({ value: v, label: t(`checkboxGroup.${v}`) }))}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>{t('section.radio')}</h2>
+        <div className="showcase__row showcase__row--top">
+          <RadioGroup
+            legend={t('radioGroup.legend')}
+            helper={t('radioGroup.helper')}
+            defaultValue="standard"
+            options={[
+              { value: 'standard', label: t('radioGroup.standard') },
+              { value: 'express', label: t('radioGroup.express') },
+              { value: 'pickup', label: t('radioGroup.pickup') },
+              { value: 'drone', label: t('radioGroup.unavailable'), disabled: true },
+            ]}
+          />
+          <RadioGroup
+            legend={t('radioGroup.error')}
+            helper={t('radioGroup.errorHelper')}
+            invalid
+            required
+            orientation="horizontal"
+            options={[
+              { value: 'standard', label: t('radioGroup.standard') },
+              { value: 'express', label: t('radioGroup.express') },
+            ]}
+          />
+          <Radio name="single-demo" label={t('checkbox.disabled')} disabled />
         </div>
       </section>
 

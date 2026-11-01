@@ -1,0 +1,40 @@
+/* Shared by RadioGroup and CheckboxGroup. */
+.selection-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.selection-group__legend {
+  padding: 0;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-foreground-primary);
+}
+
+.selection-group__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.selection-group--horizontal .selection-group__options {
+  flex-flow: row wrap;
+  gap: var(--spacing-xs) var(--spacing-xl);
+}
+
+.selection-group__helper {
+  margin: 0;
+  color: var(--color-foreground-secondary);
+}
+
+.selection-group--invalid .selection-group__helper {
+  color: var(--color-foreground-error);
+}
+
+.selection-group:disabled .selection-group__legend {
+  color: var(--color-foreground-disabled);
+}

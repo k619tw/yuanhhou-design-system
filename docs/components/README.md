@@ -11,6 +11,8 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Image Card](ImageCard.md) | Media card with text and actions | Via inner controls | `Image Card` |
 | [Input](Input.md) | Single-line text field | Yes | `Input` |
 | [Toggle](Toggle.md) | On/off switch | Yes | `Toggle` |
+| [Checkbox](Checkbox.md) | Choose any number of options (Checkbox, Checkbox Group) | Yes | `Checkbox` |
+| [Radio](Radio.md) | Choose exactly one option (Radio, Radio Group) | Yes | `Radio` |
 | [Accordion](Accordion.md) | Expandable section | Yes | `Accordion` |
 
 ## Conventions every component follows
@@ -27,4 +29,4 @@ Each component file has: When to use, Anatomy, Properties, Layout, Color tokens,
 ## Known gaps
 - Hover and Focus states are not drawn in Figma.
 - Button Large is 48 from padding (12 + 24 line height); Button Small (36) and Icon Button (48, 32) are fixed values, not yet bound to `size/control/*`.
-- Checkbox, Radio, Select, Tabs, Modal are not built.
+- Select, Tabs, Modal are not built.
