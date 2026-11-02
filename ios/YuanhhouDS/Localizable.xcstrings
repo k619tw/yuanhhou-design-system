@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-      "shouldTranslate" : false
-    },
     "#%@" : {
       "shouldTranslate" : false
     },
@@ -110,6 +107,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "トグルは設定のオン／オフを切り替え、すぐに反映されます。"
+          }
+        }
+      }
+    },
+    "Accessibility" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクセシビリティ"
           }
         }
       }
@@ -376,6 +383,7 @@
       }
     },
     "Built on the native TextField. Tap a field to see Focus." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -498,6 +506,7 @@
       }
     },
     "City" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -508,6 +517,7 @@
       }
     },
     "Clear" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -738,6 +748,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "標準"
+          }
+        }
+      }
+    },
+    "Default (Large)" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標準（大）"
           }
         }
       }
@@ -1041,6 +1062,46 @@
         }
       }
     },
+    "Extra extra extra large" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特特特大"
+          }
+        }
+      }
+    },
+    "Extra extra large" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特特大"
+          }
+        }
+      }
+    },
+    "Extra large" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特大"
+          }
+        }
+      }
+    },
+    "Extra small" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "極小"
+          }
+        }
+      }
+    },
     "Favorite" : {
       "localizations" : {
         "ja" : {
@@ -1295,6 +1356,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "入力フィールド"
+          }
+        }
+      }
+    },
+    "Input (iOS)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力（iOS）"
           }
         }
       }
@@ -1742,6 +1813,7 @@
       }
     },
     "On iOS the Figma Toggle is the native switch, tinted with action/primary. Do not redraw it." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2470,6 +2542,16 @@
         }
       }
     },
+    "System (%@)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システム（%@）"
+          }
+        }
+      }
+    },
     "System button styles adapt to Dynamic Type, accessibility settings and the platform. Use a prominent style for the one most likely action." : {
       "localizations" : {
         "ja" : {
@@ -2492,6 +2574,7 @@
       }
     },
     "System switch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2572,6 +2655,16 @@
         }
       }
     },
+    "The native switch, tinted with action/primary. Do not redraw it." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネイティブのスイッチを action/primary で色付けしたものです。独自に描き直さないでください。"
+          }
+        }
+      }
+    },
     "The navigation bar shows the title and lets people go back. Use a large title at the top of a hierarchy and an inline title deeper in." : {
       "localizations" : {
         "ja" : {
@@ -2612,6 +2705,16 @@
         }
       }
     },
+    "Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テーマと密度はアプリ全体に適用されます。「システム」はデバイスの設定（外観、文字サイズ、言語）に従い、それ以外の選択肢はそれを上書きします。言語は「設定」>「yuanhhou DS」>「言語」でも変更できます。"
+          }
+        }
+      }
+    },
     "This draft will be removed from all your devices." : {
       "localizations" : {
         "ja" : {
@@ -2628,6 +2731,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "トグル"
+          }
+        }
+      }
+    },
+    "Toggle (iOS)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "トグル（iOS）"
           }
         }
       }
@@ -2846,82 +2959,72 @@
     "日本語" : {
       "shouldTranslate" : false
     },
-    "Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language." : {
+    "I agree to the terms" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "テーマと密度はアプリ全体に適用されます。「システム」はデバイスの設定（外観、文字サイズ、言語）に従い、それ以外の選択肢はそれを上書きします。言語は「設定」>「yuanhhou DS」>「言語」でも変更できます。"
+            "value" : "利用規約に同意する"
           }
         }
       }
     },
-    "System (%@)" : {
+    "One choice: Toggle (iOS)" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "システム（%@）"
+            "value" : "1つの選択：トグル（iOS）"
           }
         }
       }
     },
-    "Extra small" : {
+    "iOS has no checkbox. A single yes or no is the system switch." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "極小"
+            "value" : "iOS にはチェックボックスがありません。はい・いいえの1つの選択はシステムのスイッチを使います。"
           }
         }
       }
     },
-    "Extra large" : {
+    "Several choices: checkmark rows" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "特大"
+            "value" : "複数の選択：チェックマーク付きの行"
           }
         }
       }
     },
-    "Extra extra large" : {
+    "One of many: Picker (inline)" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "特特大"
+            "value" : "複数から1つ：ピッカー（インライン）"
           }
         }
       }
     },
-    "Extra extra extra large" : {
+    "iOS has no radio button. The inline Picker shows every option with a checkmark on the selected one." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "特特特大"
+            "value" : "iOS にはラジオボタンがありません。インラインのピッカーはすべての選択肢を表示し、選択中の項目にチェックマークを付けます。"
           }
         }
       }
     },
-    "Accessibility" : {
+    "Compact: Picker (menu)" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アクセシビリティ"
-          }
-        }
-      }
-    },
-    "Default (Large)" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "標準（大）"
+            "value" : "コンパクト：ピッカー（メニュー）"
           }
         }
       }

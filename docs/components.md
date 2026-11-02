@@ -9,11 +9,12 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Utility Icon](#utility-icon) | Display-only icon (30 Material Rounded) | No | `Icons` |
 | [Badge](#badge) | Status label | No | `Badge` |
 | [Image Card](#image-card) | Media card with text and actions | Via inner controls | `Image Card` |
-| [Input](#input) | Single-line text field | Yes | `Input` |
-| [Toggle](#toggle) | On/off switch | Yes | `Toggle` |
-| [Checkbox](#checkbox) | Choose any number of options (Checkbox, Checkbox Group) | Yes | `Checkbox` |
-| [Radio](#radio) | Choose exactly one option (Radio, Radio Group) | Yes | `Radio` |
+| [Input](#input) | `Input (Web)`: single-line text field. iOS: `Input (iOS)` | Yes | `Input` |
+| [Toggle](#toggle) | `Toggle (Web)`: on/off switch. iOS: `Toggle (iOS)` | Yes | `Toggle` |
+| [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: Toggle (iOS) or checkmark rows | Yes | `Checkbox` |
+| [Radio](#radio) | `Radio (Web)`, `Radio Group (Web)`: choose exactly one option. iOS: Picker | Yes | `Radio` |
 | [Accordion](#accordion) | Expandable section | Yes | `Accordion` |
+| [List Section (iOS)](#list-section-ios) | iOS only: groups Input (iOS) and Toggle (iOS) rows with a header and footer | Via its rows | `List Section (iOS)` |
 
 
 ## Conventions every component follows
@@ -23,6 +24,14 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 - **Type** uses the text styles `<Style>/Regular|Emphasized` (Figtree on web; Platform mode `iOS` switches to SF Pro).
 - **States:** Pressed and Disabled are designed. Hover and Focus are not yet in Figma; implement focus as a 2px `--color-border-focus` outline.
 - **Sizes** use size tokens where they exist (icons: `size/icon/*`).
+- **Platform suffix in the name** tells you where a component can be used:
+  | Name | Use on | Today |
+  |---|---|---|
+  | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card, Accordion |
+  | `(Web)` | web only, because iOS has a native control | `Input (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
+  | `(iOS)` | iOS only: the native control shown with our tokens | `Input (iOS)`, `Toggle (iOS)`, `List Section (iOS)` |
+
+  An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
 
 Each component section has: When to use, Anatomy, Properties, Layout, Color tokens, Do, Don't, Accessibility, Code mapping, Related. Keep this order when adding components.
 
@@ -418,7 +427,7 @@ import { Badge, Button, ImageCard } from '../components'
 
 ## Input
 
-A single-line text field with a label and helper text. Figma: page `Input`, component set `Input` (node `18:109`), 8 variants.
+A single-line text field with a label and helper text. Figma: page `Input`, component set `Input (Web)` (node `18:109`), 8 variants. **Web only.** On iOS use [Input (iOS)](#ios-input-ios), on the same page.
 
 ### When to use
 - For short free-text values: name, email, search, URL.
@@ -505,12 +514,30 @@ import { IconButton, Input } from '../components'
 ```
 `invalid` sets the Error state (`aria-invalid`, red outline); keep `helper` as the error message. `size`: `medium` (40) or `large` (48). Focus is `:focus-within`; Disabled is the native `disabled` attribute. The label is linked with `htmlFor` and the helper with `aria-describedby` automatically.
 
+### iOS: Input (iOS)
+Apple has a native text field, so there is no DS input on iOS (hard rule: native first). Figma shows the native field instead: component set `Input (iOS)` (node `116:51`) on the `Input` page, copied from Apple's iOS kit and bound to the Tokens library so it follows all four themes, 6 variants, `Platform` mode iOS. It is a bare row: place it in [List Section (iOS)](#list-section-ios), which draws the background, corners, header and footer.
+
+| Property | Values | Notes |
+|---|---|---|
+| State | Placeholder, Focused, Typing, Value Entered, Error, Disabled | Typing shows the clear Icon Button (`close`, Tertiary, Small) |
+| Value | text | |
+| Show separator | boolean, default on | Turn off on the last row of a section |
+
+| Part | Value / token |
+|---|---|
+| Row | width 402, height 52 with the separator (Apple geometry), padding 16 horizontal (`spacing/200`), no fill (the section draws it) |
+| Value | `Body 1/Regular`: `foreground/primary`; placeholder `foreground/secondary`; disabled `foreground/disabled` |
+| Cursor | 2 × 22, `action/primary` (the app tint) |
+| Separator | 1 (`border/width/thin`), inset 16, `border/primary`; `border/error` in Error |
+
+Helper and error text belong to the section footer, not the row. SwiftUI: `TextField("Email", text: $email, prompt: Text("name@company.com")).dsTextField()` (or `SecureField`) in a `Form` section, with `Text("…").dsTextFieldFooter(isError: true)` in the footer. SwiftUI's `TextField` has no clear button, so the Typing state's clear button is a design reference only. See [ios.md](ios.md).
+
 ### Related
 [Icon Button](#icon-button) · [Utility Icon](#utility-icon) · [Toggle](#toggle)
 
 ## Toggle
 
-An on/off switch for a setting that takes effect immediately. Figma: page `Toggle`, component set `Toggle` (node `18:167`), 4 variants.
+An on/off switch for a setting that takes effect immediately. Figma: page `Toggle`, component set `Toggle (Web)` (node `18:167`), 4 variants. **Web only.** On iOS use [Toggle (iOS)](#ios-toggle-ios), on the same page.
 
 ### When to use
 - For binary settings that apply right away: "Notifications", "Dark mode", "Auto-renew".
@@ -569,12 +596,75 @@ import { Toggle } from '../components'
 ```
 Built on a native checkbox with `role="switch"`, so Off/On is `:checked` and Default/Disabled is `:disabled`; it works in forms and with `onChange`. The label is part of the click target.
 
+### iOS: Toggle (iOS)
+Apple has a native switch, so there is no DS toggle on iOS (hard rule: native first); Figma shows the system switch, copied from Apple's iOS kit. Apple's green On track is replaced by `action/primary`, the brand control tint, so it follows the theme (brand blue in Light, lime in EVA). Figma: page `Toggle`, component set `Toggle (iOS)` (node `117:22`), 4 variants, `Platform` mode iOS.
+
+| Property | Values | Notes |
+|---|---|---|
+| Checked | Off, On | |
+| State | Default, Disabled | Disabled is the system 50% opacity |
+| Label | text | |
+| Show separator | boolean, default on | Turn off on the last row of a section |
+
+| Part | Value / token |
+|---|---|
+| Row | width 402, height 52 with the separator, padding 16 horizontal (`spacing/200`), no fill (the section draws it), separator `border/primary` |
+| Label | `Body 1/Regular`, `foreground/primary`; `foreground/disabled` when Disabled |
+| Switch | 64 × 28, radius full; On `action/primary`, Off `border/tertiary` (passes 3:1) |
+| Knob | 38 × 24, radius full, `background/primary`, small shadow |
+
+It is a bare row: place it in [List Section (iOS)](#list-section-ios). The switch and knob sizes are Apple geometry, not tokens. SwiftUI: `Toggle("Auto-renew", isOn: $on)` with `.dsControlTint()` set once on the app. Do not redraw it.
+
 ### Related
 [Input](#input) · [Accordion](#accordion)
 
+## List Section (iOS)
+
+iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` inside `Form`). Figma: page `List Section (iOS)`, component set `List Section (iOS)` (node `120:49`), 2 variants, `Platform` mode iOS. Examples with inputs, toggles and an error are in the `Examples` frame on the same page.
+
+### When to use
+- To group related iOS rows: sign-in fields, settings toggles, a short form.
+- Not on web (use the web components in a normal layout).
+
+### Properties
+| Property | Values | Notes |
+|---|---|---|
+| State | Default, Error | Error colors the footer `foreground/error`; also set the failing row to `State=Error` |
+| Rows | slot | `Input (iOS)` and `Toggle (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
+| Header / Show header | text, boolean (on) | |
+| Footer / Show footer | text, boolean (on) | Helper text, or the error message in Error |
+
+### Layout and tokens
+| Part | Value / token |
+|---|---|
+| Section | width 402, padding 16 (`spacing/200`), gap 8 (`spacing/100`), page `background/secondary` |
+| Rows | `background/primary`, radius 24 (`radius/xl`; Apple's inset grouped corner is about 26), clips content |
+| Header | `Body 2/Regular`, `foreground/secondary`, inset 16 |
+| Footer | `Caption 1/Regular`, `foreground/secondary` (`foreground/error` in Error), inset 16 |
+
+### Code mapping
+```swift
+Form {
+    Section {
+        TextField("Name", text: $name).dsTextField()
+        SecureField("Password", text: $password).dsTextField()
+    } header: {
+        Text("Account")
+    } footer: {
+        Text("Use the email you signed up with.").dsTextFieldFooter()
+    }
+    .dsListRowBackground()
+}
+.dsListBackground()
+```
+SwiftUI draws the corners, separators and spacing itself; the tokens come from `.dsListBackground()`, `.dsListRowBackground()` and the row modifiers.
+
+### Related
+[Input](#input) · [Toggle](#toggle)
+
 ## Checkbox
 
-Chooses any number of options, or agrees to a single statement in a form. Figma: page `09 — Checkbox`, component sets `Checkbox` (node `82:36`, 9 variants) and `Checkbox Group` (node `88:171`, 4 variants).
+Chooses any number of options, or agrees to a single statement in a form. Figma: page `09 — Checkbox`, component sets `Checkbox (Web)` (node `82:36`, 9 variants) and `Checkbox Group (Web)` (node `88:171`, 4 variants). **Web only.** On iOS use Toggle (iOS) or checkmark rows.
 
 ### When to use
 - Several options can be true at once: notification channels, filters, "I agree to the terms".
@@ -651,20 +741,24 @@ import { Checkbox, CheckboxGroup } from '../components'
 Checked is `:checked` (or `indeterminate` for Mixed); Default, Error and Disabled are the `invalid` and `disabled` props. `CheckboxGroup` is a `fieldset`: pass `disabled` to disable every option, `invalid` for Error.
 
 ### iOS
-SwiftUI has no checkbox control. The design-system version is a style for the native `Toggle`:
+No checkbox on iOS, and no DS checkbox either (native first). Use the native pattern:
 ```swift
-Toggle("Email", isOn: $email).toggleStyle(.dsCheckbox)
-Toggle("Select all", isOn: selectAll).toggleStyle(.dsCheckbox).dsMixed(someSelected)
-DSCheckboxGroup("Notifications", selection: $channels, options: [DSChoice("Email", value: Channel.email)])
+Toggle("I agree to the terms", isOn: $agreed)          // one yes or no
+ForEach(options) { option in                             // several of many: checkmark rows bound to a Set
+    Button { toggle(option) } label: {
+        HStack { Text(option.label); Spacer(); if selection.contains(option) { Image(systemName: "checkmark").foregroundStyle(DSColor.actionPrimary) } }
+    }
+    .accessibilityAddTraits(selection.contains(option) ? .isSelected : [])
+}
 ```
-For settings that apply at once use the system switch; for many choices in a list use checkmark rows. Both patterns are shown in the app under iOS System > Selection. See [ios.md](ios.md).
+Put the rows in a `Form` section (Figma: `List Section (iOS)`). Shown in the app under yuanhhou - DS > Checkbox and iOS System > Selection. See [ios.md](ios.md).
 
 ### Related
 [Radio](#radio) · [Toggle](#toggle)
 
 ## Radio
 
-Chooses exactly one option from a short list. Figma: page `10 — Radio`, component sets `Radio` (node `82:59`, 6 variants) and `Radio Group` (node `88:86`, 4 variants).
+Chooses exactly one option from a short list. Figma: page `10 — Radio`, component sets `Radio (Web)` (node `82:59`, 6 variants) and `Radio Group (Web)` (node `88:86`, 4 variants). **Web only.** On iOS use a Picker.
 
 ### When to use
 - One of 2 to 7 options, all of which should be visible at once: delivery speed, plan, payment method.
@@ -741,14 +835,14 @@ import { RadioGroup } from '../components'
 Controlled with `value`, uncontrolled with `defaultValue`. `orientation="horizontal"` lays the options out in a row, `invalid` is Error and `disabled` disables the whole group. `Radio` is exported too but should only be used inside a group (it needs a shared `name`).
 
 ### iOS
-SwiftUI has no radio control either. The platform pattern is `Picker(selection:)` with `.pickerStyle(.inline)` (a checkmark on the selected row) or `.menu`; reach for that first. `PickerStyle` cannot be customised, so the design-system look is a separate view with the same single-value binding:
+No radio on iOS, and no DS radio either (native first). Use `Picker(selection:)`: `.pickerStyle(.inline)` shows every option with a checkmark on the selected one, `.menu` is compact, `.segmented` fits 2 to 5 short options.
 ```swift
-DSRadioGroup("Delivery speed", selection: $speed, options: [
-    DSChoice("Standard", value: Speed.standard),
-    DSChoice("Express", value: Speed.express),
-], helper: "Choose one")
+Picker("Delivery speed", selection: $speed) {
+    ForEach(Speed.allCases, id: \.self) { Text($0.label).tag($0) }
+}
+.pickerStyle(.inline)
 ```
-Selection examples for every pattern are in the app under iOS System > Selection. See [ios.md](ios.md).
+Shown in the app under yuanhhou - DS > Radio and iOS System > Selection. See [ios.md](ios.md).
 
 ### Related
 [Checkbox](#checkbox) · [Toggle](#toggle)

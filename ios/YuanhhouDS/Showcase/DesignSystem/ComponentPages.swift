@@ -97,20 +97,41 @@ struct ImageCardPage: View {
 
 struct InputPage: View {
     @State private var name = ""
+    @State private var password = ""
     @State private var email = "name@company"
-    @State private var search = "Sydney"
 
     var body: some View {
-        DSShowcasePage(title: "Input") {
-            DSShowcaseSection(title: "States", note: "Built on the native TextField. Tap a field to see Focus.") {
-                DSTextField("Name", text: $name, prompt: "Your full name", helper: "As it appears on your ID")
-                DSTextField("Email", text: $email, prompt: "name@company.com",
-                            errorMessage: "Enter an email like name@company.com", leadingIcon: .mail, size: .large)
-                DSTextField("Search", text: $search, prompt: "City", leadingIcon: .search, showsClearButton: true)
-                DSTextField("Disabled", text: .constant("Not editable"), helper: "Locked by your admin")
-                    .disabled(true)
+        Form {
+            Section {
+                TextField("Name", text: $name, prompt: Text("Your full name")).dsTextField()
+                SecureField("Password", text: $password, prompt: Text("Password")).dsTextField()
+            } header: {
+                Text("Input (iOS)")
+            } footer: {
+                Text("As it appears on your ID").dsTextFieldFooter()
             }
+            .dsListRowBackground()
+
+            Section {
+                TextField("Email", text: $email, prompt: Text("name@company.com"))
+                    .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .dsTextField()
+            } footer: {
+                Text("Enter an email like name@company.com").dsTextFieldFooter(isError: true)
+            }
+            .dsListRowBackground()
+
+            Section {
+                TextField("Disabled", text: .constant("Not editable")).dsTextField().disabled(true)
+            } footer: {
+                Text("Locked by your admin").dsTextFieldFooter()
+            }
+            .dsListRowBackground()
         }
+        .dsListBackground()
+        .navigationTitle("Input")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -119,15 +140,25 @@ struct TogglePage: View {
     @State private var off = false
 
     var body: some View {
-        DSShowcasePage(title: "Toggle") {
-            DSShowcaseSection(title: "System switch", note: "On iOS the Figma Toggle is the native switch, tinted with action/primary. Do not redraw it.") {
-                Toggle("Email notifications", isOn: $on)
-                Toggle("Auto-renew", isOn: $off)
-                Toggle("Disabled", isOn: .constant(true)).disabled(true)
+        Form {
+            Section {
+                Group {
+                    Toggle("Email notifications", isOn: $on)
+                    Toggle("Auto-renew", isOn: $off)
+                    Toggle("Disabled", isOn: .constant(true)).disabled(true)
+                }
+                .font(.ds(.body1))
+                .foregroundStyle(DSColor.foregroundPrimary)
+            } header: {
+                Text("Toggle (iOS)")
+            } footer: {
+                Text("The native switch, tinted with action/primary. Do not redraw it.").dsTextFieldFooter()
             }
-            .font(.ds(.body1))
-            .foregroundStyle(DSColor.foregroundPrimary)
+            .dsListRowBackground()
         }
+        .dsListBackground()
+        .navigationTitle("Toggle")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -157,74 +188,90 @@ struct AccordionPage: View {
 }
 
 struct CheckboxPage: View {
-    private enum Channel: String, Hashable { case email, sms, push }
+    private enum Channel: String, CaseIterable, Hashable { case email = "Email", sms = "Text message", push = "Push" }
 
-    @State private var unchecked = false
-    @State private var checked = true
+    @State private var agreed = false
     @State private var channels: Set<Channel> = [.email]
 
-    private var allChannels: [Channel] { [.email, .sms, .push] }
-    private var selectAll: Binding<Bool> {
-        Binding(
-            get: { channels.count == allChannels.count },
-            set: { channels = $0 ? Set(allChannels) : [] }
-        )
-    }
-
     var body: some View {
-        DSShowcasePage(title: "Checkbox") {
-            DSShowcaseSection(title: "States", note: "iOS has no checkbox control. The design-system checkbox is a style for the native Toggle: .toggleStyle(.dsCheckbox). For a setting that applies at once, use the switch instead.") {
-                VStack(alignment: .leading, spacing: 0) {
-                    Toggle("Unchecked", isOn: $unchecked)
-                    Toggle("Checked", isOn: $checked)
-                    Toggle("Mixed", isOn: .constant(false)).dsMixed()
-                    Toggle("Error", isOn: .constant(false)).dsInvalid()
-                    Toggle("Disabled", isOn: .constant(false)).disabled(true)
-                    Toggle("Disabled checked", isOn: .constant(true)).disabled(true)
+        Form {
+            Section {
+                Toggle("I agree to the terms", isOn: $agreed)
+                    .font(.ds(.body1))
+                    .foregroundStyle(DSColor.foregroundPrimary)
+            } header: {
+                Text("One choice: Toggle (iOS)")
+            } footer: {
+                Text("iOS has no checkbox. A single yes or no is the system switch.").dsTextFieldFooter()
+            }
+            .dsListRowBackground()
+
+            Section {
+                ForEach(Channel.allCases, id: \.self) { channel in
+                    Button {
+                        if channels.contains(channel) { channels.remove(channel) } else { channels.insert(channel) }
+                    } label: {
+                        HStack {
+                            Text(LocalizedStringKey(channel.rawValue))
+                                .font(.ds(.body1))
+                                .foregroundStyle(DSColor.foregroundPrimary)
+                            Spacer()
+                            if channels.contains(channel) {
+                                Image(systemName: "checkmark").foregroundStyle(DSColor.actionPrimary)
+                            }
+                        }
+                    }
+                    .accessibilityAddTraits(channels.contains(channel) ? .isSelected : [])
                 }
-                .toggleStyle(.dsCheckbox)
+            } header: {
+                Text("Several choices: checkmark rows")
+            } footer: {
+                Text("Choose any that apply").dsTextFieldFooter()
             }
-            DSShowcaseSection(title: "Group", note: "A Set binding. The parent checkbox shows Mixed while only some children are selected.") {
-                Toggle("Select all", isOn: selectAll)
-                    .toggleStyle(.dsCheckbox)
-                    .dsMixed(!channels.isEmpty && channels.count < allChannels.count)
-                DSCheckboxGroup("Notifications", selection: $channels, options: [
-                    DSChoice("Email", value: Channel.email),
-                    DSChoice("Text message", value: Channel.sms),
-                    DSChoice("Push", value: Channel.push),
-                ], helper: "Choose any that apply")
-            }
+            .dsListRowBackground()
         }
+        .dsListBackground()
+        .navigationTitle("Checkbox")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct RadioPage: View {
-    private enum Speed: String, Hashable { case standard, express, pickup, drone }
+    private enum Speed: String, CaseIterable, Hashable { case standard = "Standard", express = "Express", pickup = "Store pickup" }
 
     @State private var speed: Speed = .standard
-    @State private var none: Speed = .drone
+    @State private var menuSpeed: Speed = .express
 
     var body: some View {
-        DSShowcasePage(title: "Radio") {
-            DSShowcaseSection(title: "Group", note: "Pick exactly one. SwiftUI's own pattern is Picker with .pickerStyle(.inline); DSRadioGroup is the design-system look with the same single-value binding.") {
-                DSRadioGroup("Delivery speed", selection: $speed, options: [
-                    DSChoice("Standard", value: Speed.standard),
-                    DSChoice("Express", value: Speed.express),
-                    DSChoice("Store pickup", value: Speed.pickup),
-                    DSChoice("Drone (unavailable)", value: Speed.drone, isDisabled: true),
-                ], helper: "Choose one")
+        Form {
+            Section {
+                Picker("Delivery speed", selection: $speed) {
+                    ForEach(Speed.allCases, id: \.self) { Text(LocalizedStringKey($0.rawValue)).tag($0) }
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+                .font(.ds(.body1))
+            } header: {
+                Text("One of many: Picker (inline)")
+            } footer: {
+                Text("iOS has no radio button. The inline Picker shows every option with a checkmark on the selected one.").dsTextFieldFooter()
             }
-            DSShowcaseSection(title: "Error and disabled") {
-                DSRadioGroup("Delivery speed", selection: $none, options: [
-                    DSChoice("Standard", value: Speed.standard),
-                    DSChoice("Express", value: Speed.express),
-                ], errorMessage: "Select a delivery speed")
-                DSRadioGroup("Disabled group", selection: .constant(Speed.standard), options: [
-                    DSChoice("Standard", value: Speed.standard),
-                    DSChoice("Express", value: Speed.express),
-                ])
-                .disabled(true)
+            .dsListRowBackground()
+
+            Section {
+                Picker("Delivery speed", selection: $menuSpeed) {
+                    ForEach(Speed.allCases, id: \.self) { Text(LocalizedStringKey($0.rawValue)).tag($0) }
+                }
+                .font(.ds(.body1))
+            } header: {
+                Text("Compact: Picker (menu)")
+            } footer: {
+                Text("Choose one").dsTextFieldFooter()
             }
+            .dsListRowBackground()
         }
+        .dsListBackground()
+        .navigationTitle("Radio")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

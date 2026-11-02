@@ -2,8 +2,8 @@
 
 How each Figma component is used in the iOS app (`ios/`). Values (sizes, colors, spacing) are the same as the web docs in [docs/components.md](components.md); only the API differs. Every pattern below is demonstrated in the app: **yuanhhou - DS** for the design-system versions and **iOS System** for the native controls they build on.
 
-## Rule: native first
-Before building a control, use what SwiftUI and the HIG already provide, and style it with tokens (`.tint`, `DSColor`, `.ds(...)` fonts, a `ButtonStyle`, `ToggleStyle` or `DisclosureGroupStyle`). Build a custom view only when there is no native equivalent, and say why here. A custom control must keep VoiceOver, Dynamic Type, Voice Control and a 44 pt hit target.
+## Rule: native first (hard rule)
+Before building a control, use what SwiftUI and the HIG already provide, and style it with tokens (`.tint`, `DSColor`, `.ds(...)` fonts, a `ButtonStyle`, `ToggleStyle` or `DisclosureGroupStyle`). When Apple has an equivalent, there is no DS component on iOS: the native control is shown instead, in Figma as `<Component> (iOS)` (rows inside `List Section (iOS)`), in **iOS System** in the app, and in the table below. Build a custom view only when there is no native equivalent, and say why here. A custom control must keep VoiceOver, Dynamic Type, Voice Control and a 44 pt hit target.
 
 ## Component map
 | Figma | Use this on iOS | Notes |
@@ -13,11 +13,12 @@ Before building a control, use what SwiftUI and the HIG already provide, and sty
 | [Utility Icon](components.md#utility-icon) | `DSIcon.search.image` | Maps each Material icon to an SF Symbol |
 | [Badge](components.md#badge) | `DSBadge("Paid", type: .success, style: .subtle, icon: .check)` | Display only |
 | [Image Card](components.md#image-card) | `DSImageCard(...)` | Media, title, description, optional actions |
-| [Input](components.md#input) | `DSTextField("Email", text: $email, helper: "...", leadingIcon: .mail)` | Wraps the native `TextField` |
-| [Toggle](components.md#toggle) | `Toggle("Auto-renew", isOn: $on)` | The system switch, tinted with `action/primary` via `.dsControlTint()`. Do not redraw it |
+| [Input](components.md#input) `Input (Web)` → `Input (iOS)` | `TextField("Email", text: $email).dsTextField()` (or `SecureField`) in a `Form` section; helper or error in the section footer with `.dsTextFieldFooter(isError:)` | Native row: font `Body 1`, token colors, cursor in the app tint. No DS input on iOS; Figma `Input (Web)` is web only |
+| [Toggle](components.md#toggle) `Toggle (Web)` → `Toggle (iOS)` | `Toggle("Auto-renew", isOn: $on)` | The system switch, tinted with `action/primary` (brand, replaces Apple green) via `.dsControlTint()`. Do not redraw it. Figma `Toggle (Web)` is web only |
+| [List Section (iOS)](components.md#list-section-ios) | `Form { Section { rows } header: { } footer: { } .dsListRowBackground() }.dsListBackground()` | The native section; groups Input (iOS) and Toggle (iOS) rows |
 | [Accordion](components.md#accordion) | `DisclosureGroup("Title") { ... }.disclosureGroupStyle(.dsAccordion)` | A style on the native view |
-| [Checkbox](components.md#checkbox) | no native control. Switch for a setting, checkmark rows for several choices. Optional: `Toggle(...).toggleStyle(.dsCheckbox)` | `.dsMixed()`, `.dsInvalid()`; `DSCheckboxGroup` for a `Set` |
-| [Radio](components.md#radio) | `Picker` with `.pickerStyle(.inline)`. Optional: `DSRadioGroup` | Radio is web-first |
+| [Checkbox](components.md#checkbox) → none | `Toggle` for one yes or no; checkmark rows bound to a `Set` for several | No DS checkbox on iOS. Figma `Checkbox (Web)` is web only |
+| [Radio](components.md#radio) → none | `Picker` with `.pickerStyle(.inline)`, `.menu` or `.segmented` | No DS radio on iOS. Figma `Radio (Web)` is web only |
 
 ## Selection on iOS
 There is no checkbox or radio control (macOS has a checkbox `Toggle` style; iOS does not). Selection is a binding:
@@ -29,7 +30,7 @@ There is no checkbox or radio control (macOS has a checkbox `Toggle` style; iOS 
 | Several of many | rows with a trailing `checkmark` | `Set<Value>` |
 | Bulk actions (delete, move) | `List(selection:)` in edit mode | `Set<ID>` |
 
-See **iOS System > Selection**. Use `.dsCheckbox` only for form consent and similar cases where a switch reads wrongly. `PickerStyle` cannot be customised, so `DSRadioGroup` is a separate view with the same single-value binding; it is optional.
+See **iOS System > Selection** and the DS Checkbox and Radio pages. There is no DS checkbox or radio on iOS: always use `Toggle`, `Picker` and checkmark rows.
 
 ## Tokens
 Tokens are Swift types named like the Figma variables; the iOS code syntax in Figma is the source of truth.

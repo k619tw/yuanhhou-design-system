@@ -1,3 +1,5 @@
+// xcode: set sdk=iOS
+
 import SwiftUI
 
 /// Catalog of native iOS components. Everything here is stock SwiftUI: when the design system needs

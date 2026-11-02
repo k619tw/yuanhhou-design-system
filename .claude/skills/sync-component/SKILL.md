@@ -22,7 +22,8 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 
 ## 3. Apply to both platforms
 - Colors, spacing and radius come from tokens only: no hex, no raw spacing that has a token. If a token is missing, add it to the Tokens library, tell the user to publish it, and only then add the CSS variable and Swift value.
-- **Native first on iOS:** use the SwiftUI control and style it (`ButtonStyle`, `ToggleStyle`, `.tint`); build a custom view only when none exists, and say why in `docs/ios.md`. iOS has no checkbox or radio control.
+- **Native first (hard rule):** before creating a component on any platform, look for the OS-level control (SwiftUI and the HIG, Material 3, semantic HTML). If one exists, do not build a component for that platform: use the native control styled with tokens (`ButtonStyle`, `ToggleStyle`, `.tint`), and show it instead: a token-bound `<Component> (iOS)` in Figma copied from the Apple iOS kit (rows inside `List Section (iOS)`), a demo in the app's iOS System catalog, and a row in `docs/ios.md`. Build a custom view only when none exists, and say why in `docs/ios.md`. iOS has no checkbox or radio control: iOS always uses `Toggle`, `Picker` and checkmark rows.
+- **Platform suffix in Figma:** no suffix = shared; `(Web)` = web only; `(iOS)` = native iOS control with tokens. Keep the suffix when renaming or adding components, and use it to pick components when generating screens (iOS: no-suffix and `(iOS)`; web: no-suffix and `(Web)`).
 - Every UI string goes into both languages: `web/src/i18n/messages.ts` (`en` and `ja`) and `ios/YuanhhouDS/Localizable.xcstrings`.
 - Code direction: change the Figma component the same way (variants, bound variables), keeping Title Case property names and instance swap (not slots) for icons.
 

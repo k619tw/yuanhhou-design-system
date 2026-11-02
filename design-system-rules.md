@@ -58,13 +58,15 @@ Other rules:
 4. Heading styles map to real `h1/h2/h3`; Body to `p`; Button, Caption and Headline are utility classes.
 5. Every component gets a section in `docs/components.md`, and a row in `docs/ios.md`. Figma is the only source of truth: when code, docs and Figma disagree, read the Figma variables and update the docs to match.
 
-## Platform rule: follow the native pattern first
-A Figma component is a design, not an order to redraw it on every platform. On each platform, check what the platform already provides before building a custom control.
+## Platform rule: follow the native pattern first (hard rule)
+A Figma component is a design, not an order to redraw it on every platform. On each platform, check what the platform already provides before building a custom control. If the platform has an equivalent, no component is built for that platform: the native control is used and styled with tokens, and it is shown (Figma `<Component> (iOS)`, the app's iOS System catalog, `docs/ios.md`) rather than rebuilt.
 
 1. **Look for the native control or pattern first** (Apple HIG and SwiftUI on iOS, semantic HTML elements on web). If it fits the job, use it and style it with tokens (tint, fonts, colors). Do not redraw it.
 2. **Build a custom control only when there is no native equivalent** or the native one cannot meet the Figma design in a way users would accept. Say why in the component spec.
 3. **Prefer styling over replacing:** a `ToggleStyle`, `ButtonStyle` or `DisclosureGroupStyle` on the native view, `.tint(...)`, token fonts and colors.
-4. **A Figma component without a native iOS twin is web-first.** `docs/ios.md` lists the native pattern to use instead, and the DS control, if one exists, is optional and documented as such.
+4. **Name the platform in Figma.** No suffix = shared by web and iOS. `(Web)` = web only, because the platform has its own control (Input, Toggle, Checkbox, Radio). `(iOS)` = the native iOS control shown with our tokens. An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. `docs/ios.md` lists the native pattern for every `(Web)` component.
 5. **Keep what the platform gives for free:** VoiceOver, Dynamic Type, Voice Control, minimum 44 pt hit target, keyboard operation on web. A custom control must reproduce them or it must not ship.
+6. **Draw the native control in Figma when it differs from web.** Copy it from the platform kit (Apple iOS kit, later Material 3), then rebind every fill, stroke and text to `02 Semantics` and the text styles so it follows all four themes. Never use the kit instance directly: its colors are the kit's own and ignore EVA and Heritage Luxury. Replace the kit's accent (Apple green or blue) with `action/primary`. Name it `<Component> (iOS)` next to the `<Component> (Web)` component and set the `Platform` mode. Rows (inputs, toggles, pickers) are bare, with a `Show separator` boolean, and go in the `Rows` slot of `List Section (iOS)`, which owns the background, corners, header and footer, as SwiftUI's `Form` `Section` does. Current: `Input (iOS)`, `Toggle (iOS)`, `List Section (iOS)`.
+7. **Android (planned):** add an `Android` mode to the `Platform` collection (Roboto, Material 3 type scale) and map the semantic styles to it the same way as iOS (for example Body 1 to `bodyLarge`, Body 2 to `bodyMedium`, Button to `labelLarge`). Compose controls (`TextField`, `OutlinedTextField`, `Switch`) take the Semantics colors through a `MaterialTheme` color scheme per theme.
 
 Per-component choices for iOS are in `docs/ios.md`.
