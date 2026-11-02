@@ -9,10 +9,10 @@ Before building a control, use what SwiftUI and the HIG already provide, and sty
 | Figma | Use this on iOS | Notes |
 |---|---|---|
 | [Button](components.md#button) | `Button("Save") {}.buttonStyle(.ds(.primary, size: .large))` | `ButtonStyle`; Pressed is `isPressed`, Disabled is `.disabled()`. Height comes from padding on both sizes: Large is 46 pt and Small 36 pt at the default Dynamic Type, and both grow with it |
-| [Icon Button](components.md#icon-button) | `DSIconButton(.close, label: "Close", kind: .tertiary, size: .small) { }` | `label` is the accessibility label; Small gets a 44 pt hit area |
-| [Utility Icon](components.md#utility-icon) | `DSIcon.search.image` | Maps each Material icon to an SF Symbol |
-| [Badge](components.md#badge) | `DSBadge("Paid", type: .success, style: .subtle, icon: .check)` | Display only |
-| [Image Card](components.md#image-card) | `DSImageCard(...)` | Media, title, description, optional actions |
+| [Icon Button](components.md#icon-button) | `DSIconButton(.close, label: "Close", kind: .tertiary, size: .small) { }` | A native `Button` with a `ButtonStyle`. `label` is the accessibility label; Small gets a 44 pt hit area |
+| [Utility Icon](components.md#utility-icon) | `DSIcon.search.image` | Maps each Material icon to an SF Symbol. Figma shows the Material glyph; `(iOS)` Figma components draw SF Symbols directly |
+| [Badge](components.md#badge) | `DSBadge("Paid", type: .success, style: .subtle, icon: .check)` | Display only. Custom because SwiftUI's `.badge(_:)` is only a count or text on a list row or tab item, not a status label |
+| [Image Card](components.md#image-card) | `DSImageCard(...)` | Media, title, description, optional actions. Custom because SwiftUI has no card control |
 | [Input](components.md#input) `Input (Web)` → `Input (iOS)` | `TextField("Email", text: $email).dsTextField()` (or `SecureField`) in a `Form` section; helper or error in the section footer with `.dsTextFieldFooter(isError:)` | Native row: font `Body 1`, token colors, cursor in the app tint. No DS input on iOS; Figma `Input (Web)` is web only |
 | [Toggle](components.md#toggle) `Toggle (Web)` → `Toggle (iOS)` | `Toggle("Auto-renew", isOn: $on)` | The system switch, tinted with `action/primary` (brand, replaces Apple green) via `.dsControlTint()`. Do not redraw it. Figma `Toggle (Web)` is web only |
 | [List Section (iOS)](components.md#list-section-ios) | `Form { Section { rows } header: { } footer: { } .dsListRowBackground() }.dsListBackground()` | The native section; groups Input, Toggle, Checkmark Row and Picker (iOS) rows |

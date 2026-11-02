@@ -41,6 +41,7 @@ Other rules:
 - If the icon sits inside something that is already tappable (Button, Badge, a card action), it is a Utility Icon. If the icon itself triggers an action (accordion chevron, close, more menu), use Icon Button, never a Utility Icon with a click handler.
 - Icons inside components (Button leading/trailing, Badge, Input leading, Icon Button) use **instance swap** properties: pick the icon from the Figma right panel (the list shows the 30 Utility Icon sets). Button, Badge and Input also have a `Show … icon` boolean. The instance keeps its Size when you swap. To change an Icon Button used inside another component (Input clear button, Accordion chevron), select the Icon Button instance and change its `Icon` property. Slots are for free-form content only (card image, accordion content, input trailing action).
 - Icon Button always needs an accessible name (`aria-label`).
+- **iOS renders Utility Icons as SF Symbols.** The shared Figma icon is the Material glyph; in code `DSIcon` maps each one to an SF Symbol. `(iOS)` Figma components draw the SF Symbol glyph directly (SF Pro text layer bound to the matching text style), not a Material Utility Icon.
 
 ## Building in Figma
 

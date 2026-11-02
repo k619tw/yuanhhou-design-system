@@ -47,4 +47,7 @@ Apply the same edit to the Figma component (variants, properties, bound variable
 - Hover and Focus states are not drawn in Figma.
 - Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
 - Accordion: Figma shows the chevron as an Icon Button instance; web draws the same look but not a nested button (invalid HTML inside a button).
+- Utility Icon is Material in Figma; iOS renders the mapped SF Symbol (`DSIcon`). Shared components (Button, Icon Button, Badge) therefore show a Material glyph in Figma that differs from what iOS draws.
+- The segmented `Picker` exists in SwiftUI (iOS System > Selection) but has no Figma reference.
+- Figma `(iOS)` rows are 52 pt high (Apple kit geometry) and `List Section (iOS)` uses `radius/xl` (24; Apple's inset grouped corner is about 26); SwiftUI draws the real values.
 - Not built: Select, Tabs, Modal.

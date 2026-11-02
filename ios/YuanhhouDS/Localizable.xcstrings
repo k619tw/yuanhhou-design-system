@@ -82,6 +82,7 @@
       }
     },
     "A Set binding. The parent checkbox shows Mixed while only some children are selected." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -454,6 +455,7 @@
       }
     },
     "Checked" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -584,6 +586,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コンパクト"
+          }
+        }
+      }
+    },
+    "Compact: Picker (menu)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンパクト：ピッカー（メニュー）"
           }
         }
       }
@@ -864,6 +876,7 @@
       }
     },
     "Disabled checked" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -874,6 +887,7 @@
       }
     },
     "Disabled group" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -945,6 +959,7 @@
       }
     },
     "Drone (unavailable)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1029,6 +1044,7 @@
       }
     },
     "Error and disabled" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1053,6 +1069,7 @@
       }
     },
     "Express" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1288,6 +1305,16 @@
         }
       }
     },
+    "I agree to the terms" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利用規約に同意する"
+          }
+        }
+      }
+    },
     "Icon Button" : {
       "localizations" : {
         "ja" : {
@@ -1371,11 +1398,32 @@
       }
     },
     "iOS has no checkbox control. The design-system checkbox is a style for the native Toggle: .toggleStyle(.dsCheckbox). For a setting that applies at once, use the switch instead." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iOS にはチェックボックスのコントロールがありません。デザインシステムのチェックボックスはネイティブ Toggle のスタイル（.toggleStyle(.dsCheckbox)）です。すぐ反映される設定にはスイッチを使います。"
+          }
+        }
+      }
+    },
+    "iOS has no checkbox. A single yes or no is the system switch." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS にはチェックボックスがありません。はい・いいえの1つの選択はシステムのスイッチを使います。"
+          }
+        }
+      }
+    },
+    "iOS has no radio button. The inline Picker shows every option with a checkmark on the selected one." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS にはラジオボタンがありません。インラインのピッカーはすべての選択肢を表示し、選択中の項目にチェックマークを付けます。"
           }
         }
       }
@@ -1646,6 +1694,7 @@
       }
     },
     "Mixed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -1823,6 +1872,16 @@
         }
       }
     },
+    "One choice: Toggle (iOS)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1つの選択：トグル（iOS）"
+          }
+        }
+      }
+    },
     "One of many: inline Picker" : {
       "localizations" : {
         "ja" : {
@@ -1839,6 +1898,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "複数から1つ：メニューとセグメント"
+          }
+        }
+      }
+    },
+    "One of many: Picker (inline)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数から1つ：ピッカー（インライン）"
           }
         }
       }
@@ -1884,6 +1953,7 @@
       }
     },
     "Pick exactly one. SwiftUI's own pattern is Picker with .pickerStyle(.inline); DSRadioGroup is the design-system look with the same single-value binding." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2006,6 +2076,7 @@
       }
     },
     "Push" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2137,6 +2208,7 @@
       }
     },
     "Select a delivery speed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2147,6 +2219,7 @@
       }
     },
     "Select all" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2193,6 +2266,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定"
+          }
+        }
+      }
+    },
+    "Several choices: checkmark rows" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数の選択：チェックマーク付きの行"
           }
         }
       }
@@ -2420,6 +2503,7 @@
       }
     },
     "Standard" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2440,6 +2524,7 @@
       }
     },
     "States" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2450,6 +2535,7 @@
       }
     },
     "Store pickup" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2626,6 +2712,7 @@
       }
     },
     "Text message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2786,6 +2873,7 @@
       }
     },
     "Unchecked" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2958,76 +3046,6 @@
     },
     "日本語" : {
       "shouldTranslate" : false
-    },
-    "I agree to the terms" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "利用規約に同意する"
-          }
-        }
-      }
-    },
-    "One choice: Toggle (iOS)" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1つの選択：トグル（iOS）"
-          }
-        }
-      }
-    },
-    "iOS has no checkbox. A single yes or no is the system switch." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iOS にはチェックボックスがありません。はい・いいえの1つの選択はシステムのスイッチを使います。"
-          }
-        }
-      }
-    },
-    "Several choices: checkmark rows" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "複数の選択：チェックマーク付きの行"
-          }
-        }
-      }
-    },
-    "One of many: Picker (inline)" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "複数から1つ：ピッカー（インライン）"
-          }
-        }
-      }
-    },
-    "iOS has no radio button. The inline Picker shows every option with a checkmark on the selected one." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iOS にはラジオボタンがありません。インラインのピッカーはすべての選択肢を表示し、選択中の項目にチェックマークを付けます。"
-          }
-        }
-      }
-    },
-    "Compact: Picker (menu)" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "コンパクト：ピッカー（メニュー）"
-          }
-        }
-      }
     }
   },
   "version" : "1.1"

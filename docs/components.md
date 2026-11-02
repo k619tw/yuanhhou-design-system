@@ -263,6 +263,9 @@ import { Icon } from '../components'
 ```
 `name` is the exact Material Symbols name; `size`: `sm` (16) `md` (20) `lg` (24), mapped to `--size-icon-sm|md|lg`. The component renders `aria-hidden="true"`; it is never interactive. See `src/styles/tokens.css`.
 
+### iOS
+Figma shows the Material glyph because Utility Icon is shared. On iOS the same icon renders as the mapped SF Symbol (`DSIcon.search.image`, see [ios.md](ios.md)), sized with the same `size/icon/*` tokens. `(iOS)` components in Figma draw SF Symbol glyphs directly (SF Pro, sized by a text style), never Material icons.
+
 ### Related
 [Icon Button](#icon-button) · [Button](#button) · [Badge](#badge)
 
