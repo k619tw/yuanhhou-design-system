@@ -37,7 +37,7 @@ The workflows below are packaged as the skill `/sync-component <Component|tokens
 Apply the same edit to the Figma component (variants, properties, bound variables), then follow steps 3 to 5 above. Library token changes need the user to publish the Tokens library and accept the update in DS - Components before they can be verified there.
 
 ## Figma conventions
-- **Platform suffix:** no suffix = shared by web and iOS; `(Web)` = web only (Input, Toggle, Checkbox, Radio); `(iOS)` = the native iOS control shown with tokens (`Input (iOS)`, `Toggle (iOS)`, `List Section (iOS)`). When generating an iOS screen or prototype use no-suffix and `(iOS)` components, never `(Web)`; for web, the reverse.
+- **Platform suffix:** no suffix = shared by web and iOS; `(Web)` = web only (Input, Toggle, Checkbox, Radio); `(iOS)` = the native iOS control shown with tokens (`Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)`). When generating an iOS screen or prototype use no-suffix and `(iOS)` components, never `(Web)`; for web, the reverse.
 - Variant properties are Title Case: `Type`, `State`, `Size`, `Style`, `Orientation`, `Checked`, `Expanded`.
 - Icons are chosen with instance swap properties (right panel), not slots. Slots are only for free-form content (Image Card image, Accordion content, Input trailing action, group options).
 - Bind fills, strokes, padding, gap and radius to variables. Component colors bind only to the Tokens library.

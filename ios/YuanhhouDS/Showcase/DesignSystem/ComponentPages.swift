@@ -217,7 +217,9 @@ struct CheckboxPage: View {
                                 .foregroundStyle(DSColor.foregroundPrimary)
                             Spacer()
                             if channels.contains(channel) {
-                                Image(systemName: "checkmark").foregroundStyle(DSColor.actionPrimary)
+                                Image(systemName: "checkmark")
+                                    .font(.ds(.body1, .emphasized))
+                                    .foregroundStyle(DSColor.actionPrimary)
                             }
                         }
                     }

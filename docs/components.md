@@ -11,10 +11,10 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Image Card](#image-card) | Media card with text and actions | Via inner controls | `Image Card` |
 | [Input](#input) | `Input (Web)`: single-line text field. iOS: `Input (iOS)` | Yes | `Input` |
 | [Toggle](#toggle) | `Toggle (Web)`: on/off switch. iOS: `Toggle (iOS)` | Yes | `Toggle` |
-| [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: Toggle (iOS) or checkmark rows | Yes | `Checkbox` |
-| [Radio](#radio) | `Radio (Web)`, `Radio Group (Web)`: choose exactly one option. iOS: Picker | Yes | `Radio` |
+| [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: `Toggle (iOS)` or `Checkmark Row (iOS)` | Yes | `Checkbox` |
+| [Radio](#radio) | `Radio (Web)`, `Radio Group (Web)`: choose exactly one option. iOS: `Picker (iOS)` | Yes | `Radio` |
 | [Accordion](#accordion) | Expandable section | Yes | `Accordion` |
-| [List Section (iOS)](#list-section-ios) | iOS only: groups Input (iOS) and Toggle (iOS) rows with a header and footer | Via its rows | `List Section (iOS)` |
+| [List Section (iOS)](#list-section-ios) | iOS only: groups iOS rows (Input, Toggle, Checkmark Row, Picker) with a header and footer | Via its rows | `List Section (iOS)` |
 
 
 ## Conventions every component follows
@@ -29,7 +29,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
   |---|---|---|
   | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card, Accordion |
   | `(Web)` | web only, because iOS has a native control | `Input (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
-  | `(iOS)` | iOS only: the native control shown with our tokens | `Input (iOS)`, `Toggle (iOS)`, `List Section (iOS)` |
+  | `(iOS)` | iOS only: the native control shown with our tokens | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
 
   An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
 
@@ -519,7 +519,7 @@ Apple has a native text field, so there is no DS input on iOS (hard rule: native
 
 | Property | Values | Notes |
 |---|---|---|
-| State | Placeholder, Focused, Typing, Value Entered, Error, Disabled | Typing shows the clear Icon Button (`close`, Tertiary, Small) |
+| State | Placeholder, Focused, Typing, Value Entered, Error, Disabled | Typing shows the clear button: SF Symbol `xmark.circle.fill`, `Body 1/Regular`, `foreground/secondary` |
 | Value | text | |
 | Show separator | boolean, default on | Turn off on the last row of a section |
 
@@ -620,7 +620,7 @@ It is a bare row: place it in [List Section (iOS)](#list-section-ios). The switc
 
 ## List Section (iOS)
 
-iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` inside `Form`). Figma: page `List Section (iOS)`, component set `List Section (iOS)` (node `120:49`), 2 variants, `Platform` mode iOS. Examples with inputs, toggles and an error are in the `Examples` frame on the same page.
+iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` inside `Form`). Figma: page `List Section (iOS)`, component set `List Section (iOS)` (node `120:49`), 2 variants, `Platform` mode iOS. Examples with inputs, toggles, an error, checkmark rows, an inline picker and a menu picker are in the `Examples` frame on the same page.
 
 ### When to use
 - To group related iOS rows: sign-in fields, settings toggles, a short form.
@@ -630,7 +630,7 @@ iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` insid
 | Property | Values | Notes |
 |---|---|---|
 | State | Default, Error | Error colors the footer `foreground/error`; also set the failing row to `State=Error` |
-| Rows | slot | `Input (iOS)` and `Toggle (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
+| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)` and `Picker (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
 | Header / Show header | text, boolean (on) | |
 | Footer / Show footer | text, boolean (on) | Helper text, or the error message in Error |
 
@@ -664,7 +664,7 @@ SwiftUI draws the corners, separators and spacing itself; the tokens come from `
 
 ## Checkbox
 
-Chooses any number of options, or agrees to a single statement in a form. Figma: page `09 — Checkbox`, component sets `Checkbox (Web)` (node `82:36`, 9 variants) and `Checkbox Group (Web)` (node `88:171`, 4 variants). **Web only.** On iOS use Toggle (iOS) or checkmark rows.
+Chooses any number of options, or agrees to a single statement in a form. Figma: page `09 — Checkbox`, component sets `Checkbox (Web)` (node `82:36`, 9 variants) and `Checkbox Group (Web)` (node `88:171`, 4 variants). **Web only.** On iOS use `Toggle (iOS)` or [Checkmark Row (iOS)](#ios-checkmark-row-ios), on the same page.
 
 ### When to use
 - Several options can be true at once: notification channels, filters, "I agree to the terms".
@@ -753,12 +753,29 @@ ForEach(options) { option in                             // several of many: che
 ```
 Put the rows in a `Form` section (Figma: `List Section (iOS)`). Shown in the app under yuanhhou - DS > Checkbox and iOS System > Selection. See [ios.md](ios.md).
 
+### iOS: Checkmark Row (iOS)
+The native checkmark row, shown in Figma: component set `Checkmark Row (iOS)` (node `124:58`) on the `Checkbox` page, 4 variants, `Platform` mode iOS. Used for several of many (the checkbox equivalent) and as the options of an inline Picker (the radio equivalent). It is a bare row: place it in [List Section (iOS)](#list-section-ios).
+
+| Property | Values | Notes |
+|---|---|---|
+| Checked | Off, On | On shows the checkmark |
+| State | Default, Disabled | |
+| Label | text | |
+| Show separator | boolean, default on | Turn off on the last row |
+
+| Part | Value / token |
+|---|---|
+| Row | width 402, height 52 with the separator, padding 16 horizontal (`spacing/200`), no fill |
+| Label | `Body 1/Regular`, `foreground/primary`; `foreground/disabled` when Disabled |
+| Checkmark | SF Symbol `checkmark`: the glyph in SF Pro with `Body 1/Emphasized` (17 pt Semibold), `action/primary`; `foreground/disabled` when Disabled. Frame hugs the glyph so it follows the density modes |
+| Separator | 1 (`border/width/thin`), inset 16, `border/primary` |
+
 ### Related
 [Radio](#radio) · [Toggle](#toggle)
 
 ## Radio
 
-Chooses exactly one option from a short list. Figma: page `10 — Radio`, component sets `Radio (Web)` (node `82:59`, 6 variants) and `Radio Group (Web)` (node `88:86`, 4 variants). **Web only.** On iOS use a Picker.
+Chooses exactly one option from a short list. Figma: page `10 — Radio`, component sets `Radio (Web)` (node `82:59`, 6 variants) and `Radio Group (Web)` (node `88:86`, 4 variants). **Web only.** On iOS use [Picker (iOS)](#ios-picker-ios), on the same page.
 
 ### When to use
 - One of 2 to 7 options, all of which should be visible at once: delivery speed, plan, payment method.
@@ -843,6 +860,25 @@ Picker("Delivery speed", selection: $speed) {
 .pickerStyle(.inline)
 ```
 Shown in the app under yuanhhou - DS > Radio and iOS System > Selection. See [ios.md](ios.md).
+
+### iOS: Picker (iOS)
+The native Picker, shown in Figma: component set `Picker (iOS)` (node `125:70`) on the `Radio` page, 4 variants, `Platform` mode iOS. It is a bare row: place it in [List Section (iOS)](#list-section-ios). iOS icons are SF Symbols (glyphs in SF Pro), not Material Utility Icons.
+
+| Property | Values | Notes |
+|---|---|---|
+| Style | Menu, Checkmark | Menu = `.pickerStyle(.menu)`. Checkmark = one option of `.pickerStyle(.inline)`, an instance of [Checkmark Row (iOS)](#ios-checkmark-row-ios) whose `Label`, `Checked` and `Show separator` are exposed |
+| State | Default, Disabled | |
+| Label, Value | text | Menu |
+| Show separator | boolean, default on | Menu; the Checkmark style uses the nested row's |
+
+| Part | Value / token |
+|---|---|
+| Menu label | `Body 1/Regular`, `foreground/primary` |
+| Menu value and chevron | `Body 1/Regular` in `action/primary`; the chevron is the SF Symbol `chevron.up.chevron.down` (17 pt, the in-row size, not the standalone pop-up button's 18 pt Semibold) |
+| Disabled | text and chevron `foreground/disabled` |
+| Row | width 402, height 52 with the separator, padding 16 horizontal (`spacing/200`), no fill |
+
+SwiftUI: `Picker("Delivery speed", selection: $speed) { … }` with `.pickerStyle(.menu)` or `.inline`. `.segmented` exists in SwiftUI (shown in iOS System > Selection) but has no Figma component yet.
 
 ### Related
 [Checkbox](#checkbox) · [Toggle](#toggle)

@@ -15,10 +15,10 @@ Before building a control, use what SwiftUI and the HIG already provide, and sty
 | [Image Card](components.md#image-card) | `DSImageCard(...)` | Media, title, description, optional actions |
 | [Input](components.md#input) `Input (Web)` → `Input (iOS)` | `TextField("Email", text: $email).dsTextField()` (or `SecureField`) in a `Form` section; helper or error in the section footer with `.dsTextFieldFooter(isError:)` | Native row: font `Body 1`, token colors, cursor in the app tint. No DS input on iOS; Figma `Input (Web)` is web only |
 | [Toggle](components.md#toggle) `Toggle (Web)` → `Toggle (iOS)` | `Toggle("Auto-renew", isOn: $on)` | The system switch, tinted with `action/primary` (brand, replaces Apple green) via `.dsControlTint()`. Do not redraw it. Figma `Toggle (Web)` is web only |
-| [List Section (iOS)](components.md#list-section-ios) | `Form { Section { rows } header: { } footer: { } .dsListRowBackground() }.dsListBackground()` | The native section; groups Input (iOS) and Toggle (iOS) rows |
+| [List Section (iOS)](components.md#list-section-ios) | `Form { Section { rows } header: { } footer: { } .dsListRowBackground() }.dsListBackground()` | The native section; groups Input, Toggle, Checkmark Row and Picker (iOS) rows |
 | [Accordion](components.md#accordion) | `DisclosureGroup("Title") { ... }.disclosureGroupStyle(.dsAccordion)` | A style on the native view |
-| [Checkbox](components.md#checkbox) → none | `Toggle` for one yes or no; checkmark rows bound to a `Set` for several | No DS checkbox on iOS. Figma `Checkbox (Web)` is web only |
-| [Radio](components.md#radio) → none | `Picker` with `.pickerStyle(.inline)`, `.menu` or `.segmented` | No DS radio on iOS. Figma `Radio (Web)` is web only |
+| [Checkbox](components.md#checkbox) → `Checkmark Row (iOS)` | `Toggle` for one yes or no; checkmark rows bound to a `Set` for several | No DS checkbox on iOS. Figma `Checkbox (Web)` is web only |
+| [Radio](components.md#radio) → `Picker (iOS)` | `Picker` with `.pickerStyle(.inline)` (Checkmark Row rows), `.menu` or `.segmented` | No DS radio on iOS. Figma `Radio (Web)` is web only |
 
 ## Selection on iOS
 There is no checkbox or radio control (macOS has a checkbox `Toggle` style; iOS does not). Selection is a binding:
