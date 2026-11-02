@@ -13,7 +13,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Toggle](#toggle) | `Toggle (Web)`: on/off switch. iOS: `Toggle (iOS)` | Yes | `Toggle` |
 | [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: `Toggle (iOS)` or `Checkmark Row (iOS)` | Yes | `Checkbox` |
 | [Radio](#radio) | `Radio (Web)`, `Radio Group (Web)`: choose exactly one option. iOS: `Picker (iOS)` | Yes | `Radio` |
-| [Accordion](#accordion) | Expandable section | Yes | `Accordion` |
+| [Accordion](#accordion) | `Accordion (Web)`: expandable section. iOS: `Accordion (iOS)`, the native disclosure group with text | Yes | `Accordion` |
 | [List Section (iOS)](#list-section-ios) | iOS only: groups iOS rows (Input, Toggle, Checkmark Row, Picker) with a header and footer | Via its rows | `List Section (iOS)` |
 
 
@@ -27,9 +27,9 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 - **Platform suffix in the name** tells you where a component can be used:
   | Name | Use on | Today |
   |---|---|---|
-  | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card, Accordion |
-  | `(Web)` | web only, because iOS has a native control | `Input (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
-  | `(iOS)` | iOS only: the native control shown with our tokens | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
+  | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card |
+  | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
+  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
 
   An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
 
@@ -633,7 +633,7 @@ iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` insid
 | Property | Values | Notes |
 |---|---|---|
 | State | Default, Error | Error colors the footer `foreground/error`; also set the failing row to `State=Error` |
-| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)` and `Picker (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
+| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)` and `Accordion (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
 | Header / Show header | text, boolean (on) | |
 | Footer / Show footer | text, boolean (on) | Helper text, or the error message in Error |
 
@@ -888,7 +888,7 @@ SwiftUI: `Picker("Delivery speed", selection: $speed) { … }` with `.pickerStyl
 
 ## Accordion
 
-An expandable section: a header that toggles a content region. Figma: page `Accordion`, component set `Accordion` (node `18:221`), 4 variants (one item).
+An expandable section: a header that toggles a content region. Figma: page `Accordion`, component set `Accordion (Web)` (node `18:221`), 4 variants (one item). **Web only.** On iOS use [Accordion (iOS)](#ios-accordion-ios), on the same page.
 
 ### When to use
 - To keep long, optional content tidy: FAQs, settings groups, details.
@@ -957,6 +957,26 @@ import { Accordion } from '../components'
 </Accordion>
 ```
 Use `defaultExpanded` (uncontrolled) or `expanded` + `onExpandedChange` (controlled); `disabled` blocks toggling. The whole header is one `<button>` with `aria-expanded` and `aria-controls`, and the content is a `role="region"`. In Figma the chevron is an Icon Button instance; in code it is drawn the same way (Tertiary, Small) but is not a nested button, because a button inside a button is invalid HTML. Single- vs multi-open for a group is up to the caller.
+
+### iOS: Accordion (iOS)
+Apple has a native disclosure group, so there is no custom accordion on iOS (native first). Figma shows it instead: component set `Accordion (iOS)` (node `137:129`) on the `Accordion` page, 4 variants, `Platform` mode iOS, copied from SwiftUI's `DisclosureGroup` and bound to the Tokens library. The iOS accordion is **text based**: a label with a chevron that opens indented text. It is a bare row: place it in [List Section (iOS)](#list-section-ios).
+
+| Property | Values | Notes |
+|---|---|---|
+| Expanded | False, True | False shows `chevron.right`, True shows `chevron.down` and the content |
+| State | Default, Disabled | |
+| Label | text | Header label |
+| Content | slot | A text row by default; the slot is free-form but the accordion is text based |
+| Show separator | boolean, default on | The separator under the row: under the header when collapsed, under the content when expanded. There is never a separator between the header and the content. Turn off on the last row |
+
+| Part | Value / token |
+|---|---|
+| Header | height 52 with the separator, padding 16 horizontal (`spacing/200`); label `Body 1/Regular`, `foreground/primary` |
+| Chevron | SF Symbol glyph in `Body 1/Emphasized` (17 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 13.0 EVA, 9.8 Heritage Luxury), below the 3:1 used for UI icons: a known gap. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
+| Content | text row aligned with the label (16 padding), no top padding, `spacing/150` bottom padding, `Body 2/Regular`, `foreground/secondary` |
+| Separator | 1 (`border/width/thin`), inset 16, `border/primary` |
+
+SwiftUI: `DisclosureGroup("Shipping and returns", isExpanded: $open) { Text("…") }` with `.disclosureGroupStyle(.dsAccordion)` in a `Form` section. It is the native `DisclosureGroup` with a small `DisclosureGroupStyle` (`DSAccordion.swift`) that only draws the chevron SF Symbol in `action/secondary` (the system chevron cannot be recolored) and sets the content: Body 2 `foreground/secondary`, aligned with the label, no top padding and no separator above it. Set `.environment(\.defaultMinListRowHeight, 0)` on the `Form`, or one-line content is padded to the 44 pt minimum row height. See [ios.md](ios.md).
 
 ### Related
 [Icon Button](#icon-button) · [Toggle](#toggle)

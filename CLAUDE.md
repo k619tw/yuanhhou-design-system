@@ -37,7 +37,7 @@ The workflows below are packaged as the skill `/sync-component <Component|tokens
 Apply the same edit to the Figma component (variants, properties, bound variables), then follow steps 3 to 5 above. Library token changes need the user to publish the Tokens library and accept the update in DS - Components before they can be verified there.
 
 ## Figma conventions
-- **Platform suffix:** no suffix = shared by web and iOS; `(Web)` = web only (Input, Toggle, Checkbox, Radio); `(iOS)` = the native iOS control shown with tokens (`Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)`). When generating an iOS screen or prototype use no-suffix and `(iOS)` components, never `(Web)`; for web, the reverse.
+- **Platform suffix:** no suffix = shared by web and iOS; `(Web)` = web only (Accordion, Input, Toggle, Checkbox, Radio); `(iOS)` = the native iOS control shown with tokens (`Accordion (iOS)`, `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)`). When generating an iOS screen or prototype use no-suffix and `(iOS)` components, never `(Web)`; for web, the reverse.
 - Variant properties are Title Case: `Type`, `State`, `Size`, `Style`, `Orientation`, `Checked`, `Expanded`.
 - Icons are chosen with instance swap properties (right panel), not slots. Slots are only for free-form content (Image Card image, Accordion content, Input trailing action, group options).
 - Bind fills, strokes, padding, gap and radius to variables. Component colors bind only to the Tokens library.
@@ -46,8 +46,9 @@ Apply the same edit to the Figma component (variants, properties, bound variable
 ## Known gaps
 - Hover and Focus states are not drawn in Figma.
 - Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
-- Accordion: Figma shows the chevron as an Icon Button instance; web draws the same look but not a nested button (invalid HTML inside a button).
+- Accordion (Web): Figma shows the chevron as an Icon Button instance; web draws the same look but not a nested button (invalid HTML inside a button).
 - Utility Icon is Material in Figma; iOS renders the mapped SF Symbol (`DSIcon`). Shared components (Button, Icon Button, Badge) therefore show a Material glyph in Figma that differs from what iOS draws.
+- Accordion (iOS) chevron is `action/secondary` in Figma: 1.78:1 against `background/primary` in Light (Dark 4.1, EVA 13.0, Heritage Luxury 9.8), below the 3:1 used for UI icons. SwiftUI draws the chevron through the small `.dsAccordion` style because the system chevron cannot be recolored.
 - The segmented `Picker` exists in SwiftUI (iOS System > Selection) but has no Figma reference.
 - Figma `(iOS)` rows are 52 pt high (Apple kit geometry) and `List Section (iOS)` uses `radius/xl` (24; Apple's inset grouped corner is about 26); SwiftUI draws the real values.
 - Not built: Select, Tabs, Modal.

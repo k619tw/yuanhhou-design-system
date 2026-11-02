@@ -163,27 +163,35 @@ struct TogglePage: View {
 }
 
 struct AccordionPage: View {
-    @State private var first = true
-    @State private var second = false
+    @State private var shipping = true
+    @State private var payment = false
 
     var body: some View {
-        DSShowcasePage(title: "Accordion") {
-            DSShowcaseSection(title: "Group", note: "A native DisclosureGroup with the design-system style.") {
-                VStack(spacing: 0) {
-                    DisclosureGroup("Shipping and returns", isExpanded: $first) {
-                        Text("Free returns within 30 days. Items must be unused and in their original packaging.")
-                    }
-                    DisclosureGroup("Payment options", isExpanded: $second) {
-                        Text("Pay with card, Apple Pay or bank transfer.")
-                    }
-                    DisclosureGroup("Gift cards") {
-                        Text("Unavailable for this order.")
-                    }
-                    .disabled(true)
+        Form {
+            Section {
+                DisclosureGroup("Shipping and returns", isExpanded: $shipping) {
+                    Text("Free returns within 30 days. Items must be unused and in their original packaging.")
                 }
-                .disclosureGroupStyle(.dsAccordion)
+                DisclosureGroup("Payment options", isExpanded: $payment) {
+                    Text("Pay with card, Apple Pay or bank transfer.")
+                }
+                DisclosureGroup("Gift cards") {
+                    Text("Unavailable for this order.")
+                }
+                .disabled(true)
+            } header: {
+                Text("Accordion (iOS)")
+            } footer: {
+                Text("The native DisclosureGroup with text content in a Form section. The design-system style only colors the chevron.").dsTextFieldFooter()
             }
+            .disclosureGroupStyle(.dsAccordion)
+            .dsListRowBackground()
         }
+        // One-line content would otherwise be padded to the 44 pt minimum row height.
+        .environment(\.defaultMinListRowHeight, 0)
+        .dsListBackground()
+        .navigationTitle("Accordion")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

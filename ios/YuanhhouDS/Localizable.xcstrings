@@ -72,6 +72,7 @@
       }
     },
     "A native DisclosureGroup with the design-system style." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -128,6 +129,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "アコーディオン"
+          }
+        }
+      }
+    },
+    "Accordion (iOS)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アコーディオン（iOS）"
           }
         }
       }
@@ -918,11 +929,22 @@
       }
     },
     "Disclosure groups hide and show related content. The design-system Accordion is this same control with a custom style." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ディスクロージャグループは関連するコンテンツを表示／非表示にします。デザインシステムのアコーディオンは、このコントロールに独自のスタイルを適用したものです。"
+          }
+        }
+      }
+    },
+    "Disclosure groups hide and show related content. This is the iOS Accordion: use it as it is, there is no design-system style." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクロージャグループは関連するコンテンツを表示／非表示にします。これが iOS のアコーディオンです。デザインシステムのスタイルはなく、そのまま使用します。"
           }
         }
       }
@@ -1251,6 +1273,7 @@
       }
     },
     "Group" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -2738,6 +2761,27 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "チェックボックスに相当します。Set にバインドし、行をタップすると値が追加・削除されます。VoiceOver は「選択済み」特性を読み上げます。"
+          }
+        }
+      }
+    },
+    "The native DisclosureGroup with text content in a Form section. The design-system style only colors the chevron." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Form のセクションにある、テキストの内容を持つネイティブの DisclosureGroup です。デザインシステムのスタイルはシェブロンの色だけを変えます。"
+          }
+        }
+      }
+    },
+    "The native DisclosureGroup with text content in a Form section. There is no design-system style: use it as it is." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Form のセクションにある、テキストの内容を持つネイティブの DisclosureGroup です。デザインシステムのスタイルはなく、そのまま使用します。"
           }
         }
       }

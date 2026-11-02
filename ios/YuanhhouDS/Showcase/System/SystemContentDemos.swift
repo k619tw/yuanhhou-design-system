@@ -57,7 +57,7 @@ struct DisclosureGroupDemo: View {
 
     var body: some View {
         List {
-            HIGNote("Disclosure groups hide and show related content. The design-system Accordion is this same control with a custom style.")
+            HIGNote("Disclosure groups hide and show related content. This is the iOS Accordion: use it as it is, there is no design-system style.")
             DisclosureGroup("Advanced options", isExpanded: $expanded) {
                 Toggle("Use cellular data", isOn: .constant(true))
                 Toggle("Low data mode", isOn: .constant(false))
