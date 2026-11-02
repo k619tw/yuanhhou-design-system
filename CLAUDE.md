@@ -5,7 +5,7 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 ## Sources of truth
 | What | Where |
 |---|---|
-| Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components). Pages in order: `Button`, `Icon Button`, `Icons`, `Badge`, `Image Card`, `Accordion`, `Input`, `Toggle`, `Checkbox`, `Radio`, `List Section (iOS)`, then `Foundation` and `Typography`. Component set node ids are in `docs/components.md` |
+| Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components). Component pages in alphabetical order (`Accordion` … `Toggle`, including `List Section (iOS)`), then `Foundation` and `Typography`. Keep new component pages alphabetical. Component set node ids are in `docs/components.md` |
 | Colors | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), library collection `02 Semantics` (modes Light, Dark, EVA, Heritage Luxury). Primitives in `01 Primitives` |
 | Spacing, radius, size, border width | `Dimension` collection in DS - Components, plus semantic `radius/*` and `space/*` in the Tokens library |
 | Typography | Text styles `<Style>/Regular|Emphasized`; mode axes: collection `Platform` (Web, iOS) and `Typography` (density Compact, Default, Loose) |
