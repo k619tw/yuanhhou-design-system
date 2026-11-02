@@ -15,7 +15,10 @@ struct DSAccordionStyle: DisclosureGroupStyle {
         DSAccordionHeader(configuration: configuration)
         if configuration.isExpanded {
             DSAccordionContent(content: configuration.content)
-                .listRowInsets(EdgeInsets(top: 0, leading: DSSpacing.lg, bottom: DSSpacing.md, trailing: DSSpacing.lg))
+                // Only the vertical insets change; the leading inset stays the system's, so the text lines up
+                // with the label on every device.
+                .listRowInsets(.top, 0)
+                .listRowInsets(.bottom, DSSpacing.md)
                 .listRowSeparator(.hidden, edges: .top)
         }
     }

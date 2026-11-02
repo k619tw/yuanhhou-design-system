@@ -976,7 +976,7 @@ Apple has a native disclosure group, so there is no custom accordion on iOS (nat
 | Content | text row aligned with the label (16 padding), no top padding, `spacing/150` bottom padding, `Body 2/Regular`, `foreground/secondary` |
 | Separator | 1 (`border/width/thin`), inset 16, `border/primary` |
 
-SwiftUI: `DisclosureGroup("Shipping and returns", isExpanded: $open) { Text("…") }` with `.disclosureGroupStyle(.dsAccordion)` in a `Form` section. It is the native `DisclosureGroup` with a small `DisclosureGroupStyle` (`DSAccordion.swift`) that only draws the chevron SF Symbol in `action/secondary` (the system chevron cannot be recolored) and sets the content: Body 2 `foreground/secondary`, aligned with the label, no top padding and no separator above it. Set `.environment(\.defaultMinListRowHeight, 0)` on the `Form`, or one-line content is padded to the 44 pt minimum row height. See [ios.md](ios.md).
+SwiftUI: `DisclosureGroup("Shipping and returns", isExpanded: $open) { Text("…") }` with `.disclosureGroupStyle(.dsAccordion)` in a `Form` section. It is the native `DisclosureGroup` with a small `DisclosureGroupStyle` (`DSAccordion.swift`) that only draws the chevron SF Symbol in `action/secondary` (the system chevron cannot be recolored) and sets the content: Body 2 `foreground/secondary`, aligned with the label (the style changes only the top and bottom row insets and keeps the system leading inset, so the text lines up with the label on every iPhone), no top padding and no separator above it. Set `.environment(\.defaultMinListRowHeight, 0)` on the `Form`, or one-line content is padded to the 44 pt minimum row height. See [ios.md](ios.md).
 
 ### Related
 [Icon Button](#icon-button) · [Toggle](#toggle)
