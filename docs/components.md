@@ -664,7 +664,7 @@ SwiftUI draws the corners, separators and spacing itself; the tokens come from `
 
 ## Checkbox
 
-Chooses any number of options, or agrees to a single statement in a form. Figma: page `09 — Checkbox`, component sets `Checkbox (Web)` (node `82:36`, 9 variants) and `Checkbox Group (Web)` (node `88:171`, 4 variants). **Web only.** On iOS use `Toggle (iOS)` or [Checkmark Row (iOS)](#ios-checkmark-row-ios), on the same page.
+Chooses any number of options, or agrees to a single statement in a form. Figma: page `Checkbox`, component sets `Checkbox (Web)` (node `82:36`, 9 variants) and `Checkbox Group (Web)` (node `88:171`, 4 variants). **Web only.** On iOS use `Toggle (iOS)` or [Checkmark Row (iOS)](#ios-checkmark-row-ios), on the same page.
 
 ### When to use
 - Several options can be true at once: notification channels, filters, "I agree to the terms".
@@ -775,7 +775,7 @@ The native checkmark row, shown in Figma: component set `Checkmark Row (iOS)` (n
 
 ## Radio
 
-Chooses exactly one option from a short list. Figma: page `10 — Radio`, component sets `Radio (Web)` (node `82:59`, 6 variants) and `Radio Group (Web)` (node `88:86`, 4 variants). **Web only.** On iOS use [Picker (iOS)](#ios-picker-ios), on the same page.
+Chooses exactly one option from a short list. Figma: page `Radio`, component sets `Radio (Web)` (node `82:59`, 6 variants) and `Radio Group (Web)` (node `88:86`, 4 variants). **Web only.** On iOS use [Picker (iOS)](#ios-picker-ios), on the same page.
 
 ### When to use
 - One of 2 to 7 options, all of which should be visible at once: delivery speed, plan, payment method.
