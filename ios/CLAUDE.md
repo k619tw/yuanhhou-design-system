@@ -14,7 +14,8 @@ Before building any control, check what SwiftUI and the HIG already provide. Use
 - `YuanhhouDS/App/`: app entry and Home screen (theme, appearance, density, language).
 - `YuanhhouDS/DesignSystem/Tokens/`: `DSColor` (6 modes: each brand in Light and Dark), `DSDimension`, `DSTypography`, `DSIcon`, `DSPrimitive`.
 - `YuanhhouDS/DesignSystem/Components/`: DS controls and styles.
-- `YuanhhouDS/Showcase/System/` (native catalog) and `Showcase/DesignSystem/` (DS catalog).
+- `YuanhhouDS/Showcase/System/` (native catalog) and `Showcase/DesignSystem/` (DS catalog: Foundations, then Components in alphabetical order, the same structure as the web demo).
+- Control tint: `.dsControlTint()` is set once on the app, inside the `dsTheme` environment. It passes `action/primary` as a dynamic `UIColor` with both Light and Dark values, because UIKit-backed controls (a menu `Picker` in a list row) keep their first tint and only update on a device Light/Dark switch through a dynamic color. Tint native controls through it, not with `.tint(DSColor…)` directly.
 - Colors are never hardcoded: use `DSColor` tokens. All user-facing text is a `LocalizedStringKey` with English and Japanese entries in `Localizable.xcstrings`.
 
 ## Build

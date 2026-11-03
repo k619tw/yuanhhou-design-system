@@ -13,15 +13,15 @@ struct DesignSystemCatalogView: View {
             }
             .dsListRowBackground()
             Section {
-                NavigationLink("Button") { ButtonPage() }
-                NavigationLink("Icon Button") { IconButtonPage() }
+                NavigationLink("Accordion") { AccordionPage() }
                 NavigationLink("Badge") { BadgePage() }
+                NavigationLink("Button") { ButtonPage() }
+                NavigationLink("Checkbox") { CheckboxPage() }
+                NavigationLink("Icon Button") { IconButtonPage() }
                 NavigationLink("Image Card") { ImageCardPage() }
                 NavigationLink("Input") { InputPage() }
-                NavigationLink("Toggle") { TogglePage() }
-                NavigationLink("Checkbox") { CheckboxPage() }
                 NavigationLink("Radio") { RadioPage() }
-                NavigationLink("Accordion") { AccordionPage() }
+                NavigationLink("Toggle") { TogglePage() }
             } header: {
                 Text("Components")
             } footer: {

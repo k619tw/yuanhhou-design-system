@@ -4,7 +4,7 @@ React + TypeScript + Vite implementation of the design system. See the [root REA
 
 ```bash
 npm install
-npm run dev      # demo of every component at http://localhost:5173
+npm run dev      # demo catalog at http://localhost:5173 (one page per foundation and component)
 npm run build    # type-check and build
 npm run lint     # oxlint
 ```

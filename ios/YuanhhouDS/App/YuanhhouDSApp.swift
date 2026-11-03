@@ -104,12 +104,13 @@ struct RootView: View {
         // (it returns to Home, where the pickers are).
         .id("\(language.rawValue)-\(theme.rawValue)-\(appearance.rawValue)")
         .appLanguage(language)
+        // Inside the theme environment, so the tint resolves for the chosen theme.
+        .dsControlTint()
         .environment(\.dsTheme, theme)
         // Setting the window's color scheme (not just the content's) keeps the navigation bar,
         // title and native controls in step with the theme.
         .preferredColorScheme(appearance.colorScheme)
         .dsDensity(density)
-        .dsControlTint()
         #if DEBUG
         .onAppear(perform: openDebugStartRoute)
         #endif

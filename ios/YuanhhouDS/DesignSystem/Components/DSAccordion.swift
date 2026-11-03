@@ -37,9 +37,12 @@ private struct DSAccordionHeader: View {
                     .font(.ds(.body1))
                     .foregroundStyle(isEnabled ? DSColor.foregroundPrimary : DSColor.foregroundDisabled)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Image(systemName: configuration.isExpanded ? "chevron.down" : "chevron.right")
+                // One glyph that turns 90 degrees. Swapping chevron.right for chevron.down changes the glyph's
+                // width and cross-fades, which jumps; rotating keeps the same shape and animates smoothly.
+                Image(systemName: "chevron.right")
                     .font(.ds(.body1, .emphasized))
                     .foregroundStyle(isEnabled ? DSColor.actionSecondary : DSColor.foregroundDisabled)
+                    .rotationEffect(.degrees(configuration.isExpanded ? 90 : 0))
                     .accessibilityHidden(true)
             }
             .contentShape(Rectangle())

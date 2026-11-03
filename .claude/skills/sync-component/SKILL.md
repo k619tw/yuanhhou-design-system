@@ -16,8 +16,8 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 - Do not trust the markdown over Figma. If a screenshot call drops the connection, rely on the structural read instead.
 
 ## 2. Diff against code
-- Web: `web/src/components/<Name>/` (`.tsx`, `.css`), `web/src/styles/tokens.css`, `web/src/styles/primitives.css`, `web/src/App.tsx`.
-- iOS: `ios/YuanhhouDS/DesignSystem/Tokens/*` and `ios/YuanhhouDS/DesignSystem/Components/*`, plus the demo pages in `ios/YuanhhouDS/Showcase/`.
+- Web: `web/src/components/<Name>/` (`.tsx`, `.css`), `web/src/styles/tokens.css`, `web/src/styles/primitives.css`, the demo page in `web/src/showcase/` (listed in `pages.ts`).
+- iOS: `ios/YuanhhouDS/DesignSystem/Tokens/*` and `ios/YuanhhouDS/DesignSystem/Components/*`, plus the demo pages in `ios/YuanhhouDS/Showcase/`. Both catalogs list components in alphabetical order; a new component gets a page in each, in that order.
 - List every difference (values, variants, states, token names). If code changed instead (`code` direction), list what Figma lacks.
 
 ## 3. Apply to both platforms
