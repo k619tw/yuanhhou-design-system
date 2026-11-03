@@ -16,22 +16,25 @@ import { languageNames, languages, useI18n } from '@/i18n/i18n'
 import type { Language } from '@/i18n/i18n'
 import './App.css'
 
-const themes = ['light', 'dark', 'eva', 'heritage-luxury'] as const
+const themes = ['default', 'eva', 'heritage-luxury'] as const
+const appearances = ['light', 'dark'] as const
 const densities = ['compact', 'default', 'loose'] as const
 const buttonTypes = ['primary', 'secondary', 'tertiary', 'alert'] as const
 const badgeTypes = ['brand', 'info', 'success', 'warning', 'error', 'promote'] as const
 
 function App() {
   const { t, language, setLanguage } = useI18n()
-  const [theme, setTheme] = useState<(typeof themes)[number]>('light')
+  const [theme, setTheme] = useState<(typeof themes)[number]>('default')
+  const [appearance, setAppearance] = useState<(typeof appearances)[number]>('light')
   const [density, setDensity] = useState<(typeof densities)[number]>('default')
   const [channels, setChannels] = useState<string[]>(['email'])
   const channelValues = ['email', 'sms', 'push'] as const
 
   useEffect(() => {
-    document.documentElement.dataset.theme = theme
+    // Every theme has a Light and a Dark mode: data-theme is light, dark or <theme>-<appearance>.
+    document.documentElement.dataset.theme = theme === 'default' ? appearance : `${theme}-${appearance}`
     document.documentElement.dataset.density = density
-  }, [theme, density])
+  }, [theme, appearance, density])
 
   return (
     <main className="showcase">
@@ -54,6 +57,16 @@ function App() {
               {themes.map((th) => (
                 <option key={th} value={th}>
                   {t(`theme.${th}`)}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="text-body-2">
+            {t('appearance')}{' '}
+            <select id="appearance" name="appearance" value={appearance} onChange={(e) => setAppearance(e.target.value as typeof appearance)}>
+              {appearances.map((a) => (
+                <option key={a} value={a}>
+                  {t(`appearance.${a}`)}
                 </option>
               ))}
             </select>

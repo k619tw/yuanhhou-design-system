@@ -1,15 +1,25 @@
 .accordion {
+  position: relative;
   width: 100%;
   max-width: 480px;
+}
+
+/* Separator under the row (under the content when open), inset from the left like the iOS list. */
+.accordion::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: var(--spacing-lg);
   border-bottom: var(--border-width-thin) solid var(--color-border-primary);
 }
 
 .accordion__header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   width: 100%;
-  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   border: 0;
   background: transparent;
   color: var(--color-foreground-primary);
@@ -24,15 +34,10 @@
 .accordion__chevron {
   display: inline-flex;
   flex: none;
-  align-items: center;
-  justify-content: center;
-  width: var(--size-control-sm);
-  height: var(--size-control-sm);
-  border-radius: var(--radius-md);
-  color: var(--color-foreground-brand);
+  color: var(--color-action-secondary);
 }
 
-.accordion__header:active:not(:disabled) .accordion__chevron {
+.accordion__header:active:not(:disabled) {
   background: var(--color-background-overlay);
 }
 
@@ -42,10 +47,15 @@
 }
 
 .accordion__header:disabled .accordion__chevron {
-  color: var(--color-foreground-on-disabled);
+  color: var(--color-foreground-disabled);
 }
 
+/* The text sits right under the label (no top padding), aligned with it. */
 .accordion__content {
-  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  padding: 0 var(--spacing-lg) var(--spacing-md);
   color: var(--color-foreground-secondary);
+}
+
+.accordion__header:disabled + .accordion__content {
+  color: var(--color-foreground-disabled);
 }

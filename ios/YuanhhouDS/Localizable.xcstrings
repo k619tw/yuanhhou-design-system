@@ -226,7 +226,6 @@
       }
     },
     "Appearance" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -723,6 +722,17 @@
         }
       }
     },
+    "Dark" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダーク"
+          }
+        }
+      }
+    },
     "Date" : {
       "localizations" : {
         "ja" : {
@@ -1151,16 +1161,6 @@
         }
       }
     },
-    "Fixed 36pt height." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "高さは36pt固定です。"
-          }
-        }
-      }
-    },
     "Flavor" : {
       "localizations" : {
         "ja" : {
@@ -1289,6 +1289,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "高さはパディングで決まります：12 + 行の高さ + 12。"
+          }
+        }
+      }
+    },
+    "Height comes from padding: 8 + line height + 8." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高さはパディングで決まります：8 + 行の高さ + 8。"
           }
         }
       }
@@ -1543,13 +1553,13 @@
         }
       }
     },
-    "Light / Dark (System)" : {
+    "Light" : {
       "extractionState" : "manual",
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ライト／ダーク（システム）"
+            "value" : "ライト"
           }
         }
       }
@@ -2836,12 +2846,12 @@
         }
       }
     },
-    "Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language." : {
+    "Theme, appearance and density apply to the whole app. Every theme has a Light and a Dark mode. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "テーマと密度はアプリ全体に適用されます。「システム」はデバイスの設定（外観、文字サイズ、言語）に従い、それ以外の選択肢はそれを上書きします。言語は「設定」>「yuanhhou DS」>「言語」でも変更できます。"
+            "value" : "テーマ、外観、密度はアプリ全体に適用されます。どのテーマにもライトとダークがあります。「システム」はデバイスの設定（外観、文字サイズ、言語）に従い、それ以外の選択肢はそれを上書きします。言語は「設定」>「yuanhhou DS」>「言語」でも変更できます。"
           }
         }
       }

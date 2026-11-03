@@ -20,7 +20,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 ## Conventions every component follows
 - **Icon rule:** an icon inside something already interactive is a Utility Icon (display only). An icon that triggers an action is an Icon Button.
 - **Icons** are chosen through instance swap properties (right panel); **slots** are only for free-form content (card image, accordion content, input trailing action).
-- **Color** binds only to the Tokens library (`02 Semantics`) and follows the pairing table in the rules file. All text pairs pass 4.5:1 in Light, Dark, EVA and Heritage Luxury.
+- **Color** binds only to the Tokens library (`02 Semantics`) and follows the pairing table in the rules file. All text pairs pass 4.5:1 in all six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark).
 - **Type** uses the text styles `<Style>/Regular|Emphasized` (Figtree on web; Platform mode `iOS` switches to SF Pro).
 - **States:** Pressed and Disabled are designed. Hover and Focus are not yet in Figma; implement focus as a 2px `--color-border-focus` outline.
 - **Sizes** use size tokens where they exist (icons: `size/icon/*`).
@@ -518,7 +518,7 @@ import { IconButton, Input } from '../components'
 `invalid` sets the Error state (`aria-invalid`, red outline); keep `helper` as the error message. `size`: `medium` (40) or `large` (48). Focus is `:focus-within`; Disabled is the native `disabled` attribute. The label is linked with `htmlFor` and the helper with `aria-describedby` automatically.
 
 ### iOS: Input (iOS)
-Apple has a native text field, so there is no DS input on iOS (hard rule: native first). Figma shows the native field instead: component set `Input (iOS)` (node `116:51`) on the `Input` page, copied from Apple's iOS kit and bound to the Tokens library so it follows all four themes, 6 variants, `Platform` mode iOS. It is a bare row: place it in [List Section (iOS)](#list-section-ios), which draws the background, corners, header and footer.
+Apple has a native text field, so there is no DS input on iOS (hard rule: native first). Figma shows the native field instead: component set `Input (iOS)` (node `116:51`) on the `Input` page, copied from Apple's iOS kit and bound to the Tokens library so it follows all six modes, 6 variants, `Platform` mode iOS. It is a bare row: place it in [List Section (iOS)](#list-section-ios), which draws the background, corners, header and footer.
 
 | Property | Values | Notes |
 |---|---|---|
@@ -588,7 +588,7 @@ An on/off switch for a setting that takes effect immediately. Figma: page `Toggl
 - `<button role="switch" aria-checked="true|false">` or `<input type="checkbox" role="switch">`.
 - Space and Enter toggle it.
 - Visible focus ring: `outline: 2px solid var(--color-border-focus)` (not yet in Figma).
-- Track contrast against the surface: both Off (`border/tertiary`) and On (`action/primary`) pass 3:1 in all four themes. Do not use `action/secondary` for the Off track; it is 1.8:1 in Light.
+- Track contrast against the surface: both Off (`border/tertiary`) and On (`action/primary`) pass 3:1 in all six modes. Do not use `action/secondary` for the Off track; it is 1.8:1 in Light.
 
 ### Code mapping
 Source: `web/src/components/Toggle`.
@@ -600,7 +600,7 @@ import { Toggle } from '../components'
 Built on a native checkbox with `role="switch"`, so Off/On is `:checked` and Default/Disabled is `:disabled`; it works in forms and with `onChange`. The label is part of the click target.
 
 ### iOS: Toggle (iOS)
-Apple has a native switch, so there is no DS toggle on iOS (hard rule: native first); Figma shows the system switch, copied from Apple's iOS kit. Apple's green On track is replaced by `action/primary`, the brand control tint, so it follows the theme (brand blue in Light, lime in EVA). Figma: page `Toggle`, component set `Toggle (iOS)` (node `117:22`), 4 variants, `Platform` mode iOS.
+Apple has a native switch, so there is no DS toggle on iOS (hard rule: native first); Figma shows the system switch, copied from Apple's iOS kit. Apple's green On track is replaced by `action/primary`, the brand control tint, so it follows the theme (brand blue in Light, purple in EVA Light, lime in EVA Dark). Figma: page `Toggle`, component set `Toggle (iOS)` (node `117:22`), 4 variants, `Platform` mode iOS.
 
 | Property | Values | Notes |
 |---|---|---|
@@ -717,12 +717,12 @@ Group helper: `foreground/secondary`; in Error `foreground/error`.
 - Don't use a Checkbox for mutually exclusive options (use Radio).
 - Don't use Mixed as a third answer for a single option.
 - Don't rely on color alone for Error; show the message in the helper text.
-- Don't put a foreground on the checked box other than `background/primary`: `action/primary` is lime in EVA, so white would vanish.
+- Don't put a foreground on the checked box other than `background/primary`: `action/primary` is lime in EVA Dark, so white would vanish.
 
 ### Accessibility
 - Native `<input type="checkbox">` inside a `<label>`; Space toggles it. Mixed sets `indeterminate`, which exposes `aria-checked="mixed"`.
 - Group: `<fieldset>` with a `<legend>`; the helper is linked with `aria-describedby`; Error sets `aria-invalid`.
-- Unchecked outline `border/tertiary` and Error outline `border/error` pass 3:1 against the surface in all four themes; checked fill `action/primary` also passes 3:1.
+- Unchecked outline `border/tertiary` and Error outline `border/error` pass 3:1 against the surface in all six modes; checked fill `action/primary` also passes 3:1.
 - Visible focus ring: `outline: 2px solid var(--color-border-focus)` around the box (not yet in Figma).
 
 ### Code mapping
@@ -832,7 +832,7 @@ Group helper: `foreground/secondary`; in Error `foreground/error`.
 ### Accessibility
 - Native `<input type="radio">` elements sharing one `name` inside a `<fieldset>` with a `<legend>`. Tab enters the group at the selected radio; arrow keys move and select; Space selects.
 - Error sets `aria-invalid` on the fieldset; the helper is linked with `aria-describedby`.
-- Unselected ring `border/tertiary` and Error ring `border/error` pass 3:1 against the surface in all four themes; the selected ring and dot use `action/primary`, which also passes 3:1.
+- Unselected ring `border/tertiary` and Error ring `border/error` pass 3:1 against the surface in all six modes; the selected ring and dot use `action/primary`, which also passes 3:1.
 - Visible focus ring: `outline: 2px solid var(--color-border-focus)` around the circle (not yet in Figma).
 
 ### Code mapping
@@ -888,17 +888,16 @@ SwiftUI: `Picker("Delivery speed", selection: $speed) { … }` with `.pickerStyl
 
 ## Accordion
 
-An expandable section: a header that toggles a content region. Figma: page `Accordion`, component set `Accordion (Web)` (node `18:221`), 4 variants (one item). **Web only.** On iOS use [Accordion (iOS)](#ios-accordion-ios), on the same page.
+An expandable section: a header that toggles a content region. It is text based, with the same look as the iOS disclosure group: a label, a chevron and text that opens right under the label. Figma: page `Accordion`, component set `Accordion (Web)` (node `18:221`), 4 variants (one item). **Web only.** On iOS use [Accordion (iOS)](#ios-accordion-ios), on the same page.
 
 ### When to use
 - To keep long, optional content tidy: FAQs, settings groups, details.
 - Not for content everyone must read, or for navigation between pages (use tabs or a menu).
 
 ### Anatomy
-1. Header row (title)
-2. Expand button (an [Icon Button](#icon-button), Tertiary Small)
-3. Content (slot, visible when expanded)
-4. Bottom divider
+1. Header row (title and chevron)
+2. Content (slot, visible when expanded)
+3. Bottom divider, inset from the left
 
 ### Properties
 | Property | Values | Notes |
@@ -908,24 +907,24 @@ An expandable section: a header that toggles a content region. Figma: page `Acco
 | Title | text | |
 | Content | slot | Any content |
 
-The chevron is an Icon Button because it triggers the expand. It shows `expand_more` when closed and `expand_less` when open. To change it, select the Icon Button instance and change its `Icon` property.
+The chevron is a display-only [Utility Icon](design-system-rules.md#icons-and-the-display-only-vs-interactive-rule) (Material Symbols Rounded, Medium 20), not an Icon Button: the whole header is the button, so there is no nested control. It shows `chevron_right` when closed and `expand_more` when open (the same right and down chevrons as iOS), and follows the `Expanded` variant. Its color is `action/secondary`, which is 1.78:1 against `background/primary` in Light, below the 3:1 used for UI icons: a known gap shared with Accordion (iOS). The label is not affected and the header is still readable without the chevron.
 
 ### Layout
 | | |
 |---|---|
 | Width | 480 (fill in code) |
-| Header padding | 16 left (`spacing/200`), 8 right and vertical (`spacing/100`) |
-| Gap title to button | 12 (`spacing/150`) |
-| Title | `Body 1/Emphasized` |
-| Content padding | 16 left, right and bottom |
+| Header padding | 16 left and right (`spacing/200`), 12 top and bottom (`spacing/150`) |
+| Gap title to chevron | 8 (`spacing/100`) |
+| Title | `Body 1/Regular` |
+| Content padding | 16 left and right, no top padding (the text sits right under the label), 12 bottom (`spacing/150`) |
 | Content text (default) | `Body 2/Regular` |
-| Divider | 1px bottom border, `border/primary` |
+| Divider | 1px under the row (under the content when open), inset 16 from the left, `border/primary`. Never between the header and the content |
 
 ### Color tokens
 | State | Title | Content text | Chevron |
 |---|---|---|---|
-| Default | `foreground/primary` | `foreground/secondary` | `foreground/brand` |
-| Disabled | `foreground/disabled` | `foreground/disabled` | `foreground/on-disabled` |
+| Default | `foreground/primary` | `foreground/secondary` | `action/secondary` |
+| Disabled | `foreground/disabled` | `foreground/disabled` | `foreground/disabled` |
 
 ### Do
 - Write titles that predict the content ("Shipping and returns").
@@ -937,15 +936,15 @@ The chevron is an Icon Button because it triggers the expand. It shows `expand_m
 ### Don't
 - Don't hide critical information, errors or required fields inside a closed item.
 - Don't nest Accordions.
-- Don't use a Utility Icon as the chevron; it must be an Icon Button.
-- Don't change the chevron direction rules (down = closed, up = open).
+- Don't make the chevron its own button: the whole header is the button, so the chevron is a display-only Utility Icon.
+- Don't change the chevron direction rules (right = closed, down = open, as on iOS).
 - Don't put long forms in an item; link to a page.
 
 ### Accessibility
 - Header is a `<button>` inside a heading: `<h3><button aria-expanded aria-controls="panel-1">…</button></h3>`.
 - Content is `role="region"` with `aria-labelledby` pointing at the header button.
 - Enter and Space toggle; Tab moves between headers. Optional Up/Down/Home/End navigation for groups.
-- If the full header is the button, the chevron Icon Button should be `aria-hidden` and not focusable, so there is one tab stop.
+- The whole header is the button and the chevron is `aria-hidden`, so there is one tab stop.
 
 ### Code mapping
 Source: `web/src/components/Accordion`.
@@ -972,7 +971,7 @@ Apple has a native disclosure group, so there is no custom accordion on iOS (nat
 | Part | Value / token |
 |---|---|
 | Header | height 52 with the separator, padding 16 horizontal (`spacing/200`); label `Body 1/Regular`, `foreground/primary` |
-| Chevron | SF Symbol glyph in `Body 1/Emphasized` (17 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 13.0 EVA, 9.8 Heritage Luxury), below the 3:1 used for UI icons: a known gap. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
+| Chevron | SF Symbol glyph in `Body 1/Emphasized` (17 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 3.0 EVA Light, 13.0 EVA Dark, 9.8 Heritage Luxury Light, 4.8 Heritage Luxury Dark), below the 3:1 used for UI icons: a known gap. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
 | Content | text row aligned with the label (16 padding), no top padding, `spacing/150` bottom padding, `Body 2/Regular`, `foreground/secondary` |
 | Separator | 1 (`border/width/thin`), inset 16, `border/primary` |
 

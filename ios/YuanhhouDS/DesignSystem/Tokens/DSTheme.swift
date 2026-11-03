@@ -1,40 +1,55 @@
 import SwiftUI
 
-/// The four Figma color modes of the Tokens library.
+/// The six Figma color modes of the Tokens library: each brand in Light and Dark.
 nonisolated enum DSThemeMode: String, CaseIterable, Sendable {
-    case light, dark, eva, heritageLuxury
+    case light, dark, evaLight, evaDark, heritageLuxuryLight, heritageLuxuryDark
 }
 
-/// Which palette a view tree uses. `.system` is the standard palette and follows the device
-/// appearance (Light or Dark), as the HIG asks; preview Dark with the device setting or Xcode's
-/// Environment Overrides. The brand themes are fixed palettes.
+/// Which brand palette a view tree uses. Every brand has a Light and a Dark mode and follows the
+/// color scheme (the device appearance, as the HIG asks, unless ``DSAppearance`` overrides it).
 nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
+    // `system` is the stored value of the standard palette, kept so saved settings still load.
     case system, eva, heritageLuxury
 
     var id: String { rawValue }
 
     var title: String {
         switch self {
-        case .system: "Light / Dark (System)"
+        case .system: "Default"
         case .eva: "EVA"
         case .heritageLuxury: "Heritage Luxury"
         }
     }
 
     func mode(for colorScheme: ColorScheme) -> DSThemeMode {
+        let dark = colorScheme == .dark
         switch self {
-        case .system: colorScheme == .dark ? .dark : .light
-        case .eva: .eva
-        case .heritageLuxury: .heritageLuxury
+        case .system: return dark ? .dark : .light
+        case .eva: return dark ? .evaDark : .evaLight
+        case .heritageLuxury: return dark ? .heritageLuxuryDark : .heritageLuxuryLight
+        }
+    }
+}
+
+/// Light or Dark for the whole app. `.system` follows the device; the others preview one mode.
+nonisolated enum DSAppearance: String, CaseIterable, Identifiable, Sendable {
+    case system, light, dark
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .system: "System"
+        case .light: "Light"
+        case .dark: "Dark"
         }
     }
 
-    /// Color scheme for native controls inside the theme (EVA is a dark palette, Heritage Luxury a light one).
     var colorScheme: ColorScheme? {
         switch self {
         case .system: nil
-        case .heritageLuxury: .light
-        case .eva: .dark
+        case .light: .light
+        case .dark: .dark
         }
     }
 }
@@ -70,14 +85,9 @@ nonisolated extension EnvironmentValues {
 }
 
 extension View {
-    /// Applies a design-system theme to this view tree, including the color scheme of native controls.
-    @ViewBuilder
+    /// Applies a design-system brand palette to this view tree. Light or Dark comes from the color scheme.
     func dsTheme(_ theme: DSTheme) -> some View {
-        if let scheme = theme.colorScheme {
-            environment(\.dsTheme, theme).environment(\.colorScheme, scheme)
-        } else {
-            environment(\.dsTheme, theme)
-        }
+        environment(\.dsTheme, theme)
     }
 
     /// Previews a typography density. Production screens should leave Dynamic Type to the user.

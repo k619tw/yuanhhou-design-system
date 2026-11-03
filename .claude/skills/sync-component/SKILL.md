@@ -12,7 +12,7 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 
 ## 1. Read Figma (the source of truth)
 - Load the `figma-use` skill, call `create_session` for the file, then read with `use_figma` (read-only). Never run two `use_figma` calls at once.
-- Component set node ids are in `docs/components.md`. Read variants, properties, bound variables, text styles, sizes. For `tokens`, read the `02 Semantics` collection (4 modes) and the `Dimension` collection.
+- Component set node ids are in `docs/components.md`. Read variants, properties, bound variables, text styles, sizes. For `tokens`, read the `02 Semantics` collection (6 modes: each brand in Light and Dark) and the `Dimension` collection.
 - Do not trust the markdown over Figma. If a screenshot call drops the connection, rely on the structural read instead.
 
 ## 2. Diff against code
@@ -34,7 +34,7 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 ## 5. Validate
 - Web: `npm run build` and `npm run lint` in `web/`; check the demo in the browser when the change is visual.
 - iOS: in `ios/`, `xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' -derivedDataPath <temp dir> build`. Run in the simulator if the user wants to see it.
-- Colors changed: re-check contrast across all four themes (text 4.5:1, borders and control outlines 3:1) and compare Figma code syntax values with `tokens.css` and `DSColor+Tokens.swift`.
+- Colors changed: re-check contrast across all six modes (text 4.5:1, borders and control outlines 3:1) and compare Figma code syntax values with `tokens.css` and `DSColor+Tokens.swift`.
 - Anything you could not check (no screenshot, no simulator run) goes in the report.
 
 ## 6. Report

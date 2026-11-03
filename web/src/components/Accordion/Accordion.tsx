@@ -16,9 +16,10 @@ export interface AccordionProps {
 }
 
 /**
- * One accordion item. The whole header is a single button (`aria-expanded`,
- * `aria-controls`); the chevron is drawn like the Figma Tertiary Small Icon Button
- * but is not a nested button, which would be invalid inside a button.
+ * One accordion item, text based like the iOS disclosure group: a label with a chevron
+ * (`chevron_right` closed, `expand_more` open) that opens text right under the label.
+ * The whole header is a single button (`aria-expanded`, `aria-controls`); the chevron is a
+ * display-only Utility Icon, not a nested button, which would be invalid inside a button.
  * Stack items for a group; single- vs multi-open is up to the caller.
  */
 export function Accordion({
@@ -49,9 +50,9 @@ export function Accordion({
         disabled={disabled}
         onClick={toggle}
       >
-        <span className="accordion__title text-body-1 text-emphasized">{title}</span>
+        <span className="accordion__title text-body-1">{title}</span>
         <span className="accordion__chevron">
-          <Icon name={expanded ? 'expand_less' : 'expand_more'} size="md" />
+          <Icon name={expanded ? 'expand_more' : 'chevron_right'} size="md" />
         </span>
       </button>
       <div

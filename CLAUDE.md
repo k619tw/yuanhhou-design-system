@@ -6,7 +6,7 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 | What | Where |
 |---|---|
 | Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components). Component pages in alphabetical order (`Accordion` … `Toggle`, including `List Section (iOS)`), then `Foundation` and `Typography`. Keep new component pages alphabetical. Component set node ids are in `docs/components.md` |
-| Colors | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), library collection `02 Semantics` (modes Light, Dark, EVA, Heritage Luxury). Primitives in `01 Primitives` |
+| Colors | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), library collection `02 Semantics` (modes Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark: each brand in Light and Dark). Primitives in `01 Primitives` |
 | Spacing, radius, size, border width | `Dimension` collection in DS - Components, plus semantic `radius/*` and `space/*` in the Tokens library |
 | Typography | Text styles `<Style>/Regular|Emphasized`; mode axes: collection `Platform` (Web, iOS) and `Typography` (density Compact, Default, Loose) |
 | Rules and color pairing | `design-system-rules.md` |
@@ -46,9 +46,8 @@ Apply the same edit to the Figma component (variants, properties, bound variable
 ## Known gaps
 - Hover and Focus states are not drawn in Figma.
 - Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
-- Accordion (Web): Figma shows the chevron as an Icon Button instance; web draws the same look but not a nested button (invalid HTML inside a button).
 - Utility Icon is Material in Figma; iOS renders the mapped SF Symbol (`DSIcon`). Shared components (Button, Icon Button, Badge) therefore show a Material glyph in Figma that differs from what iOS draws.
-- Accordion (iOS) chevron is `action/secondary` in Figma: 1.78:1 against `background/primary` in Light (Dark 4.1, EVA 13.0, Heritage Luxury 9.8), below the 3:1 used for UI icons. SwiftUI draws the chevron through the small `.dsAccordion` style because the system chevron cannot be recolored.
+- Accordion (iOS) chevron is `action/secondary` in Figma: 1.78:1 against `background/primary` in Light (Dark 4.1, EVA Light 3.0, EVA Dark 13.0, Heritage Luxury Light 9.8, Heritage Luxury Dark 4.8), below the 3:1 used for UI icons. SwiftUI draws the chevron through the small `.dsAccordion` style because the system chevron cannot be recolored.
 - The segmented `Picker` exists in SwiftUI (iOS System > Selection) but has no Figma reference.
 - Figma `(iOS)` rows are 52 pt high (Apple kit geometry) and `List Section (iOS)` uses `radius/xl` (24; Apple's inset grouped corner is about 26); SwiftUI draws the real values.
 - Not built: Select, Tabs, Modal.

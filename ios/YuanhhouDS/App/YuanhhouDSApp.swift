@@ -20,6 +20,7 @@ private enum HomeRoute: String, Hashable {
 struct RootView: View {
     @AppStorage("app.language") private var language: AppLanguage = .system
     @AppStorage("ds.theme") private var theme: DSTheme = .system
+    @AppStorage("ds.appearance") private var appearance: DSAppearance = .system
     @AppStorage("ds.density") private var density: DSDensity = .system
     @State private var path: [HomeRoute] = []
     /// The device's own settings. RootView sits above the overrides applied below, so these are not affected by them.
@@ -72,6 +73,11 @@ struct RootView: View {
                     } label: {
                         Label("Theme", systemImage: "paintbrush")
                     }
+                    Picker(selection: $appearance) {
+                        ForEach(DSAppearance.allCases) { Text(LocalizedStringKey($0.title)).tag($0) }
+                    } label: {
+                        Label("Appearance", systemImage: "circle.lefthalf.filled")
+                    }
                     Picker(selection: $density) {
                         ForEach(DSDensity.allCases) { Text($0 == .system ? systemDensityLabel : LocalizedStringKey($0.title)).tag($0) }
                     } label: {
@@ -80,7 +86,7 @@ struct RootView: View {
                 } header: {
                     Text("Settings")
                 } footer: {
-                    Text("Theme and density apply to the whole app. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language.")
+                    Text("Theme, appearance and density apply to the whole app. Every theme has a Light and a Dark mode. System follows your device (appearance, text size or language); the other options override it. Language can also be set in Settings > yuanhhou DS > Language.")
                 }
                 .dsListRowBackground()
             }
@@ -94,14 +100,14 @@ struct RootView: View {
             }
         }
         // Navigation bar titles and list rows are drawn by UIKit and do not re-resolve when only the locale
-        // or the `dsTheme` environment value changes, so rebuild the stack on a language or theme switch
+        // or the `dsTheme` environment value changes, so rebuild the stack on a language, theme or appearance switch
         // (it returns to Home, where the pickers are).
-        .id("\(language.rawValue)-\(theme.rawValue)")
+        .id("\(language.rawValue)-\(theme.rawValue)-\(appearance.rawValue)")
         .appLanguage(language)
         .environment(\.dsTheme, theme)
         // Setting the window's color scheme (not just the content's) keeps the navigation bar,
         // title and native controls in step with the theme.
-        .preferredColorScheme(theme.colorScheme)
+        .preferredColorScheme(appearance.colorScheme)
         .dsDensity(density)
         .dsControlTint()
         #if DEBUG

@@ -4,7 +4,7 @@ struct ButtonPage: View {
     var body: some View {
         DSShowcasePage(title: "Button") {
             ForEach(DSButtonStyle.Size.allCases) { size in
-                DSShowcaseSection(title: LocalizedStringKey(size.title), note: size == .large ? "Height comes from padding: 12 + line height + 12." : "Fixed 36pt height.") {
+                DSShowcaseSection(title: LocalizedStringKey(size.title), note: size == .large ? "Height comes from padding: 12 + line height + 12." : "Height comes from padding: 8 + line height + 8.") {
                     ForEach(DSButtonStyle.Kind.allCases) { kind in
                         HStack(spacing: DSSpacing.md) {
                             Button(LocalizedStringKey(kind.title)) {}

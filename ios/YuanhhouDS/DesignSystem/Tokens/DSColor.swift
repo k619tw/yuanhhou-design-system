@@ -10,17 +10,24 @@ nonisolated struct DSColor: ShapeStyle, Hashable, Sendable, Identifiable {
     let name: String
     let light: String
     let dark: String
-    let eva: String
-    let heritageLuxury: String
+    let evaLight: String
+    let evaDark: String
+    let heritageLuxuryLight: String
+    let heritageLuxuryDark: String
 
     var id: String { name }
 
-    init(_ name: String, light: String, dark: String, eva: String, heritageLuxury: String) {
+    init(
+        _ name: String, light: String, dark: String, evaLight: String, evaDark: String,
+        heritageLuxuryLight: String, heritageLuxuryDark: String
+    ) {
         self.name = name
         self.light = light
         self.dark = dark
-        self.eva = eva
-        self.heritageLuxury = heritageLuxury
+        self.evaLight = evaLight
+        self.evaDark = evaDark
+        self.heritageLuxuryLight = heritageLuxuryLight
+        self.heritageLuxuryDark = heritageLuxuryDark
     }
 
     func resolve(in environment: EnvironmentValues) -> Color {
@@ -32,8 +39,10 @@ nonisolated struct DSColor: ShapeStyle, Hashable, Sendable, Identifiable {
         switch mode {
         case .light: light
         case .dark: dark
-        case .eva: eva
-        case .heritageLuxury: heritageLuxury
+        case .evaLight: evaLight
+        case .evaDark: evaDark
+        case .heritageLuxuryLight: heritageLuxuryLight
+        case .heritageLuxuryDark: heritageLuxuryDark
         }
     }
 
