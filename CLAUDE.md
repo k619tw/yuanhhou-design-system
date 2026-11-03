@@ -30,7 +30,7 @@ The workflows below are packaged as the skill `/sync-component <Component|tokens
 1. Read the current Figma values (Figma MCP `use_figma` read-only, or `get_design_context`). Do not trust earlier docs over Figma.
 2. Update the web component (CSS/TSX, `tokens.css`) and the SwiftUI component or style.
 3. Update the component's section in `docs/components.md`, `design-system-rules.md`, and `docs/ios.md` if the iOS usage changes.
-4. Update the `Component documentation` frame on that Figma page so it matches the markdown.
+4. Update the `Component documentation` frame on that Figma page so it matches the markdown, then sweep every markdown file and every component page's frame for the old wording of what you changed (a rule or fact is usually repeated in several places). The change is not done until the sweep is clean.
 5. Validate: `npm run build` and `npm run lint` in `web/`, `xcodebuild` for `ios/`; check visual changes in the browser and the simulator.
 
 ## Workflow: a change in code

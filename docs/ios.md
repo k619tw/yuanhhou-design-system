@@ -43,4 +43,4 @@ Tokens are Swift types named like the Figma variables; the iOS code syntax in Fi
 | text styles `Body 1/Regular` | `.font(.ds(.body1))`, `.ds(.body2, .emphasized)`; Platform `iOS` is SF Pro and matches Apple's Dynamic Type tables: size, leading and tracking come from the Apple text style, and the weight per style (Headline Semibold; Emphasized Bold for Large Title, Title 1, Title 2, Semibold otherwise) |
 | primitives | `DSPrimitive` (components do not use them directly) |
 
-Theme, density (Compact = Medium, Default = Large, Loose = xLarge Dynamic Type) and language (English, Japanese) are set on the Home screen. Strings are `LocalizedStringKey` with entries in `Localizable.xcstrings`.
+Theme, appearance (System, Light, Dark), density (Compact = Medium, Default = Large, Loose = xLarge Dynamic Type) and language (English, Japanese) are set on the Home screen. Strings are `LocalizedStringKey` with entries in `Localizable.xcstrings`.

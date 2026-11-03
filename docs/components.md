@@ -141,11 +141,11 @@ An interactive button that shows only an icon. Figma: page `Icon Button`, compon
 ### The icon rule
 - **Utility Icon is display only. Icon Button is interactive.**
 - If an icon sits inside something already tappable (Button, Badge, card), it is a Utility Icon.
-- If the icon itself triggers an action (accordion chevron, close, more menu, clear), use an Icon Button.
+- If the icon itself triggers an action (close, more menu, clear), use an Icon Button. The accordion chevron is display only because the whole header is the button.
 
 ### When to use
 - Compact actions where the meaning is universal and space is tight: close, more, delete, edit, share, expand.
-- Inside other components: the Input's clear button, the Accordion's expand chevron.
+- Inside other components: the Input's clear button.
 - Not for the main action of a view; use a [Button](#button) with a label.
 
 ### Properties
@@ -192,7 +192,7 @@ An interactive button that shows only an icon. Figma: page `Icon Button`, compon
 
 ### Accessibility
 - Real `<button type="button" aria-label="…">`; the icon is `aria-hidden="true"`.
-- Toggle-style buttons (like the Accordion chevron) also need `aria-expanded` or `aria-pressed`.
+- Toggle-style buttons also need `aria-expanded` or `aria-pressed`.
 - Visible focus ring using `--color-border-focus`.
 
 ### Code mapping
@@ -955,7 +955,7 @@ import { Accordion } from '../components'
   Content goes here.
 </Accordion>
 ```
-Use `defaultExpanded` (uncontrolled) or `expanded` + `onExpandedChange` (controlled); `disabled` blocks toggling. The whole header is one `<button>` with `aria-expanded` and `aria-controls`, and the content is a `role="region"`. In Figma the chevron is an Icon Button instance; in code it is drawn the same way (Tertiary, Small) but is not a nested button, because a button inside a button is invalid HTML. Single- vs multi-open for a group is up to the caller.
+Use `defaultExpanded` (uncontrolled) or `expanded` + `onExpandedChange` (controlled); `disabled` blocks toggling. The whole header is one `<button>` with `aria-expanded` and `aria-controls`, and the content is a `role="region"`. The chevron is a display-only Utility Icon (`chevron_right` closed, `expand_more` open) in Figma and in code, so there is no nested button. Single- vs multi-open for a group is up to the caller.
 
 ### iOS: Accordion (iOS)
 Apple has a native disclosure group, so there is no custom accordion on iOS (native first). Figma shows it instead: component set `Accordion (iOS)` (node `137:129`) on the `Accordion` page, 4 variants, `Platform` mode iOS, copied from SwiftUI's `DisclosureGroup` and bound to the Tokens library. The iOS accordion is **text based**: a label with a chevron that opens indented text. It is a bare row: place it in [List Section (iOS)](#list-section-ios).

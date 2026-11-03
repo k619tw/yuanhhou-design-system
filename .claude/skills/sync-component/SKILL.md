@@ -29,13 +29,15 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 
 ## 4. Update docs and Figma frames
 - Update the component's section in `docs/components.md`, `design-system-rules.md` if a rule or token pairing changed, and the row in `docs/ios.md`.
-- Update the `Component documentation` frame on the component's Figma page so it matches the markdown. Do not rename that frame.
+- Update the `Component documentation` frame on the component's Figma page so it matches the markdown. Do not rename that frame. This is part of the change, not a follow-up: the work is not done until the frame matches.
+- **Sweep for the same statement everywhere.** A rule or fact rarely lives in one place. For every sentence you changed (a mode list, a token, a "which icon" rule, a size), search for its old wording in all markdown files (`git ls-files '*.md'`) and in the `Component documentation` frame of **every** component page, not just the one you edited (read-only `use_figma`, one page per call, filter the frame's text with a regex of the old words). Fix each hit in the markdown and in Figma. Changes to tokens, themes, shared rules or icons touch many pages.
 
 ## 5. Validate
+- Docs: repeat the sweep with the old wording and confirm nothing stale is left in the markdown files or any Figma doc frame.
 - Web: `npm run build` and `npm run lint` in `web/`; check the demo in the browser when the change is visual.
 - iOS: in `ios/`, `xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' -derivedDataPath <temp dir> build`. Run in the simulator if the user wants to see it.
 - Colors changed: re-check contrast across all six modes (text 4.5:1, borders and control outlines 3:1) and compare Figma code syntax values with `tokens.css` and `DSColor+Tokens.swift`.
 - Anything you could not check (no screenshot, no simulator run) goes in the report.
 
 ## 6. Report
-Summarize in a short list: what changed in Figma, React, SwiftUI and the docs; what matched, what drifted and was fixed; what was not verified. Do not commit or push unless the user asks; a change to both platforms is one commit.
+Summarize in a short list: what changed in Figma, React, SwiftUI and the docs; what matched, what drifted and was fixed; which Figma doc frames were checked and which were not; what was not verified. Do not commit or push unless the user asks; a change to both platforms is one commit.

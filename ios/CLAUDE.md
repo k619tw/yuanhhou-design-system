@@ -11,8 +11,8 @@ Before building any control, check what SwiftUI and the HIG already provide. Use
 - Every pattern is demonstrated in the app under iOS System; add a demo there when you introduce a new native pattern.
 
 ## Layout
-- `YuanhhouDS/App/`: app entry and Home screen (theme, density, language).
-- `YuanhhouDS/DesignSystem/Tokens/`: `DSColor` (4 themes), `DSDimension`, `DSTypography`, `DSIcon`, `DSPrimitive`.
+- `YuanhhouDS/App/`: app entry and Home screen (theme, appearance, density, language).
+- `YuanhhouDS/DesignSystem/Tokens/`: `DSColor` (6 modes: each brand in Light and Dark), `DSDimension`, `DSTypography`, `DSIcon`, `DSPrimitive`.
 - `YuanhhouDS/DesignSystem/Components/`: DS controls and styles.
 - `YuanhhouDS/Showcase/System/` (native catalog) and `Showcase/DesignSystem/` (DS catalog).
 - Colors are never hardcoded: use `DSColor` tokens. All user-facing text is a `LocalizedStringKey` with English and Japanese entries in `Localizable.xcstrings`.

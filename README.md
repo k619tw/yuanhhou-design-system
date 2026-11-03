@@ -5,7 +5,7 @@ One Figma design system, built for two platforms: **React** for web and **SwiftU
 | Folder | What |
 |---|---|
 | `web/` | React + TypeScript + Vite. Components, CSS variable tokens, English and Japanese demo |
-| `ios/` | SwiftUI app: a catalog of Apple's native components and of the design system, with theme, density and language switching |
+| `ios/` | SwiftUI app: a catalog of Apple's native components and of the design system, with theme, appearance (Light or Dark), density and language switching |
 | `docs/components.md` | One section per component: when to use, properties, layout, color tokens, do and don't, accessibility, code |
 | `docs/ios.md` | How each component is used in SwiftUI, and the native-first rule |
 | `design-system-rules.md` | Token layers, color pairing, contrast audit, platform rules |
@@ -21,7 +21,7 @@ npm run dev
 iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on a simulator.
 
 ## What is in it
-- Tokens from a Figma library: primitives plus semantic colors in four themes (Light, Dark, EVA, Heritage Luxury), spacing on an 8 pt scale, radius, sizes and typography with Web and iOS modes.
+- Tokens from a Figma library: primitives plus semantic colors in six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark: each brand in Light and Dark), spacing on an 8 pt scale, radius, sizes and typography with Web and iOS modes.
 - Components: Button, Icon Button, Utility Icon, Badge, Image Card, Input, Toggle, Checkbox, Radio, Accordion.
-- Accessibility: text pairs checked at 4.5:1 and borders at 3:1 in every theme; native controls first on iOS.
+- Accessibility: text pairs checked at 4.5:1 and borders at 3:1 in every mode; native controls first on iOS.
 - English and Japanese on both platforms.
