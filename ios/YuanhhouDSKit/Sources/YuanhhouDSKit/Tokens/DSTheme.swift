@@ -1,19 +1,19 @@
 import SwiftUI
 
 /// The six Figma color modes of the Tokens library: each brand in Light and Dark.
-nonisolated enum DSThemeMode: String, CaseIterable, Sendable {
+public nonisolated enum DSThemeMode: String, CaseIterable, Sendable {
     case light, dark, evaLight, evaDark, heritageLuxuryLight, heritageLuxuryDark
 }
 
 /// Which brand palette a view tree uses. Every brand has a Light and a Dark mode and follows the
 /// color scheme (the device appearance, as the HIG asks, unless ``DSAppearance`` overrides it).
-nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
+public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
     // `system` is the stored value of the standard palette, kept so saved settings still load.
     case system, eva, heritageLuxury
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
-    var title: String {
+    public var title: String {
         switch self {
         case .system: "Default"
         case .eva: "EVA"
@@ -21,7 +21,7 @@ nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
         }
     }
 
-    func mode(for colorScheme: ColorScheme) -> DSThemeMode {
+    public func mode(for colorScheme: ColorScheme) -> DSThemeMode {
         let dark = colorScheme == .dark
         switch self {
         case .system: return dark ? .dark : .light
@@ -32,12 +32,12 @@ nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
 }
 
 /// Light or Dark for the whole app. `.system` follows the device; the others preview one mode.
-nonisolated enum DSAppearance: String, CaseIterable, Identifiable, Sendable {
+public nonisolated enum DSAppearance: String, CaseIterable, Identifiable, Sendable {
     case system, light, dark
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
-    var title: String {
+    public var title: String {
         switch self {
         case .system: "System"
         case .light: "Light"
@@ -45,7 +45,7 @@ nonisolated enum DSAppearance: String, CaseIterable, Identifiable, Sendable {
         }
     }
 
-    var colorScheme: ColorScheme? {
+    public var colorScheme: ColorScheme? {
         switch self {
         case .system: nil
         case .light: .light
@@ -56,12 +56,12 @@ nonisolated enum DSAppearance: String, CaseIterable, Identifiable, Sendable {
 
 /// Figma `Typography` density mode, mapped to Apple's Dynamic Type sizes
 /// (Compact = Medium, Default = Large, Loose = xLarge). `.system` keeps the user's setting.
-nonisolated enum DSDensity: String, CaseIterable, Identifiable, Sendable {
+public nonisolated enum DSDensity: String, CaseIterable, Identifiable, Sendable {
     case system, compact, standard, loose
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
-    var title: String {
+    public var title: String {
         switch self {
         case .system: "System"
         case .compact: "Compact"
@@ -70,7 +70,7 @@ nonisolated enum DSDensity: String, CaseIterable, Identifiable, Sendable {
         }
     }
 
-    var dynamicTypeSize: DynamicTypeSize? {
+    public var dynamicTypeSize: DynamicTypeSize? {
         switch self {
         case .system: nil
         case .compact: .medium
@@ -80,11 +80,11 @@ nonisolated enum DSDensity: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
-nonisolated extension EnvironmentValues {
+public nonisolated extension EnvironmentValues {
     @Entry var dsTheme: DSTheme = .system
 }
 
-extension View {
+public extension View {
     /// Applies a design-system brand palette to this view tree. Light or Dark comes from the color scheme.
     func dsTheme(_ theme: DSTheme) -> some View {
         environment(\.dsTheme, theme)

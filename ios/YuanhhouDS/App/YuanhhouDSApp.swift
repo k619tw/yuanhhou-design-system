@@ -1,6 +1,7 @@
 // xcode: set sdk=iOS
 
 import SwiftUI
+import YuanhhouDSKit
 
 @main
 struct YuanhhouDSApp: App {

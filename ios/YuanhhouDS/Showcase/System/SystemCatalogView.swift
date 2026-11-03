@@ -1,6 +1,7 @@
 // xcode: set sdk=iOS
 
 import SwiftUI
+import YuanhhouDSKit
 
 /// Catalog of native iOS components. Everything here is stock SwiftUI: when the design system needs
 /// one of these patterns, use the system component rather than rebuilding it.

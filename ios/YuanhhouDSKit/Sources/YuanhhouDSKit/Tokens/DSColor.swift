@@ -5,19 +5,19 @@ import SwiftUI
 /// `DSColor` is a `ShapeStyle`, so it resolves itself against the current ``DSTheme`` and color scheme:
 /// `.foregroundStyle(DSColor.foregroundPrimary)`, `.background(DSColor.backgroundPrimary)`,
 /// `.tint(DSColor.actionPrimary)`. The token values live in `DSColor+Tokens.swift`.
-nonisolated struct DSColor: ShapeStyle, Hashable, Sendable, Identifiable {
+public nonisolated struct DSColor: ShapeStyle, Hashable, Sendable, Identifiable {
     /// Figma variable name, for example `color/background/brand/primary`.
-    let name: String
-    let light: String
-    let dark: String
-    let evaLight: String
-    let evaDark: String
-    let heritageLuxuryLight: String
-    let heritageLuxuryDark: String
+    public let name: String
+    public let light: String
+    public let dark: String
+    public let evaLight: String
+    public let evaDark: String
+    public let heritageLuxuryLight: String
+    public let heritageLuxuryDark: String
 
-    var id: String { name }
+    public var id: String { name }
 
-    init(
+    public init(
         _ name: String, light: String, dark: String, evaLight: String, evaDark: String,
         heritageLuxuryLight: String, heritageLuxuryDark: String
     ) {
@@ -30,12 +30,12 @@ nonisolated struct DSColor: ShapeStyle, Hashable, Sendable, Identifiable {
         self.heritageLuxuryDark = heritageLuxuryDark
     }
 
-    func resolve(in environment: EnvironmentValues) -> Color {
+    public func resolve(in environment: EnvironmentValues) -> Color {
         color(for: environment.dsTheme.mode(for: environment.colorScheme))
     }
 
     /// Hex string (`RRGGBB` or `RRGGBBAA`) for one Figma mode.
-    func hex(for mode: DSThemeMode) -> String {
+    public func hex(for mode: DSThemeMode) -> String {
         switch mode {
         case .light: light
         case .dark: dark
@@ -46,12 +46,12 @@ nonisolated struct DSColor: ShapeStyle, Hashable, Sendable, Identifiable {
         }
     }
 
-    func color(for mode: DSThemeMode) -> Color {
+    public func color(for mode: DSThemeMode) -> Color {
         Color(dsHex: hex(for: mode))
     }
 }
 
-nonisolated extension Color {
+public nonisolated extension Color {
     /// Creates a color from `RRGGBB` or `RRGGBBAA`.
     init(dsHex hex: String) {
         let value = UInt64(hex, radix: 16) ?? 0

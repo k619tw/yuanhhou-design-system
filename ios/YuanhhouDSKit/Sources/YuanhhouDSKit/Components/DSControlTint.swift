@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-extension View {
+public extension View {
     /// Tints native controls (Toggle, Slider, Picker, text cursor, disclosure group) with the design-system
     /// action color. iOS uses the native controls as they are; only the tint comes from the design system.
     /// Apply it inside `.environment(\.dsTheme, …)` so it sees the theme.

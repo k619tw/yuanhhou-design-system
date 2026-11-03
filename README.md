@@ -4,8 +4,11 @@ One Figma design system, built for two platforms: **React** for web and **SwiftU
 
 | Folder | What |
 |---|---|
-| `web/` | React + TypeScript + Vite. Components, CSS variable tokens, English and Japanese demo |
-| `ios/` | SwiftUI app: a catalog of Apple's native components and of the design system, with theme, appearance (Light or Dark), density and language switching |
+| `web/` | React + TypeScript + Vite: the `@yuanhhou/ds` package (components, CSS variable tokens) and an English and Japanese demo catalog |
+| `ios/YuanhhouDSKit/` | The design system as a Swift package: tokens, `DSColor`, typography and the styles for native controls |
+| `ios/YuanhhouDS.xcodeproj` | SwiftUI app: a catalog of Apple's native components and of the design system, with theme, appearance (Light or Dark), density and language switching |
+| `tokens/` | `colors.json` (exported from Figma) and `generate.mjs`, which writes the color files for both platforms |
+| `docs/workflow.md` | Diagrams of how Figma, the token generator, the two packages and the apps fit together, and the steps of every change (also in Figma: Ai Design Systems Workflow) |
 | `docs/components.md` | One section per component: when to use, properties, layout, color tokens, do and don't, accessibility, code |
 | `docs/ios.md` | How each component is used in SwiftUI, and the native-first rule |
 | `design-system-rules.md` | Token layers, color pairing, contrast audit, platform rules |
@@ -19,6 +22,11 @@ npm install
 npm run dev
 ```
 iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on a simulator.
+
+## Use it in an app
+- **Web:** install the `web/` package (`@yuanhhou/ds`), then `import { Button } from '@yuanhhou/ds'` and `import '@yuanhhou/ds/style.css'`, and set `data-theme` on `<html>`. Details in [web/README.md](web/README.md).
+- **iOS:** in Xcode, File > Add Package Dependencies > Add Local, choose `ios/YuanhhouDSKit`, then `import YuanhhouDSKit`. At the root of the app use `.dsControlTint().environment(\.dsTheme, .eva)` (tint inside the theme), then `.buttonStyle(.ds(.primary))`, `DSColor` and `.font(.ds(.body1))` in views. To add it by repository URL instead, `Package.swift` has to move to the root of a repository: SwiftPM cannot load a package from a subfolder.
+- **Colors:** change them in Figma, export with `tokens/export-figma.js` into `tokens/colors.json`, and run `node tokens/generate.mjs`. See [tokens/README.md](tokens/README.md).
 
 ## What is in it
 - Tokens from a Figma library: primitives plus semantic colors in six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark: each brand in Light and Dark), spacing on an 8 pt scale, radius, sizes and typography with Web and iOS modes.

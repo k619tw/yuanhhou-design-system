@@ -1,26 +1,26 @@
 import SwiftUI
 
 /// Image Card `Orientation`: Vertical = image on top, Horizontal = image leading.
-enum DSImageCardOrientation: String, CaseIterable, Identifiable {
+public enum DSImageCardOrientation: String, CaseIterable, Identifiable {
     case vertical, horizontal
-    var id: String { rawValue }
-    var title: String { rawValue.capitalized }
+    public var id: String { rawValue }
+    public var title: String { rawValue.capitalized }
 }
 
 /// Figma `Image Card`: media, optional badge, title, description and optional actions.
 /// The card itself is not a button; put real buttons in `actions`, or wrap the card in a
 /// `NavigationLink` when the whole card navigates.
-struct DSImageCard<Media: View, Actions: View>: View {
-    typealias Orientation = DSImageCardOrientation
+public struct DSImageCard<Media: View, Actions: View>: View {
+    public typealias Orientation = DSImageCardOrientation
 
-    var orientation: Orientation = .vertical
-    let title: LocalizedStringKey
-    var description: LocalizedStringKey?
-    var badge: DSBadge?
-    @ViewBuilder var media: Media
-    @ViewBuilder var actions: Actions
+    public var orientation: Orientation = .vertical
+    public let title: LocalizedStringKey
+    public var description: LocalizedStringKey?
+    public var badge: DSBadge?
+    @ViewBuilder public var media: Media
+    @ViewBuilder public var actions: Actions
 
-    init(
+    public init(
         orientation: Orientation = .vertical,
         title: LocalizedStringKey,
         description: LocalizedStringKey? = nil,
@@ -36,7 +36,7 @@ struct DSImageCard<Media: View, Actions: View>: View {
         self.actions = actions()
     }
 
-    var body: some View {
+    public var body: some View {
         let shape = RoundedRectangle(cornerRadius: DSRadius.lg, style: .continuous)
         Group {
             if orientation == .vertical {
@@ -85,7 +85,7 @@ struct DSImageCard<Media: View, Actions: View>: View {
     }
 }
 
-extension DSImageCard where Actions == EmptyView {
+public extension DSImageCard where Actions == EmptyView {
     /// Card without an actions row (Figma `Show actions` off).
     init(
         orientation: Orientation = .vertical,

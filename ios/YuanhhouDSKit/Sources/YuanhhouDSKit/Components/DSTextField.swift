@@ -1,6 +1,6 @@
 import SwiftUI
 
-extension View {
+public extension View {
     /// Figma `Text Field (iOS)`: the native `TextField` in a `Form` or `List` row, styled with tokens.
     /// This is the default on iOS. Put helper and error text in the section footer.
     ///
@@ -26,7 +26,7 @@ private struct DSTextFieldRowStyle: ViewModifier {
     }
 }
 
-extension Text {
+public extension Text {
     /// Section footer under a `.dsTextField()` row: Caption 1 in `foreground/secondary`, or `foreground/error`.
     func dsTextFieldFooter(isError: Bool = false) -> some View {
         let color = isError ? DSColor.foregroundError : DSColor.foregroundSecondary

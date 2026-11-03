@@ -1,0 +1,621 @@
+{
+  "source": "Figma Tokens file 5iR1wP3qoTT4uD6d20ekVv, collection 02 Semantics. Export with tokens/export-figma.js; do not edit by hand.",
+  "modes": [
+    "Light",
+    "Dark",
+    "EVA Light",
+    "EVA Dark",
+    "Heritage Luxury Light",
+    "Heritage Luxury Dark"
+  ],
+  "colors": {
+    "color/background/primary": {
+      "Light": "FFFFFF",
+      "Dark": "000000",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "320050",
+      "Heritage Luxury Light": "FBF7EF",
+      "Heritage Luxury Dark": "1C140F"
+    },
+    "color/background/secondary": {
+      "Light": "F6F4F4",
+      "Dark": "1A1A1A",
+      "EVA Light": "F6F4F4",
+      "EVA Dark": "1E0532",
+      "Heritage Luxury Light": "F1E8D8",
+      "Heritage Luxury Dark": "322319"
+    },
+    "color/background/inverted-primary": {
+      "Light": "000000",
+      "Dark": "FFFFFF",
+      "EVA Light": "1E0532",
+      "EVA Dark": "FFFFFF",
+      "Heritage Luxury Light": "1C140F",
+      "Heritage Luxury Dark": "FBF7EF"
+    },
+    "color/background/inverted-secondary": {
+      "Light": "101274",
+      "Dark": "F6F4F4",
+      "EVA Light": "320050",
+      "EVA Dark": "EEDCFF",
+      "Heritage Luxury Light": "322319",
+      "Heritage Luxury Dark": "F1E8D8"
+    },
+    "color/background/overlay": {
+      "Light": "1A1A1A1A",
+      "Dark": "F6F4F433",
+      "EVA Light": "1A1A1A1A",
+      "EVA Dark": "F6F4F41A",
+      "Heritage Luxury Light": "1A1A1A1A",
+      "Heritage Luxury Dark": "F6F4F41A"
+    },
+    "color/background/disabled": {
+      "Light": "BDC3C9",
+      "Dark": "6D6D73",
+      "EVA Light": "D2AAFF",
+      "EVA Dark": "4B0078",
+      "Heritage Luxury Light": "E2D0B3",
+      "Heritage Luxury Dark": "503B28"
+    },
+    "color/background/brand/primary": {
+      "Light": "0073E5",
+      "Dark": "0073E5",
+      "EVA Light": "8000C8",
+      "EVA Dark": "8000C8",
+      "Heritage Luxury Light": "6E512A",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/background/brand/secondary": {
+      "Light": "F1F8FF",
+      "Dark": "F1F8FF",
+      "EVA Light": "DCFFB4",
+      "EVA Dark": "4B0078",
+      "Heritage Luxury Light": "FBF4E3",
+      "Heritage Luxury Dark": "49351D"
+    },
+    "color/background/brand/primary-pressed": {
+      "Light": "101274",
+      "Dark": "101274",
+      "EVA Light": "6400A0",
+      "EVA Dark": "6400A0",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "C4A05B"
+    },
+    "color/background/brand/secondary-pressed": {
+      "Light": "8FC7FF",
+      "Dark": "8FC7FF",
+      "EVA Light": "BEFF78",
+      "EVA Dark": "320050",
+      "Heritage Luxury Light": "F2E1B7",
+      "Heritage Luxury Dark": "2F2213"
+    },
+    "color/background/info/primary": {
+      "Light": "0073E5",
+      "Dark": "0073E5",
+      "EVA Light": "0073E5",
+      "EVA Dark": "0073E5",
+      "Heritage Luxury Light": "2D4549",
+      "Heritage Luxury Dark": "B4CBC4"
+    },
+    "color/background/info/secondary": {
+      "Light": "F1F8FF",
+      "Dark": "F1F8FF",
+      "EVA Light": "F1F8FF",
+      "EVA Dark": "0A0B52",
+      "Heritage Luxury Light": "EEF3F1",
+      "Heritage Luxury Dark": "1E3034"
+    },
+    "color/background/info/primary-pressed": {
+      "Light": "101274",
+      "Dark": "101274",
+      "EVA Light": "101274",
+      "EVA Dark": "005BBF",
+      "Heritage Luxury Light": "1E3034",
+      "Heritage Luxury Dark": "8DACA6"
+    },
+    "color/background/info/secondary-pressed": {
+      "Light": "8FC7FF",
+      "Dark": "8FC7FF",
+      "EVA Light": "8FC7FF",
+      "EVA Dark": "101274",
+      "Heritage Luxury Light": "D8E3DF",
+      "Heritage Luxury Dark": "111D20"
+    },
+    "color/background/success/primary": {
+      "Light": "08872E",
+      "Dark": "08872E",
+      "EVA Light": "4D7C0F",
+      "EVA Dark": "82E600",
+      "Heritage Luxury Light": "294432",
+      "Heritage Luxury Dark": "B9CAA4"
+    },
+    "color/background/success/secondary": {
+      "Light": "E9F9E9",
+      "Dark": "E9F9E9",
+      "EVA Light": "DCFFB4",
+      "EVA Dark": "3F6212",
+      "Heritage Luxury Light": "EFF4E9",
+      "Heritage Luxury Dark": "1B2D23"
+    },
+    "color/background/success/primary-pressed": {
+      "Light": "0E6027",
+      "Dark": "0E6027",
+      "EVA Light": "3F6212",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "1B2D23",
+      "Heritage Luxury Dark": "94AC7F"
+    },
+    "color/background/success/secondary-pressed": {
+      "Light": "9DDD96",
+      "Dark": "9DDD96",
+      "EVA Light": "BEFF78",
+      "EVA Dark": "365314",
+      "Heritage Luxury Light": "D9E4CB",
+      "Heritage Luxury Dark": "101D17"
+    },
+    "color/background/warning/primary": {
+      "Light": "FDB487",
+      "Dark": "FDB487",
+      "EVA Light": "FDB487",
+      "EVA Dark": "FDB487",
+      "Heritage Luxury Light": "DDBF7C",
+      "Heritage Luxury Dark": "C4A05B"
+    },
+    "color/background/warning/secondary": {
+      "Light": "FEECE1",
+      "Dark": "FEECE1",
+      "EVA Light": "FEECE1",
+      "EVA Dark": "380400",
+      "Heritage Luxury Light": "FBF4E3",
+      "Heritage Luxury Dark": "49351D"
+    },
+    "color/background/warning/primary-pressed": {
+      "Light": "FB8E4B",
+      "Dark": "FB8E4B",
+      "EVA Light": "FB8E4B",
+      "EVA Dark": "FB8E4B",
+      "Heritage Luxury Light": "C4A05B",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/background/warning/secondary-pressed": {
+      "Light": "FDB487",
+      "Dark": "FDB487",
+      "EVA Light": "FDB487",
+      "EVA Dark": "570D00",
+      "Heritage Luxury Light": "F2E1B7",
+      "Heritage Luxury Dark": "2F2213"
+    },
+    "color/background/error/primary": {
+      "Light": "C41616",
+      "Dark": "C41616",
+      "EVA Light": "C41616",
+      "EVA Dark": "C41616",
+      "Heritage Luxury Light": "692C35",
+      "Heritage Luxury Dark": "D4A6B0"
+    },
+    "color/background/error/secondary": {
+      "Light": "FCE2E2",
+      "Dark": "FCE2E2",
+      "EVA Light": "FCE2E2",
+      "EVA Dark": "330012",
+      "Heritage Luxury Light": "F9EEF0",
+      "Heritage Luxury Dark": "481B26"
+    },
+    "color/background/error/primary-pressed": {
+      "Light": "AD1818",
+      "Dark": "AD1818",
+      "EVA Light": "AD1818",
+      "EVA Dark": "AD1818",
+      "Heritage Luxury Light": "481B26",
+      "Heritage Luxury Dark": "B97B8A"
+    },
+    "color/background/error/secondary-pressed": {
+      "Light": "F67A7A",
+      "Dark": "F67A7A",
+      "EVA Light": "F67A7A",
+      "EVA Dark": "7A002B",
+      "Heritage Luxury Light": "ECD5D9",
+      "Heritage Luxury Dark": "2C1019"
+    },
+    "color/background/promote/primary": {
+      "Light": "DE98FF",
+      "Dark": "DE98FF",
+      "EVA Light": "9446E1",
+      "EVA Dark": "8000C8",
+      "Heritage Luxury Light": "8C4050",
+      "Heritage Luxury Dark": "B97B8A"
+    },
+    "color/background/promote/secondary": {
+      "Light": "F7F2FC",
+      "Dark": "F7F2FC",
+      "EVA Light": "EEDCFF",
+      "EVA Dark": "4B0078",
+      "Heritage Luxury Light": "F1E8D8",
+      "Heritage Luxury Dark": "322319"
+    },
+    "color/background/promote/primary-pressed": {
+      "Light": "B670FA",
+      "Dark": "B670FA",
+      "EVA Light": "8000C8",
+      "EVA Dark": "6400A0",
+      "Heritage Luxury Light": "692C35",
+      "Heritage Luxury Dark": "D4A6B0"
+    },
+    "color/background/promote/secondary-pressed": {
+      "Light": "DE98FF",
+      "Dark": "DE98FF",
+      "EVA Light": "D2AAFF",
+      "EVA Dark": "320050",
+      "Heritage Luxury Light": "E2D0B3",
+      "Heritage Luxury Dark": "503B28"
+    },
+    "color/foreground/hero": {
+      "Light": "101274",
+      "Dark": "FFFFFF",
+      "EVA Light": "4B0078",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "481B26",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/foreground/primary": {
+      "Light": "000000",
+      "Dark": "FFFFFF",
+      "EVA Light": "1E0532",
+      "EVA Dark": "FFFFFF",
+      "Heritage Luxury Light": "1C140F",
+      "Heritage Luxury Dark": "FBF7EF"
+    },
+    "color/foreground/secondary": {
+      "Light": "6D6D73",
+      "Dark": "BDC3C9",
+      "EVA Light": "4B5158",
+      "EVA Dark": "EEDCFF",
+      "Heritage Luxury Light": "503B28",
+      "Heritage Luxury Dark": "C3AC88"
+    },
+    "color/foreground/inverted/primary": {
+      "Light": "FFFFFF",
+      "Dark": "000000",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "1E0532",
+      "Heritage Luxury Light": "FBF7EF",
+      "Heritage Luxury Dark": "1C140F"
+    },
+    "color/foreground/inverted/secondary": {
+      "Light": "BDC3C9",
+      "Dark": "404040",
+      "EVA Light": "D2AAFF",
+      "EVA Dark": "4B0078",
+      "Heritage Luxury Light": "F1E8D8",
+      "Heritage Luxury Dark": "503B28"
+    },
+    "color/foreground/disabled": {
+      "Light": "BDC3C9",
+      "Dark": "6D6D73",
+      "EVA Light": "B478F5",
+      "EVA Dark": "D2AAFF",
+      "Heritage Luxury Light": "503B28",
+      "Heritage Luxury Dark": "72593E"
+    },
+    "color/foreground/on-disabled": {
+      "Light": "6D6D73",
+      "Dark": "4B5158",
+      "EVA Light": "6400A0",
+      "EVA Dark": "EEDCFF",
+      "Heritage Luxury Light": "322319",
+      "Heritage Luxury Dark": "C3AC88"
+    },
+    "color/foreground/brand": {
+      "Light": "0069D1",
+      "Dark": "57ABFF",
+      "EVA Light": "8000C8",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/foreground/brand/on/primary": {
+      "Light": "FFFFFF",
+      "Dark": "FFFFFF",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "FFFFFF",
+      "Heritage Luxury Light": "FBF7EF",
+      "Heritage Luxury Dark": "1C140F"
+    },
+    "color/foreground/brand/on/secondary": {
+      "Light": "003F96",
+      "Dark": "003F96",
+      "EVA Light": "4B0078",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "F2E1B7"
+    },
+    "color/foreground/info": {
+      "Light": "0069D1",
+      "Dark": "57ABFF",
+      "EVA Light": "0069D1",
+      "EVA Dark": "8FC7FF",
+      "Heritage Luxury Light": "1E3034",
+      "Heritage Luxury Dark": "B4CBC4"
+    },
+    "color/foreground/info/on/primary": {
+      "Light": "FFFFFF",
+      "Dark": "FFFFFF",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "FFFFFF",
+      "Heritage Luxury Light": "FBF7EF",
+      "Heritage Luxury Dark": "111D20"
+    },
+    "color/foreground/info/on/secondary": {
+      "Light": "003F96",
+      "Dark": "003F96",
+      "EVA Light": "003F96",
+      "EVA Dark": "8FC7FF",
+      "Heritage Luxury Light": "1E3034",
+      "Heritage Luxury Dark": "D8E3DF"
+    },
+    "color/foreground/success": {
+      "Light": "038229",
+      "Dark": "7ECA6B",
+      "EVA Light": "3F6212",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "1B2D23",
+      "Heritage Luxury Dark": "B9CAA4"
+    },
+    "color/foreground/success/on/primary": {
+      "Light": "FFFFFF",
+      "Dark": "FFFFFF",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "1E0532",
+      "Heritage Luxury Light": "FBF7EF",
+      "Heritage Luxury Dark": "101D17"
+    },
+    "color/foreground/success/on/secondary": {
+      "Light": "0E6027",
+      "Dark": "0E6027",
+      "EVA Light": "365314",
+      "EVA Dark": "DCFFB4",
+      "Heritage Luxury Light": "1B2D23",
+      "Heritage Luxury Dark": "D9E4CB"
+    },
+    "color/foreground/warning": {
+      "Light": "8F6425",
+      "Dark": "FDB487",
+      "EVA Light": "8F6425",
+      "EVA Dark": "FDDCB5",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "F2E1B7"
+    },
+    "color/foreground/warning/on/primary": {
+      "Light": "1A1A1A",
+      "Dark": "1A1A1A",
+      "EVA Light": "1A1A1A",
+      "EVA Dark": "1E0532",
+      "Heritage Luxury Light": "2F2213",
+      "Heritage Luxury Dark": "2F2213"
+    },
+    "color/foreground/warning/on/secondary": {
+      "Light": "570D00",
+      "Dark": "570D00",
+      "EVA Light": "570D00",
+      "EVA Dark": "FDDCB5",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "F2E1B7"
+    },
+    "color/foreground/error": {
+      "Light": "C41616",
+      "Dark": "F67A7A",
+      "EVA Light": "C41616",
+      "EVA Dark": "FFCCCC",
+      "Heritage Luxury Light": "481B26",
+      "Heritage Luxury Dark": "D4A6B0"
+    },
+    "color/foreground/error/on/primary": {
+      "Light": "FFFFFF",
+      "Dark": "FFFFFF",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "FFFFFF",
+      "Heritage Luxury Light": "FBF7EF",
+      "Heritage Luxury Dark": "2C1019"
+    },
+    "color/foreground/error/on/secondary": {
+      "Light": "330012",
+      "Dark": "330012",
+      "EVA Light": "330012",
+      "EVA Dark": "FFCCCC",
+      "Heritage Luxury Light": "481B26",
+      "Heritage Luxury Dark": "ECD5D9"
+    },
+    "color/foreground/promote": {
+      "Light": "914CD4",
+      "Dark": "DE98FF",
+      "EVA Light": "8000C8",
+      "EVA Dark": "D2AAFF",
+      "Heritage Luxury Light": "692C35",
+      "Heritage Luxury Dark": "ECD5D9"
+    },
+    "color/foreground/promote/on/primary": {
+      "Light": "1A1A1A",
+      "Dark": "1A1A1A",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "FFFFFF",
+      "Heritage Luxury Light": "FBF7EF",
+      "Heritage Luxury Dark": "1C140F"
+    },
+    "color/foreground/promote/on/secondary": {
+      "Light": "491D8B",
+      "Dark": "491D8B",
+      "EVA Light": "4B0078",
+      "EVA Dark": "EEDCFF",
+      "Heritage Luxury Light": "481B26",
+      "Heritage Luxury Dark": "ECD5D9"
+    },
+    "color/action/primary": {
+      "Light": "0069D1",
+      "Dark": "0073E5",
+      "EVA Light": "8000C8",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/action/secondary": {
+      "Light": "BDC3C9",
+      "Dark": "6D6D73",
+      "EVA Light": "B478F5",
+      "EVA Dark": "EEDCFF",
+      "Heritage Luxury Light": "503B28",
+      "Heritage Luxury Dark": "9A7E5A"
+    },
+    "color/border/primary": {
+      "Light": "DDE1E6",
+      "Dark": "404040",
+      "EVA Light": "D2AAFF",
+      "EVA Dark": "D2AAFF",
+      "Heritage Luxury Light": "72593E",
+      "Heritage Luxury Dark": "503B28"
+    },
+    "color/border/secondary": {
+      "Light": "BDC3C9",
+      "Dark": "6D6D73",
+      "EVA Light": "B478F5",
+      "EVA Dark": "EEDCFF",
+      "Heritage Luxury Light": "503B28",
+      "Heritage Luxury Dark": "72593E"
+    },
+    "color/border/tertiary": {
+      "Light": "6D6D73",
+      "Dark": "BDC3C9",
+      "EVA Light": "9446E1",
+      "EVA Dark": "B478F5",
+      "Heritage Luxury Light": "6E512A",
+      "Heritage Luxury Dark": "9A7E5A"
+    },
+    "color/border/inverted": {
+      "Light": "FFFFFF",
+      "Dark": "1A1A1A",
+      "EVA Light": "B478F5",
+      "EVA Dark": "4B0078",
+      "Heritage Luxury Light": "F1E8D8",
+      "Heritage Luxury Dark": "72593E"
+    },
+    "color/border/brand": {
+      "Light": "0073E5",
+      "Dark": "57ABFF",
+      "EVA Light": "8000C8",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "6E512A",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/border/brand/pressed": {
+      "Light": "101274",
+      "Dark": "0073E5",
+      "EVA Light": "4B0078",
+      "EVA Dark": "82E600",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "C4A05B"
+    },
+    "color/border/info": {
+      "Light": "0073E5",
+      "Dark": "57ABFF",
+      "EVA Light": "0073E5",
+      "EVA Dark": "8FC7FF",
+      "Heritage Luxury Light": "2D4549",
+      "Heritage Luxury Dark": "B4CBC4"
+    },
+    "color/border/info/pressed": {
+      "Light": "101274",
+      "Dark": "0073E5",
+      "EVA Light": "101274",
+      "EVA Dark": "57ABFF",
+      "Heritage Luxury Light": "1E3034",
+      "Heritage Luxury Dark": "8DACA6"
+    },
+    "color/border/success": {
+      "Light": "08872E",
+      "Dark": "7ECA6B",
+      "EVA Light": "4D7C0F",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "294432",
+      "Heritage Luxury Dark": "B9CAA4"
+    },
+    "color/border/success/pressed": {
+      "Light": "0E6027",
+      "Dark": "08872E",
+      "EVA Light": "3F6212",
+      "EVA Dark": "82E600",
+      "Heritage Luxury Light": "1B2D23",
+      "Heritage Luxury Dark": "94AC7F"
+    },
+    "color/border/warning": {
+      "Light": "EA5E00",
+      "Dark": "FDB487",
+      "EVA Light": "EA5E00",
+      "EVA Dark": "FDDCB5",
+      "Heritage Luxury Light": "6E512A",
+      "Heritage Luxury Dark": "F2E1B7"
+    },
+    "color/border/warning/pressed": {
+      "Light": "FB8E4B",
+      "Dark": "FB8E4B",
+      "EVA Light": "FB8E4B",
+      "EVA Dark": "FDB487",
+      "Heritage Luxury Light": "49351D",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/border/error": {
+      "Light": "C41616",
+      "Dark": "F67A7A",
+      "EVA Light": "C41616",
+      "EVA Dark": "FFCCCC",
+      "Heritage Luxury Light": "692C35",
+      "Heritage Luxury Dark": "D4A6B0"
+    },
+    "color/border/error/pressed": {
+      "Light": "AD1818",
+      "Dark": "C41616",
+      "EVA Light": "AD1818",
+      "EVA Dark": "F67A7A",
+      "Heritage Luxury Light": "481B26",
+      "Heritage Luxury Dark": "B97B8A"
+    },
+    "color/border/promote": {
+      "Light": "914CD4",
+      "Dark": "DE98FF",
+      "EVA Light": "9446E1",
+      "EVA Dark": "D2AAFF",
+      "Heritage Luxury Light": "692C35",
+      "Heritage Luxury Dark": "ECD5D9"
+    },
+    "color/border/promote/pressed": {
+      "Light": "B670FA",
+      "Dark": "B670FA",
+      "EVA Light": "8000C8",
+      "EVA Dark": "B478F5",
+      "Heritage Luxury Light": "481B26",
+      "Heritage Luxury Dark": "D4A6B0"
+    },
+    "color/ai/gradient/start": {
+      "Light": "0069D1",
+      "Dark": "3A9DFF",
+      "EVA Light": "4D7C0F",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "6E512A",
+      "Heritage Luxury Dark": "DDBF7C"
+    },
+    "color/ai/gradient/end": {
+      "Light": "914CD4",
+      "Dark": "DE98FF",
+      "EVA Light": "8000C8",
+      "EVA Dark": "D2AAFF",
+      "Heritage Luxury Light": "692C35",
+      "Heritage Luxury Dark": "D4A6B0"
+    },
+    "color/border/focus": {
+      "Light": "0069D1",
+      "Dark": "57ABFF",
+      "EVA Light": "8000C8",
+      "EVA Dark": "A0FF3C",
+      "Heritage Luxury Light": "692C35",
+      "Heritage Luxury Dark": "D4A6B0"
+    }
+  }
+}

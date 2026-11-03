@@ -1,4 +1,4 @@
-import { Icon } from '@/components'
+import { Icon } from '@yuanhhou/ds'
 import { useI18n } from '@/i18n/i18n'
 import { componentPages, foundationPages } from './pages'
 import type { PageEntry } from './pages'

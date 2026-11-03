@@ -1,4 +1,5 @@
 import SwiftUI
+import YuanhhouDSKit
 
 /// In-app language choice. `.system` follows the device (and the per-app language in Settings);
 /// the others override the SwiftUI locale so every `Text` and `LocalizedStringKey` switches instantly.

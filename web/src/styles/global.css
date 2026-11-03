@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './primitives.css';
 @import './tokens.css';
+@import './colors.css';
 @import './typography.css';
 
 body {

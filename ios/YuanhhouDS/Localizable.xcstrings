@@ -549,16 +549,6 @@
         }
       }
     },
-    "Collapsed" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "折りたたみ"
-          }
-        }
-      }
-    },
     "Color picker" : {
       "localizations" : {
         "ja" : {
@@ -1089,16 +1079,6 @@
     "EVA" : {
       "extractionState" : "manual",
       "shouldTranslate" : false
-    },
-    "Expanded" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "展開"
-          }
-        }
-      }
     },
     "Express" : {
       "extractionState" : "stale",

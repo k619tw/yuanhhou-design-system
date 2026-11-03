@@ -1,6 +1,6 @@
 # iOS (SwiftUI)
 
-How each Figma component is used in the iOS app (`ios/`). Values (sizes, colors, spacing) are the same as the web docs in [docs/components.md](components.md); only the API differs. Every pattern below is demonstrated in the app: **yuanhhou - DS** for the design-system versions and **iOS System** for the native controls they build on.
+How each Figma component is used in SwiftUI. Everything below comes from the Swift package `YuanhhouDSKit` (`ios/YuanhhouDSKit`): add it to the app and `import YuanhhouDSKit`. Values (sizes, colors, spacing) are the same as the web docs in [docs/components.md](components.md); only the API differs. Every pattern below is demonstrated in the app: **yuanhhou - DS** for the design-system versions and **iOS System** for the native controls they build on.
 
 ## Rule: native first (hard rule)
 Before building a control, use what SwiftUI and the HIG already provide, and style it with tokens (`.tint`, `DSColor`, `.ds(...)` fonts, a `ButtonStyle`, `ToggleStyle` or `DisclosureGroupStyle`). When Apple has an equivalent, there is no DS component on iOS: the native control is shown instead, in Figma as `<Component> (iOS)` (rows inside `List Section (iOS)`), in **iOS System** in the app, and in the table below. Build a custom view only when there is no native equivalent, and say why here. A custom control must keep VoiceOver, Dynamic Type, Voice Control and a 44 pt hit target.

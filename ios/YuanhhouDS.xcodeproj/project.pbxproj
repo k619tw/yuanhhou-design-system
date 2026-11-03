@@ -6,7 +6,12 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0000000000000000000000A1 /* YuanhhouDSKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0000000000000000000000A2 /* YuanhhouDSKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		0000000000000000000000A4 /* YuanhhouDSKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = YuanhhouDSKit; sourceTree = "<group>"; };
 		000000000000000000000120 /* YuanhhouDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuanhhouDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -22,6 +27,7 @@
 		000000000000000130000000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				0000000000000000000000A1 /* YuanhhouDSKit in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -30,6 +36,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				0000000000000000000000A4 /* YuanhhouDSKit */,
 				000000000000000000000010 /* YuanhhouDS */,
 				000000000000000000000020 /* Products */,
 			);
@@ -60,6 +67,9 @@
 				000000000000000000000010 /* YuanhhouDS */,
 			);
 			name = YuanhhouDS;
+			packageProductDependencies = (
+				0000000000000000000000A2 /* YuanhhouDSKit */,
+			);
 			productName = MyApp;
 			productReference = 000000000000000000000120 /* YuanhhouDS.app */;
 			productType = "com.apple.product-type.application";
@@ -89,6 +99,9 @@
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0000000000000000000000A3 /* XCLocalSwiftPackageReference "YuanhhouDSKit" */,
+			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
@@ -348,6 +361,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		0000000000000000000000A3 /* XCLocalSwiftPackageReference "YuanhhouDSKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = YuanhhouDSKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0000000000000000000000A2 /* YuanhhouDSKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YuanhhouDSKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 000000000000000000000000 /* Project object */;
 }

@@ -3,32 +3,32 @@ import SwiftUI
 /// Figma `Badge`: a small, non-interactive status label.
 ///
 ///     DSBadge("Paid", type: .success, style: .subtle, icon: .check)
-struct DSBadge: View {
-    enum BadgeType: String, CaseIterable, Identifiable {
+public struct DSBadge: View {
+    public enum BadgeType: String, CaseIterable, Identifiable {
         case brand, info, success, warning, error, promote
-        var id: String { rawValue }
-        var title: String { rawValue.capitalized }
+        public var id: String { rawValue }
+        public var title: String { rawValue.capitalized }
     }
 
-    enum Style: String, CaseIterable, Identifiable {
+    public enum Style: String, CaseIterable, Identifiable {
         case solid, subtle
-        var id: String { rawValue }
-        var title: String { rawValue.capitalized }
+        public var id: String { rawValue }
+        public var title: String { rawValue.capitalized }
     }
 
-    enum Size: String, CaseIterable, Identifiable {
+    public enum Size: String, CaseIterable, Identifiable {
         case medium, small
-        var id: String { rawValue }
-        var title: String { rawValue.capitalized }
+        public var id: String { rawValue }
+        public var title: String { rawValue.capitalized }
     }
 
-    let text: LocalizedStringKey
-    var type: BadgeType = .brand
-    var style: Style = .subtle
-    var size: Size = .medium
-    var icon: DSIcon?
+    public let text: LocalizedStringKey
+    public var type: BadgeType = .brand
+    public var style: Style = .subtle
+    public var size: Size = .medium
+    public var icon: DSIcon?
 
-    init(_ text: LocalizedStringKey, type: BadgeType = .brand, style: Style = .subtle, size: Size = .medium, icon: DSIcon? = nil) {
+    public init(_ text: LocalizedStringKey, type: BadgeType = .brand, style: Style = .subtle, size: Size = .medium, icon: DSIcon? = nil) {
         self.text = text
         self.type = type
         self.style = style
@@ -36,7 +36,7 @@ struct DSBadge: View {
         self.icon = icon
     }
 
-    var body: some View {
+    public var body: some View {
         HStack(spacing: DSSpacing.xs) {
             if let icon { icon.image.accessibilityHidden(true) }
             Text(text)

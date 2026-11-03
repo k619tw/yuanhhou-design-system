@@ -1,4 +1,4 @@
-import { Icon } from '@/components'
+import { Icon } from '@yuanhhou/ds'
 import { useI18n } from '@/i18n/i18n'
 import type { MessageKey } from '@/i18n/messages'
 import { cssVar, useDocumentMode } from './documentMode'

@@ -11,7 +11,7 @@ import {
   Radio,
   RadioGroup,
   Toggle,
-} from '@/components'
+} from '@yuanhhou/ds'
 import { useI18n } from '@/i18n/i18n'
 import { ShowcasePage, ShowcaseSection } from './Showcase'
 

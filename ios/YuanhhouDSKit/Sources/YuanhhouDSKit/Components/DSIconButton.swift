@@ -4,23 +4,23 @@ import SwiftUI
 /// For a decorative icon use ``DSUtilityIcon``.
 ///
 ///     DSIconButton(.close, label: "Close", kind: .tertiary, size: .small) { dismiss() }
-struct DSIconButton: View {
-    enum Size: String, CaseIterable, Identifiable {
+public struct DSIconButton: View {
+    public enum Size: String, CaseIterable, Identifiable {
         case large, small
-        var id: String { rawValue }
-        var title: String { rawValue.capitalized }
+        public var id: String { rawValue }
+        public var title: String { rawValue.capitalized }
     }
 
-    let icon: DSIcon
+    public let icon: DSIcon
     /// Accessibility label, localized from the String Catalog.
-    let label: LocalizedStringKey
-    var kind: DSButtonStyle.Kind = .primary
-    var size: Size = .large
+    public let label: LocalizedStringKey
+    public var kind: DSButtonStyle.Kind = .primary
+    public var size: Size = .large
     /// Pads Small (32) out to the 44pt HIG hit target. Turn off only when the parent is already 44pt tall.
-    var expandsHitArea = true
-    let action: () -> Void
+    public var expandsHitArea = true
+    public let action: () -> Void
 
-    init(
+    public init(
         _ icon: DSIcon,
         label: LocalizedStringKey,
         kind: DSButtonStyle.Kind = .primary,
@@ -36,7 +36,7 @@ struct DSIconButton: View {
         self.action = action
     }
 
-    var body: some View {
+    public var body: some View {
         Button(action: action) {
             icon.image
         }
@@ -45,12 +45,12 @@ struct DSIconButton: View {
     }
 }
 
-struct DSIconButtonStyle: ButtonStyle {
-    var kind: DSButtonStyle.Kind
-    var size: DSIconButton.Size
-    var expandsHitArea: Bool
+public struct DSIconButtonStyle: ButtonStyle {
+    public var kind: DSButtonStyle.Kind
+    public var size: DSIconButton.Size
+    public var expandsHitArea: Bool
 
-    func makeBody(configuration: Configuration) -> some View {
+    public func makeBody(configuration: Configuration) -> some View {
         DSIconButtonBody(configuration: configuration, kind: kind, size: size, expandsHitArea: expandsHitArea)
     }
 }

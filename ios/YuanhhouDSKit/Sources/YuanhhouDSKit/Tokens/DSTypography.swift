@@ -5,13 +5,13 @@ import SwiftUI
 /// Each style maps to an Apple text style, so it uses SF Pro and scales with Dynamic Type.
 /// At the default Dynamic Type size (Large) the values match the Figma `iOS` / `Default` mode;
 /// the Figma `Compact` and `Loose` densities are Apple's Medium and xLarge sizes (see ``DSDensity``).
-nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
+public nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
     case largeTitle, title1, title2, title3, headline, body1, body2, button1, button2, caption1, caption2
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
     /// Figma style name.
-    var figmaName: String {
+    public var figmaName: String {
         switch self {
         case .largeTitle: "Large Title"
         case .title1: "Title 1"
@@ -29,7 +29,7 @@ nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
 
     /// The Apple text style this maps to. Body 2 and the button styles share Apple styles,
     /// because the Figma set is not 1:1 with iOS.
-    var appleTextStyle: Font.TextStyle {
+    public var appleTextStyle: Font.TextStyle {
         switch self {
         case .largeTitle: .largeTitle
         case .title1: .title
@@ -44,7 +44,7 @@ nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
     }
 
     /// Size and leading at Dynamic Type Large (Figma `iOS` / `Default`), for documentation.
-    var defaultMetrics: (size: Int, lineHeight: Int) {
+    public var defaultMetrics: (size: Int, lineHeight: Int) {
         switch self {
         case .largeTitle: (34, 41)
         case .title1: (28, 34)
@@ -60,7 +60,7 @@ nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
     /// Apple's Dynamic Type weights (HIG typography tables): Headline is Semibold by default, and the
     /// emphasized weight is Bold for Large Title, Title 1 and Title 2, Semibold for the rest.
     /// Mirrors the Figma variables `typography/<style>/weight/regular|emphasized` in the iOS mode.
-    func weight(_ variant: DSFontWeight) -> Font.Weight {
+    public func weight(_ variant: DSFontWeight) -> Font.Weight {
         switch variant {
         case .regular:
             switch self {
@@ -76,7 +76,7 @@ nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
     }
 
     /// Accessibility heading role, mirroring the web HTML tags (h1, h2, h3).
-    var isHeading: Bool {
+    public var isHeading: Bool {
         switch self {
         case .largeTitle, .title1, .title2, .title3: true
         default: false
@@ -86,18 +86,18 @@ nonisolated enum DSTextStyle: String, CaseIterable, Identifiable, Sendable {
 
 /// `Regular` or `Emphasized` variant of a text style. The actual weight depends on the style:
 /// see ``DSTextStyle/weight(_:)``.
-nonisolated enum DSFontWeight: String, CaseIterable, Sendable {
+public nonisolated enum DSFontWeight: String, CaseIterable, Sendable {
     case regular, emphasized
 }
 
-extension Font {
+public extension Font {
     /// Design-system font: `.font(.ds(.body1, .emphasized))`.
     static func ds(_ style: DSTextStyle, _ weight: DSFontWeight = .regular) -> Font {
         .system(style.appleTextStyle, weight: style.weight(weight))
     }
 }
 
-extension View {
+public extension View {
     /// Applies a design-system text style and, for titles, the header accessibility trait.
     func dsTextStyle(_ style: DSTextStyle, _ weight: DSFontWeight = .regular) -> some View {
         font(.ds(style, weight))

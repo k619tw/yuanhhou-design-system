@@ -1,6 +1,7 @@
 // xcode: set sdk=iOS
 
 import SwiftUI
+import YuanhhouDSKit
 
 struct AlertDemo: View {
     @State private var showsAlert = false

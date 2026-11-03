@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
-import { Icon } from '@/components'
+import { Icon } from '@yuanhhou/ds'
 import { useI18n } from '@/i18n/i18n'
 import { catalogHref } from './router'
 import './Showcase.css'

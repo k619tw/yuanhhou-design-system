@@ -12,12 +12,12 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 
 ## 1. Read Figma (the source of truth)
 - Load the `figma-use` skill, call `create_session` for the file, then read with `use_figma` (read-only). Never run two `use_figma` calls at once.
-- Component set node ids are in `docs/components.md`. Read variants, properties, bound variables, text styles, sizes. For `tokens`, read the `02 Semantics` collection (6 modes: each brand in Light and Dark) and the `Dimension` collection.
+- Component set node ids are in `docs/components.md`. Read variants, properties, bound variables, text styles, sizes. For `tokens`, run `tokens/export-figma.js` on the Tokens file and save the result as `tokens/colors.json`, then run `node tokens/generate.mjs` (never edit the generated color files); read the `Dimension` collection for spacing, radius and sizes.
 - Do not trust the markdown over Figma. If a screenshot call drops the connection, rely on the structural read instead.
 
 ## 2. Diff against code
-- Web: `web/src/components/<Name>/` (`.tsx`, `.css`), `web/src/styles/tokens.css`, `web/src/styles/primitives.css`, the demo page in `web/src/showcase/` (listed in `pages.ts`).
-- iOS: `ios/YuanhhouDS/DesignSystem/Tokens/*` and `ios/YuanhhouDS/DesignSystem/Components/*`, plus the demo pages in `ios/YuanhhouDS/Showcase/`. Both catalogs list components in alphabetical order; a new component gets a page in each, in that order.
+- Web: `web/src/components/<Name>/` (`.tsx`, `.css`), exported from `web/src/components/index.ts` (the `@yuanhhou/ds` package), `web/src/styles/tokens.css`, `web/src/styles/primitives.css`, the generated `web/src/styles/colors.css`, the demo page in `web/src/showcase/` (listed in `pages.ts`).
+- iOS: the `YuanhhouDSKit` package, `ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Tokens/*` and `.../Components/*` (anything the app uses must be `public`; the package's own strings go in its `Resources/Localizable.xcstrings`), plus the demo pages in `ios/YuanhhouDS/Showcase/`. Both catalogs list components in alphabetical order; a new component gets a page in each, in that order.
 - List every difference (values, variants, states, token names). If code changed instead (`code` direction), list what Figma lacks.
 
 ## 3. Apply to both platforms
@@ -34,9 +34,9 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 
 ## 5. Validate
 - Docs: repeat the sweep with the old wording and confirm nothing stale is left in the markdown files or any Figma doc frame.
-- Web: `npm run build` and `npm run lint` in `web/`; check the demo in the browser when the change is visual.
+- Web: `npm run build`, `npm run build:lib` and `npm run lint` in `web/`; check the demo in the browser when the change is visual.
 - iOS: in `ios/`, `xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' -derivedDataPath <temp dir> build`. Run in the simulator if the user wants to see it.
-- Colors changed: re-check contrast across all six modes (text 4.5:1, borders and control outlines 3:1) and compare Figma code syntax values with `tokens.css` and `DSColor+Tokens.swift`.
+- Colors changed: re-check contrast across all six modes (text 4.5:1, borders and control outlines 3:1) and run `node tokens/generate.mjs --check`, which fails if `colors.css` or `DSColor+Tokens.swift` no longer match `tokens/colors.json`.
 - Anything you could not check (no screenshot, no simulator run) goes in the report.
 
 ## 6. Report

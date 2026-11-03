@@ -10,8 +10,8 @@ import SwiftUI
 /// The content sits right under the label (no top padding, no separator above it), in Body 2 and `foreground/secondary`.
 /// Set `.environment(\.defaultMinListRowHeight, 0)` on the `Form` or `List`, or one-line content is padded to the
 /// 44 pt minimum row height and floats in extra space.
-struct DSAccordionStyle: DisclosureGroupStyle {
-    func makeBody(configuration: Configuration) -> some View {
+public struct DSAccordionStyle: DisclosureGroupStyle {
+    public func makeBody(configuration: Configuration) -> some View {
         DSAccordionHeader(configuration: configuration)
         if configuration.isExpanded {
             DSAccordionContent(content: configuration.content)
@@ -48,7 +48,7 @@ private struct DSAccordionHeader: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .accessibilityValue(configuration.isExpanded ? Text("Expanded") : Text("Collapsed"))
+        .accessibilityValue(configuration.isExpanded ? Text("Expanded", bundle: .module) : Text("Collapsed", bundle: .module))
     }
 }
 
@@ -63,6 +63,6 @@ private struct DSAccordionContent<Content: View>: View {
     }
 }
 
-extension DisclosureGroupStyle where Self == DSAccordionStyle {
+public extension DisclosureGroupStyle where Self == DSAccordionStyle {
     static var dsAccordion: DSAccordionStyle { DSAccordionStyle() }
 }
