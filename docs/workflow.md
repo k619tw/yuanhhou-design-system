@@ -72,6 +72,7 @@ flowchart TD
   OK -- no --> AP
   OK -- yes --> REP["6. Report<br/>what changed, what was not verified"]
   REP --> CP["Commit and push<br/>when you say so"]
+  CP --> REL["/release<br/>version · CHANGELOG.md · Figma Release Note<br/>tag vX.Y.Z · publish when asked"]
 ```
 
 ## Where each step's rules live
@@ -81,4 +82,5 @@ flowchart TD
 | Component specs | [components.md](components.md) |
 | SwiftUI usage | [ios.md](ios.md) |
 | Token export and generation | [tokens/README.md](../tokens/README.md) |
-| The skill itself | [.claude/skills/sync-component/SKILL.md](../.claude/skills/sync-component/SKILL.md) |
+| The sync skill | [.claude/skills/sync-component/SKILL.md](../.claude/skills/sync-component/SKILL.md) |
+| Releases and notes | [.claude/skills/release/SKILL.md](../.claude/skills/release/SKILL.md), [CHANGELOG.md](../CHANGELOG.md) |

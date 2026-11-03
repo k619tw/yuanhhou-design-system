@@ -13,6 +13,8 @@ One Figma design system, built for two platforms: **React** for web and **SwiftU
 | `docs/ios.md` | How each component is used in SwiftUI, and the native-first rule |
 | `design-system-rules.md` | Token layers, color pairing, contrast audit, platform rules |
 | `.claude/skills/sync-component/` | The one command that syncs Figma, React and SwiftUI |
+| `.claude/skills/release/` | `/release`: version, release notes (`CHANGELOG.md` and the Figma `Release Note` page) and tag |
+| `CHANGELOG.md` | Every release, newest first |
 
 ## Run it
 Web:

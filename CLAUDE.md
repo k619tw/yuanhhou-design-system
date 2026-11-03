@@ -29,6 +29,9 @@ The design system ships as two packages; the demo apps use them the same way any
 - **No hardcoded colors** on either platform. If a color is missing, add it to the Tokens file and publish the library. Then export the colors with `tokens/export-figma.js` into `tokens/colors.json` and run `node tokens/generate.mjs`, which writes `web/src/styles/colors.css` and `ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Tokens/DSColor+Tokens.swift`. Never edit those two files by hand.
 - **Every UI string in English and Japanese** (`web/src/i18n/messages.ts`, `ios/YuanhhouDS/Localizable.xcstrings`).
 
+## Releases
+`/release [major|minor|patch]` (`.claude/skills/release`) cuts a version: one number for `@yuanhhou/ds`, `YuanhhouDSKit` (`DSVersion.swift`) and the Figma libraries, notes in `CHANGELOG.md` and on the Figma `Release Note` page (DS - Components, page `158:362`), then a `vX.Y.Z` tag. It asks before committing, pushing or publishing.
+
 ## One command
 The workflows below are packaged as the skill `/sync-component <Component|tokens> [figma|code]` (`.claude/skills/sync-component`), which runs them for React and SwiftUI together. Start Claude in this folder so the skill is found. The flow is drawn in `docs/workflow.md` and in the Figma file `IJKMYKXRddNKjFwY9yWYAv` (Ai Design Systems Workflow, frame `4:2`); update both when the workflow changes.
 
