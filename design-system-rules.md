@@ -46,10 +46,12 @@ Other rules:
 
 ## Building in Figma
 
+- Component pages are in alphabetical order (`Accordion` … `Toggle`, including `List Section (iOS)`), then `Foundation` and `Typography`. Keep new component pages alphabetical.
 - Bind fills, strokes, padding, gap and radius to variables; only intentional fixed geometry is hard-coded.
 - Variable scopes set explicitly; primitives hidden.
 - Auto-layout everywhere; text via a component property, optional parts via boolean + slot.
-- Variant property names are Title Case (`Type`, `State`, `Size`, `Style`).
+- Variant property names are Title Case (`Type`, `State`, `Size`, `Style`, `Orientation`, `Checked`, `Expanded`).
+- Do not rename the `Component documentation` frames; they are found by name.
 - Slots: create them on each variant before combining into a set, so they merge into one property. Clear the slot's default white fill.
 
 ## Implementing in code

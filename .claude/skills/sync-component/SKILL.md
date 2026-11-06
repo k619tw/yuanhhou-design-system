@@ -25,7 +25,7 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 - **Native first (hard rule):** before creating a component on any platform, look for the OS-level control (SwiftUI and the HIG, Material 3, semantic HTML). If one exists, do not build a component for that platform: use the native control styled with tokens (`ButtonStyle`, `ToggleStyle`, `.tint`), and show it instead: a token-bound `<Component> (iOS)` in Figma copied from the Apple iOS kit (rows inside `List Section (iOS)`), a demo in the app's iOS System catalog, and a row in `docs/ios.md`. Build a custom view only when none exists, and say why in `docs/ios.md`. iOS has no checkbox or radio control: iOS always uses `Toggle`, `Picker` and checkmark rows.
 - **Platform suffix in Figma:** no suffix = shared; `(Web)` = web only; `(iOS)` = native iOS control with tokens. Keep the suffix when renaming or adding components, and use it to pick components when generating screens (iOS: no-suffix and `(iOS)`; web: no-suffix and `(Web)`).
 - Every UI string goes into both languages: `web/src/i18n/messages.ts` (`en` and `ja`) and `ios/YuanhhouDS/Localizable.xcstrings`.
-- Code direction: change the Figma component the same way (variants, bound variables), keeping Title Case property names and instance swap (not slots) for icons.
+- Code direction: change the Figma component the same way (variants, bound variables), keeping Title Case property names and instance swap (not slots) for icons. Library token changes need the user to publish the Tokens library and accept the update in DS - Components before they can be verified there.
 
 ## 4. Update docs and Figma frames
 - Update the component's section in `docs/components.md`, `design-system-rules.md` if a rule or token pairing changed, and the row in `docs/ios.md`.
@@ -35,7 +35,7 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 ## 5. Validate
 - Docs: repeat the sweep with the old wording and confirm nothing stale is left in the markdown files or any Figma doc frame.
 - Web: `npm run build`, `npm run build:lib` and `npm run lint` in `web/`; check the demo in the browser when the change is visual.
-- iOS: in `ios/`, `xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' -derivedDataPath <temp dir> build`. Run in the simulator if the user wants to see it.
+- iOS: in `ios/`, `xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' -derivedDataPath <temp dir> build`. Then `xcodebuild test -scheme YuanhhouDSKit -destination 'platform=iOS Simulator,name=iPhone 17'` in `ios/YuanhhouDSKit/` (token contrast, icons, strings). Run in the simulator if the user wants to see it.
 - Colors changed: re-check contrast across all six modes (text 4.5:1, borders and control outlines 3:1) and run `node tokens/generate.mjs --check`, which fails if `colors.css` or `DSColor+Tokens.swift` no longer match `tokens/colors.json`.
 - Anything you could not check (no screenshot, no simulator run) goes in the report.
 

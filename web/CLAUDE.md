@@ -1,6 +1,6 @@
 # web (React)
 
-React + TypeScript + Vite implementation of the design system. Shared rules, sources of truth and workflows are in `../CLAUDE.md`; component specs in `../docs/components.md`.
+React + TypeScript + Vite implementation of the design system. Shared rules, sources of truth and the steps for a change are in `../CLAUDE.md`; component specs in `../docs/components.md`.
 
 ## Code layout
 - `src/styles/primitives.css`: the 201 primitives from the Tokens file as CSS variables (`--yuanhhouColorBlue100`, `--yuanhhouSpacing150`, spacing on the 8pt rule: 100 = 8px). Components never use them directly; they use the semantic variables below. The iOS twin is `DSPrimitive.swift`.

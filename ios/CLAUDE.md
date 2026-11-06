@@ -1,6 +1,6 @@
 # ios (SwiftUI)
 
-SwiftUI showcase of Apple's system components and the design system. Open `YuanhhouDS.xcodeproj` (scheme `YuanhhouDS`). Shared rules, sources of truth and workflows are in `../CLAUDE.md`; component specs in `../docs/components.md`; how each component maps to SwiftUI in `../docs/ios.md`.
+SwiftUI showcase of Apple's system components and the design system. Open `YuanhhouDS.xcodeproj` (scheme `YuanhhouDS`). Shared rules, sources of truth and the steps for a change are in `../CLAUDE.md`; component specs in `../docs/components.md`; how each component maps to SwiftUI in `../docs/ios.md`.
 
 ## Rule: native pattern first
 Before building any control, check what SwiftUI and the HIG already provide. Use the native control and style it with design tokens (`.tint`, `DSColor`, `.ds(...)` fonts, a `ToggleStyle`/`ButtonStyle`/`DisclosureGroupStyle`). Build a custom control only when there is no native equivalent, and say why in `../docs/ios.md`.
