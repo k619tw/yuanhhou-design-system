@@ -14,7 +14,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: `Toggle (iOS)` or `Checkmark Row (iOS)` | Yes | `Checkbox` |
 | [Radio](#radio) | `Radio (Web)`, `Radio Group (Web)`: choose exactly one option. iOS: `Picker (iOS)` | Yes | `Radio` |
 | [Accordion](#accordion) | `Accordion (Web)`: expandable section. iOS: `Accordion (iOS)`, the native disclosure group with text | Yes | `Accordion` |
-| [List Section (iOS)](#list-section-ios) | iOS only: groups iOS rows (Input, Toggle, Checkmark Row, Picker) with a header and footer | Via its rows | `List Section (iOS)` |
+| [List Section (iOS)](#list-section-ios) | iOS only: groups iOS rows (Input, Toggle, Checkmark Row, Picker, Row) with a header and footer | Via its rows | `List Section (iOS)` |
 
 
 ## Conventions every component follows
@@ -29,7 +29,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
   |---|---|---|
   | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card |
   | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
-  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
+  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `Row (iOS)`, `List Section (iOS)` |
 
   An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
 
@@ -633,7 +633,7 @@ iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` insid
 | Property | Values | Notes |
 |---|---|---|
 | State | Default, Error | Error colors the footer `foreground/error`; also set the failing row to `State=Error` |
-| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)` and `Accordion (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
+| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `Row (iOS)` and `Accordion (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
 | Header / Show header | text, boolean (on) | |
 | Footer / Show footer | text, boolean (on) | Helper text, or the error message in Error |
 
@@ -644,6 +644,29 @@ iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` insid
 | Rows | `background/primary`, radius 24 (`radius/xl`; Apple's inset grouped corner is about 26), clips content |
 | Header | `Body 2/Regular`, `foreground/secondary`, inset 16 |
 | Footer | `Caption 1/Regular`, `foreground/secondary` (`foreground/error` in Error), inset 16 |
+
+### Row (iOS)
+The plain list row: a title with an optional subtitle, a detail value and a disclosure chevron, or an action row. Native first: SwiftUI's `LabeledContent` and `NavigationLink` in a `List` already draw it, so there is no DS row on iOS; Figma shows it with our tokens. Figma: component set `Row (iOS)` (node `198:311`) on the `List Section (iOS)` page, 2 variants, `Platform` mode iOS. It replaces the iOS System Components file's own `Row` and `Row - Button`.
+
+| Property | Values | Notes |
+|---|---|---|
+| Type | Default, Action | Action is a row that runs an action, its title in `action/primary` (no subtitle, detail or chevron) |
+| Title | text | |
+| Subtitle / Show subtitle | text, boolean (off) | Default only; makes the row two lines |
+| Detail / Show detail | text, boolean (on) | Default only; the value on the right |
+| Show chevron | boolean (on) | Default only; set it on a row that opens another screen |
+| Show separator | boolean (on) | Turn off on the last row of a section |
+
+| Part | Value / token |
+|---|---|
+| Row | width 402, 52 high with the separator (grows with a subtitle), padding 16 horizontal (`spacing/200`), vertical padding 8 (`spacing/100`) |
+| Title | `Body 1/Regular`, `foreground/primary` |
+| Subtitle | `Body 2/Regular`, `foreground/secondary` |
+| Detail | `Body 1/Regular`, `foreground/secondary` |
+| Chevron | SF Symbol `chevron.right`, `Body 2/Emphasized`, `foreground/secondary` |
+| Separator | `border/primary`, `border/width/thin` |
+
+SwiftUI: `NavigationLink { Detail() } label: { LabeledContent("Storage", value: "12 GB") }`, or `Button("Add account") { }` for an Action row.
 
 ### Code mapping
 ```swift
