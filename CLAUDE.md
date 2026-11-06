@@ -6,6 +6,7 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 | What | Where |
 |---|---|
 | Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components); node ids in `docs/components.md` |
+| Native iOS controls, brand applied | Figma file `Ow4FgnInMQhUgn0LEz4ugM` (iOS System Components) |
 | Colors | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), collection `02 Semantics`, exported to `tokens/colors.json`; primitives in `01 Primitives` |
 | Spacing, radius, size, border width | `Dimension` collection in DS - Components, plus semantic `radius/*` and `space/*` in the Tokens library |
 | Typography | Text styles `<Style>/Regular|Emphasized`; mode axes: collections `Platform` and `Typography` |
