@@ -57,7 +57,7 @@ Show the user the version, the notes and the files changed, then ask once: "Comm
 
 ## 8. Publish (only when the user asks)
 - Web: `web/package.json` is `private`, so npm will refuse. Publishing needs the user to choose a registry (npm or GitHub Packages) and remove `private`; never do that on your own. Then `npm publish` from `web/` after `npm run build:lib`.
-- iOS: apps that use the package by Git URL pick up the tag, once `Package.swift` sits at the root of a repository (SwiftPM cannot load a package from a subfolder). Local-package users get it on their next pull.
+- iOS: apps that use the package by Git URL pick up the tag through the root `Package.swift`. Local-package users get it on their next pull.
 - Figma: remind the user to publish the DS - Components and Tokens libraries if they changed, so the version in Figma matches.
 
 ## 9. Report
