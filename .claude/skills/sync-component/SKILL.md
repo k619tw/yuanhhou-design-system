@@ -40,4 +40,4 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 - Anything you could not check (no screenshot, no simulator run) goes in the report.
 
 ## 6. Report
-Summarize in a short list: what changed in Figma, React, SwiftUI and the docs; what matched, what drifted and was fixed; which Figma doc frames were checked and which were not; what was not verified. Do not commit or push unless the user asks; a change to both platforms is one commit.
+Summarize in a short list: what changed in Figma, React, SwiftUI and the docs; what matched, what drifted and was fixed; which Figma doc frames were checked and which were not; what was not verified. Commit and push to `main` once validation passes; publishing to npm and the Figma libraries stays with the user; a change to both platforms is one commit.

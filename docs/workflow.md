@@ -44,20 +44,21 @@ flowchart LR
   WC --> WL
   WR --> WL
   WL --> WD
-  WL --> X
+  WL -- "npm install @yuanhhou/ds" --> X
   IC --> ID
   IR --> ID
-  IC --> X
-  IR --> X
+  IC -- "Git URL" --> X
+  IR -- "Git URL" --> X
+  X -. "findings go through<br/>the same loop" .-> C
 ```
 
 ## Making a change
 
-The same steps whether the change starts in Figma or in code. `/sync-component <Component|tokens> [figma|code]` runs them for React and SwiftUI together.
+The same steps whether the change starts in Figma, in code or with feedback from an app. `/sync-component <Component|tokens> [figma|code]` runs them for React and SwiftUI together.
 
 ```mermaid
 flowchart TD
-  A["Change in Figma<br/>or in code"] --> B["/sync-component"]
+  A["Change in Figma or in code,<br/>or feedback from an app"] --> B["/sync-component"]
   B --> R["1. Read Figma<br/>use_figma, read-only"]
   R --> D["2. Diff against code<br/>web/ and ios/YuanhhouDSKit"]
   D --> K{"Colors changed?"}
@@ -67,12 +68,12 @@ flowchart TD
   AP --> DOC["4. Update docs<br/>components.md, ios.md, rules"]
   DOC --> FR["Update the Figma<br/>Component documentation frame"]
   FR --> SW["Sweep every .md and every<br/>page's doc frame for old wording"]
-  SW --> V["5. Validate<br/>generate.mjs --check · build · build:lib · lint<br/>xcodebuild · browser · simulator"]
+  SW --> V["5. Validate<br/>generate.mjs --check · build · build:lib · lint<br/>xcodebuild · xcodebuild test · browser · simulator"]
   V --> OK{"All clean?"}
   OK -- no --> AP
   OK -- yes --> REP["6. Report<br/>what changed, what was not verified"]
-  REP --> CP["Commit and push<br/>when you say so"]
-  CP --> REL["/release<br/>version · CHANGELOG.md · Figma Release Note<br/>tag vX.Y.Z · publish when asked"]
+  REP --> CP["Commit and push to main<br/>after validation passes"]
+  CP --> REL["/release<br/>version · CHANGELOG.md · Figma Release Note<br/>test in an outside app · tag vX.Y.Z<br/>publish to npm and Figma: you approve"]
 ```
 
 ## Where each step's rules live

@@ -14,7 +14,7 @@ Figma: DS - Components `GLymoPHNnAmM4irCifF2Ei`, page `Release Note` (`158:362`)
 - On `main`, working tree clean, up to date with `origin/main` (`git fetch`, `git status -sb`).
 - `node tokens/generate.mjs --check`.
 - Web, in `web/`: `npm run build`, `npm run build:lib`, `npm run lint`.
-- iOS: `xcodebuild` the app (it builds the package too), as in `ios/CLAUDE.md`.
+- iOS: `xcodebuild` the app (it builds the package too) and `xcodebuild test` the package, as in `ios/CLAUDE.md`.
 - If anything fails, report it and do not release.
 
 ## 2. Collect what changed
@@ -46,7 +46,7 @@ Same text in all places. Sections in this order, only those that apply: **Breaki
 5. If the workflow or packages changed, also update `docs/workflow.md` and the Figma workflow diagram (see `CLAUDE.md`).
 
 ## 6. Validate
-Rerun `npm run build:lib` and the iOS build (the version changed), and confirm `CHANGELOG.md`, `package.json`, `DSVersion.swift` and the Figma entry all show `X.Y.Z`.
+Rerun `npm run build:lib` and the iOS build (the version changed). Then test as an outside app: `npm pack`, install the file in a new test app outside this repo, and open a production build in the browser with Button, Input, Toggle, Checkbox, Radio and Accordion, checking for no console errors. Dev mode and the demo catalog do not catch install problems. Confirm `CHANGELOG.md`, `package.json`, `DSVersion.swift` and the Figma entry all show `X.Y.Z`.
 
 ## 7. Commit, tag, push (ask first)
 Show the user the version, the notes and the files changed, then ask once: "Commit, tag vX.Y.Z and push?" On yes:
