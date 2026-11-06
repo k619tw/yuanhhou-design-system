@@ -32,10 +32,11 @@ applyTheme() // once when the app starts; or applyTheme('eva'), applyTheme('heri
 
 React 19 is a peer dependency. `style.css` loads Figtree and Material Symbols Rounded from Google Fonts, so there is nothing to add to the page. `package.json` is `private` so it cannot be published by accident; remove that when you choose a registry (npm or GitHub Packages).
 
-**Installing from the folder instead** (`npm install ../path/to/web`) links to `web/`, which has its own copy of React. A production build then holds two Reacts, and every component that uses hooks (Input, Toggle, Accordion, Checkbox, Radio and the groups) crashes to a blank page, although `npm run dev` looks fine. If you link it, run `npm run build:lib` first and add this to the app's `vite.config.ts`:
-```ts
-resolve: { dedupe: ['react', 'react-dom'] },
+**Do not install the folder with a plain `npm install ../path/to/web`.** That links to `web/`, which has its own copy of React. A production build then holds two Reacts, and every component that uses hooks (Input, Toggle, Accordion, Checkbox, Radio and the groups) crashes to a blank page, although `npm run dev` looks fine. To install from the folder, run `npm run build:lib` first, then:
+```bash
+npm install --install-links ../path/to/web
 ```
+`--install-links` copies the package instead of linking it, so it needs running again after kit changes. If a linked folder is unavoidable, add `resolve: { dedupe: ['react', 'react-dom'] }` to the app's `vite.config.ts`.
 
 ### Tokens in your own CSS
 Use the same variables as the components. Never hardcode a color, and follow the pairing table in [design-system-rules.md](../design-system-rules.md).

@@ -282,7 +282,7 @@ A small, non-interactive status label. Figma: page `Badge`, component set `Badge
 | Property | Values | Notes |
 |---|---|---|
 | Type | Brand, Info, Success, Warning, Error, Promote | Meaning |
-| Style | Solid, Subtle | Solid = high emphasis, Subtle = low emphasis |
+| Style | Solid, Subtle | Solid = high emphasis, Subtle = low emphasis. Default: Subtle |
 | Size | Medium, Small | |
 | Label | text | |
 | Show icon | boolean, default off | |
@@ -343,7 +343,7 @@ import { Badge } from '../components'
 
 <Badge type="success" badgeStyle="subtle" size="medium" icon="check">Paid</Badge>
 ```
-`type`: `brand` `info` `success` `warning` `error` `promote`; `badgeStyle`: `solid` `subtle`; `size`: `medium` `small`; `icon` is an optional Material Symbols name (display only, 16px). It renders a plain `<span>`.
+`type`: `brand` `info` `success` `warning` `error` `promote`; `badgeStyle`: `solid` `subtle` (default `subtle`); `size`: `medium` `small`; `icon` is an optional Material Symbols name (display only, 16px). It renders a plain `<span>`.
 
 ### Related
 [Image Card](#image-card) · [Utility Icon](#utility-icon)

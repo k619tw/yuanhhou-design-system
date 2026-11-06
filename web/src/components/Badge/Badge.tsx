@@ -6,7 +6,7 @@ export type BadgeType = 'brand' | 'info' | 'success' | 'warning' | 'error' | 'pr
 
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   type?: BadgeType
-  /** Solid = high emphasis, Subtle = low emphasis. */
+  /** Solid = high emphasis, Subtle = low emphasis (the default). */
   badgeStyle?: 'solid' | 'subtle'
   size?: 'medium' | 'small'
   /** Material Symbols name for the optional display-only icon. */
@@ -16,7 +16,7 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 /** Non-interactive status label. Use Button or a chip if it must be clickable. */
 export function Badge({
   type = 'brand',
-  badgeStyle = 'solid',
+  badgeStyle = 'subtle',
   size = 'medium',
   icon,
   className,
