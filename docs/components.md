@@ -600,7 +600,7 @@ import { Toggle } from '../components'
 Built on a native checkbox with `role="switch"`, so Off/On is `:checked` and Default/Disabled is `:disabled`; it works in forms and with `onChange`. The label is part of the click target.
 
 ### iOS: Toggle (iOS)
-Apple has a native switch, so there is no DS toggle on iOS (hard rule: native first); Figma shows the system switch, copied from Apple's iOS kit. Apple's green On track is replaced by `action/primary`, the brand control tint, so it follows the theme (brand blue in Light, purple in EVA Light, lime in EVA Dark). Figma: page `Toggle`, component set `Toggle (iOS)` (node `117:22`), 4 variants, `Platform` mode iOS.
+Apple has a native switch, so there is no DS toggle on iOS (hard rule: native first); Figma shows the system switch, copied from Apple's iOS kit. Apple's green On track is replaced by `action/primary`, the brand control tint, so it follows the theme (brand blue in Light, purple in EVA Light, lime in EVA Dark). The Off track and the knob are what iOS draws and an app cannot recolor, so they are not DS tokens: `Labels/Tertiary` at 30% and `Grays/White`, both from the iOS System Components file. Figma: page `Toggle`, component set `Toggle (iOS)` (node `117:22`), 4 variants, `Platform` mode iOS.
 
 | Property | Values | Notes |
 |---|---|---|
@@ -613,8 +613,8 @@ Apple has a native switch, so there is no DS toggle on iOS (hard rule: native fi
 |---|---|
 | Row | width 402, height 52 with the separator, padding 16 horizontal (`spacing/200`), no fill (the section draws it), separator `border/primary` |
 | Label | `Body 1/Regular`, `foreground/primary`; `foreground/disabled` when Disabled |
-| Switch | 64 × 28, radius full; On `action/primary`, Off `border/tertiary` (passes 3:1) |
-| Knob | 38 × 24, radius full, `background/primary`, small shadow |
+| Switch | 64 × 28, radius full; On `action/primary`, Off `Labels/Tertiary` at 30% (iOS System Components file, the system grey) |
+| Knob | 38 × 24, radius full, `Grays/White` (iOS System Components file), small shadow |
 
 It is a bare row: place it in [List Section (iOS)](#list-section-ios). The switch and knob sizes are Apple geometry, not tokens. SwiftUI: `Toggle("Auto-renew", isOn: $on)` with `.dsTheme(_:)` set once on the app. Do not redraw it.
 

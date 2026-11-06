@@ -12,7 +12,8 @@ What the design system does not do yet, or does differently on purpose.
 - SwiftUI's `.glassProminent` and `.borderedProminent` fill with `.tint` (`action/primary`) and draw a white label, which is 1.25:1 in EVA Dark and 1.78:1 in Heritage Luxury Dark. Figma's iOS System Components file already uses the `background/brand/primary` and `foreground/brand/on/primary` pair for these; the code does not yet.
 - `.tint` also overrides `role: .destructive` on a `.bordered` button, so Delete draws in the brand color rather than red in **iOS System > Buttons**.
 - A `.sheet` toolbar's `.confirmationAction` draws tinted text on glass in SwiftUI, while the Figma sheet shows a filled button. Add `.buttonStyle(.glassProminent)` to get the fill.
-- The Toggle knob stays white in the iOS System Components file, as the system draws it; `Toggle (iOS)` in DS - Components uses `background/primary`.
+- The iOS Toggle knob is white and the Off track is the system grey, as iOS draws them, in both `Toggle (iOS)` and the iOS System Components file. A white knob on the On track is 1.25:1 in EVA Dark and 1.78:1 in Heritage Luxury Dark; the knob position still shows On or Off. Not reviewed with an accessibility specialist yet.
+- `Toggle (iOS)` in DS - Components binds its knob and Off track to variables of the iOS System Components file, while that file imports `Input (iOS)` from DS - Components, so the two libraries depend on each other.
 - iOS does not respond to Increase Contrast: the Tokens library has no high-contrast values.
 - `DSColor` and `DSTheme` have a fixed set of brands, so adding one changes the public API. Apps cannot bring their own.
 - Below iOS 26 the accordion content uses fixed side insets (20 and 16) instead of the system value.
