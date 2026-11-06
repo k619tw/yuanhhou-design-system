@@ -1,4 +1,6 @@
 // DS components, built from the Figma file `DS - Components`.
+export { applyTheme } from './theme'
+export type { ThemeBrand } from './theme'
 export { Icon } from './Icon/Icon'
 export type { IconProps, IconSize } from './Icon/Icon'
 export { Button } from './Button/Button'

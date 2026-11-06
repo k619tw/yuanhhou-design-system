@@ -26,8 +26,8 @@ npm run dev
 iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on a simulator.
 
 ## Use it in an app
-- **Web:** install the `web/` package (`@yuanhhou/ds`), then `import { Button } from '@yuanhhou/ds'` and `import '@yuanhhou/ds/style.css'`, and set `data-theme` on `<html>`. Details in [web/README.md](web/README.md).
-- **iOS** (iOS 17 or later): in Xcode, File > Add Package Dependencies, enter `https://github.com/k619tw/yuanhhou-design-system`, then `import YuanhhouDSKit`. At the root of the app use `.dsTheme(.eva)`, which sets the palette and tints native controls, then `.buttonStyle(.ds(.primary))`, `DSColor` and `.font(.ds(.body1))` in views. See `ios/YuanhhouDSKit/README.md`.
+- **Web:** install a packed tarball of the `web/` package (`@yuanhhou/ds`), then `import { applyTheme, Button } from '@yuanhhou/ds'` and `import '@yuanhhou/ds/style.css'`, and call `applyTheme()` once. Details in [web/README.md](web/README.md).
+- **iOS** (iOS 17 or later, built with Xcode 26 or later): the repository is private, so your GitHub account needs access. In Xcode, File > Add Package Dependencies, enter `https://github.com/k619tw/yuanhhou-design-system`, then `import YuanhhouDSKit`. At the root of the app use `.dsTheme(.default)` (or `.eva`, `.heritageLuxury`), which sets the palette and tints native controls, then `.buttonStyle(.ds(.primary))`, `DSColor` and `.dsTextStyle(.body1)` in views. See `ios/YuanhhouDSKit/README.md`.
 - **Colors:** change them in Figma, export with `tokens/export-figma.js` into `tokens/colors.json`, and run `node tokens/generate.mjs`. See [tokens/README.md](tokens/README.md).
 
 ## What is in it

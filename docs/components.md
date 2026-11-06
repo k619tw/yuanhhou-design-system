@@ -271,7 +271,7 @@ Figma shows the Material glyph because Utility Icon is shared. On iOS the same i
 
 ## Badge
 
-A small, non-interactive status label. Figma: page `Badge`, component set `Badge` (node `16:148`), 24 variants.
+A small, non-interactive status label. Figma: page `Badge`, component set `Badge` (node `75:191`), 24 variants.
 
 ### When to use
 - To show status or category: "New", "Paid", "Overdue", "Beta".

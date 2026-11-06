@@ -100,3 +100,9 @@ private var repoRoot: URL {
         #expect(try platforms("Package.swift") == platforms("ios/YuanhhouDSKit/Package.swift"))
     }
 }
+
+@Test func defaultBrandKeepsItsSavedValue() {
+    // Settings saved when the case was named `.system` must still load.
+    #expect(DSTheme(rawValue: "system") == .default)
+    #expect(DSTheme.default.title == "Default")
+}

@@ -20,7 +20,7 @@ private enum HomeRoute: String, Hashable {
 /// them, and the app-wide settings (language, theme, density).
 struct RootView: View {
     @AppStorage("app.language") private var language: AppLanguage = .system
-    @AppStorage("ds.theme") private var theme: DSTheme = .system
+    @AppStorage("ds.theme") private var theme: DSTheme = .default
     @AppStorage("ds.appearance") private var appearance: DSAppearance = .system
     @AppStorage("ds.density") private var density: DSDensity = .system
     @State private var path: [HomeRoute] = []

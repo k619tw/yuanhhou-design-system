@@ -13,15 +13,39 @@ npm run lint       # oxlint
 Components are in `src/components/`, tokens in `src/styles/` (`primitives.css`, `tokens.css`, and `colors.css`, which is generated from `../tokens/colors.json`), English and Japanese strings for the demo in `src/i18n/`.
 
 ## Using the package in an app
+The package is not on a registry yet. Until it is, install a packed file:
 ```bash
-npm install ../path/to/web          # or a packed tarball: npm pack, then npm install yuanhhou-ds-0.1.0.tgz
+cd path/to/web && npm pack                                 # builds lib/ and writes yuanhhou-ds-<version>.tgz
+cd path/to/your-app && npm install path/to/yuanhhou-ds-<version>.tgz
 ```
+`lib/` is not in Git, so a fresh clone has nothing to install until `npm pack` builds it. Pack and install again to pick up kit changes. Commit the `.tgz` in the app if a hosting service has to build it.
+
 ```tsx
-import { Button } from '@yuanhhou/ds'
+import { applyTheme, Button } from '@yuanhhou/ds'
 import '@yuanhhou/ds/style.css'
 
-document.documentElement.dataset.theme = 'light' // dark, eva-light, eva-dark, heritage-luxury-light, heritage-luxury-dark
+applyTheme() // once when the app starts; or applyTheme('eva'), applyTheme('heritage-luxury')
 
 <Button variant="primary">Save</Button>
 ```
-React 19 is a peer dependency. Load the fonts in the page, as `index.html` does: Figtree (400, 600) and Material Symbols Rounded from Google Fonts. `package.json` is `private` so it cannot be published by accident; remove that when you choose a registry (npm or GitHub Packages).
+`applyTheme` sets the brand and follows the device's Light or Dark setting, like `.dsTheme(_:)` on iOS. To force one mode, set `data-theme` on `<html>` instead: `light`, `dark`, `eva-light`, `eva-dark`, `heritage-luxury-light`, `heritage-luxury-dark`.
+
+React 19 is a peer dependency. `style.css` loads Figtree and Material Symbols Rounded from Google Fonts, so there is nothing to add to the page. `package.json` is `private` so it cannot be published by accident; remove that when you choose a registry (npm or GitHub Packages).
+
+**Installing from the folder instead** (`npm install ../path/to/web`) links to `web/`, which has its own copy of React. A production build then holds two Reacts, and every component that uses hooks (Input, Toggle, Accordion, Checkbox, Radio and the groups) crashes to a blank page, although `npm run dev` looks fine. If you link it, run `npm run build:lib` first and add this to the app's `vite.config.ts`:
+```ts
+resolve: { dedupe: ['react', 'react-dom'] },
+```
+
+### Tokens in your own CSS
+Use the same variables as the components. Never hardcode a color, and follow the pairing table in [design-system-rules.md](../design-system-rules.md).
+
+| What | Use |
+|---|---|
+| Color | `--color-<role>-<name>`, named like the Figma variable: `color/background/primary` is `--color-background-primary` |
+| Spacing | `--spacing-2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl` (2 to 48) |
+| Semantic space | `--space-inset-compact`, `default`, `comfortable`; `--space-gap-tight`, `inline`, `stack`, `section`; `--space-page-mobile`, `desktop` |
+| Radius, size, border | `--radius-*`, `--size-icon-*`, `--size-control-*`, `--border-width-*` in `src/styles/tokens.css` |
+| Text | `h1`, `h2`, `h3` and `p` are styled for you. Other elements take a class: `text-body-1`, `text-body-2`, `text-button-1`, `text-button-2`, `text-caption-1`, `text-caption-2`, `text-headline`, `text-large-title`, `text-title-1`, `text-title-2`, `text-title-3`, plus `text-emphasized` |
+
+English and Japanese are up to the app: the package has no text of its own to translate on web, and `src/i18n/` belongs to the demo.

@@ -8,8 +8,13 @@ public nonisolated enum DSThemeMode: String, CaseIterable, Sendable {
 /// Which brand palette a view tree uses. Every brand has a Light and a Dark mode and follows the
 /// color scheme (the device appearance, as the HIG asks, unless ``DSAppearance`` overrides it).
 public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
-    // `system` is the stored value of the standard palette, kept so saved settings still load.
-    case system, eva, heritageLuxury
+    // The raw value stays "system" so settings saved by earlier versions still load.
+    case `default` = "system"
+    case eva, heritageLuxury
+
+    /// The Default brand was named `.system`, which read like the device setting.
+    @available(*, deprecated, renamed: "default")
+    public static let system = DSTheme.default
 
     public var id: String { rawValue }
 
@@ -19,7 +24,7 @@ public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
     /// English name, stable across languages. Show ``label`` to people.
     public var title: String {
         switch self {
-        case .system: "Default"
+        case .default: "Default"
         case .eva: "EVA"
         case .heritageLuxury: "Heritage Luxury"
         }
@@ -28,7 +33,7 @@ public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
     public func mode(for colorScheme: ColorScheme) -> DSThemeMode {
         let dark = colorScheme == .dark
         switch self {
-        case .system: return dark ? .dark : .light
+        case .default: return dark ? .dark : .light
         case .eva: return dark ? .evaDark : .evaLight
         case .heritageLuxury: return dark ? .heritageLuxuryDark : .heritageLuxuryLight
         }
@@ -93,7 +98,7 @@ public nonisolated enum DSDensity: String, CaseIterable, Identifiable, Sendable 
 }
 
 public nonisolated extension EnvironmentValues {
-    @Entry var dsTheme: DSTheme = .system
+    @Entry var dsTheme: DSTheme = .default
 }
 
 public extension View {

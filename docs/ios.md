@@ -37,10 +37,21 @@ Tokens are Swift types named like the Figma variables; the iOS code syntax in Fi
 
 | Figma | Swift |
 |---|---|
-| `color/<role>/<name>` | `DSColor.<roleName>`, for example `DSColor.backgroundPrimary`, resolved for the current brand (`DSTheme`: Default, EVA, Heritage Luxury) in Light or Dark from the color scheme (the device, or `DSAppearance` in the showcase) |
+| `color/<role>/<name>` | `DSColor.<roleName>`, for example `DSColor.backgroundPrimary`, resolved for the current brand (`DSTheme`: `.default`, `.eva`, `.heritageLuxury`) in Light or Dark from the color scheme (the device, or `DSAppearance` in the showcase) |
 | `spacing/*`, `space/*` | `DSSpacing.*`, `DSSpace.*` |
 | `radius/*`, `size/*`, `border/width/*` | `DSRadius`, `DSSize`, `DSBorderWidth` |
-| text styles `Body 1/Regular` | `.font(.ds(.body1))`, `.ds(.body2, .emphasized)`; Platform `iOS` is SF Pro and matches Apple's Dynamic Type tables: size, leading and tracking come from the Apple text style, and the weight per style (Headline Semibold; Emphasized Bold for Large Title, Title 1, Title 2, Semibold otherwise) |
+| text styles `Body 1/Regular` | `.dsTextStyle(.body1)`, `.dsTextStyle(.body2, .emphasized)` on text, which also marks titles as headings for VoiceOver. Use `.font(.ds(.body1))` only for a font inside another style; Platform `iOS` is SF Pro and matches Apple's Dynamic Type tables: size, leading and tracking come from the Apple text style, and the weight per style (Headline Semibold; Emphasized Bold for Large Title, Title 1, Title 2, Semibold otherwise) |
 | primitives | `DSPrimitive` (components do not use them directly) |
+
+## Same component, different names
+React and SwiftUI each follow their platform's habits, so the code names are not all the Figma names. `type` means something else on an HTML button, so web Button uses `variant`.
+
+| Figma | Web | iOS |
+|---|---|---|
+| Button `Type` | `variant` | `.ds(.primary)` |
+| Icon Button `Type` | `variant` | `kind:` |
+| Badge `Type` | `type` | `kind:` |
+| Badge `Style` | `badgeStyle` | `style:` |
+| Brand and mode | `applyTheme('eva')`, `data-theme` | `.dsTheme(.eva)` |
 
 Theme, appearance (System, Light, Dark), density (Compact = Medium, Default = Large, Loose = xLarge Dynamic Type) and language (English, Japanese) are set on the Home screen. Strings are `LocalizedStringKey` with entries in `Localizable.xcstrings`.

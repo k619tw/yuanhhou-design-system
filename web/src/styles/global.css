@@ -1,3 +1,5 @@
+/* Figtree and Material Symbols Rounded, so apps get the fonts from style.css alone. */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,400,0..1,0&display=swap');
 @import './reset.css';
 @import './primitives.css';
 @import './tokens.css';
