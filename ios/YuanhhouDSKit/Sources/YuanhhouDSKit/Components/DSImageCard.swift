@@ -4,7 +4,10 @@ import SwiftUI
 public enum DSImageCardOrientation: String, CaseIterable, Identifiable {
     case vertical, horizontal
     public var id: String { rawValue }
+    /// English name, stable across languages. Show ``label`` to people.
     public var title: String { rawValue.capitalized }
+    /// Localized name from the package catalog.
+    public var label: Text { Text(LocalizedStringKey(title), bundle: .module) }
 }
 
 /// Figma `Image Card`: media, optional badge, title, description and optional actions.
@@ -55,7 +58,7 @@ public struct DSImageCard<Media: View, Actions: View>: View {
         .background(DSColor.backgroundPrimary)
         .clipShape(shape)
         .overlay(shape.strokeBorder(DSColor.borderPrimary, lineWidth: DSBorderWidth.thin))
-        .shadow(color: .black.opacity(0.08), radius: 2, y: 1)
+        .shadow(color: DSShadow.small.color, radius: DSShadow.small.radius, y: DSShadow.small.y)
     }
 
     private var mediaArea: some View {

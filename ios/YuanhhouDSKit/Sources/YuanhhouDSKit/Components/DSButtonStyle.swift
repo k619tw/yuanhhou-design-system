@@ -11,20 +11,37 @@ public struct DSButtonStyle: ButtonStyle {
     public enum Kind: String, CaseIterable, Identifiable {
         case primary, secondary, tertiary, alert
         public var id: String { rawValue }
+        /// English name, stable across languages. Show ``label`` to people.
         public var title: String { rawValue.capitalized }
+        /// Localized name from the package catalog.
+        public var label: Text { Text(LocalizedStringKey(title), bundle: .module) }
     }
 
     public enum Size: String, CaseIterable, Identifiable {
         case large, small
         public var id: String { rawValue }
+        /// English name, stable across languages. Show ``label`` to people.
         public var title: String { rawValue.capitalized }
+        /// Localized name from the package catalog.
+        public var label: Text { Text(LocalizedStringKey(title), bundle: .module) }
     }
 
     public var kind: Kind = .primary
     public var size: Size = .large
+    /// Stretches the button to the width its container offers.
+    public var fullWidth = false
+    /// Pads Small out to the 44 pt HIG hit target. Turn off only when the parent is already 44 pt tall.
+    public var expandsHitArea = true
+
+    public init(kind: Kind = .primary, size: Size = .large, fullWidth: Bool = false, expandsHitArea: Bool = true) {
+        self.kind = kind
+        self.size = size
+        self.fullWidth = fullWidth
+        self.expandsHitArea = expandsHitArea
+    }
 
     public func makeBody(configuration: Configuration) -> some View {
-        DSButtonBody(configuration: configuration, kind: kind, size: size)
+        DSButtonBody(configuration: configuration, kind: kind, size: size, fullWidth: fullWidth, expandsHitArea: expandsHitArea)
     }
 }
 
@@ -32,15 +49,21 @@ private struct DSButtonBody: View {
     let configuration: ButtonStyle.Configuration
     let kind: DSButtonStyle.Kind
     let size: DSButtonStyle.Size
+    let fullWidth: Bool
+    let expandsHitArea: Bool
 
     @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
         let pressed = configuration.isPressed && isEnabled
+        let iconGap = size == .large ? DSSpace.gapTight : DSSpacing.sm
         configuration.label
             .font(size == .large ? .ds(.button1, .emphasized) : .ds(.button2, .emphasized))
-            .labelStyle(DSButtonLabelStyle(spacing: size == .large ? DSSpace.gapTight : DSSpacing.sm))
-            .lineLimit(1)
+            .labelStyle(DSButtonLabelStyle(spacing: iconGap))
+            .environment(\.dsButtonIconGap, iconGap)
+            // No line limit: long labels and accessibility text sizes wrap instead of truncating.
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: fullWidth ? .infinity : nil)
             .foregroundStyle(foreground)
             // Height comes from padding, like Figma: Large 12 + line height + 12, Small 8 + line height + 8.
             // Both grow with Dynamic Type.
@@ -52,7 +75,12 @@ private struct DSButtonBody: View {
                     Capsule().strokeBorder(stroke(pressed: pressed), lineWidth: DSBorderWidth.regular)
                 }
             }
-            .contentShape(Capsule())
+            // Small draws about 36 pt; this pads its layout and tap area to 44 without changing what is drawn.
+            .frame(
+                minWidth: expandsHitArea ? DSSize.minimumHitTarget : nil,
+                minHeight: expandsHitArea ? DSSize.minimumHitTarget : nil
+            )
+            .contentShape(Rectangle())
     }
 
     private var foreground: AnyShapeStyle {
@@ -103,6 +131,8 @@ public struct DSButtonLabel: View {
     public var leading: DSIcon?
     public var trailing: DSIcon?
 
+    @Environment(\.dsButtonIconGap) private var iconGap
+
     public init(_ title: LocalizedStringKey, leading: DSIcon? = nil, trailing: DSIcon? = nil) {
         self.title = title
         self.leading = leading
@@ -110,7 +140,7 @@ public struct DSButtonLabel: View {
     }
 
     public var body: some View {
-        HStack(spacing: DSSpace.gapTight + 4) {
+        HStack(spacing: iconGap) {
             if let leading { leading.image.accessibilityHidden(true) }
             Text(title)
             if let trailing { trailing.image.accessibilityHidden(true) }
@@ -119,7 +149,28 @@ public struct DSButtonLabel: View {
 }
 
 public extension ButtonStyle where Self == DSButtonStyle {
-    static func ds(_ kind: DSButtonStyle.Kind = .primary, size: DSButtonStyle.Size = .large) -> DSButtonStyle {
-        DSButtonStyle(kind: kind, size: size)
+    static func ds(
+        _ kind: DSButtonStyle.Kind = .primary,
+        size: DSButtonStyle.Size = .large,
+        fullWidth: Bool = false,
+        expandsHitArea: Bool = true
+    ) -> DSButtonStyle {
+        DSButtonStyle(kind: kind, size: size, fullWidth: fullWidth, expandsHitArea: expandsHitArea)
     }
+}
+
+private extension EnvironmentValues {
+    /// Icon gap of the enclosing button: Large 4, Small 8, as in Figma.
+    @Entry var dsButtonIconGap: CGFloat = DSSpace.gapTight
+}
+
+#Preview("Button") {
+    VStack(spacing: DSSpacing.md) {
+        ForEach(DSButtonStyle.Kind.allCases) { kind in
+            Button { } label: { kind.label }.buttonStyle(.ds(kind))
+            Button { } label: { kind.label }.buttonStyle(.ds(kind, size: .small))
+        }
+        Button("Full width") { }.buttonStyle(.ds(fullWidth: true))
+    }
+    .padding()
 }

@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Primitive tokens from the Figma Tokens library, collection `01 Primitives`.
 /// Components use the semantic tokens (`DSColor`, `DSSpace`, `DSRadius`); primitives are for foundations and previews.
-/// Spacing follows the 8pt rule: `spacing100` = 8pt, `spacing150` = 12pt. Generated; do not edit values by hand.
+/// Spacing follows the 8pt rule: `spacing100` = 8pt, `spacing150` = 12pt. Copied from Figma by hand: `tokens/generate.mjs` does not write this file, so re-check it when primitives change.
 public enum DSPrimitive {
     public static let colorBlue100 = Color(dsHex: "F1F8FF")
     public static let colorBlue200 = Color(dsHex: "8FC7FF")

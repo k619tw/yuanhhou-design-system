@@ -7,7 +7,7 @@ import PackageDescription
 let package = Package(
     name: "YuanhhouDSKit",
     defaultLocalization: "en",
-    platforms: [.iOS("27.0")],
+    platforms: [.iOS(.v17)],
     products: [
         .library(name: "YuanhhouDSKit", targets: ["YuanhhouDSKit"]),
     ],
@@ -15,13 +15,13 @@ let package = Package(
         .target(
             name: "YuanhhouDSKit",
             resources: [.process("Resources")],
-            // Same concurrency settings as the app target (main actor by default, approachable concurrency).
+            // Swift 6 language mode; same isolation settings as the app target (main actor by default).
             swiftSettings: [
-                .swiftLanguageMode(.v5),
                 .defaultIsolation(MainActor.self),
                 .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
                 .enableUpcomingFeature("InferIsolatedConformances"),
             ]
         ),
+        .testTarget(name: "YuanhhouDSKitTests", dependencies: ["YuanhhouDSKit"]),
     ]
 )

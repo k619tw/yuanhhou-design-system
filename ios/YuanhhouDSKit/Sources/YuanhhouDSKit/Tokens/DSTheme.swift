@@ -13,6 +13,10 @@ public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
 
     public var id: String { rawValue }
 
+    /// Localized name from the package catalog.
+    public var label: Text { Text(LocalizedStringKey(title), bundle: .module) }
+
+    /// English name, stable across languages. Show ``label`` to people.
     public var title: String {
         switch self {
         case .system: "Default"
@@ -37,6 +41,10 @@ public nonisolated enum DSAppearance: String, CaseIterable, Identifiable, Sendab
 
     public var id: String { rawValue }
 
+    /// Localized name from the package catalog.
+    public var label: Text { Text(LocalizedStringKey(title), bundle: .module) }
+
+    /// English name, stable across languages. Show ``label`` to people.
     public var title: String {
         switch self {
         case .system: "System"
@@ -61,6 +69,10 @@ public nonisolated enum DSDensity: String, CaseIterable, Identifiable, Sendable 
 
     public var id: String { rawValue }
 
+    /// Localized name from the package catalog.
+    public var label: Text { Text(LocalizedStringKey(title), bundle: .module) }
+
+    /// English name, stable across languages. Show ``label`` to people.
     public var title: String {
         switch self {
         case .system: "System"
@@ -85,9 +97,10 @@ public nonisolated extension EnvironmentValues {
 }
 
 public extension View {
-    /// Applies a design-system brand palette to this view tree. Light or Dark comes from the color scheme.
+    /// Applies a design-system brand palette to this view tree and tints its native controls with
+    /// `action/primary`. Light or Dark comes from the color scheme. Call it once, at the root of the app.
     func dsTheme(_ theme: DSTheme) -> some View {
-        environment(\.dsTheme, theme)
+        dsControlTint().environment(\.dsTheme, theme)
     }
 
     /// Previews a typography density. Production screens should leave Dynamic Type to the user.

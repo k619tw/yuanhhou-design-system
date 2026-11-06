@@ -1,4 +1,4 @@
-import CoreGraphics
+import SwiftUI
 
 /// Spacing scale (Figma `Dimension` collection, `spacing/*`).
 public nonisolated enum DSSpacing {
@@ -58,6 +58,17 @@ public nonisolated enum DSBorderWidth {
     public static let thin: CGFloat = 1
     public static let regular: CGFloat = 1.5
     public static let focus: CGFloat = 2
+}
+
+/// Elevation (`shadow/*`), the same values as `--shadow-*` on web. iOS uses the color, radius and offset of the
+/// first layer only.
+public struct DSShadow: Sendable {
+    public let color: Color
+    public let radius: CGFloat
+    public let y: CGFloat
+
+    /// `shadow/sm`: 0 1 2 at `1A1A1A` 8%.
+    public nonisolated static let small = DSShadow(color: Color(dsHex: "1A1A1A14"), radius: 2, y: 1)
 }
 
 /// Opacity tokens (Tokens library, `opacity/*`).

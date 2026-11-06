@@ -70,17 +70,17 @@ struct RootView: View {
                         Label("Language", systemImage: "globe")
                     }
                     Picker(selection: $theme) {
-                        ForEach(DSTheme.allCases) { Text(LocalizedStringKey($0.title)).tag($0) }
+                        ForEach(DSTheme.allCases) { $0.label.tag($0) }
                     } label: {
                         Label("Theme", systemImage: "paintbrush")
                     }
                     Picker(selection: $appearance) {
-                        ForEach(DSAppearance.allCases) { Text(LocalizedStringKey($0.title)).tag($0) }
+                        ForEach(DSAppearance.allCases) { $0.label.tag($0) }
                     } label: {
                         Label("Appearance", systemImage: "circle.lefthalf.filled")
                     }
                     Picker(selection: $density) {
-                        ForEach(DSDensity.allCases) { Text($0 == .system ? systemDensityLabel : LocalizedStringKey($0.title)).tag($0) }
+                        ForEach(DSDensity.allCases) { ($0 == .system ? Text(systemDensityLabel) : $0.label).tag($0) }
                     } label: {
                         Label("Density", systemImage: "textformat.size")
                     }
@@ -106,8 +106,7 @@ struct RootView: View {
         .id("\(language.rawValue)-\(theme.rawValue)-\(appearance.rawValue)")
         .appLanguage(language)
         // Inside the theme environment, so the tint resolves for the chosen theme.
-        .dsControlTint()
-        .environment(\.dsTheme, theme)
+        .dsTheme(theme)
         // Setting the window's color scheme (not just the content's) keeps the navigation bar,
         // title and native controls in step with the theme.
         .preferredColorScheme(appearance.colorScheme)

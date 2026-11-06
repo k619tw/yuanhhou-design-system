@@ -34,7 +34,7 @@
 .accordion__chevron {
   display: inline-flex;
   flex: none;
-  color: var(--color-action-secondary);
+  color: var(--color-foreground-secondary);
 }
 
 .accordion__header:active:not(:disabled) {

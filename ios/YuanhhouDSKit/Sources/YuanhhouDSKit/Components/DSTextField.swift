@@ -10,7 +10,7 @@ public extension View {
     ///         Text("Enter an email like name@company.com").dsTextFieldFooter(isError: true)
     ///     }
     ///
-    /// The cursor uses the app tint (`action/primary`, set once with `.dsControlTint()`).
+    /// The cursor uses the app tint (`action/primary`, set once with `.dsTheme(_:)`).
     func dsTextField() -> some View {
         modifier(DSTextFieldRowStyle())
     }

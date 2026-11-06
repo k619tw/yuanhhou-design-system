@@ -52,7 +52,7 @@ export function Accordion({
       >
         <span className="accordion__title text-body-1">{title}</span>
         <span className="accordion__chevron">
-          <Icon name={expanded ? 'expand_more' : 'chevron_right'} size="md" />
+          <Icon name={expanded ? 'expand_more' : 'chevron_right'} size="lg" />
         </span>
       </button>
       <div

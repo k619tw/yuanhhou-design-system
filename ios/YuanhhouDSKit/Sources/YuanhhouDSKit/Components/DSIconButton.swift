@@ -8,7 +8,10 @@ public struct DSIconButton: View {
     public enum Size: String, CaseIterable, Identifiable {
         case large, small
         public var id: String { rawValue }
+        /// English name, stable across languages. Show ``label`` to people.
         public var title: String { rawValue.capitalized }
+        /// Localized name from the package catalog.
+        public var label: Text { Text(LocalizedStringKey(title), bundle: .module) }
     }
 
     public let icon: DSIcon
@@ -50,6 +53,12 @@ public struct DSIconButtonStyle: ButtonStyle {
     public var size: DSIconButton.Size
     public var expandsHitArea: Bool
 
+    public init(kind: DSButtonStyle.Kind = .primary, size: DSIconButton.Size = .large, expandsHitArea: Bool = true) {
+        self.kind = kind
+        self.size = size
+        self.expandsHitArea = expandsHitArea
+    }
+
     public func makeBody(configuration: Configuration) -> some View {
         DSIconButtonBody(configuration: configuration, kind: kind, size: size, expandsHitArea: expandsHitArea)
     }
@@ -62,13 +71,15 @@ private struct DSIconButtonBody: View {
     let expandsHitArea: Bool
 
     @Environment(\.isEnabled) private var isEnabled
+    /// Grows the box and glyph with Dynamic Type; 1 at the default size.
+    @ScaledMetric private var scale: CGFloat = 1
 
     var body: some View {
         let pressed = configuration.isPressed && isEnabled
-        let box = size == .large ? DSSize.controlLarge : DSSize.controlSmall
+        let box = (size == .large ? DSSize.controlLarge : DSSize.controlSmall) * scale
         let shape = RoundedRectangle(cornerRadius: DSRadius.md, style: .continuous)
         configuration.label
-            .font(.system(size: (size == .large ? DSSize.iconLarge : DSSize.iconMedium) * 0.85, weight: .medium))
+            .font(.system(size: (size == .large ? DSSize.iconLarge : DSSize.iconMedium) * 0.85 * scale, weight: .medium))
             .foregroundStyle(foreground)
             .frame(width: box, height: box)
             .background(shape.fill(fill(pressed: pressed)))
@@ -112,4 +123,14 @@ private struct DSIconButtonBody: View {
         if !isEnabled { return DSColor.foregroundDisabled }
         return pressed ? DSColor.borderBrandPressed : DSColor.borderBrand
     }
+}
+
+#Preview("Icon Button") {
+    HStack(spacing: DSSpacing.md) {
+        ForEach(DSButtonStyle.Kind.allCases) { kind in
+            DSIconButton(.close, label: "Close", kind: kind) { }
+            DSIconButton(.close, label: "Close", kind: kind, size: .small) { }
+        }
+    }
+    .padding()
 }

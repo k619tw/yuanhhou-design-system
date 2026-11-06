@@ -17,10 +17,12 @@ Before building any control, check what SwiftUI and the HIG already provide. Use
   - `Sources/YuanhhouDSKit/Components/`: DS controls and styles.
   - Everything an app uses must be `public`. The package's own strings (for example the accordion's Expanded and Collapsed) are in `Sources/YuanhhouDSKit/Resources/Localizable.xcstrings` and are read with `bundle: .module`; strings passed in by the app stay in the app's catalog.
   - `DSVersion.current` is the release number, set by `/release`.
-  - Concurrency settings match the app target (main actor by default, approachable concurrency).
+  - Swift 6 language mode, main actor by default like the app target. Public token types are `nonisolated`.
+  - `Tests/YuanhhouDSKitTests/`: token contrast against the pairing table, icon names, package strings, version and manifest checks.
+  - Display names: `.label` is a localized `Text` from the package catalog; `.title` is the English name.
 - `YuanhhouDS/Showcase/System/` (native catalog) and `Showcase/DesignSystem/` (DS catalog: Foundations, then Components in alphabetical order, the same structure as the web demo).
-- Control tint: `.dsControlTint()` is set once on the app, inside the `dsTheme` environment. It passes `action/primary` as a dynamic `UIColor` with both Light and Dark values, because UIKit-backed controls (a menu `Picker` in a list row) keep their first tint and only update on a device Light/Dark switch through a dynamic color. Tint native controls through it, not with `.tint(DSColor…)` directly.
+- Control tint: `.dsTheme(_:)` is called once on the app and also tints native controls. It passes `action/primary` as a dynamic `UIColor` with both Light and Dark values, because UIKit-backed controls (a menu `Picker` in a list row) keep their first tint and only update on a device Light/Dark switch through a dynamic color. Tint native controls through it, not with `.tint(DSColor…)` directly.
 - Colors are never hardcoded: use `DSColor` tokens. All user-facing text is a `LocalizedStringKey` with English and Japanese entries in `Localizable.xcstrings`.
 
 ## Build
-`xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' build` (builds the package too). The package alone: in `YuanhhouDSKit/`, `xcodebuild -scheme YuanhhouDSKit -destination 'generic/platform=iOS Simulator' build`.
+`xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' build` (builds the package too). The package alone: in `YuanhhouDSKit/`, `xcodebuild -scheme YuanhhouDSKit -destination 'generic/platform=iOS Simulator' build`. Tests: `xcodebuild test -scheme YuanhhouDSKit -destination 'platform=iOS Simulator,name=iPhone 17'`. `swift build` does not work: the package imports UIKit and is iOS only.

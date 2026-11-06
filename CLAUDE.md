@@ -16,7 +16,7 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 ## Packages
 The design system ships as two packages; the demo apps use them the same way any app would.
 - Web: `@yuanhhou/ds` from `web/` (`src/index.ts` is the entry; `npm run build:lib` writes `web/lib/`). Apps import components from `@yuanhhou/ds` and the stylesheet from `@yuanhhou/ds/style.css`.
-- iOS: the Swift package `ios/YuanhhouDSKit` (product `YuanhhouDSKit`). The app links it as a local package; apps add it and `import YuanhhouDSKit`.
+- iOS: the Swift package `YuanhhouDSKit`, iOS 17 or later. Other apps add this repository by Git URL through the root `Package.swift`; the demo app links `ios/YuanhhouDSKit` as a local package. Keep the two manifests in step (a package test checks the platform). Apps `import YuanhhouDSKit`.
 - Colors for both are generated from one file, `tokens/colors.json` (see `tokens/README.md`).
 
 ## Rules that must hold
@@ -40,7 +40,7 @@ The workflows below are packaged as the skill `/sync-component <Component|tokens
 2. Update the web component (CSS/TSX; `tokens.css` for dimensions and typography; colors through `tokens/`, see above) and the SwiftUI component or style in the `YuanhhouDSKit` package.
 3. Update the component's section in `docs/components.md`, `design-system-rules.md`, and `docs/ios.md` if the iOS usage changes.
 4. Update the `Component documentation` frame on that Figma page so it matches the markdown, then sweep every markdown file and every component page's frame for the old wording of what you changed (a rule or fact is usually repeated in several places). The change is not done until the sweep is clean.
-5. Validate: `node tokens/generate.mjs --check`; `npm run build`, `npm run build:lib` and `npm run lint` in `web/`; `xcodebuild` for `ios/`; check visual changes in the browser and the simulator.
+5. Validate: `node tokens/generate.mjs --check`; `npm run build`, `npm run build:lib` and `npm run lint` in `web/`; `xcodebuild` for `ios/`, and `xcodebuild test` in `ios/YuanhhouDSKit/` (token contrast, icons, strings); check visual changes in the browser and the simulator.
 
 ## Workflow: a change in code
 Apply the same edit to the Figma component (variants, properties, bound variables), then follow steps 3 to 5 above. Library token changes need the user to publish the Tokens library and accept the update in DS - Components before they can be verified there.
@@ -56,7 +56,11 @@ Apply the same edit to the Figma component (variants, properties, bound variable
 - Hover and Focus states are not drawn in Figma.
 - Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
 - Utility Icon is Material in Figma; iOS renders the mapped SF Symbol (`DSIcon`). Shared components (Button, Icon Button, Badge) therefore show a Material glyph in Figma that differs from what iOS draws.
-- Accordion (iOS) chevron is `action/secondary` in Figma: 1.78:1 against `background/primary` in Light (Dark 4.1, EVA Light 3.0, EVA Dark 13.0, Heritage Luxury Light 9.8, Heritage Luxury Dark 4.8), below the 3:1 used for UI icons. SwiftUI draws the chevron through the small `.dsAccordion` style because the system chevron cannot be recolored.
 - The segmented `Picker` exists in SwiftUI (iOS System > Selection) but has no Figma reference.
 - Figma `(iOS)` rows are 52 pt high (Apple kit geometry) and `List Section (iOS)` uses `radius/xl` (24; Apple's inset grouped corner is about 26); SwiftUI draws the real values.
+- Accordion (iOS) chevron is `action/secondary` in Figma: 1.78:1 against `background/primary` in Light (Dark 4.1, EVA Light 3.0, EVA Dark 13.0, Heritage Luxury Light 9.8, Heritage Luxury Dark 4.8), below the 3:1 used for UI icons; reviewed with an accessibility specialist and accepted. Accordion (Web) uses `foreground/secondary`. SwiftUI draws the chevron through the small `.dsAccordion` style because the system chevron cannot be recolored.
 - Not built: Select, Tabs, Modal.
+- iOS does not respond to Increase Contrast: the Tokens library has no high-contrast values.
+- `DSColor` and `DSTheme` have a fixed set of brands, so adding one changes the public API. Apps cannot bring their own.
+- Below iOS 26 the accordion content uses fixed side insets (20 and 16) instead of the system value.
+- `DSPrimitive.swift` and `DSDimension.swift` are kept by hand, not generated from Figma.

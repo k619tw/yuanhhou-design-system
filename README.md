@@ -27,7 +27,7 @@ iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on
 
 ## Use it in an app
 - **Web:** install the `web/` package (`@yuanhhou/ds`), then `import { Button } from '@yuanhhou/ds'` and `import '@yuanhhou/ds/style.css'`, and set `data-theme` on `<html>`. Details in [web/README.md](web/README.md).
-- **iOS:** in Xcode, File > Add Package Dependencies > Add Local, choose `ios/YuanhhouDSKit`, then `import YuanhhouDSKit`. At the root of the app use `.dsControlTint().environment(\.dsTheme, .eva)` (tint inside the theme), then `.buttonStyle(.ds(.primary))`, `DSColor` and `.font(.ds(.body1))` in views. To add it by repository URL instead, `Package.swift` has to move to the root of a repository: SwiftPM cannot load a package from a subfolder.
+- **iOS** (iOS 17 or later): in Xcode, File > Add Package Dependencies, enter `https://github.com/k619tw/yuanhhou-design-system`, then `import YuanhhouDSKit`. At the root of the app use `.dsTheme(.eva)`, which sets the palette and tints native controls, then `.buttonStyle(.ds(.primary))`, `DSColor` and `.font(.ds(.body1))` in views. See `ios/YuanhhouDSKit/README.md`.
 - **Colors:** change them in Figma, export with `tokens/export-figma.js` into `tokens/colors.json`, and run `node tokens/generate.mjs`. See [tokens/README.md](tokens/README.md).
 
 ## What is in it

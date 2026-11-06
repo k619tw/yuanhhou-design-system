@@ -8,7 +8,7 @@ import SwiftUI
 ///         .disclosureGroupStyle(.dsAccordion)
 ///
 /// The content sits right under the label (no top padding, no separator above it), in Body 2 and `foreground/secondary`.
-/// Set `.environment(\.defaultMinListRowHeight, 0)` on the `Form` or `List`, or one-line content is padded to the
+/// Add `.dsAccordionList()` to the `Form` or `List`, or one-line content is padded to the
 /// 44 pt minimum row height and floats in extra space.
 public struct DSAccordionStyle: DisclosureGroupStyle {
     public func makeBody(configuration: Configuration) -> some View {
@@ -17,8 +17,7 @@ public struct DSAccordionStyle: DisclosureGroupStyle {
             DSAccordionContent(content: configuration.content)
                 // Only the vertical insets change; the leading inset stays the system's, so the text lines up
                 // with the label on every device.
-                .listRowInsets(.top, 0)
-                .listRowInsets(.bottom, DSSpacing.md)
+                .dsAccordionContentInsets()
                 .listRowSeparator(.hidden, edges: .top)
         }
     }
@@ -40,7 +39,7 @@ private struct DSAccordionHeader: View {
                 // One glyph that turns 90 degrees. Swapping chevron.right for chevron.down changes the glyph's
                 // width and cross-fades, which jumps; rotating keeps the same shape and animates smoothly.
                 Image(systemName: "chevron.right")
-                    .font(.ds(.body1, .emphasized))
+                    .font(.ds(.body2, .emphasized))
                     .foregroundStyle(isEnabled ? DSColor.actionSecondary : DSColor.foregroundDisabled)
                     .rotationEffect(.degrees(configuration.isExpanded ? 90 : 0))
                     .accessibilityHidden(true)
@@ -63,6 +62,33 @@ private struct DSAccordionContent<Content: View>: View {
     }
 }
 
+private extension View {
+    @ViewBuilder
+    func dsAccordionContentInsets() -> some View {
+        if #available(iOS 26.0, *) {
+            listRowInsets(.top, 0).listRowInsets(.bottom, DSSpacing.md)
+        } else {
+            // Before iOS 26 all four insets must be set together; 16 and 20 are the system's list values.
+            listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: DSSpacing.md, trailing: 16))
+        }
+    }
+}
+
+public extension View {
+    /// Lets `.dsAccordion` content rows be as short as their text. Apply it to the `Form` or `List`.
+    func dsAccordionList() -> some View {
+        environment(\.defaultMinListRowHeight, 0)
+    }
+}
+
 public extension DisclosureGroupStyle where Self == DSAccordionStyle {
     static var dsAccordion: DSAccordionStyle { DSAccordionStyle() }
+}
+
+#Preview("Accordion") {
+    Form {
+        DisclosureGroup("Shipping and returns") { Text("Free returns within 30 days.") }
+            .disclosureGroupStyle(.dsAccordion)
+    }
+    .dsAccordionList()
 }

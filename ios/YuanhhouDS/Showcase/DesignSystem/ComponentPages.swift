@@ -58,11 +58,11 @@ struct BadgePage: View {
         DSShowcasePage(title: "Badge") {
             ForEach(DSBadge.Style.allCases) { style in
                 DSShowcaseSection(title: LocalizedStringKey(style.title)) {
-                    ForEach(DSBadge.BadgeType.allCases) { type in
+                    ForEach(DSBadge.Kind.allCases) { type in
                         HStack(spacing: DSSpacing.sm) {
-                            DSBadge(LocalizedStringKey(type.title), type: type, style: style, size: .medium)
-                            DSBadge(LocalizedStringKey(type.title), type: type, style: style, size: .small)
-                            DSBadge(LocalizedStringKey(type.title), type: type, style: style, size: .medium, icon: .star)
+                            DSBadge(LocalizedStringKey(type.title), kind: type, style: style, size: .medium)
+                            DSBadge(LocalizedStringKey(type.title), kind: type, style: style, size: .small)
+                            DSBadge(LocalizedStringKey(type.title), kind: type, style: style, size: .medium, icon: .star)
                         }
                     }
                 }
@@ -80,7 +80,7 @@ struct ImageCardPage: View {
                         orientation: orientation,
                         title: "Card title",
                         description: "Short supporting description that explains the card content in a line or two.",
-                        badge: DSBadge("New", type: .brand, style: .subtle, size: .small)
+                        badge: DSBadge("New", kind: .brand, style: .subtle, size: .small)
                     ) {
                         Image(systemName: "photo")
                             .font(.largeTitle)
@@ -189,7 +189,7 @@ struct AccordionPage: View {
             .dsListRowBackground()
         }
         // One-line content would otherwise be padded to the 44 pt minimum row height.
-        .environment(\.defaultMinListRowHeight, 0)
+        .dsAccordionList()
         .dsListBackground()
         .navigationTitle("Accordion")
         .navigationBarTitleDisplayMode(.inline)

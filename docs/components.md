@@ -78,7 +78,7 @@ Triggers an action or submits a form. Figma: page `Button`, component set `Butto
 | Text style | `Button 1/Emphasized` (16/24) | `Button 2/Emphasized` (14/20) |
 | Corner radius | pill (`radius/pill`) | pill |
 
-Width hugs the label. Both sizes get their height from padding plus the line height (Large 12 + 24 + 12 = 48, Small 8 + 20 + 8 = 36), so they follow the text style: Large is 46 under the iOS typography mode (Platform = iOS, Default density), Small stays 36. Full-width is a layout decision in code, not a variant.
+Width hugs the label. Both sizes get their height from padding plus the line height (Large 12 + 24 + 12 = 48, Small 8 + 20 + 8 = 36), so they follow the text style: Large is 46 under the iOS typography mode (Platform = iOS, Default density), Small stays 36. Full-width is a layout decision in code, not a variant (`fullWidth` in SwiftUI). Labels wrap rather than truncate. On iOS, Small keeps its drawn 36 pt height with a 44 pt hit area.
 
 ### Color tokens (Tokens library, `02 Semantics`)
 | Type / State | Fill | Outline | Label and icon |
@@ -616,7 +616,7 @@ Apple has a native switch, so there is no DS toggle on iOS (hard rule: native fi
 | Switch | 64 × 28, radius full; On `action/primary`, Off `border/tertiary` (passes 3:1) |
 | Knob | 38 × 24, radius full, `background/primary`, small shadow |
 
-It is a bare row: place it in [List Section (iOS)](#list-section-ios). The switch and knob sizes are Apple geometry, not tokens. SwiftUI: `Toggle("Auto-renew", isOn: $on)` with `.dsControlTint()` set once on the app. Do not redraw it.
+It is a bare row: place it in [List Section (iOS)](#list-section-ios). The switch and knob sizes are Apple geometry, not tokens. SwiftUI: `Toggle("Auto-renew", isOn: $on)` with `.dsTheme(_:)` set once on the app. Do not redraw it.
 
 ### Related
 [Input](#input) · [Accordion](#accordion)
@@ -907,7 +907,7 @@ An expandable section: a header that toggles a content region. It is text based,
 | Title | text | |
 | Content | slot | Any content |
 
-The chevron is a display-only [Utility Icon](design-system-rules.md#icons-and-the-display-only-vs-interactive-rule) (Material Symbols Rounded, Medium 20), not an Icon Button: the whole header is the button, so there is no nested control. It shows `chevron_right` when closed and `expand_more` when open (the same right and down chevrons as iOS), and follows the `Expanded` variant. Its color is `action/secondary`, which is 1.78:1 against `background/primary` in Light, below the 3:1 used for UI icons: a known gap shared with Accordion (iOS). The label is not affected and the header is still readable without the chevron.
+The chevron is a display-only [Utility Icon](design-system-rules.md#icons-and-the-display-only-vs-interactive-rule) (Material Symbols Rounded, Large 24), not an Icon Button: the whole header is the button, so there is no nested control. It shows `chevron_right` when closed and `expand_more` when open (the same right and down chevrons as iOS), and follows the `Expanded` variant. Its color is `foreground/secondary`, which passes the 3:1 used for UI icons against `background/primary` in every mode. Accordion (iOS) stays on `action/secondary`.
 
 ### Layout
 | | |
@@ -923,7 +923,7 @@ The chevron is a display-only [Utility Icon](design-system-rules.md#icons-and-th
 ### Color tokens
 | State | Title | Content text | Chevron |
 |---|---|---|---|
-| Default | `foreground/primary` | `foreground/secondary` | `action/secondary` |
+| Default | `foreground/primary` | `foreground/secondary` | `foreground/secondary` |
 | Disabled | `foreground/disabled` | `foreground/disabled` | `foreground/disabled` |
 
 ### Do
@@ -971,11 +971,11 @@ Apple has a native disclosure group, so there is no custom accordion on iOS (nat
 | Part | Value / token |
 |---|---|
 | Header | height 52 with the separator, padding 16 horizontal (`spacing/200`); label `Body 1/Regular`, `foreground/primary` |
-| Chevron | SF Symbol glyph in `Body 1/Emphasized` (17 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 3.0 EVA Light, 13.0 EVA Dark, 9.8 Heritage Luxury Light, 4.8 Heritage Luxury Dark), below the 3:1 used for UI icons: a known gap. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
+| Chevron | SF Symbol glyph in `Body 2/Emphasized` (15 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 3.0 EVA Light, 13.0 EVA Dark, 9.8 Heritage Luxury Light, 4.8 Heritage Luxury Dark), below the 3:1 used for UI icons. Reviewed with an accessibility specialist and accepted. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
 | Content | text row aligned with the label (16 padding), no top padding, `spacing/150` bottom padding, `Body 2/Regular`, `foreground/secondary` |
 | Separator | 1 (`border/width/thin`), inset 16, `border/primary` |
 
-SwiftUI: `DisclosureGroup("Shipping and returns", isExpanded: $open) { Text("…") }` with `.disclosureGroupStyle(.dsAccordion)` in a `Form` section. It is the native `DisclosureGroup` with a small `DisclosureGroupStyle` (`DSAccordion.swift`) that only draws the chevron SF Symbol in `action/secondary` (the system chevron cannot be recolored) and sets the content: Body 2 `foreground/secondary`, aligned with the label (the style changes only the top and bottom row insets and keeps the system leading inset, so the text lines up with the label on every iPhone), no top padding and no separator above it. Set `.environment(\.defaultMinListRowHeight, 0)` on the `Form`, or one-line content is padded to the 44 pt minimum row height. See [ios.md](ios.md).
+SwiftUI: `DisclosureGroup("Shipping and returns", isExpanded: $open) { Text("…") }` with `.disclosureGroupStyle(.dsAccordion)` in a `Form` section. It is the native `DisclosureGroup` with a small `DisclosureGroupStyle` (`DSAccordion.swift`) that only draws the chevron SF Symbol in `action/secondary` (the system chevron cannot be recolored) and sets the content: Body 2 `foreground/secondary`, aligned with the label (the style changes only the top and bottom row insets and keeps the system leading inset, so the text lines up with the label on every iPhone), no top padding and no separator above it. Set `.dsAccordionList()` on the `Form`, or one-line content is padded to the 44 pt minimum row height. See [ios.md](ios.md).
 
 ### Related
 [Icon Button](#icon-button) · [Toggle](#toggle)

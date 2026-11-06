@@ -90,7 +90,7 @@ public nonisolated enum DSFontWeight: String, CaseIterable, Sendable {
     case regular, emphasized
 }
 
-public extension Font {
+public nonisolated extension Font {
     /// Design-system font: `.font(.ds(.body1, .emphasized))`.
     static func ds(_ style: DSTextStyle, _ weight: DSFontWeight = .regular) -> Font {
         .system(style.appleTextStyle, weight: style.weight(weight))
