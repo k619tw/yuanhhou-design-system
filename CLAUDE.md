@@ -15,8 +15,9 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 
 ## Packages
 The design system ships as two packages; the demo apps use them the same way any app would.
-- Web: `@yuanhhou/ds` from `web/` (`src/index.ts` is the entry; `npm run build:lib` writes `web/lib/`). Apps import components from `@yuanhhou/ds` and the stylesheet from `@yuanhhou/ds/style.css`, which also loads the web fonts, and call `applyTheme()` once. Until the package is on a registry, apps install the file from `npm pack` (`prepack` builds `lib/`); a plain folder install crashes hook components in production builds, see `web/README.md`.
+- Web: `@yuanhhou/ds` from `web/` (`src/index.ts` is the entry; `npm run build:lib` writes `web/lib/`). Apps import components from `@yuanhhou/ds` and the stylesheet from `@yuanhhou/ds/style.css`, which also loads the web fonts, and call `applyTheme()` once. It is on npm (public, MIT); `prepack` builds `lib/`. To try unpublished changes, use `npm pack` or `--install-links`: a plain folder install crashes hook components in production builds, see `web/README.md`.
 - iOS: the Swift package `YuanhhouDSKit`, iOS 17 or later. Other apps add this repository by Git URL through the root `Package.swift`; the demo app links `ios/YuanhhouDSKit` as a local package. Keep the two manifests in step (a package test checks the platform). Apps `import YuanhhouDSKit`.
+- The repository is public, so everything committed here is public.
 - Colors for both are generated from one file, `tokens/colors.json` (see `tokens/README.md`).
 
 ## Rules that must hold

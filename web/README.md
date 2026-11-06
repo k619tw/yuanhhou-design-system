@@ -1,6 +1,6 @@
 # web
 
-React + TypeScript + Vite implementation of the design system, published as the package `@yuanhhou/ds`. See the [root README](../README.md) for the whole project.
+React + TypeScript + Vite implementation of the design system, published on npm as `@yuanhhou/ds`. See the [root README](../README.md) for the whole project.
 
 ```bash
 npm install
@@ -13,13 +13,9 @@ npm run lint       # oxlint
 Components are in `src/components/`, tokens in `src/styles/` (`primitives.css`, `tokens.css`, and `colors.css`, which is generated from `../tokens/colors.json`), English and Japanese strings for the demo in `src/i18n/`.
 
 ## Using the package in an app
-The package is not on a registry yet. Until it is, install a packed file:
 ```bash
-cd path/to/web && npm pack                                 # builds lib/ and writes yuanhhou-ds-<version>.tgz
-cd path/to/your-app && npm install path/to/yuanhhou-ds-<version>.tgz
+npm install @yuanhhou/ds
 ```
-`lib/` is not in Git, so a fresh clone has nothing to install until `npm pack` builds it. Pack and install again to pick up kit changes. Commit the `.tgz` in the app if a hosting service has to build it.
-
 ```tsx
 import { applyTheme, Button } from '@yuanhhou/ds'
 import '@yuanhhou/ds/style.css'
@@ -30,13 +26,12 @@ applyTheme() // once when the app starts; or applyTheme('eva'), applyTheme('heri
 ```
 `applyTheme` sets the brand and follows the device's Light or Dark setting, like `.dsTheme(_:)` on iOS. To force one mode, set `data-theme` on `<html>` instead: `light`, `dark`, `eva-light`, `eva-dark`, `heritage-luxury-light`, `heritage-luxury-dark`.
 
-React 19 is a peer dependency. `style.css` loads Figtree and Material Symbols Rounded from Google Fonts, so there is nothing to add to the page. `package.json` is `private` so it cannot be published by accident; remove that when you choose a registry (npm or GitHub Packages).
+React 19 is a peer dependency. `style.css` loads Figtree and Material Symbols Rounded from Google Fonts, so there is nothing to add to the page.
 
-**Do not install the folder with a plain `npm install ../path/to/web`.** That links to `web/`, which has its own copy of React. A production build then holds two Reacts, and every component that uses hooks (Input, Toggle, Accordion, Checkbox, Radio and the groups) crashes to a blank page, although `npm run dev` looks fine. To install from the folder, run `npm run build:lib` first, then:
-```bash
-npm install --install-links ../path/to/web
-```
-`--install-links` copies the package instead of linking it, so it needs running again after kit changes. If a linked folder is unavoidable, add `resolve: { dedupe: ['react', 'react-dom'] }` to the app's `vite.config.ts`.
+### Trying kit changes before they are published
+Install a packed file: `npm pack` in `web/` builds `lib/` and writes `yuanhhou-ds-<version>.tgz`, then run `npm install path/to/that.tgz` in the app. Or run `npm run build:lib` and then `npm install --install-links ../path/to/web`, which copies the package. Repeat either after each kit change.
+
+**Do not install the folder with a plain `npm install ../path/to/web`.** That links to `web/`, which has its own copy of React. A production build then holds two Reacts, and every component that uses hooks (Input, Toggle, Accordion, Checkbox, Radio and the groups) crashes to a blank page, although `npm run dev` looks fine. If a linked folder is unavoidable, add `resolve: { dedupe: ['react', 'react-dom'] }` to the app's `vite.config.ts`.
 
 ### Tokens in your own CSS
 Use the same variables as the components. Never hardcode a color, and follow the pairing table in [design-system-rules.md](../design-system-rules.md).

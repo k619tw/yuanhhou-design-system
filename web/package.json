@@ -1,9 +1,18 @@
 {
   "name": "@yuanhhou/ds",
-  "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "yuanhhou design system for React: components and tokens from the Figma DS.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k619tw/yuanhhou-design-system.git",
+    "directory": "web"
+  },
+  "homepage": "https://github.com/k619tw/yuanhhou-design-system#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "lib"
   ],

@@ -56,7 +56,7 @@ Show the user the version, the notes and the files changed, then ask once: "Comm
 - Ask separately before `gh release create vX.Y.Z --title "vX.Y.Z" --notes "<the notes>"`.
 
 ## 8. Publish (only when the user asks)
-- Web: `web/package.json` is `private`, so npm will refuse. Publishing needs the user to choose a registry (npm or GitHub Packages) and remove `private`; never do that on your own. Then `npm publish` from `web/` after `npm run build:lib`.
+- Web: `npm publish` from `web/`, on npm as `@yuanhhou/ds` (`prepack` builds `lib/`). It needs the user's npm login. A published version can generally be removed only within about 72 hours, so only publish when the user asks.
 - iOS: apps that use the package by Git URL pick up the tag through the root `Package.swift`. Local-package users get it on their next pull.
 - Figma: remind the user to publish the DS - Components and Tokens libraries if they changed, so the version in Figma matches.
 

@@ -4,6 +4,27 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.3.0 · 2026-11-06
+
+The kit is public: install the web package from npm and the iOS package by Git URL without any access set up, with simpler setup on both.
+
+### Breaking
+- Web: `Badge` now defaults to Subtle, matching iOS and Figma. Set `badgeStyle="solid"` to keep the old look.
+
+### Added
+- Web: `@yuanhhou/ds` is on npm: `npm install @yuanhhou/ds`.
+- Web: `applyTheme()` sets the brand and follows the device's Light or Dark.
+- Both: an MIT license.
+
+### Changed
+- Web: `style.css` now loads the fonts, so remove any Google Fonts link you added for the kit.
+- iOS: the Default brand is `.dsTheme(.default)`. `.system` still works but shows a warning.
+- Docs: titles on iOS use `.dsTextStyle`, which marks them as headings for VoiceOver. There is also a table of names across platforms, and a list of web tokens and text classes.
+
+### Fixed
+- Web: packing the package always builds it first.
+- Figma, docs: Subtle is the stated Badge default, and the Badge node id is corrected.
+
 ## 0.2.0 · 2026-11-06
 
 The iOS package can now be installed from Git on iOS 17 and later, with accessibility fixes and an updated Accordion chevron.

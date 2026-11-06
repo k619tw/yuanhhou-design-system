@@ -26,8 +26,8 @@ npm run dev
 iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on a simulator.
 
 ## Use it in an app
-- **Web:** install a packed tarball of the `web/` package (`@yuanhhou/ds`), then `import { applyTheme, Button } from '@yuanhhou/ds'` and `import '@yuanhhou/ds/style.css'`, and call `applyTheme()` once. Details in [web/README.md](web/README.md).
-- **iOS** (iOS 17 or later, built with Xcode 26 or later): the repository is private, so your GitHub account needs access. In Xcode, File > Add Package Dependencies, enter `https://github.com/k619tw/yuanhhou-design-system`, then `import YuanhhouDSKit`. At the root of the app use `.dsTheme(.default)` (or `.eva`, `.heritageLuxury`), which sets the palette and tints native controls, then `.buttonStyle(.ds(.primary))`, `DSColor` and `.dsTextStyle(.body1)` in views. See `ios/YuanhhouDSKit/README.md`.
+- **Web:** `npm install @yuanhhou/ds`, then `import { applyTheme, Button } from '@yuanhhou/ds'` and `import '@yuanhhou/ds/style.css'`, and call `applyTheme()` once. Details in [web/README.md](web/README.md).
+- **iOS** (iOS 17 or later, built with Xcode 26 or later): in Xcode, File > Add Package Dependencies, enter `https://github.com/k619tw/yuanhhou-design-system`, then `import YuanhhouDSKit`. At the root of the app use `.dsTheme(.default)` (or `.eva`, `.heritageLuxury`), which sets the palette and tints native controls, then `.buttonStyle(.ds(.primary))`, `DSColor` and `.dsTextStyle(.body1)` in views. See `ios/YuanhhouDSKit/README.md`.
 - **Colors:** change them in Figma, export with `tokens/export-figma.js` into `tokens/colors.json`, and run `node tokens/generate.mjs`. See [tokens/README.md](tokens/README.md).
 
 ## What is in it
@@ -35,3 +35,6 @@ iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on
 - Components: Button, Icon Button, Utility Icon, Badge, Image Card, Input, Toggle, Checkbox, Radio, Accordion.
 - Accessibility: text pairs checked at 4.5:1 and borders at 3:1 in every mode; native controls first on iOS.
 - English and Japanese on both platforms.
+
+## License
+[MIT](LICENSE)
