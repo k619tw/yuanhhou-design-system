@@ -117,7 +117,7 @@ struct InputPage: View {
                 TextField("Email", text: $email, prompt: Text("name@company.com"))
                     .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.never)
-                    .dsTextField()
+                    .dsTextField(isError: true)
             } footer: {
                 Text("Enter an email like name@company.com").dsTextFieldFooter(isError: true)
             }

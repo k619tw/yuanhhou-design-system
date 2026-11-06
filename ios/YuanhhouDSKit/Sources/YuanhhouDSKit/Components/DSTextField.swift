@@ -11,18 +11,29 @@ public extension View {
     ///     }
     ///
     /// The cursor uses the app tint (`action/primary`, set once with `.dsTheme(_:)`).
-    func dsTextField() -> some View {
-        modifier(DSTextFieldRowStyle())
+    /// Pass `isError: true` for the Figma Error state: the value in `foreground/error` and the row separator
+    /// in `border/error`. Disabled wins over error. Show the message in the footer too, not by color alone.
+    func dsTextField(isError: Bool = false) -> some View {
+        modifier(DSTextFieldRowStyle(isError: isError))
     }
 }
 
 private struct DSTextFieldRowStyle: ViewModifier {
+    let isError: Bool
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.dsTheme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
         content
             .font(.ds(.body1))
-            .foregroundStyle(isEnabled ? DSColor.foregroundPrimary : DSColor.foregroundDisabled)
+            .foregroundStyle(valueColor)
+            .listRowSeparatorTint(isError ? DSColor.borderError.color(for: theme.mode(for: colorScheme)) : nil)
+    }
+
+    private var valueColor: DSColor {
+        if !isEnabled { return .foregroundDisabled }
+        return isError ? .foregroundError : .foregroundPrimary
     }
 }
 

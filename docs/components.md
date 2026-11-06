@@ -529,11 +529,11 @@ Apple has a native text field, so there is no DS input on iOS (hard rule: native
 | Part | Value / token |
 |---|---|
 | Row | width 402, height 52 with the separator (Apple geometry), padding 16 horizontal (`spacing/200`), no fill (the section draws it) |
-| Value | `Body 1/Regular`: `foreground/primary`; placeholder `foreground/secondary`; disabled `foreground/disabled` |
+| Value | `Body 1/Regular`: `foreground/primary`; placeholder `foreground/secondary`; disabled `foreground/disabled`; Error `foreground/error` |
 | Cursor | 2 × 22, `action/primary` (the app tint) |
 | Separator | 1 (`border/width/thin`), inset 16, `border/primary`; `border/error` in Error |
 
-Helper and error text belong to the section footer, not the row. SwiftUI: `TextField("Email", text: $email, prompt: Text("name@company.com")).dsTextField()` (or `SecureField`) in a `Form` section, with `Text("…").dsTextFieldFooter(isError: true)` in the footer. SwiftUI's `TextField` has no clear button, so the Typing state's clear button is a design reference only. See [ios.md](ios.md).
+Helper and error text belong to the section footer, not the row. SwiftUI: `TextField("Email", text: $email, prompt: Text("name@company.com")).dsTextField()` (or `SecureField`) in a `Form` section, with `Text("…").dsTextFieldFooter(isError: true)` in the footer. Pass `isError: true` to `.dsTextField()` as well for the Error state: the value in `foreground/error` and the row separator in `border/error` (disabled wins over error). SwiftUI's `TextField` has no clear button, so the Typing state's clear button is a design reference only. See [ios.md](ios.md).
 
 ### Related
 [Icon Button](#icon-button) · [Utility Icon](#utility-icon) · [Toggle](#toggle)
