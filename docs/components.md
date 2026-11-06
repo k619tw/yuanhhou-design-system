@@ -646,7 +646,7 @@ iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` insid
 | Footer | `Caption 1/Regular`, `foreground/secondary` (`foreground/error` in Error), inset 16 |
 
 ### Row (iOS)
-The plain list row: a title with an optional subtitle, a detail value and a disclosure chevron, or an action row. Native first: SwiftUI's `LabeledContent` and `NavigationLink` in a `List` already draw it, so there is no DS row on iOS; Figma shows it with our tokens. Figma: component set `Row (iOS)` (node `198:311`) on the `List Section (iOS)` page, 2 variants, `Platform` mode iOS. It replaces the iOS System Components file's own `Row` and `Row - Button`.
+The plain list row: a title with an optional subtitle, a detail value and a disclosure chevron, or an action row. Native first: SwiftUI's `LabeledContent` and `NavigationLink` in a `List` already draw it, so there is no DS row on iOS; Figma shows it with our tokens. Figma: component set `Row (iOS)` (node `198:311`) on the `List Section (iOS)` page, 2 variants, `Platform` mode iOS. The iOS System Components file no longer has its own list rows (its Lists page did not translate to SwiftUI and was removed), so use this one.
 
 | Property | Values | Notes |
 |---|---|---|
