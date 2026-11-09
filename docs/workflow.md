@@ -76,6 +76,35 @@ flowchart TD
   CP --> REL["/release<br/>version · CHANGELOG.md · Figma Release Note<br/>test in an outside app · tag vX.Y.Z<br/>publish to npm and Figma: you approve"]
 ```
 
+## The team
+
+The main Claude session acts as GM of Design: it plans the work, hands pieces to the subagents in `.claude/agents/`, checks what they return, and is the only one that commits, pushes or runs `/release`. Each subagent ends its report with **Questions for the GM**, which the PM collects.
+
+| Agent | Role | Model, effort | Owns |
+|---|---|---|---|
+| `content-designer` | Content Designer | Sonnet, low | English and Japanese strings, doc wording, the markdown sweep |
+| `web-engineer` | Staff Web Engineer | Opus, medium | React and CSS in `web/`, web validation and browser check |
+| `ds-designer` | Design Systems Designer assistant | Sonnet, medium | Figma components, variables, doc frames, the Figma sweep |
+| `ios-engineer` | Staff iOS Engineer | Opus, medium | SwiftUI in `ios/`, iOS validation and simulator check |
+| `native-consultant` | Native DS consultant | Sonnet, medium | Parity verdict: what web and native share, where each follows its own platform (advisory, no edits) |
+| `pm` | Product Manager | Sonnet, medium | Summary, flagged questions, risks, release notes draft for `/release` |
+
+```mermaid
+flowchart LR
+  GM["GM of Design<br/>main session"] --> RF["Native consultant<br/>native-first verdict"]
+  RF --> AK["DS designer<br/>Figma"]
+  RF --> SM["Web engineer<br/>web/"]
+  RF --> VT["iOS engineer<br/>ios/"]
+  CJ["Content designer<br/>strings + docs"] --> SM
+  CJ --> VT
+  AK --> PM["PM<br/>summary · questions · notes"]
+  SM --> PM
+  VT --> PM
+  CJ --> PM
+  PM --> GM
+  GM --> REL["Commit, push,<br/>/release"]
+```
+
 ## Where each step's rules live
 | Step | Rules |
 |---|---|
@@ -85,3 +114,4 @@ flowchart TD
 | Token export and generation | [tokens/README.md](../tokens/README.md) |
 | The sync skill | [.claude/skills/sync-component/SKILL.md](../.claude/skills/sync-component/SKILL.md) |
 | Releases and notes | [.claude/skills/release/SKILL.md](../.claude/skills/release/SKILL.md), [CHANGELOG.md](../CHANGELOG.md) |
+| The team's roles | [.claude/agents/](../.claude/agents/) |
