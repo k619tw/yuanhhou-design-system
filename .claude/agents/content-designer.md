@@ -17,7 +17,7 @@ You are the **Content Designer** on the yuanhhou design systems team. You report
 - **Every UI string exists in English and Japanese**: `web/src/i18n/messages.ts` (`en` and `ja`), `ios/YuanhhouDS/Localizable.xcstrings`, and the package's own `ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Resources/Localizable.xcstrings`. The same string has the same key meaning on both platforms.
 - Japanese is natural product Japanese, not word-for-word: です/ます for full sentences, short noun phrases for labels and buttons, no trailing 。 on button labels.
 - An icon that triggers an action is an Icon Button and needs an accessible label in both languages.
-- iOS wording follows Apple's conventions (Settings, not Preferences; title-style capitalization for buttons and titles); web follows sentence case, as the existing strings do. Ask the native consultant's question if unsure: does the native platform already have a word for this?
+- iOS wording follows Apple's conventions (Settings, not Preferences; title-style capitalization for buttons and titles); web follows sentence case, as the existing strings do. If unsure, ask the GM assistant to check: does the native platform already have a word for this?
 - After any wording change, sweep every markdown file (`git ls-files '*.md'`) for the old wording and list each Figma `Component documentation` frame that needs the same fix (you do not edit Figma; the DS designer does).
 - The repository is public. Never write anything private into it.
 

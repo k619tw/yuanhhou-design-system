@@ -32,5 +32,5 @@ Do not commit, push or publish. The GM does that.
 1. **Changed**: files and what each change does; any public API change, marked breaking or not.
 2. **Validated**: each command and its result; what you checked in the browser.
 3. **Not done or not verified**.
-4. **Parity notes for the iOS engineer and native consultant**: anything the iOS side must match or deliberately not match.
+4. **Parity notes for the iOS engineer and GM assistant**: anything the iOS side must match or deliberately not match.
 5. **Questions for the GM** ("None" if none). The PM collects these.

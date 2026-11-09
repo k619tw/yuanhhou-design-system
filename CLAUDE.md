@@ -37,7 +37,7 @@ Use `/sync-component <Component|tokens> [figma|code]` (`.claude/skills/sync-comp
 5. Validate: `node tokens/generate.mjs --check`; `npm run build`, `build:lib` and `lint` in `web/`; `xcodebuild` for `ios/` and `xcodebuild test` in `ios/YuanhhouDSKit/`; check visual changes in the browser and the simulator.
 
 ## Team
-The main session is the GM of Design and can hand work to the subagents in `.claude/agents/`: content designer, web engineer, DS designer (Figma), iOS engineer, native consultant (parity, advisory) and PM (summary, questions, release notes). Only the main session commits, pushes or releases. Roles and the flow are in `docs/workflow.md`.
+The main session is the GM of Design and can hand work to the subagents in `.claude/agents/`: content designer, web engineer, DS designer (Figma), iOS engineer, GM assistant (checks everything: native-first verdict before building, then that web, iOS, content, Figma and docs agree; read-only) and PM (summary, questions, release notes, portfolio framing). Only the main session commits, pushes or releases. Roles and the flow are in `docs/workflow.md`.
 
 When the workflow changes, update `docs/workflow.md` and the Figma file `IJKMYKXRddNKjFwY9yWYAv` (frame `4:2`).
 

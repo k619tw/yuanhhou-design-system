@@ -86,21 +86,22 @@ The main Claude session acts as GM of Design: it plans the work, hands pieces to
 | `web-engineer` | Staff Web Engineer | Opus, medium | React and CSS in `web/`, web validation and browser check |
 | `ds-designer` | Design Systems Designer assistant | Sonnet, medium | Figma components, variables, doc frames, the Figma sweep |
 | `ios-engineer` | Staff iOS Engineer | Opus, medium | SwiftUI in `ios/`, iOS validation and simulator check |
-| `native-consultant` | Native DS consultant | Sonnet, medium | Parity verdict: what web and native share, where each follows its own platform (advisory, no edits) |
-| `pm` | Product Manager | Sonnet, medium | Summary, flagged questions, risks, release notes draft for `/release` |
+| `gm-assistant` | GM assistant | Sonnet, medium | Native-first verdict before building; after building, checks that web, iOS, content, Figma and docs agree (read-only, no edits) |
+| `pm` | Product Manager | Sonnet, medium | Summary, flagged questions, risks, release notes draft for `/release`, and framing the work as a portfolio case study |
 
 ```mermaid
 flowchart LR
-  GM["GM of Design<br/>main session"] --> RF["Native consultant<br/>native-first verdict"]
+  GM["GM of Design<br/>main session"] --> RF["GM assistant<br/>native-first verdict"]
   RF --> AK["DS designer<br/>Figma"]
   RF --> SM["Web engineer<br/>web/"]
   RF --> VT["iOS engineer<br/>ios/"]
   CJ["Content designer<br/>strings + docs"] --> SM
   CJ --> VT
-  AK --> PM["PM<br/>summary · questions · notes"]
-  SM --> PM
-  VT --> PM
-  CJ --> PM
+  AK --> RV["GM assistant<br/>cross-team check"]
+  SM --> RV
+  VT --> RV
+  CJ --> RV
+  RV --> PM["PM<br/>summary · questions · notes · portfolio"]
   PM --> GM
   GM --> REL["Commit, push,<br/>/release"]
 ```
