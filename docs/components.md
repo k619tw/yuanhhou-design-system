@@ -458,7 +458,7 @@ A link has no padding of its own. When it stands alone (not inside a sentence), 
 | Text and underline | `action/primary` |
 | Focus outline (Web) | `border/focus`, 2px |
 
-`action/primary` is tint with no fill behind it. Against `background/primary` it passes 4.5:1 in all six modes (lowest: Dark, 4.58:1). Against `background/secondary` it fails in Dark (3.80:1), so put links on `background/primary` only (see [known-gaps.md](known-gaps.md)). Do not put a link on a brand or inverted surface.
+`action/primary` is tint with no fill behind it. It passes 4.5:1 against `background/primary` (lowest: Light, 5.33:1) and `background/secondary` (lowest: Light, 4.86:1) in all six modes. Prefer `background/primary`. Do not put a link on a brand or inverted surface.
 
 ### Do
 - Write the destination, not "Click here": "Read the rebrand story".

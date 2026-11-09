@@ -114,7 +114,7 @@ public nonisolated extension DSColor {
     /// `color/foreground/promote/on/secondary`
     static let foregroundPromoteOnSecondary = DSColor("color/foreground/promote/on/secondary", light: "491D8B", dark: "491D8B", evaLight: "4B0078", evaDark: "EEDCFF", heritageLuxuryLight: "481B26", heritageLuxuryDark: "ECD5D9")
     /// `color/action/primary`
-    static let actionPrimary = DSColor("color/action/primary", light: "0069D1", dark: "0073E5", evaLight: "8000C8", evaDark: "A0FF3C", heritageLuxuryLight: "49351D", heritageLuxuryDark: "DDBF7C")
+    static let actionPrimary = DSColor("color/action/primary", light: "0069D1", dark: "3A9DFF", evaLight: "8000C8", evaDark: "A0FF3C", heritageLuxuryLight: "49351D", heritageLuxuryDark: "DDBF7C")
     /// `color/action/secondary`
     static let actionSecondary = DSColor("color/action/secondary", light: "BDC3C9", dark: "6D6D73", evaLight: "B478F5", evaDark: "EEDCFF", heritageLuxuryLight: "503B28", heritageLuxuryDark: "9A7E5A")
     /// `color/border/primary`

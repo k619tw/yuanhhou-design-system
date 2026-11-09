@@ -3,7 +3,6 @@
 What the design system does not do yet, or does differently on purpose.
 
 - Hover and Focus states are not drawn in Figma.
-- Link text (`action/primary`) on `background/secondary` is 3.80:1 in Dark, below 4.5:1 (it passes on `background/primary`, 4.58:1). Until `action/primary` Dark is lightened in the Tokens library, links go on `background/primary` only.
 - Icon Button (48, 32) and Input heights are fixed values, not bound to `size/control/*`.
 - Utility Icon is Material in Figma; iOS renders the mapped SF Symbol (`DSIcon`). Shared components (Button, Icon Button, Badge) therefore show a Material glyph in Figma that differs from what iOS draws.
 - The segmented `Picker` exists in SwiftUI (iOS System > Selection) but has no Figma reference.
