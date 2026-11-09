@@ -4,6 +4,23 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.4.0 · 2026-11-09
+
+Links arrive on web, iOS and Figma, Dark mode's tint is lighter so it passes contrast on every surface, and the iOS text field can show an error.
+
+### Added
+- Web: `Link`, an underlined text link in Body 1, Body 2 or Caption 1 (Emphasized weight) in `action/primary`: `import { Link } from '@yuanhhou/ds'`.
+- iOS: `.dsLink(.body2)` styles SwiftUI's native `Link` with the same sizes and tint, and no underline. In a sentence, write `Text("Read **[the story](url)**").font(.ds(.body1)).dsLink(.body1)`.
+- Figma: `Link (Web)` and `Link (iOS)` on the new `Link` page.
+- iOS: `dsTextField(isError:)` draws the Error state from Figma: the value in `foreground/error` and the separator in `border/error`.
+
+### Changed
+- Both: `action/primary` in Dark is a lighter blue (`#3A9DFF`, was `#0073E5`), so links, tints and control fills pass 4.5:1 on `background/primary` and `background/secondary`. Expect lighter Toggle tracks, checkmarks and radio dots in Dark.
+- Docs: how native iOS controls take the brand (filled with a label uses the `background/brand/primary` pair, tint with no fill uses `action/primary`), sheets as the iOS modal, and the iOS switch's knob and Off track being drawn by the system.
+
+### Fixed
+- Figma: `Badge` icons now use the same colour token as the label in every variant. Success, Warning, Error and Promote icons were black, and Info Subtle used the Brand token.
+
 ## 0.3.0 · 2026-11-06
 
 The kit is public: install the web package from npm and the iOS package by Git URL without any access set up, with simpler setup on both.

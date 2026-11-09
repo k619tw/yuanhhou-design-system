@@ -1,6 +1,6 @@
 {
   "name": "@yuanhhou/ds",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "description": "yuanhhou design system for React: components and tokens from the Figma DS.",
   "license": "MIT",
