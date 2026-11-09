@@ -8,6 +8,7 @@ import {
   IconButton,
   ImageCard,
   Input,
+  Link,
   Radio,
   RadioGroup,
   Toggle,
@@ -193,6 +194,36 @@ export function InputPage() {
         <Input label={t('input.error')} helper={t('input.required')} invalid size="large" placeholder={t('input.placeholder')} />
         <Input label={t('input.disabled')} helper={t('input.notEditable')} disabled placeholder={t('input.placeholder')} />
       </div>
+    </ShowcasePage>
+  )
+}
+
+const linkSizes = [
+  { size: 'body-1', key: 'link.body1', text: 'text-body-1' },
+  { size: 'body-2', key: 'link.body2', text: 'text-body-2' },
+  { size: 'caption-1', key: 'link.caption1', text: 'text-caption-1' },
+] as const
+
+export function LinkPage() {
+  const { t } = useI18n()
+  return (
+    <ShowcasePage title={t('section.link')}>
+      {linkSizes.map(({ size, key, text }) => (
+        <ShowcaseSection key={size} title={t(key)}>
+          <p className={text}>
+            {t('link.sentenceBefore')}
+            <Link href="#/link" size={size}>
+              {t('link.inline')}
+            </Link>
+            {t('link.sentenceAfter')}
+          </p>
+          <div className="showcase__link-standalone">
+            <Link href="#/link" size={size}>
+              {t('link.standalone')}
+            </Link>
+          </div>
+        </ShowcaseSection>
+      ))}
     </ShowcasePage>
   )
 }

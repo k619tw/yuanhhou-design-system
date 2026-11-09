@@ -101,6 +101,20 @@ private var repoRoot: URL {
     }
 }
 
+/// `docs/components.md` Link: Body 1, Body 2 and Caption 1, each set in the Emphasized weight.
+@Test func linkSizesMatchTheFigmaTextStyles() {
+    #expect(DSLinkSize.allCases.map(\.textStyle) == [.body1, .body2, .caption1])
+    for size in DSLinkSize.allCases {
+        #expect(size.textStyle.weight(.emphasized) == .semibold, "\(size)")
+    }
+}
+
+/// A link is `action/primary` text with no fill behind it, so it must pass text contrast on its surface.
+/// Only `background/primary` is checked: on `background/secondary` the Default Dark mode is 3.8:1.
+@Test func linkTintPassesTextContrast() throws {
+    try checkContrast("action/primary", on: "background/primary", minimum: 4.5)
+}
+
 @Test func defaultBrandKeepsItsSavedValue() {
     // Settings saved when the case was named `.system` must still load.
     #expect(DSTheme(rawValue: "system") == .default)

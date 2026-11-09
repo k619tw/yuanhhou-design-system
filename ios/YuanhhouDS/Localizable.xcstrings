@@ -856,6 +856,16 @@
         }
       }
     },
+    "Design system link" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デザインシステムのリンク"
+          }
+        }
+      }
+    },
     "Detail" : {
       "localizations" : {
         "ja" : {
@@ -1772,6 +1782,16 @@
     "name@company.com" : {
       "shouldTranslate" : false
     },
+    "Native Link with .dsLink: the Emphasized text style in action/primary, no underline. A link on its own line gets a 44 pt hit area." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネイティブのLinkに.dsLinkを適用：Emphasizedのテキストスタイルをaction/primaryで表示し、下線はありません。単独の行に置くリンクには44ptのタップ領域を確保します。"
+          }
+        }
+      }
+    },
     "Navigation" : {
       "localizations" : {
         "ja" : {
@@ -2139,12 +2159,32 @@
         }
       }
     },
+    "Read **[the typography guidelines](https://developer.apple.com/design/human-interface-guidelines/typography)** before you choose a text style." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テキストスタイルを選ぶ前に、**[タイポグラフィのガイドライン](https://developer.apple.com/design/human-interface-guidelines/typography)**をお読みください。"
+          }
+        }
+      }
+    },
     "Read more" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "続きを読む"
+          }
+        }
+      }
+    },
+    "Read the typography guidelines" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイポグラフィのガイドラインを読む"
           }
         }
       }

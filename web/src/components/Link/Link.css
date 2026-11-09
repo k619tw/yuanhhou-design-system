@@ -1,0 +1,41 @@
+/* No padding of its own: inline in a sentence it sits on the text's line box.
+   Typography is the Emphasized weight of the style, from the same --typography-* variables as typography.css. */
+.link {
+  color: var(--color-action-primary);
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-action-primary);
+  text-decoration-thickness: var(--border-width-thin);
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+/* 2px underline on hover; no 2px underline token exists, so the value is written here (as the 2px offsets are). */
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.link:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.link--body-1 {
+  font-size: var(--typography-body-1-size);
+  line-height: var(--typography-body-1-line-height);
+  font-weight: var(--typography-body-1-weight-emphasized);
+  letter-spacing: var(--typography-body-1-letter-spacing);
+}
+
+.link--body-2 {
+  font-size: var(--typography-body-2-size);
+  line-height: var(--typography-body-2-line-height);
+  font-weight: var(--typography-body-2-weight-emphasized);
+  letter-spacing: var(--typography-body-2-letter-spacing);
+}
+
+.link--caption-1 {
+  font-size: var(--typography-caption-1-size);
+  line-height: var(--typography-caption-1-line-height);
+  font-weight: var(--typography-caption-1-weight-emphasized);
+  letter-spacing: var(--typography-caption-1-letter-spacing);
+}

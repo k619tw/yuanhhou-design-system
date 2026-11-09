@@ -114,6 +114,19 @@
   align-items: flex-start;
 }
 
+/* A standalone link gets a 44px hit area (the link has no padding of its own). */
+.showcase__link-standalone {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.showcase__link-standalone > .link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .showcase__stack {
   display: flex;
   flex-direction: column;

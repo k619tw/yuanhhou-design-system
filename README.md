@@ -32,7 +32,7 @@ iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on
 
 ## What is in it
 - Tokens from a Figma library: primitives plus semantic colors in six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark: each brand in Light and Dark), spacing on an 8 pt scale, radius, sizes and typography with Web and iOS modes.
-- Components: Button, Icon Button, Utility Icon, Badge, Image Card, Input, Toggle, Checkbox, Radio, Accordion.
+- Components: Button, Icon Button, Utility Icon, Badge, Image Card, Link, Input, Toggle, Checkbox, Radio, Accordion.
 - Accessibility: text pairs checked at 4.5:1 and borders at 3:1 in every mode; native controls first on iOS.
 - English and Japanese on both platforms.
 

@@ -8,6 +8,7 @@ import {
   IconButtonPage,
   ImageCardPage,
   InputPage,
+  LinkPage,
   RadioPage,
   TogglePage,
 } from './ComponentPages'
@@ -35,6 +36,7 @@ export const componentPages: PageEntry[] = [
   { id: 'icon-button', title: 'section.iconButton', Page: IconButtonPage },
   { id: 'image-card', title: 'section.imageCard', Page: ImageCardPage },
   { id: 'input', title: 'section.input', Page: InputPage },
+  { id: 'link', title: 'section.link', Page: LinkPage },
   { id: 'radio', title: 'section.radio', Page: RadioPage },
   { id: 'toggle', title: 'section.toggle', Page: TogglePage },
 ]

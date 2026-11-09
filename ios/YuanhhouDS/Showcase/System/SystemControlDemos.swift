@@ -148,6 +148,8 @@ struct ProgressDemo: View {
 }
 
 struct LinkShareDemo: View {
+    private static let typographyURL = URL(string: "https://developer.apple.com/design/human-interface-guidelines/typography")!
+
     var body: some View {
         List {
             HIGNote("Links open URLs in the right app; the share sheet lets people send content anywhere.")
@@ -155,6 +157,29 @@ struct LinkShareDemo: View {
             ShareLink(item: URL(string: "https://developer.apple.com")!) {
                 Label("Share a link", systemImage: "square.and.arrow.up")
             }
+
+            Section {
+                ForEach(DSLinkSize.allCases) { size in
+                    VStack(alignment: .leading, spacing: DSSpace.gapTight) {
+                        Text(verbatim: "\(size.textStyle.figmaName) · .dsLink(.\(size.rawValue))")
+                            .font(.ds(.caption1))
+                            .foregroundStyle(DSColor.foregroundSecondary)
+                        Link("Read the typography guidelines", destination: Self.typographyURL)
+                            .dsLink(size)
+                            .frame(minHeight: DSSize.minimumHitTarget)
+                    }
+                }
+                Text("Read **[the typography guidelines](https://developer.apple.com/design/human-interface-guidelines/typography)** before you choose a text style.")
+                    .font(.ds(.body1))
+                    .foregroundStyle(DSColor.foregroundPrimary)
+                    .dsLink(.body1)
+            } header: {
+                Text("Design system link")
+            } footer: {
+                Text("Native Link with .dsLink: the Emphasized text style in action/primary, no underline. A link on its own line gets a 44 pt hit area.")
+            }
+            // Links pass 4.5:1 on background/primary in every mode (not on background/secondary in Dark).
+            .dsListRowBackground()
         }
         .navigationTitle("Link and share")
     }

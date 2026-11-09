@@ -9,6 +9,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Utility Icon](#utility-icon) | Display-only icon (30 Material Rounded) | No | `Icons` |
 | [Badge](#badge) | Status label | No | `Badge` |
 | [Image Card](#image-card) | Media card with text and actions | Via inner controls | `Image Card` |
+| [Link](#link) | `Link (Web)`: underlined text link. iOS: `Link (iOS)`, the native link with no underline | Yes | `Link` |
 | [Input](#input) | `Input (Web)`: single-line text field. iOS: `Input (iOS)` | Yes | `Input` |
 | [Toggle](#toggle) | `Toggle (Web)`: on/off switch. iOS: `Toggle (iOS)` | Yes | `Toggle` |
 | [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: `Toggle (iOS)` or `Checkmark Row (iOS)` | Yes | `Checkbox` |
@@ -28,8 +29,8 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
   | Name | Use on | Today |
   |---|---|---|
   | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card |
-  | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
-  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
+  | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Link (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
+  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Link (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
 
   An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
 
@@ -427,6 +428,64 @@ import { Badge, Button, ImageCard } from '../components'
 
 ### Related
 [Badge](#badge) · [Button](#button) · [Icon Button](#icon-button)
+
+## Link
+
+A text link that takes the user to another page, screen or site. Figma: page `Link`, component sets `Link (Web)` (node `209:13`) and `Link (iOS)` (node `209:20`), 3 variants each. Web underlines links; iOS does not, as in Apple's own apps.
+
+### When to use
+- To go somewhere: another page, a section, an external site, a document.
+- Inside a sentence (inline) or on its own line under content ("View all", "Read the case study").
+- Not for actions that change data (save, delete, submit): use a Button.
+
+### Properties
+| Property | Values | Notes |
+|---|---|---|
+| Size | Body 1, Body 2, Caption 1 | Match the size of the text around it |
+| Label | text | Says where the link goes |
+
+### Layout
+| | Body 1 | Body 2 | Caption 1 |
+|---|---|---|---|
+| Text style | `Body 1/Emphasized` | `Body 2/Emphasized` | `Caption 1/Emphasized` |
+| Underline (Web only) | 1px, offset 2px | 1px, offset 2px | 1px, offset 2px |
+
+A link has no padding of its own. When it stands alone (not inside a sentence), give it a 44px (44 pt) hit area.
+
+### Color tokens
+| Part | Token |
+|---|---|
+| Text and underline | `action/primary` |
+| Focus outline (Web) | `border/focus`, 2px |
+
+`action/primary` is tint with no fill behind it. Against `background/primary` it passes 4.5:1 in all six modes (lowest: Dark, 4.58:1). Against `background/secondary` it fails in Dark (3.80:1), so put links on `background/primary` only (see [known-gaps.md](known-gaps.md)). Do not put a link on a brand or inverted surface.
+
+### Do
+- Write the destination, not "Click here": "Read the rebrand story".
+- Use the same size as the surrounding text.
+- Keep the underline on web: it is how people tell a link from emphasized text.
+
+### Don't
+- Don't use a link for an action; use a Button.
+- Don't remove the underline on web or add one on iOS.
+- Don't color links by hand.
+
+### Accessibility
+- Web: a real `<a href>`; keyboard focus shows the 2px `border/focus` outline. Links that open a new tab say so in the label or with visually hidden text.
+- iOS: SwiftUI's native `Link`, so VoiceOver reads it as a link and Dynamic Type scales it.
+- Color is not the only signal on web (underline). On iOS the link is set apart by the tint and the Emphasized weight, as in the system apps.
+
+### Code mapping
+Source: `web/src/components/Link`.
+```tsx
+import { Link } from '@yuanhhou/ds'
+
+<Link href="/work" size="body-2">Read the rebrand story</Link>
+```
+iOS: `Link("Read the rebrand story", destination: url).dsLink(.body2)`; see [ios.md](ios.md).
+
+### Related
+[Button](#button) for actions.
 
 ## Input
 
