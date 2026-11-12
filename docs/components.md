@@ -1101,6 +1101,7 @@ Title and description pass 4.5:1 on `background/primary` in all six modes (the p
 
 ### Accessibility
 - Web: the native `<dialog>` with `showModal()`. Focus moves inside, Tab stays in the modal, the page behind is inert, and Escape closes it.
+- Focus starts on the first focusable element (the close button). When the modal holds a field (a rename, a password), put `data-autofocus` on it so focus starts there; React's `autoFocus` does not work in a dialog.
 - Focus returns to the control that opened it.
 - The title names the dialog (`aria-labelledby`); the description is read with it (`aria-describedby`).
 - The close button is an Icon Button with an accessible name ("Close"), passed in as `closeLabel` so it is translated.

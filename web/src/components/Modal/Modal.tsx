@@ -32,7 +32,8 @@ export interface ModalProps {
 /**
  * A modal dialog built on the native `<dialog>` element and `showModal()`, so the browser provides the
  * focus trap, the inert page behind it, Escape and the top layer. Focus moves to the first focusable
- * element inside (add `autoFocus` to choose another) and returns to the opener when it closes.
+ * element inside, or to the one marked `data-autofocus` (for example the field in a password modal),
+ * and returns to the opener when it closes.
  * iOS has no DS modal: use the native `.sheet` (see docs/ios.md).
  */
 export function Modal({
@@ -57,8 +58,12 @@ export function Modal({
   useEffect(() => {
     const dialog = ref.current
     if (!dialog) return
-    if (open && !dialog.open) dialog.showModal()
-    else if (!open && dialog.open) dialog.close()
+    if (open && !dialog.open) {
+      dialog.showModal()
+      // showModal() focuses the first focusable element. React's autoFocus runs before the dialog opens,
+      // so it is lost; mark the element to focus with data-autofocus instead.
+      dialog.querySelector<HTMLElement>('[data-autofocus]')?.focus()
+    } else if (!open && dialog.open) dialog.close()
   }, [open])
 
   // Escape fires `cancel`. Keep the dialog open and let the owner decide, so `open` stays the only source of truth.

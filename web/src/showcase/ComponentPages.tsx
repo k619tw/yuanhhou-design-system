@@ -284,7 +284,7 @@ export function ModalPage() {
           </>
         }
       >
-        <Input label={t('modal.nameLabel')} size="large" />
+        <Input label={t('modal.nameLabel')} size="large" data-autofocus />
       </Modal>
     </ShowcasePage>
   )
