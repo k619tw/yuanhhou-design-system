@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-// Generates the color token files for both platforms from tokens/colors.json (the Figma `02 Semantics`
-// export), so web and iOS cannot drift apart.
+// Generates the theme token files for both platforms from tokens/colors.json (the Figma `02 Semantics`
+// export: colors and the brand corner radii), so web and iOS cannot drift apart.
 //
-//   node tokens/generate.mjs          write web/src/styles/colors.css and DSColor+Tokens.swift
-//   node tokens/generate.mjs --check  exit 1 if either file is out of date (for CI)
+//   node tokens/generate.mjs          write colors.css, shape.css, DSColor+Tokens.swift and DSShape+Tokens.swift
+//   node tokens/generate.mjs --check  exit 1 if any file is out of date (for CI)
 
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
-const { modes, colors } = JSON.parse(readFileSync(join(root, 'tokens/colors.json'), 'utf8'))
+const { modes, colors, radii } = JSON.parse(readFileSync(join(root, 'tokens/colors.json'), 'utf8'))
 
 // Figma mode -> CSS data-theme, color-scheme, Swift DSColor argument label.
 const modeInfo = {
@@ -71,9 +71,64 @@ function swift() {
   ].join('\n')
 }
 
+// `radius/control` -> `control`
+const radiusName = (name) => name.replace(/^radius\//, '')
+// `radius/none` is 0 in every mode and stays with the Dimension scale (tokens.css, DSRadius.none).
+const radiusNames = Object.keys(radii).filter((name) => name !== 'radius/none')
+
+function shapeCss() {
+  const blocks = modes.map((mode) => {
+    const { theme } = modeInfo[mode]
+    const selector = mode === 'Light' ? `:root,\n[data-theme='${theme}']` : `[data-theme='${theme}']`
+    const lines = radiusNames.map((name) => `  ${cssName(name)}: ${radii[name][mode]}px;`)
+    return `${selector} {\n${lines.join('\n')}\n}`
+  })
+  const comment = header.replace('the colors', 'the radii').split('\n').map((l) => ` * ${l}`).join('\n')
+  return `/*\n${comment}\n *\n * Corner radii follow the brand shape: Default round, EVA sharp, Heritage Luxury soft. Light and Dark match.\n */\n${blocks.join('\n\n')}\n`
+}
+
+function shapeSwift() {
+  const fields = radiusNames.map((name) => `    /// \`${name}\`\n    public let ${radiusName(name)}: CGFloat`)
+  const cases = modes.map((mode) => {
+    const args = radiusNames.map((name) => `${radiusName(name)}: ${radii[name][mode]}`).join(', ')
+    return `        case .${modeInfo[mode].swift}: DSShape(${args})`
+  })
+  return [
+    ...header.replace('the colors', 'the radii').split('\n').map((l) => `// ${l}`),
+    `// Values per mode: ${modes.join(', ')}. Corner radii follow the brand shape; Light and Dark match.`,
+    '',
+    'import CoreGraphics',
+    '',
+    '/// The semantic corner radii (`radius/*`) of one theme mode. Read it in a view with `@Environment(\\.dsShape)`.',
+    'public nonisolated struct DSShape: Hashable, Sendable {',
+    fields.join('\n'),
+    '}',
+    '',
+    'public nonisolated extension DSThemeMode {',
+    '    /// The corner radii of this mode.',
+    '    var shape: DSShape {',
+    '        switch self {',
+    cases.join('\n'),
+    '        }',
+    '    }',
+    '}',
+    '',
+    '// The Default brand\'s values, kept for source compatibility. They do not follow the brand.',
+    'public nonisolated extension DSRadius {',
+    ...radiusNames.map((name) => [
+      `    @available(*, deprecated, message: "Read @Environment(\\\\.dsShape).${radiusName(name)}; corners follow the brand")`,
+      `    static let ${radiusName(name)}: CGFloat = ${radii[name][modes[0]]}`,
+    ].join('\n')),
+    '}',
+    '',
+  ].join('\n')
+}
+
 const outputs = [
   ['web/src/styles/colors.css', css()],
   ['ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Tokens/DSColor+Tokens.swift', swift()],
+  ['web/src/styles/shape.css', shapeCss()],
+  ['ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Tokens/DSShape+Tokens.swift', shapeSwift()],
 ]
 
 const check = process.argv.includes('--check')

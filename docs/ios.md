@@ -8,7 +8,7 @@ Before building a control, use what SwiftUI and the HIG already provide, and sty
 ## Component map
 | Figma | Use this on iOS | Notes |
 |---|---|---|
-| [Button](components.md#button) | `Button("Save") {}.buttonStyle(.ds(.primary, size: .large))` | `ButtonStyle`; Pressed is `isPressed`, Disabled is `.disabled()`. Height comes from padding on both sizes: Large is 46 pt and Small 36 pt at the default Dynamic Type, and both grow with it. Small gets a 44 pt hit area (`expandsHitArea`). Labels wrap instead of truncating. Use `.ds(.primary, fullWidth: true)` for a full-width button |
+| [Button](components.md#button) | `Button("Save") {}.buttonStyle(.ds(.primary, size: .large))` | `ButtonStyle`; Pressed is `isPressed`, Disabled is `.disabled()`. Height comes from padding on both sizes: Large is 46 pt and Small 36 pt at the default Dynamic Type, and both grow with it. Small gets a 44 pt hit area (`expandsHitArea`). Labels wrap instead of truncating. Use `.ds(.primary, fullWidth: true)` for a full-width button A link that looks like a button is the native `Link(destination:) { Text("Read the case study") }.buttonStyle(.ds(.secondary))` (VoiceOver reads it as a link); in-app navigation is `NavigationLink(value:)` with the same style. |
 | [Icon Button](components.md#icon-button) | `DSIconButton(.close, label: "Close", kind: .tertiary, size: .small) { }` | A native `Button` with a `ButtonStyle`. `label` is the accessibility label; Small gets a 44 pt hit area. The box and glyph grow with Dynamic Type |
 | [Utility Icon](components.md#utility-icon) | `DSIcon.search.image` | Maps each Material icon to an SF Symbol. Figma shows the Material glyph; `(iOS)` Figma components draw SF Symbols directly |
 | [Badge](components.md#badge) | `DSBadge("Paid", kind: .success, style: .subtle, icon: .check)` | Display only. Custom because SwiftUI's `.badge(_:)` is only a count or text on a list row or tab item, not a status label |
@@ -41,9 +41,13 @@ Tokens are Swift types named like the Figma variables; the iOS code syntax in Fi
 |---|---|
 | `color/<role>/<name>` | `DSColor.<roleName>`, for example `DSColor.backgroundPrimary`, resolved for the current brand (`DSTheme`: `.default`, `.eva`, `.heritageLuxury`) in Light or Dark from the color scheme (the device, or `DSAppearance` in the showcase) |
 | `spacing/*`, `space/*` | `DSSpacing.*`, `DSSpace.*` |
-| `radius/*`, `size/*`, `border/width/*` | `DSRadius`, `DSSize`, `DSBorderWidth` |
+| `radius/*` scale, `size/*`, `border/width/*` | `DSRadius`, `DSSize`, `DSBorderWidth` |
+| `radius/control|card|dialog|sheet|pill` (follow the brand) | `@Environment(\.dsShape)` (`DSShape`, set by `.dsTheme(_:)`), drawn with `DSCornerShape(radius:)`, which turns a radius of half the height or more into a capsule. `DSRadius.control`, `card`, `dialog`, `sheet` and `pill` are deprecated: they are the Default brand's values only and do not follow the brand |
 | text styles `Body 1/Regular` | `.dsTextStyle(.body1)`, `.dsTextStyle(.body2, .emphasized)` on text, which also marks titles as headings for VoiceOver. Use `.font(.ds(.body1))` only for a font inside another style; Platform `iOS` is SF Pro and matches Apple's Dynamic Type tables: size, leading and tracking come from the Apple text style, and the weight per style (Headline Semibold; Emphasized Bold for Large Title, Title 1, Title 2, Semibold otherwise) |
 | primitives | `DSPrimitive` (components do not use them directly) |
+
+## Brand shape
+Button, Badge, Icon Button and Image Card read `@Environment(\.dsShape)` and draw with `DSCornerShape`, so EVA draws them square and Heritage Luxury soft. The HIG's capsule buttons describe the system styles; a custom `ButtonStyle` is where a brand shows, so a square EVA button is allowed. The system styles we do not restyle (`.glass`, `.glassProminent`, `.borderedProminent`) stay capsules in every brand, and native controls (TextField rows, Toggle, segmented `Picker`, List sections, sheets) keep Apple's corners. The iPad pointer highlight uses the brand's corners (`.contentShape(.hoverEffect, …)`), while the tap area stays a 44 pt rectangle. Each of the four has a `… , brands` preview.
 
 ## Same component, different names
 React and SwiftUI each follow their platform's habits, so the code names are not all the Figma names. `type` means something else on an HTML button, so web Button uses `variant`.

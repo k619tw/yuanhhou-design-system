@@ -4,6 +4,7 @@
 @import './primitives.css';
 @import './tokens.css';
 @import './colors.css';
+@import './shape.css';
 @import './typography.css';
 
 body {

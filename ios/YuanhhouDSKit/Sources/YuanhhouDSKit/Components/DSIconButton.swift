@@ -71,13 +71,14 @@ private struct DSIconButtonBody: View {
     let expandsHitArea: Bool
 
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.dsShape) private var corners
     /// Grows the box and glyph with Dynamic Type; 1 at the default size.
     @ScaledMetric private var scale: CGFloat = 1
 
     var body: some View {
         let pressed = configuration.isPressed && isEnabled
         let box = (size == .large ? DSSize.controlLarge : DSSize.controlSmall) * scale
-        let shape = RoundedRectangle(cornerRadius: DSRadius.md, style: .continuous)
+        let shape = DSCornerShape(radius: corners.control)
         configuration.label
             .font(.system(size: (size == .large ? DSSize.iconLarge : DSSize.iconMedium) * 0.85 * scale, weight: .medium))
             .foregroundStyle(foreground)
@@ -88,6 +89,9 @@ private struct DSIconButtonBody: View {
                     shape.strokeBorder(stroke(pressed: pressed), lineWidth: DSBorderWidth.regular)
                 }
             }
+            // The iPad pointer highlight takes the brand's corners; the tap area below stays a 44 pt rectangle.
+            .contentShape(.hoverEffect, shape)
+            .hoverEffect(.highlight)
             .frame(
                 minWidth: expandsHitArea ? DSSize.minimumHitTarget : nil,
                 minHeight: expandsHitArea ? DSSize.minimumHitTarget : nil
@@ -130,6 +134,19 @@ private struct DSIconButtonBody: View {
         ForEach(DSButtonStyle.Kind.allCases) { kind in
             DSIconButton(.close, label: "Close", kind: kind) { }
             DSIconButton(.close, label: "Close", kind: kind, size: .small) { }
+        }
+    }
+    .padding()
+}
+
+#Preview("Icon Button, brands") {
+    VStack(spacing: DSSpacing.lg) {
+        ForEach(DSTheme.allCases) { theme in
+            HStack(spacing: DSSpacing.md) {
+                DSIconButton(.close, label: "Close") { }
+                DSIconButton(.close, label: "Close", kind: .secondary) { }
+            }
+            .dsTheme(theme)
         }
     }
     .padding()

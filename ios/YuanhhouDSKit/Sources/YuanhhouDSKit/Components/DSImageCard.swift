@@ -23,6 +23,8 @@ public struct DSImageCard<Media: View, Actions: View>: View {
     @ViewBuilder public var media: Media
     @ViewBuilder public var actions: Actions
 
+    @Environment(\.dsShape) private var corners
+
     public init(
         orientation: Orientation = .vertical,
         title: LocalizedStringKey,
@@ -40,7 +42,7 @@ public struct DSImageCard<Media: View, Actions: View>: View {
     }
 
     public var body: some View {
-        let shape = RoundedRectangle(cornerRadius: DSRadius.lg, style: .continuous)
+        let shape = DSCornerShape(radius: corners.card)
         Group {
             if orientation == .vertical {
                 VStack(alignment: .leading, spacing: 0) {
@@ -58,6 +60,8 @@ public struct DSImageCard<Media: View, Actions: View>: View {
         .background(DSColor.backgroundPrimary)
         .clipShape(shape)
         .overlay(shape.strokeBorder(DSColor.borderPrimary, lineWidth: DSBorderWidth.thin))
+        // A wrapping NavigationLink or button highlights in the brand's corners.
+        .contentShape(shape)
         .shadow(color: DSShadow.small.color, radius: DSShadow.small.radius, y: DSShadow.small.y)
     }
 
@@ -98,5 +102,21 @@ public extension DSImageCard where Actions == EmptyView {
         @ViewBuilder media: () -> Media
     ) {
         self.init(orientation: orientation, title: title, description: description, badge: badge, media: media) { EmptyView() }
+    }
+}
+
+#Preview("Image Card, brands") {
+    ScrollView {
+        VStack(spacing: DSSpacing.lg) {
+            ForEach(DSTheme.allCases) { theme in
+                DSImageCard(title: "Card title", description: "Short supporting description.", badge: DSBadge("New")) {
+                    Image(systemName: "photo").font(.largeTitle)
+                } actions: {
+                    Button("Read more") { }.buttonStyle(.ds(size: .small))
+                }
+                .dsTheme(theme)
+            }
+        }
+        .padding()
     }
 }

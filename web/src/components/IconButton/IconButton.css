@@ -11,7 +11,7 @@
   flex: none;
   padding: 0;
   border: var(--border-width-default) solid var(--btn-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-control);
   background: var(--btn-bg);
   color: var(--btn-fg);
   cursor: pointer;

@@ -45,6 +45,8 @@ public struct DSBadge: View {
         self.icon = icon
     }
 
+    @Environment(\.dsShape) private var shape
+
     public var body: some View {
         HStack(spacing: DSSpacing.xs) {
             if let icon { icon.image.accessibilityHidden(true) }
@@ -55,7 +57,7 @@ public struct DSBadge: View {
         .foregroundStyle(colors.foreground)
         .padding(.horizontal, DSSpacing.sm)
         .padding(.vertical, size == .medium ? DSSpacing.xs : DSSpacing.xxs)
-        .background(Capsule().fill(colors.background))
+        .background(DSCornerShape(radius: shape.pill).fill(colors.background))
         .accessibilityElement(children: .combine)
     }
 
@@ -79,6 +81,19 @@ public struct DSBadge: View {
                 DSBadge("Paid", kind: kind, style: .solid)
                 DSBadge("Paid", kind: kind, style: .subtle, icon: .check)
             }
+        }
+    }
+    .padding()
+}
+
+#Preview("Badge, brands") {
+    VStack(spacing: DSSpacing.md) {
+        ForEach(DSTheme.allCases) { theme in
+            HStack {
+                DSBadge("New", style: .solid)
+                DSBadge("New")
+            }
+            .dsTheme(theme)
         }
     }
     .padding()

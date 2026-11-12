@@ -107,15 +107,13 @@ export function TypographyPage() {
 }
 
 const spacing = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl']
-const radii = [
-  ['sm', 'control'],
-  ['md', 'card'],
-  ['lg', 'dialog'],
-  ['xl', 'sheet'],
-] as const
+// The semantic radii follow the brand (generated per theme in shape.css), so they change with the Theme picker.
+const radii = ['control', 'card', 'dialog', 'sheet', 'pill'] as const
 
 export function SpacingPage() {
   const { t } = useI18n()
+  // Re-read the radii when the theme changes: they follow the brand.
+  useDocumentMode()
 
   return (
     <ShowcasePage title={t('page.spacing')}>
@@ -130,12 +128,13 @@ export function SpacingPage() {
         ))}
       </ShowcaseSection>
       <ShowcaseSection title={t('spacing.radius')}>
+        <p className="text-body-2">{t('spacing.radiusNote')}</p>
         <div className="radius-grid">
-          {radii.map(([name, role]) => (
+          {radii.map((name) => (
             <div className="radius-sample" key={name}>
               <div className="radius-sample__shape" style={{ borderRadius: `var(--radius-${name})` }} />
               <span className="token-meta text-caption-1">
-                {name} / {role} · {parseFloat(cssVar(`--radius-${name}`))}
+                {name} · {parseFloat(cssVar(`--radius-${name}`))}
               </span>
             </div>
           ))}

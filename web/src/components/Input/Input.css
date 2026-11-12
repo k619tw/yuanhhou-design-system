@@ -17,7 +17,7 @@
   padding: 0 var(--spacing-md);
   background: var(--color-background-primary);
   border: var(--border-width-default) solid var(--color-border-tertiary);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-control);
 }
 
 .input--medium .input__field {

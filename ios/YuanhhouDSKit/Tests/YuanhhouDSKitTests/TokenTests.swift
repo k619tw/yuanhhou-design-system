@@ -120,3 +120,38 @@ private var repoRoot: URL {
     #expect(DSTheme(rawValue: "system") == .default)
     #expect(DSTheme.default.title == "Default")
 }
+
+// MARK: - Brand shape
+
+@Test func brandShapeIsTheSameInLightAndDark() {
+    for theme in DSTheme.allCases {
+        #expect(theme.mode(for: .light).shape == theme.mode(for: .dark).shape, "\(theme) corners differ between Light and Dark")
+    }
+}
+
+@Test func defaultBrandKeepsItsCorners() {
+    // Default must draw as before: Button and Badge are capsules, controls 12, cards 16.
+    let shape = DSTheme.default.mode(for: .light).shape
+    #expect(shape.pill >= 999)
+    #expect(shape.control == DSRadius.md)
+    #expect(shape.card == DSRadius.lg)
+}
+
+@Test @available(*, deprecated, message: "Checks the deprecated constants on purpose")
+func deprecatedRadiusConstantsMatchTheDefaultBrand() {
+    let shape = DSTheme.default.mode(for: .light).shape
+    #expect(DSRadius.control == shape.control)
+    #expect(DSRadius.card == shape.card)
+    #expect(DSRadius.dialog == shape.dialog)
+    #expect(DSRadius.sheet == shape.sheet)
+    #expect(DSRadius.pill == shape.pill)
+}
+
+@Test func cornerShapeDrawsACapsuleForPill() {
+    let rect = CGRect(x: 0, y: 0, width: 120, height: 40)
+    let pill = DSCornerShape(radius: 9999).path(in: rect)
+    #expect(pill.boundingRect == rect)
+    // A sharp corner keeps the rectangle's corner point; a capsule does not.
+    #expect(DSCornerShape(radius: 0).path(in: rect).contains(CGPoint(x: 0.5, y: 0.5)))
+    #expect(!pill.contains(CGPoint(x: 0.5, y: 0.5)))
+}

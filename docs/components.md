@@ -77,7 +77,7 @@ Triggers an action or submits a form. Figma: page `Button`, component set `Butto
 | Icon gap | 4 (`space/gap/tight`) | 8 (`spacing/100`) |
 | Icon size | Medium 20 | Small 16 |
 | Text style | `Button 1/Emphasized` (16/24) | `Button 2/Emphasized` (14/20) |
-| Corner radius | pill (`radius/pill`) | pill |
+| Corner radius | pill (`radius/pill`; follows the brand: capsule in Default, 0 in EVA, 10 in Heritage Luxury) | pill |
 
 Width hugs the label. Both sizes get their height from padding plus the line height (Large 12 + 24 + 12 = 48, Small 8 + 20 + 8 = 36), so they follow the text style: Large is 46 under the iOS typography mode (Platform = iOS, Default density), Small stays 36. Full-width is a layout decision in code, not a variant (`fullWidth` in SwiftUI). Labels wrap rather than truncate. On iOS, Small keeps its drawn 36 pt height with a 44 pt hit area.
 
@@ -162,7 +162,7 @@ An interactive button that shows only an icon. Figma: page `Icon Button`, compon
 |---|---|---|
 | Box | 48 × 48 | 32 × 32 |
 | Icon | 24 | 20 |
-| Corner radius | 12 (`radius/md`) | 12 |
+| Corner radius | 12 (`radius/control`; follows the brand: 0 in EVA, 8 in Heritage Luxury) | 12 |
 
 ### Color tokens
 | Type / State | Fill | Outline | Icon |
@@ -308,7 +308,7 @@ Brand and Info currently share the same colors in the Tokens library, so they lo
 | Padding | 8 horizontal, 4 vertical | 8 horizontal, 2 vertical |
 | Gap (icon to label) | 4 (`spacing/50`) | 4 |
 | Text style | `Caption 1/Emphasized` (12) | `Caption 2/Emphasized` (11) |
-| Corner radius | full (`radius/full`) | full |
+| Corner radius | pill (`radius/pill`; follows the brand: capsule in Default, 0 in EVA, 10 in Heritage Luxury) | pill |
 
 ### Color tokens
 | Style | Fill | Text and icon |
@@ -383,7 +383,7 @@ A content card with media, a title, a description, an optional badge and optiona
 | Image | full width, 180 high | 200 wide, full height |
 | Body padding | 16 (`spacing/200`) | 16 |
 | Gap in body | 8 (`spacing/100`) | 8 |
-| Corner radius | 16 (`radius/lg`) | 16 |
+| Corner radius | 16 (`radius/card`; follows the brand: 0 in EVA, 12 in Heritage Luxury) | 16 |
 | Elevation | `shadow/sm` | `shadow/sm` |
 | Border | 1px `border/primary` | same |
 | Title | `Headline/Emphasized` | same |
@@ -525,7 +525,7 @@ A single-line text field with a label and helper text. Figma: page `Input`, comp
 | Field padding | 12 horizontal (`spacing/150`) |
 | Gap inside field | 8 (`spacing/100`) |
 | Gap label, field, helper | 4 (`spacing/50`) |
-| Corner radius | 12 (`radius/md`) |
+| Corner radius | 12 (`radius/control`; follows the brand: 0 in EVA, 8 in Heritage Luxury) |
 | Label | `Body 2/Emphasized` |
 | Value | `Body 1/Regular` |
 | Helper | `Caption 1/Regular` |

@@ -41,7 +41,7 @@ Use the same variables as the components. Never hardcode a color, and follow the
 | Color | `--color-<role>-<name>`, named like the Figma variable: `color/background/primary` is `--color-background-primary` |
 | Spacing | `--spacing-2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl` (2 to 48) |
 | Semantic space | `--space-inset-compact`, `default`, `comfortable`; `--space-gap-tight`, `inline`, `stack`, `section`; `--space-page-mobile`, `desktop` |
-| Radius, size, border | `--radius-*`, `--size-icon-*`, `--size-control-*`, `--border-width-*` in `src/styles/tokens.css` |
+| Radius, size, border | `--radius-*`, `--size-icon-*`, `--size-control-*`, `--border-width-*` in `src/styles/tokens.css`; the semantic radii that follow the brand (`--radius-control`, `card`, `dialog`, `sheet`, `pill`) in the generated `src/styles/shape.css` |
 | Text | `h1`, `h2`, `h3` and `p` are styled for you. Other elements take a class: `text-body-1`, `text-body-2`, `text-button-1`, `text-button-2`, `text-caption-1`, `text-caption-2`, `text-headline`, `text-large-title`, `text-title-1`, `text-title-2`, `text-title-3`, plus `text-emphasized` |
 
 English and Japanese are up to the app: the package has no text of its own to translate on web, and `src/i18n/` belongs to the demo.

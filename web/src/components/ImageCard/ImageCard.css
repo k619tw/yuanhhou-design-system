@@ -3,7 +3,7 @@
   overflow: clip;
   background: var(--color-background-primary);
   border: var(--border-width-thin) solid var(--color-border-primary);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-card);
   box-shadow: var(--shadow-sm);
 }
 

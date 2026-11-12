@@ -617,5 +617,55 @@
       "Heritage Luxury Light": "692C35",
       "Heritage Luxury Dark": "D4A6B0"
     }
+  },
+  "radii": {
+    "radius/none": {
+      "Light": 0,
+      "Dark": 0,
+      "EVA Light": 0,
+      "EVA Dark": 0,
+      "Heritage Luxury Light": 0,
+      "Heritage Luxury Dark": 0
+    },
+    "radius/control": {
+      "Light": 12,
+      "Dark": 12,
+      "EVA Light": 0,
+      "EVA Dark": 0,
+      "Heritage Luxury Light": 8,
+      "Heritage Luxury Dark": 8
+    },
+    "radius/card": {
+      "Light": 16,
+      "Dark": 16,
+      "EVA Light": 0,
+      "EVA Dark": 0,
+      "Heritage Luxury Light": 12,
+      "Heritage Luxury Dark": 12
+    },
+    "radius/dialog": {
+      "Light": 16,
+      "Dark": 16,
+      "EVA Light": 0,
+      "EVA Dark": 0,
+      "Heritage Luxury Light": 12,
+      "Heritage Luxury Dark": 12
+    },
+    "radius/sheet": {
+      "Light": 24,
+      "Dark": 24,
+      "EVA Light": 0,
+      "EVA Dark": 0,
+      "Heritage Luxury Light": 16,
+      "Heritage Luxury Dark": 16
+    },
+    "radius/pill": {
+      "Light": 9999,
+      "Dark": 9999,
+      "EVA Light": 0,
+      "EVA Dark": 0,
+      "Heritage Luxury Light": 10,
+      "Heritage Luxury Dark": 10
+    }
   }
 }

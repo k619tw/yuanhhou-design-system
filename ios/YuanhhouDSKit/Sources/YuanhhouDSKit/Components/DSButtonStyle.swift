@@ -53,9 +53,11 @@ private struct DSButtonBody: View {
     let expandsHitArea: Bool
 
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.dsShape) private var shape
 
     var body: some View {
         let pressed = configuration.isPressed && isEnabled
+        let corners = DSCornerShape(radius: shape.pill)
         let iconGap = size == .large ? DSSpace.gapTight : DSSpacing.sm
         configuration.label
             .font(size == .large ? .ds(.button1, .emphasized) : .ds(.button2, .emphasized))
@@ -69,12 +71,15 @@ private struct DSButtonBody: View {
             // Both grow with Dynamic Type.
             .padding(.horizontal, size == .large ? DSSpacing.xl : DSSpacing.lg)
             .padding(.vertical, size == .large ? DSSpacing.md : DSSpacing.sm)
-            .background(Capsule().fill(fill(pressed: pressed)))
+            .background(corners.fill(fill(pressed: pressed)))
             .overlay {
                 if kind == .secondary {
-                    Capsule().strokeBorder(stroke(pressed: pressed), lineWidth: DSBorderWidth.regular)
+                    corners.strokeBorder(stroke(pressed: pressed), lineWidth: DSBorderWidth.regular)
                 }
             }
+            // The iPad pointer highlight takes the brand's corners; the tap area below stays a 44 pt rectangle.
+            .contentShape(.hoverEffect, corners)
+            .hoverEffect(.highlight)
             // Small draws about 36 pt; this pads its layout and tap area to 44 without changing what is drawn.
             .frame(
                 minWidth: expandsHitArea ? DSSize.minimumHitTarget : nil,
@@ -171,6 +176,22 @@ private extension EnvironmentValues {
             Button { } label: { kind.label }.buttonStyle(.ds(kind, size: .small))
         }
         Button("Full width") { }.buttonStyle(.ds(fullWidth: true))
+        // A native Link takes the same style: it looks like a button and VoiceOver reads it as a link.
+        Link(destination: URL(string: "https://github.com/k619tw/yuanhhou-design-system")!) { Text(verbatim: "Link as a button") }
+            .buttonStyle(.ds(.secondary))
+    }
+    .padding()
+}
+
+#Preview("Button, brands") {
+    VStack(spacing: DSSpacing.lg) {
+        ForEach(DSTheme.allCases) { theme in
+            HStack(spacing: DSSpacing.md) {
+                Button("Primary") { }.buttonStyle(.ds(.primary))
+                Button("Secondary") { }.buttonStyle(.ds(.secondary))
+            }
+            .dsTheme(theme)
+        }
     }
     .padding()
 }

@@ -4,7 +4,7 @@
   justify-content: center;
   gap: var(--spacing-xs);
   padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   font-weight: var(--typography-caption-1-weight-emphasized);
   letter-spacing: var(--typography-caption-1-letter-spacing);
   white-space: nowrap;

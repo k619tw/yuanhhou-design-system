@@ -7,7 +7,7 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 |---|---|
 | Components | Figma file `GLymoPHNnAmM4irCifF2Ei` (DS - Components); node ids in `docs/components.md` |
 | Native iOS controls, brand applied | Figma file `Ow4FgnInMQhUgn0LEz4ugM` (iOS System Components) |
-| Colors | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), collection `02 Semantics`, exported to `tokens/colors.json`; primitives in `01 Primitives` |
+| Colors and brand corner radii | Figma file `5iR1wP3qoTT4uD6d20ekVv` (Tokens), collection `02 Semantics`, exported to `tokens/colors.json`; primitives in `01 Primitives` |
 | Spacing, radius, size, border width | `Dimension` collection in DS - Components, plus semantic `radius/*` and `space/*` in the Tokens library |
 | Typography | Text styles `<Style>/Regular|Emphasized`; mode axes: collections `Platform` and `Typography` |
 | Rules, color pairing, Figma conventions | `design-system-rules.md` |
@@ -18,13 +18,13 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 ## Packages
 - Web: `@yuanhhou/ds` from `web/`, public on npm. A plain folder install crashes hook components in production builds; see `web/README.md`.
 - iOS: the Swift package `YuanhhouDSKit`, iOS 17 or later, added by Git URL through the root `Package.swift`. The demo app links `ios/YuanhhouDSKit` locally. Keep the two manifests in step (a package test checks the platform).
-- Colors for both are generated from `tokens/colors.json` (see `tokens/README.md`).
+- Colors and the brand corner radii for both are generated from `tokens/colors.json` (see `tokens/README.md`).
 
 ## Rules that must hold
 - **Native first on every platform (hard rule):** before creating any component, look for the OS-level control: SwiftUI and the HIG on iOS, Material 3 and Compose on Android, the semantic HTML element on web. If one exists, do **not** build a component for that platform: use it, styled only through tokens, and show it in Figma as `<Component> (iOS)`, in the app's iOS System catalog and in `docs/ios.md`. Build custom only when there is no equivalent, and say why in `docs/ios.md`. iOS has no checkbox or radio: use `Toggle`, `Picker` and checkmark rows.
 - **Icon rule:** a Utility Icon is display only. An icon that triggers an action is an Icon Button (with an accessible label). Icons inside Button, Badge and Input are display only.
 - **Color pairing:** follow the table in `design-system-rules.md`. Never put a foreground on a surface it was not designed for.
-- **No hardcoded colors** on either platform. If a color is missing, add it to the Tokens file and publish the library, export with `tokens/export-figma.js`, and run `node tokens/generate.mjs`. Never edit `web/src/styles/colors.css` or `DSColor+Tokens.swift` by hand.
+- **No hardcoded colors** on either platform. If a color is missing, add it to the Tokens file and publish the library, export with `tokens/export-figma.js`, and run `node tokens/generate.mjs`. Never edit the generated files (`colors.css`, `shape.css`, `DSColor+Tokens.swift`, `DSShape+Tokens.swift`) by hand.
 - **Every UI string in English and Japanese** (`web/src/i18n/messages.ts`, `ios/YuanhhouDS/Localizable.xcstrings`).
 - **Platform suffix in Figma:** no suffix = shared; `(Web)` = web only; `(iOS)` = the native iOS control shown with tokens. An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; for web, the reverse.
 

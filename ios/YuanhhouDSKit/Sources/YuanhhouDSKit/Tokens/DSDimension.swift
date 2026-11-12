@@ -26,19 +26,16 @@ public nonisolated enum DSSpace {
     public static let pageDesktop: CGFloat = 32
 }
 
-/// Corner radii (`radius/*`). Use `Capsule()` for `radius/pill` and `radius/full`.
+/// Corner radius scale (`radius/*` in the Dimension collection), the same in every brand. The semantic radii
+/// (`control`, `card`, `dialog`, `sheet`, `pill`) follow the brand: read `@Environment(\.dsShape)` and draw them
+/// with ``DSCornerShape``. The deprecated `DSRadius.control` and friends (in `DSShape+Tokens.swift`) are the
+/// Default brand's values only.
 public nonisolated enum DSRadius {
     public static let none: CGFloat = 0
     public static let sm: CGFloat = 8
     public static let md: CGFloat = 12
     public static let lg: CGFloat = 16
     public static let xl: CGFloat = 24
-    public static let control: CGFloat = 8
-    public static let card: CGFloat = 12
-    public static let dialog: CGFloat = 16
-    public static let sheet: CGFloat = 24
-    /// `radius/pill`; use `Capsule()` for the shape.
-    public static let pill: CGFloat = 9999
 }
 
 /// Component and icon sizes (`size/*`).

@@ -37,12 +37,8 @@
   --size-control-md: 40px;
   --size-control-lg: 48px;
 
-  /* Semantic dimension (Tokens: 02 Semantics) */
-  --radius-control: 8px;
-  --radius-card: 12px;
-  --radius-dialog: 16px;
-  --radius-sheet: 24px;
-  --radius-pill: 9999px;
+  /* Semantic dimension (Tokens: 02 Semantics). The semantic radii (control, card, dialog, sheet, pill) follow
+     the brand shape, so they are generated per theme in shape.css. */
   --space-inset-compact: 8px;
   --space-inset-default: 16px;
   --space-inset-comfortable: 24px;

@@ -82,9 +82,11 @@ struct SpacingPage: View {
         ("2xs", DSSpacing.xxs), ("xs", DSSpacing.xs), ("sm", DSSpacing.sm), ("md", DSSpacing.md),
         ("lg", DSSpacing.lg), ("xl", DSSpacing.xl), ("2xl", DSSpacing.xxl), ("3xl", DSSpacing.xxxl),
     ]
-    private let radii: [(String, CGFloat)] = [
-        ("sm / control", DSRadius.sm), ("md / card", DSRadius.md), ("lg / dialog", DSRadius.lg), ("xl / sheet", DSRadius.xl),
-    ]
+    /// The semantic radii follow the brand, so they change with the Theme picker on Home.
+    @Environment(\.dsShape) private var shape
+    private var radii: [(String, CGFloat)] {
+        [("control", shape.control), ("card", shape.card), ("dialog", shape.dialog), ("sheet", shape.sheet), ("pill", shape.pill)]
+    }
 
     var body: some View {
         DSShowcasePage(title: "Spacing and radius") {
@@ -100,12 +102,15 @@ struct SpacingPage: View {
                 }
             }
             DSShowcaseSection(title: "Radius") {
+                Text("Corners follow the brand: Default is round, EVA is sharp, Heritage Luxury is soft.")
+                    .font(.ds(.body2))
+                    .foregroundStyle(DSColor.foregroundSecondary)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 140))], spacing: DSSpacing.md) {
                     ForEach(radii, id: \.0) { name, value in
                         VStack(spacing: DSSpacing.xs) {
-                            RoundedRectangle(cornerRadius: value, style: .continuous)
+                            DSCornerShape(radius: value)
                                 .fill(DSColor.backgroundBrandSecondary)
-                                .overlay(RoundedRectangle(cornerRadius: value, style: .continuous).strokeBorder(DSColor.borderBrand))
+                                .overlay(DSCornerShape(radius: value).strokeBorder(DSColor.borderBrand))
                                 .frame(height: 72)
                             Text(verbatim: "\(name) · \(Int(value))")
                                 .font(.ds(.caption1))

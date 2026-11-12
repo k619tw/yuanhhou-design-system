@@ -1,4 +1,4 @@
-// Read-only Figma Plugin API script that exports the `02 Semantics` colors as tokens/colors.json.
+// Read-only Figma Plugin API script that exports the `02 Semantics` colors and corner radii as tokens/colors.json.
 // Run it with the Figma MCP `use_figma` tool on the Tokens file (5iR1wP3qoTT4uD6d20ekVv), save the returned
 // JSON as tokens/colors.json, then run `node tokens/generate.mjs`.
 const order = ['Light', 'Dark', 'EVA Light', 'EVA Dark', 'Heritage Luxury Light', 'Heritage Luxury Dark']
@@ -38,11 +38,28 @@ for (const id of semantics.variableIds) {
   if (variable.resolvedType !== 'COLOR') continue
   colors[variable.name] = Object.fromEntries(modes.map((m) => [m.name, hex(resolve(variable, m.modeId))]))
 }
+// Corner radii (`radius/*`) follow the brand shape, so they have a value per mode too.
+const resolveFloat = (variable, modeId) => {
+  let value = variable.valuesByMode[modeId]
+  while (value && value.type === 'VARIABLE_ALIAS') {
+    const target = byId[value.id]
+    const collection = collections.find((c) => c.id === target.variableCollectionId)
+    value = target.valuesByMode[collection.id === semantics.id ? modeId : collection.modes[0].modeId]
+  }
+  return value
+}
+const radii = {}
+for (const id of semantics.variableIds) {
+  const variable = byId[id]
+  if (variable.resolvedType !== 'FLOAT' || !variable.name.startsWith('radius/')) continue
+  radii[variable.name] = Object.fromEntries(modes.map((m) => [m.name, resolveFloat(variable, m.modeId)]))
+}
 return JSON.stringify(
   {
     source: 'Figma Tokens file 5iR1wP3qoTT4uD6d20ekVv, collection 02 Semantics. Export with tokens/export-figma.js; do not edit by hand.',
     modes: order,
     colors,
+    radii,
   },
   null,
   2,

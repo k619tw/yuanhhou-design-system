@@ -701,6 +701,16 @@
         }
       }
     },
+    "Corners follow the brand: Default is round, EVA is sharp, Heritage Luxury is soft." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "角の形はブランドに合わせて変わります。Defaultは丸く、EVAは角ばり、Heritage Luxuryはやわらかい角です。"
+          }
+        }
+      }
+    },
     "Daily" : {
       "extractionState" : "manual",
       "localizations" : {
