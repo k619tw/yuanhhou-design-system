@@ -1063,7 +1063,7 @@ A dialog on top of the page that asks for a short decision or a small focused ta
 | Title | text | The decision, as a question or an action. Names the dialog |
 | Description | text; `Show description` | What happens next. Read out with the title |
 | Show close button | True (default), False | Hide it when one of the actions must be chosen |
-| Content | slot; `Show content` (default False) | A form, a list, any content |
+| Content | slot; `Show content` (default False) | Any content. For a field (rename, password), put `Input (Web)` in it; it fills the width |
 | Show actions | True (default), False | One or two Buttons, primary last |
 
 ### Layout
