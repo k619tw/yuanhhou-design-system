@@ -8,7 +8,8 @@ What the design system does not do yet, or does differently on purpose.
 - The segmented `Picker` exists in SwiftUI (iOS System > Selection) but has no Figma reference.
 - Figma `(iOS)` rows are 52 pt high (Apple kit geometry) and `List Section (iOS)` uses `radius/xl` (24; Apple's inset grouped corner is about 26); SwiftUI draws the real values.
 - Accordion (iOS) chevron is `action/secondary` in Figma: 1.78:1 against `background/primary` in Light (Dark 4.1, EVA Light 3.0, EVA Dark 13.0, Heritage Luxury Light 9.8, Heritage Luxury Dark 4.8), below the 3:1 used for UI icons; reviewed with an accessibility specialist and accepted. Accordion (Web) uses `foreground/secondary`. SwiftUI draws the chevron through the small `.dsAccordion` style because the system chevron cannot be recolored.
-- Not built: Select, Tabs, and Modal on web. iOS uses the native sheet instead of a modal (see `docs/ios.md`).
+- Not built: Select and Tabs on web. iOS uses the native sheet instead of a modal (see `docs/ios.md`).
+- `color/background/scrim` (the web modal backdrop) is not drawn in Figma: `Modal (Web)` shows the box only, because the backdrop is page level.
 - SwiftUI's `.glassProminent` and `.borderedProminent` fill with `.tint` (`action/primary`) and draw a white label, which is 1.25:1 in EVA Dark and 1.78:1 in Heritage Luxury Dark. Figma's iOS System Components file already uses the `background/brand/primary` and `foreground/brand/on/primary` pair for these; the code does not yet.
 - `.tint` also overrides `role: .destructive` on a `.bordered` button, so Delete draws in the brand color rather than red in **iOS System > Buttons**.
 - A `.sheet` toolbar's `.confirmationAction` draws tinted text on glass in SwiftUI, while the Figma sheet shows a filled button. Add `.buttonStyle(.glassProminent)` to get the fill.

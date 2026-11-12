@@ -616,6 +616,14 @@
       "EVA Dark": "A0FF3C",
       "Heritage Luxury Light": "692C35",
       "Heritage Luxury Dark": "D4A6B0"
+    },
+    "color/background/scrim": {
+      "Light": "1A1A1A66",
+      "Dark": "1A1A1A99",
+      "EVA Light": "1A1A1A66",
+      "EVA Dark": "1A1A1A99",
+      "Heritage Luxury Light": "1A1A1A66",
+      "Heritage Luxury Dark": "1A1A1A99"
     }
   },
   "radii": {

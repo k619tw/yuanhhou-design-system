@@ -9,6 +9,7 @@ import {
   ImageCard,
   Input,
   Link,
+  Modal,
   Radio,
   RadioGroup,
   Toggle,
@@ -224,6 +225,67 @@ export function LinkPage() {
           </div>
         </ShowcaseSection>
       ))}
+    </ShowcasePage>
+  )
+}
+
+export function ModalPage() {
+  const { t } = useI18n()
+  const [shown, setShown] = useState<'confirm' | 'form' | null>(null)
+  const close = () => setShown(null)
+  return (
+    <ShowcasePage title={t('section.modal')}>
+      <ShowcaseSection title={t('modal.confirmTitle')} note={t('modal.confirmNote')}>
+        <div className="showcase__row">
+          <Button variant="secondary" onClick={() => setShown('confirm')}>
+            {t('modal.open')}
+          </Button>
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('modal.formTitle')} note={t('modal.formNote')}>
+        <div className="showcase__row">
+          <Button variant="secondary" onClick={() => setShown('form')}>
+            {t('modal.open')}
+          </Button>
+        </div>
+      </ShowcaseSection>
+      <p className="showcase-note text-body-2">{t('modal.iosNote')}</p>
+
+      <Modal
+        open={shown === 'confirm'}
+        onClose={close}
+        title={t('modal.discardTitle')}
+        description={t('modal.discardBody')}
+        closeLabel={t('modal.close')}
+        actions={
+          <>
+            <Button variant="secondary" onClick={close}>
+              {t('modal.keep')}
+            </Button>
+            <Button variant="alert" onClick={close}>
+              {t('modal.discard')}
+            </Button>
+          </>
+        }
+      />
+      <Modal
+        open={shown === 'form'}
+        onClose={close}
+        title={t('modal.renameTitle')}
+        description={t('modal.renameBody')}
+        closeLabel={t('modal.close')}
+        dismissOnBackdrop={false}
+        actions={
+          <>
+            <Button variant="secondary" onClick={close}>
+              {t('modal.cancel')}
+            </Button>
+            <Button onClick={close}>{t('modal.save')}</Button>
+          </>
+        }
+      >
+        <Input label={t('modal.nameLabel')} size="large" />
+      </Modal>
     </ShowcasePage>
   )
 }

@@ -155,6 +155,8 @@ public nonisolated extension DSColor {
     static let aiGradientEnd = DSColor("color/ai/gradient/end", light: "914CD4", dark: "DE98FF", evaLight: "8000C8", evaDark: "D2AAFF", heritageLuxuryLight: "692C35", heritageLuxuryDark: "D4A6B0")
     /// `color/border/focus`
     static let borderFocus = DSColor("color/border/focus", light: "0069D1", dark: "57ABFF", evaLight: "8000C8", evaDark: "A0FF3C", heritageLuxuryLight: "692C35", heritageLuxuryDark: "D4A6B0")
+    /// `color/background/scrim`
+    static let backgroundScrim = DSColor("color/background/scrim", light: "1A1A1A66", dark: "1A1A1A99", evaLight: "1A1A1A66", evaDark: "1A1A1A99", heritageLuxuryLight: "1A1A1A66", heritageLuxuryDark: "1A1A1A99")
 }
 
 public nonisolated extension DSColor {
@@ -236,5 +238,6 @@ public nonisolated extension DSColor {
         aiGradientStart,
         aiGradientEnd,
         borderFocus,
+        backgroundScrim,
     ]
 }

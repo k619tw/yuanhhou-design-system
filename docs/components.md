@@ -15,6 +15,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: `Toggle (iOS)` or `Checkmark Row (iOS)` | Yes | `Checkbox` |
 | [Radio](#radio) | `Radio (Web)`, `Radio Group (Web)`: choose exactly one option. iOS: `Picker (iOS)` | Yes | `Radio` |
 | [Accordion](#accordion) | `Accordion (Web)`: expandable section. iOS: `Accordion (iOS)`, the native disclosure group with text | Yes | `Accordion` |
+| [Modal](#modal) | `Modal (Web)`: a dialog for a short decision or task. iOS: the native sheet, alert or confirmation dialog | Yes | `Modal` |
 | [List Section (iOS)](#list-section-ios) | iOS only: groups iOS rows (Input, Toggle, Checkmark Row, Picker) with a header and footer | Via its rows | `List Section (iOS)` |
 
 
@@ -29,7 +30,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
   | Name | Use on | Today |
   |---|---|---|
   | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card |
-  | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Link (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
+  | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Link (Web)`, `Modal (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)` |
   | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Link (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
 
   An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
@@ -1038,3 +1039,95 @@ SwiftUI: `DisclosureGroup("Shipping and returns", isExpanded: $open) { Text("…
 
 ### Related
 [Icon Button](#icon-button) · [Toggle](#toggle)
+
+## Modal
+
+A dialog on top of the page that asks for a short decision or a small focused task. Figma: page `Modal`, component `Modal (Web)` (node `243:4`), no variants: four boolean properties and a content slot. **Web only.** iOS uses the native sheet, alert or confirmation dialog (file iOS System Components, page `Sheets`); see [ios.md](ios.md).
+
+### When to use
+- A decision that must be made before going on: discard changes, delete, confirm.
+- A small task in context: rename, enter a password, pick one option.
+- Not for long forms or flows (use a page), messages that need no answer (use an inline message), or anything the person did not ask for.
+
+### Anatomy
+1. Surface: the box, with an edge and a shadow.
+2. Title (`Title 3/Emphasized`) and optional description (`Body 1/Regular`).
+3. Optional close button: Icon Button, Tertiary, Small, `close`.
+4. Optional content slot.
+5. Optional actions: one or two Buttons, primary last (right).
+6. Backdrop (code only): dims the page behind.
+
+### Properties
+| Property | Values | Notes |
+|---|---|---|
+| Title | text | The decision, as a question or an action. Names the dialog |
+| Description | text; `Show description` | What happens next. Read out with the title |
+| Show close button | True (default), False | Hide it when one of the actions must be chosen |
+| Content | slot; `Show content` (default False) | A form, a list, any content |
+| Show actions | True (default), False | One or two Buttons, primary last |
+
+### Layout
+| Part | Value | Token |
+|---|---|---|
+| Width | 480, or the screen minus 16 each side | fixed |
+| Padding and gaps | 24 (16 under 480px) | `spacing/300` (`--spacing-xl`; `--spacing-lg` on a phone) |
+| Title to description | 8 | `spacing/100` |
+| Between actions | 12 | `spacing/150` |
+| Corners | follow the brand: Default 16, EVA 0, Heritage Luxury 12 | `radius/dialog` |
+| Shadow | large | `shadow/lg` |
+
+On a phone (480px or narrower) the actions share the row equally. A field in the content slot fills the modal's width.
+
+### Color tokens
+| Part | Token |
+|---|---|
+| Surface | `background/primary` |
+| Edge | `border/primary`, 1px, decorative: it separates the box from the page in Dark |
+| Title | `foreground/primary` |
+| Description | `foreground/secondary` |
+| Backdrop (code only) | `background/scrim`: `alpha/black/40` in Light modes, `alpha/black/60` in Dark modes |
+
+Title and description pass 4.5:1 on `background/primary` in all six modes (the pairing table). Nothing is drawn on `background/scrim`; it only dims the page. It is not `background/overlay`, which is the pressed fill of Secondary and Tertiary controls.
+
+### Do
+- Write the title as the decision ("Discard this draft?") and label buttons with the action ("Discard"), not "OK".
+- Put the primary action last (right); use the Alert button for a destructive action.
+- Turn off closing on the backdrop (`dismissOnBackdrop={false}`) when it would lose what someone typed.
+
+### Don't
+- Don't open a modal nobody asked for, or open one modal on top of another.
+- Don't put a long form or a multi-step flow in a modal; use a page.
+- Don't build a custom modal on iOS; use `.sheet`, `.alert` or `.confirmationDialog`.
+
+### Accessibility
+- Web: the native `<dialog>` with `showModal()`. Focus moves inside, Tab stays in the modal, the page behind is inert, and Escape closes it.
+- Focus returns to the control that opened it.
+- The title names the dialog (`aria-labelledby`); the description is read with it (`aria-describedby`).
+- The close button is an Icon Button with an accessible name ("Close"), passed in as `closeLabel` so it is translated.
+- The page behind does not scroll while the modal is open. With reduced motion, it appears without animation.
+
+### Code mapping
+Source: `web/src/components/Modal`.
+```tsx
+import { Button, Modal } from '@yuanhhou/ds'
+
+<Modal
+  open={open}
+  onClose={() => setOpen(false)}
+  title="Discard this draft?"
+  description="Your changes will be lost. You can't undo this."
+  closeLabel="Close"
+  actions={
+    <>
+      <Button variant="secondary" onClick={() => setOpen(false)}>Keep editing</Button>
+      <Button variant="alert" onClick={discard}>Discard</Button>
+    </>
+  }
+/>
+```
+`open` is controlled: the close button, Escape and a click on the backdrop call `onClose`, and the modal closes when `open` becomes false. Leave out `closeLabel` to hide the close button. Children go in the content slot.
+
+iOS: `.sheet`, `.alert` or `.confirmationDialog`; see [ios.md](ios.md).
+
+### Related
+[Button](#button) for the actions · [Icon Button](#icon-button) for close · [Input](#input) in the content slot

@@ -83,6 +83,7 @@
   --color-ai-gradient-start: #0069d1;
   --color-ai-gradient-end: #914cd4;
   --color-border-focus: #0069d1;
+  --color-background-scrim: #1a1a1a66;
 }
 
 [data-theme='dark'] {
@@ -163,6 +164,7 @@
   --color-ai-gradient-start: #3a9dff;
   --color-ai-gradient-end: #de98ff;
   --color-border-focus: #57abff;
+  --color-background-scrim: #1a1a1a99;
 }
 
 [data-theme='eva-light'] {
@@ -243,6 +245,7 @@
   --color-ai-gradient-start: #4d7c0f;
   --color-ai-gradient-end: #8000c8;
   --color-border-focus: #8000c8;
+  --color-background-scrim: #1a1a1a66;
 }
 
 [data-theme='eva-dark'] {
@@ -323,6 +326,7 @@
   --color-ai-gradient-start: #a0ff3c;
   --color-ai-gradient-end: #d2aaff;
   --color-border-focus: #a0ff3c;
+  --color-background-scrim: #1a1a1a99;
 }
 
 [data-theme='heritage-luxury-light'] {
@@ -403,6 +407,7 @@
   --color-ai-gradient-start: #6e512a;
   --color-ai-gradient-end: #692c35;
   --color-border-focus: #692c35;
+  --color-background-scrim: #1a1a1a66;
 }
 
 [data-theme='heritage-luxury-dark'] {
@@ -483,4 +488,5 @@
   --color-ai-gradient-start: #ddbf7c;
   --color-ai-gradient-end: #d4a6b0;
   --color-border-focus: #d4a6b0;
+  --color-background-scrim: #1a1a1a99;
 }

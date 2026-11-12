@@ -9,6 +9,7 @@ import {
   ImageCardPage,
   InputPage,
   LinkPage,
+  ModalPage,
   RadioPage,
   TogglePage,
 } from './ComponentPages'
@@ -37,6 +38,7 @@ export const componentPages: PageEntry[] = [
   { id: 'image-card', title: 'section.imageCard', Page: ImageCardPage },
   { id: 'input', title: 'section.input', Page: InputPage },
   { id: 'link', title: 'section.link', Page: LinkPage },
+  { id: 'modal', title: 'section.modal', Page: ModalPage },
   { id: 'radio', title: 'section.radio', Page: RadioPage },
   { id: 'toggle', title: 'section.toggle', Page: TogglePage },
 ]

@@ -1,0 +1,117 @@
+/* Modal (Web): the native <dialog>, drawn with tokens. Corners follow the brand (radius/dialog). */
+.modal {
+  box-sizing: border-box;
+  width: min(480px, calc(100% - 2 * var(--spacing-lg)));
+  max-width: none;
+  max-height: calc(100% - 2 * var(--spacing-lg));
+  margin: auto;
+  padding: 0;
+  border: var(--border-width-thin) solid var(--color-border-primary);
+  border-radius: var(--radius-dialog);
+  background: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  box-shadow: var(--shadow-lg);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.modal::backdrop {
+  background: var(--color-background-scrim);
+}
+
+/* The page behind does not scroll while a modal is open. */
+html:has(.modal[open]) {
+  overflow: hidden;
+}
+
+.modal[open] {
+  animation: modal-in 0.2s ease-out;
+}
+
+.modal[open]::backdrop {
+  animation: modal-fade 0.2s ease-out;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--spacing-sm));
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal[open],
+  .modal[open]::backdrop {
+    animation: none;
+  }
+}
+
+.modal__surface {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.modal__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.modal__title {
+  margin: 0;
+  color: var(--color-foreground-primary);
+}
+
+.modal__description {
+  margin: 0;
+  color: var(--color-foreground-secondary);
+}
+
+/* The close button sits in the corner; pull it into the padding so its glyph lines up with the title. */
+.modal__close {
+  flex: none;
+  margin: calc(var(--spacing-xs) * -1) calc(var(--spacing-xs) * -1) 0 0;
+}
+
+.modal__content {
+  min-width: 0;
+}
+
+/* A field in a modal fills the modal's width, like the actions row under it. */
+.modal__content .input {
+  max-width: none;
+}
+
+.modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+}
+
+/* On a phone the buttons share the row equally, primary last (right). */
+@media (max-width: 480px) {
+  .modal__surface {
+    padding: var(--spacing-lg);
+  }
+
+  .modal__actions > * {
+    flex: 1;
+  }
+}
