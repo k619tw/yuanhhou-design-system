@@ -11,7 +11,7 @@ One version number for everything: `web/package.json`, `ios/YuanhhouDSKit/Source
 Figma: DS - Components `GLymoPHNnAmM4irCifF2Ei`, page `Release Note` (`158:362`), frame `Release notes` with a `Releases` list of `Release entry` instances (component `161:2`), newest first. Load the `figma-use` skill and call `create_session` before any `use_figma` call.
 
 ## 1. Preflight (stop if any fails)
-- On `main`, working tree clean, up to date with `origin/main` (`git fetch`, `git status -sb`).
+- On `main` (or, in a cloud session, its own branch based on the latest `origin/main`), working tree clean, up to date (`git fetch`, `git status -sb`).
 - `node tokens/generate.mjs --check`.
 - Web, in `web/`: `npm run build`, `npm run build:lib`, `npm run lint`.
 - iOS: `xcodebuild` the app (it builds the package too) and `xcodebuild test` the package, as in `ios/CLAUDE.md`.
@@ -48,15 +48,16 @@ Same text in all places. Sections in this order, only those that apply: **Breaki
 ## 6. Validate
 Rerun `npm run build:lib` and the iOS build (the version changed). Then test as an outside app: `npm pack`, install the file in a new test app outside this repo, and open a production build in the browser with Button, Input, Toggle, Checkbox, Radio and Accordion, checking for no console errors. Dev mode and the demo catalog do not catch install problems. Confirm `CHANGELOG.md`, `package.json`, `DSVersion.swift` and the Figma entry all show `X.Y.Z`.
 
-## 7. Commit, tag, push (ask first)
-Show the user the version, the notes and the files changed, then ask once: "Commit, tag vX.Y.Z and push?" On yes:
-- `git commit -m "Release vX.Y.Z"` (body: the summary; end with the attribution lines from the session).
-- `git tag -a vX.Y.Z -m "vX.Y.Z" -m "<summary>"`.
-- `git push origin main` and `git push origin vX.Y.Z`.
-- Ask separately before `gh release create vX.Y.Z --title "vX.Y.Z" --notes "<the notes>"`.
+## 7. Commit and push to main (this publishes)
+Pushing the release to `main` publishes it: the GitHub Actions workflow `.github/workflows/release.yml` runs when `web/package.json` changes on `main`. It checks that the version matches `DSVersion.swift` and `CHANGELOG.md`, runs the token check, `build:lib` and lint, creates the tag `vX.Y.Z` and the GitHub release (notes = that version's `CHANGELOG.md` section), and publishes `@yuanhhou/ds` to npm with trusted publishing (no token). Each step skips what already exists, so a rerun (Actions > Release > Run workflow) only finishes what is missing.
 
-## 8. Publish (only when the user asks)
-- Web: `npm publish` from `web/`, on npm as `@yuanhhou/ds` (`prepack` builds `lib/`). It needs the user's npm login. A published version can generally be removed only within about 72 hours, so only publish when the user asks.
+- When the user says "publish" or "release", that is the go-ahead for this step, including pushing to `main`. Otherwise show the version, the notes and the files changed, and ask once: "Push vX.Y.Z to main and publish?"
+- `git commit -m "Release vX.Y.Z"` (body: the summary; end with the attribution lines from the session), then push the commit to `main` (from a session branch: `git push origin HEAD:main`, and push the session branch too).
+- Do not tag or publish by hand. Cloud sessions cannot push tags, and the workflow does both.
+- A published npm version can generally be removed only within about 72 hours, so never push a version bump to `main` unless the user wants it released.
+
+## 8. Check the publish
+- Wait a few minutes for the workflow, then confirm: `git ls-remote --tags origin vX.Y.Z` shows the tag and `npm view @yuanhhou/ds version` shows `X.Y.Z`. If either is missing, tell the user to open the failed run under Actions > Release and paste its error.
 - iOS: apps that use the package by Git URL pick up the tag through the root `Package.swift`. Local-package users get it on their next pull.
 - Figma: remind the user to publish the DS - Components and Tokens libraries if they changed, so the version in Figma matches.
 

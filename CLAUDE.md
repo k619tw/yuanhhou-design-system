@@ -42,4 +42,4 @@ The main session is the GM of Design and can hand work to the subagents in `.cla
 When the workflow changes, update `docs/workflow.md` and the Figma file `IJKMYKXRddNKjFwY9yWYAv` (frame `4:2`).
 
 ## Releases
-`/release [major|minor|patch]` (`.claude/skills/release`) cuts one version for both packages and the Figma libraries. It asks before committing, pushing or publishing.
+`/release [major|minor|patch]` (`.claude/skills/release`) cuts one version for both packages and the Figma libraries. Pushing the release commit to `main` publishes it: the GitHub Actions workflow `.github/workflows/release.yml` tags `vX.Y.Z`, creates the GitHub release and publishes `@yuanhhou/ds` to npm. "Publish" or "release" from the user is the go-ahead to push to `main`; otherwise ask first.

@@ -73,7 +73,7 @@ flowchart TD
   OK -- no --> AP
   OK -- yes --> REP["6. Report<br/>what changed, what was not verified"]
   REP --> CP["Commit and push to main<br/>after validation passes"]
-  CP --> REL["/release<br/>version · CHANGELOG.md · Figma Release Note<br/>test in an outside app · tag vX.Y.Z<br/>publish to npm and Figma: you approve"]
+  CP --> REL["/release<br/>version · CHANGELOG.md · Figma Release Note<br/>test in an outside app · push to main<br/>GitHub Actions: tag vX.Y.Z, GitHub release, npm<br/>Figma libraries: you publish"]
 ```
 
 ## The team

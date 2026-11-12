@@ -1,0 +1,102 @@
+# Release: when a new version reaches main, tag it, create the GitHub release and publish @yuanhhou/ds to npm.
+#
+# The version is the one in web/package.json (the /release skill bumps it with CHANGELOG.md and DSVersion.swift).
+# Every step checks first, so a rerun only does what is still missing:
+#   - the tag vX.Y.Z and the GitHub release are created only if they do not exist yet;
+#   - npm publish runs only if that version is not on npm yet.
+# npm uses trusted publishing (OpenID Connect from this workflow), so no npm token is stored anywhere.
+# One-time setup on npmjs.com: package @yuanhhou/ds > Settings > Trusted publishing > GitHub Actions,
+# repository k619tw/yuanhhou-design-system, workflow file release.yml.
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - web/package.json
+      - .github/workflows/release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write # tag and GitHub release
+  id-token: write # npm trusted publishing
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      # Trusted publishing needs npm 11.5.1 or later.
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Read the version
+        id: version
+        run: |
+          version=$(node -p "require('./web/package.json').version")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "tag=v$version" >> "$GITHUB_OUTPUT"
+          swift=$(sed -n 's/.*current = "\(.*\)".*/\1/p' ios/YuanhhouDSKit/Sources/YuanhhouDSKit/DSVersion.swift)
+          if [ "$swift" != "$version" ]; then
+            echo "::error::web/package.json is $version but DSVersion.swift is $swift. Release with /release so they match."
+            exit 1
+          fi
+          if ! grep -q "^## $version " CHANGELOG.md; then
+            echo "::error::CHANGELOG.md has no section for $version."
+            exit 1
+          fi
+
+      - name: Check, build and lint
+        run: |
+          node tokens/generate.mjs --check
+          cd web
+          npm ci
+          npm run build:lib
+          npm run lint
+
+      - name: Tag and GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          # The notes are the version's section of CHANGELOG.md, without its heading.
+          awk -v v="$VERSION" '
+            index($0, "## " v " ") == 1 { on = 1; next }
+            on && /^## / { exit }
+            on { print }
+          ' CHANGELOG.md > notes.md
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" > /dev/null; then
+            echo "Tag $TAG already exists."
+          else
+            git tag "$TAG" "$GITHUB_SHA"
+            git push origin "$TAG"
+          fi
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "GitHub release $TAG already exists."
+          else
+            gh release create "$TAG" --title "$TAG" --notes-file notes.md --verify-tag
+          fi
+
+      - name: Publish to npm
+        working-directory: web
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if npm view "@yuanhhou/ds@$VERSION" version > /dev/null 2>&1; then
+            echo "@yuanhhou/ds@$VERSION is already on npm."
+          else
+            npm publish --provenance --access public
+          fi
