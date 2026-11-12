@@ -230,8 +230,8 @@
       "Dark": "F7F2FC",
       "EVA Light": "EEDCFF",
       "EVA Dark": "4B0078",
-      "Heritage Luxury Light": "F1E8D8",
-      "Heritage Luxury Dark": "322319"
+      "Heritage Luxury Light": "ECD5D9",
+      "Heritage Luxury Dark": "692C35"
     },
     "color/background/promote/primary-pressed": {
       "Light": "B670FA",
@@ -246,8 +246,8 @@
       "Dark": "DE98FF",
       "EVA Light": "D2AAFF",
       "EVA Dark": "320050",
-      "Heritage Luxury Light": "E2D0B3",
-      "Heritage Luxury Dark": "503B28"
+      "Heritage Luxury Light": "D4A6B0",
+      "Heritage Luxury Dark": "8C4050"
     },
     "color/foreground/hero": {
       "Light": "101274",

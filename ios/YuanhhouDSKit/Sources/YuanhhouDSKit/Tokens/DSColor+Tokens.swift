@@ -58,11 +58,11 @@ public nonisolated extension DSColor {
     /// `color/background/promote/primary`
     static let backgroundPromotePrimary = DSColor("color/background/promote/primary", light: "DE98FF", dark: "DE98FF", evaLight: "9446E1", evaDark: "8000C8", heritageLuxuryLight: "8C4050", heritageLuxuryDark: "B97B8A")
     /// `color/background/promote/secondary`
-    static let backgroundPromoteSecondary = DSColor("color/background/promote/secondary", light: "F7F2FC", dark: "F7F2FC", evaLight: "EEDCFF", evaDark: "4B0078", heritageLuxuryLight: "F1E8D8", heritageLuxuryDark: "322319")
+    static let backgroundPromoteSecondary = DSColor("color/background/promote/secondary", light: "F7F2FC", dark: "F7F2FC", evaLight: "EEDCFF", evaDark: "4B0078", heritageLuxuryLight: "ECD5D9", heritageLuxuryDark: "692C35")
     /// `color/background/promote/primary-pressed`
     static let backgroundPromotePrimaryPressed = DSColor("color/background/promote/primary-pressed", light: "B670FA", dark: "B670FA", evaLight: "8000C8", evaDark: "6400A0", heritageLuxuryLight: "692C35", heritageLuxuryDark: "D4A6B0")
     /// `color/background/promote/secondary-pressed`
-    static let backgroundPromoteSecondaryPressed = DSColor("color/background/promote/secondary-pressed", light: "DE98FF", dark: "DE98FF", evaLight: "D2AAFF", evaDark: "320050", heritageLuxuryLight: "E2D0B3", heritageLuxuryDark: "503B28")
+    static let backgroundPromoteSecondaryPressed = DSColor("color/background/promote/secondary-pressed", light: "DE98FF", dark: "DE98FF", evaLight: "D2AAFF", evaDark: "320050", heritageLuxuryLight: "D4A6B0", heritageLuxuryDark: "8C4050")
     /// `color/foreground/hero`
     static let foregroundHero = DSColor("color/foreground/hero", light: "101274", dark: "FFFFFF", evaLight: "4B0078", evaDark: "A0FF3C", heritageLuxuryLight: "481B26", heritageLuxuryDark: "DDBF7C")
     /// `color/foreground/primary`

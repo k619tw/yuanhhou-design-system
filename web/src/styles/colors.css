@@ -354,9 +354,9 @@
   --color-background-error-primary-pressed: #481b26;
   --color-background-error-secondary-pressed: #ecd5d9;
   --color-background-promote-primary: #8c4050;
-  --color-background-promote-secondary: #f1e8d8;
+  --color-background-promote-secondary: #ecd5d9;
   --color-background-promote-primary-pressed: #692c35;
-  --color-background-promote-secondary-pressed: #e2d0b3;
+  --color-background-promote-secondary-pressed: #d4a6b0;
   --color-foreground-hero: #481b26;
   --color-foreground-primary: #1c140f;
   --color-foreground-secondary: #503b28;
@@ -434,9 +434,9 @@
   --color-background-error-primary-pressed: #b97b8a;
   --color-background-error-secondary-pressed: #2c1019;
   --color-background-promote-primary: #b97b8a;
-  --color-background-promote-secondary: #322319;
+  --color-background-promote-secondary: #692c35;
   --color-background-promote-primary-pressed: #d4a6b0;
-  --color-background-promote-secondary-pressed: #503b28;
+  --color-background-promote-secondary-pressed: #8c4050;
   --color-foreground-hero: #ddbf7c;
   --color-foreground-primary: #fbf7ef;
   --color-foreground-secondary: #c3ac88;
