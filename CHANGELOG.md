@@ -4,6 +4,13 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.5.1 · 2026-11-12
+
+Promote badges show their tint again in the Heritage Luxury theme.
+
+### Fixed
+- Both: in Heritage Luxury, `background/promote/secondary` is now bordeaux (Light 200, Dark 700; pressed Light 300, Dark 600). It was the same colour as `background/secondary`, so subtle Promote badges had no visible fill on cards. Badge text passes 6.8:1 or better.
+
 ## 0.5.0 · 2026-11-12
 
 Corners now follow the brand on web, iOS and in Figma: Default stays round, EVA is sharp and Heritage Luxury is soft.
