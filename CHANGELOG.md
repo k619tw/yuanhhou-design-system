@@ -4,6 +4,15 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.6.0 · 2026-11-12
+
+A Modal for web, built on the native dialog, and a scrim token for the backdrop behind it.
+
+### Added
+- Web: `Modal`, a dialog for a short decision or a small task, built on the native `<dialog>`. Focus stays inside it, Escape and the backdrop close it, and focus returns to the button that opened it. Control it with `open` and `onClose`; add `description`, a close button (`closeLabel`), content (children) and `actions` as needed. Set `dismissOnBackdrop={false}` when closing would lose what someone typed. Corners follow the brand (`--radius-dialog`).
+- Web and iOS: `color/background/scrim` (`--color-background-scrim`, `DSColor.backgroundScrim`) dims the page behind a modal: black at 40% in Light modes and 60% in Dark modes. Draw nothing on it.
+- Figma: `Modal (Web)` on the new Modal page, with Title and Description, a Content slot (put `Input (Web)` in it for a field such as a password) and switches for the description, close button, content and actions. iOS keeps the native `.sheet`, `.alert` and `.confirmationDialog`.
+
 ## 0.5.1 · 2026-11-12
 
 Promote badges show their tint again in the Heritage Luxury theme.
