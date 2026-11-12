@@ -4,6 +4,25 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.5.0 · 2026-11-12
+
+Corners now follow the brand on web, iOS and in Figma: Default stays round, EVA is sharp and Heritage Luxury is soft.
+
+### Breaking
+- Web: in the Default brand, `--radius-control` is now 12px (was 8) and `--radius-card` 16px (was 12), and both change with the brand. If your own UI uses them, check those corners.
+- iOS: `DSRadius.control`, `card`, `dialog`, `sheet` and `pill` are deprecated and now hold the Default brand's values (`control` 12, `card` 16). Read `@Environment(\.dsShape)` so corners follow the brand.
+
+### Added
+- Both: brand shape. Button, Badge, Icon Button, Image Card and Input (web) take their corners from the brand you already set (`data-theme` or `.dsTheme`): Default round, EVA square, Heritage Luxury soft (controls 8, cards 12, buttons and badges 10). Light and Dark match.
+- Web: `--radius-control`, `--radius-card`, `--radius-dialog`, `--radius-sheet` and `--radius-pill` per theme, included in `style.css`.
+- iOS: `@Environment(\.dsShape)` returns the brand's radii, and `DSCornerShape(radius:)` draws them, as a capsule when the radius is half the height or more.
+- Figma: `radius/control`, `card`, `dialog`, `sheet` and `pill` have a value per brand mode in the Tokens library, and Badge, Icon Button, Input (Web) and Image Card bind to them. Switch the `02 Semantics` mode to see each brand's corners.
+
+### Changed
+- Both: native iOS controls (text fields, toggles, segmented pickers, list sections, sheets), Checkbox, Radio and Toggle keep their own corners in every brand.
+- iOS: on iPad, the pointer highlight of Button and Icon Button follows the brand's corners.
+- Docs: a native SwiftUI `Link` takes the DS button style when a link should look like a button: `Link(destination: url) { Text("Read more") }.buttonStyle(.ds(.secondary))`.
+
 ## 0.4.0 · 2026-11-09
 
 Links arrive on web, iOS and Figma, Dark mode's tint is lighter so it passes contrast on every surface, and the iOS text field can show an error.
