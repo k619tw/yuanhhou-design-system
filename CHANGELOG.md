@@ -4,6 +4,13 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.6.1 · 2026-11-12
+
+Modal can now start with focus in a field, such as a password.
+
+### Fixed
+- Web: `Modal` focuses the element marked `data-autofocus` when it opens, so a rename or password modal starts in its field. Before, focus always went to the close button: React's `autoFocus` runs before the dialog opens, so the browser drops it. Add `data-autofocus` to the `Input` in the content slot.
+
 ## 0.6.0 · 2026-11-12
 
 A Modal for web, built on the native dialog, and a scrim token for the backdrop behind it.
