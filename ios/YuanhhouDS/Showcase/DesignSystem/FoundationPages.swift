@@ -102,7 +102,7 @@ struct SpacingPage: View {
                 }
             }
             DSShowcaseSection(title: "Radius") {
-                Text("Corners follow the brand: Default is round, EVA is sharp, Heritage Luxury is soft.")
+                Text("Corners follow the brand: Default is round, EVA is sharp, Cedar is soft.")
                     .font(.ds(.body2))
                     .foregroundStyle(DSColor.foregroundSecondary)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 140))], spacing: DSSpacing.md) {

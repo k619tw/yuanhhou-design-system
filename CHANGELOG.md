@@ -4,6 +4,20 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.7.0 · 2026-11-17
+
+Heritage Luxury is now Cedar: a woody, apothecary palette with the same contrast as before.
+
+### Breaking
+- Web: the theme is renamed. Use `data-theme="cedar-light"` and `"cedar-dark"` (were `heritage-luxury-light` and `heritage-luxury-dark`), and `applyTheme('cedar')` (was `'heritage-luxury'`).
+- Web and iOS: the theme's primitives are renamed and recoloured: `--yuanhhouColorCedar<Family><Step>` and `DSPrimitive.colorCedar<Family><Step>`, with the families linen, oak, honey, sage, smoke, clay and fig (were `Heritage` parchment, brass, bordeaux, forest and slate). Components use the semantic tokens, so only code that used these primitives directly needs to change.
+- Web and iOS: the unused `alpha/brand` primitives are removed (`--yuanhhouColorAlphaBrand10`–`90`, `DSPrimitive.colorAlphaBrand10`–`90`). Use a semantic token instead.
+- iOS: `DSTheme.heritageLuxury` is now `.cedar`, `DSThemeMode.heritageLuxuryLight` and `Dark` are `.cedarLight` and `.cedarDark`, and `DSColor`'s `heritageLuxuryLight` and `heritageLuxuryDark` are `cedarLight` and `cedarDark`. The old `DSTheme` and `DSThemeMode` names still work, marked deprecated, and a saved Heritage Luxury setting still loads as Cedar.
+- Figma: the Tokens modes are now `Cedar Light` and `Cedar Dark`, and the primitives are `color/cedar/<family>/<step>`. Accept the library update in your files.
+
+### Changed
+- All: Cedar's colours are woody and calm: linen for pages and text, oak for the brand, links and focus, honey for warnings, sage for success, smoke for info, clay for errors, and fig for promote and the end of the AI gradient. Every step is exactly as light as the colour it replaced, so every documented pair keeps its contrast ratio (all text pairs at least 4.5:1, outlines at least 3:1).
+
 ## 0.6.1 · 2026-11-12
 
 Modal can now start with focus in a field, such as a password.

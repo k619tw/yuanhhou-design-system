@@ -21,6 +21,16 @@
         }
       }
     },
+    "Cedar": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シダー"
+          }
+        }
+      }
+    },
     "Collapsed": {
       "localizations": {
         "ja": {
@@ -97,16 +107,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "展開"
-          }
-        }
-      }
-    },
-    "Heritage Luxury": {
-      "localizations": {
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Heritage Luxury"
           }
         }
       }

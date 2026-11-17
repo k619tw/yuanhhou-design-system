@@ -27,11 +27,11 @@ iOS: open `ios/YuanhhouDS.xcodeproj` in Xcode and run the `YuanhhouDS` scheme on
 
 ## Use it in an app
 - **Web:** `npm install @yuanhhou/ds`, then `import { applyTheme, Button } from '@yuanhhou/ds'` and `import '@yuanhhou/ds/style.css'`, and call `applyTheme()` once. Details in [web/README.md](web/README.md).
-- **iOS** (iOS 17 or later, built with Xcode 26 or later): in Xcode, File > Add Package Dependencies, enter `https://github.com/k619tw/yuanhhou-design-system`, then `import YuanhhouDSKit`. At the root of the app use `.dsTheme(.default)` (or `.eva`, `.heritageLuxury`), which sets the palette and tints native controls, then `.buttonStyle(.ds(.primary))`, `DSColor` and `.dsTextStyle(.body1)` in views. See `ios/YuanhhouDSKit/README.md`.
+- **iOS** (iOS 17 or later, built with Xcode 26 or later): in Xcode, File > Add Package Dependencies, enter `https://github.com/k619tw/yuanhhou-design-system`, then `import YuanhhouDSKit`. At the root of the app use `.dsTheme(.default)` (or `.eva`, `.cedar`), which sets the palette and tints native controls, then `.buttonStyle(.ds(.primary))`, `DSColor` and `.dsTextStyle(.body1)` in views. See `ios/YuanhhouDSKit/README.md`.
 - **Colors:** change them in Figma, export with `tokens/export-figma.js` into `tokens/colors.json`, and run `node tokens/generate.mjs`. See [tokens/README.md](tokens/README.md).
 
 ## What is in it
-- Tokens from a Figma library: primitives plus semantic colors in six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark: each brand in Light and Dark), spacing on an 8 pt scale, radius, sizes and typography with Web and iOS modes.
+- Tokens from a Figma library: primitives plus semantic colors in six modes (Light, Dark, EVA Light, EVA Dark, Cedar Light, Cedar Dark: each brand in Light and Dark), spacing on an 8 pt scale, radius, sizes and typography with Web and iOS modes.
 - Components: Button, Icon Button, Utility Icon, Badge, Image Card, Link, Input, Toggle, Checkbox, Radio, Accordion.
 - Accessibility: text pairs checked at 4.5:1 and borders at 3:1 in every mode; native controls first on iOS.
 - English and Japanese on both platforms.

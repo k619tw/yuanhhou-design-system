@@ -39,7 +39,7 @@ Tokens are Swift types named like the Figma variables; the iOS code syntax in Fi
 
 | Figma | Swift |
 |---|---|
-| `color/<role>/<name>` | `DSColor.<roleName>`, for example `DSColor.backgroundPrimary`, resolved for the current brand (`DSTheme`: `.default`, `.eva`, `.heritageLuxury`) in Light or Dark from the color scheme (the device, or `DSAppearance` in the showcase) |
+| `color/<role>/<name>` | `DSColor.<roleName>`, for example `DSColor.backgroundPrimary`, resolved for the current brand (`DSTheme`: `.default`, `.eva`, `.cedar`) in Light or Dark from the color scheme (the device, or `DSAppearance` in the showcase) |
 | `spacing/*`, `space/*` | `DSSpacing.*`, `DSSpace.*` |
 | `radius/*` scale, `size/*`, `border/width/*` | `DSRadius`, `DSSize`, `DSBorderWidth` |
 | `radius/control|card|dialog|sheet|pill` (follow the brand) | `@Environment(\.dsShape)` (`DSShape`, set by `.dsTheme(_:)`), drawn with `DSCornerShape(radius:)`, which turns a radius of half the height or more into a capsule. `DSRadius.control`, `card`, `dialog`, `sheet` and `pill` are deprecated: they are the Default brand's values only and do not follow the brand |
@@ -47,7 +47,7 @@ Tokens are Swift types named like the Figma variables; the iOS code syntax in Fi
 | primitives | `DSPrimitive` (components do not use them directly) |
 
 ## Brand shape
-Button, Badge, Icon Button and Image Card read `@Environment(\.dsShape)` and draw with `DSCornerShape`, so EVA draws them square and Heritage Luxury soft. The HIG's capsule buttons describe the system styles; a custom `ButtonStyle` is where a brand shows, so a square EVA button is allowed. The system styles we do not restyle (`.glass`, `.glassProminent`, `.borderedProminent`) stay capsules in every brand, and native controls (TextField rows, Toggle, segmented `Picker`, List sections, sheets) keep Apple's corners. The iPad pointer highlight uses the brand's corners (`.contentShape(.hoverEffect, …)`), while the tap area stays a 44 pt rectangle. Each of the four has a `… , brands` preview.
+Button, Badge, Icon Button and Image Card read `@Environment(\.dsShape)` and draw with `DSCornerShape`, so EVA draws them square and Cedar soft. The HIG's capsule buttons describe the system styles; a custom `ButtonStyle` is where a brand shows, so a square EVA button is allowed. The system styles we do not restyle (`.glass`, `.glassProminent`, `.borderedProminent`) stay capsules in every brand, and native controls (TextField rows, Toggle, segmented `Picker`, List sections, sheets) keep Apple's corners. The iPad pointer highlight uses the brand's corners (`.contentShape(.hoverEffect, …)`), while the tap area stays a 44 pt rectangle. Each of the four has a `… , brands` preview.
 
 ## Same component, different names
 React and SwiftUI each follow their platform's habits, so the code names are not all the Figma names. `type` means something else on an HTML button, so web Button uses `variant`.

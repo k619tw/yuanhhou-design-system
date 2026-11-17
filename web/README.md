@@ -20,11 +20,11 @@ npm install @yuanhhou/ds
 import { applyTheme, Button } from '@yuanhhou/ds'
 import '@yuanhhou/ds/style.css'
 
-applyTheme() // once when the app starts; or applyTheme('eva'), applyTheme('heritage-luxury')
+applyTheme() // once when the app starts; or applyTheme('eva'), applyTheme('cedar')
 
 <Button variant="primary">Save</Button>
 ```
-`applyTheme` sets the brand and follows the device's Light or Dark setting, like `.dsTheme(_:)` on iOS. To force one mode, set `data-theme` on `<html>` instead: `light`, `dark`, `eva-light`, `eva-dark`, `heritage-luxury-light`, `heritage-luxury-dark`.
+`applyTheme` sets the brand and follows the device's Light or Dark setting, like `.dsTheme(_:)` on iOS. To force one mode, set `data-theme` on `<html>` instead: `light`, `dark`, `eva-light`, `eva-dark`, `cedar-light`, `cedar-dark`.
 
 React 19 is a peer dependency. `style.css` loads Figtree and Material Symbols Rounded from Google Fonts, so there is nothing to add to the page.
 

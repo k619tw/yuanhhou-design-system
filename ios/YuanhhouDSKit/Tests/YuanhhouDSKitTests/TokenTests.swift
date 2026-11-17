@@ -121,6 +121,12 @@ private var repoRoot: URL {
     #expect(DSTheme.default.title == "Default")
 }
 
+@Test func cedarKeepsTheSavedHeritageLuxuryValue() {
+    // Cedar was Heritage Luxury before 0.7.0; settings saved then must still load.
+    #expect(DSTheme(rawValue: "heritageLuxury") == .cedar)
+    #expect(DSTheme.cedar.title == "Cedar")
+}
+
 // MARK: - Brand shape
 
 @Test func brandShapeIsTheSameInLightAndDark() {

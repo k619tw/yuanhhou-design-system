@@ -6,7 +6,7 @@ import { findPage } from '@/showcase/pages'
 import { catalogHref, useRoute } from '@/showcase/router'
 import './App.css'
 
-const themes = ['default', 'eva', 'heritage-luxury'] as const
+const themes = ['default', 'eva', 'cedar'] as const
 const appearances = ['light', 'dark'] as const
 const densities = ['compact', 'default', 'loose'] as const
 

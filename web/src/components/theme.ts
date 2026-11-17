@@ -1,4 +1,4 @@
-export type ThemeBrand = 'default' | 'eva' | 'heritage-luxury'
+export type ThemeBrand = 'default' | 'eva' | 'cedar'
 
 let stopFollowing: (() => void) | undefined
 

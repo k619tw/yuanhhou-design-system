@@ -14,7 +14,7 @@ import YuanhhouDSKit
 ContentView().dsTheme(.default)
 ```
 
-The brands are `.default`, `.eva` and `.heritageLuxury`. Each follows the device between Light and Dark.
+The brands are `.default`, `.eva` and `.cedar`. Each follows the device between Light and Dark.
 
 ```swift
 Button("Save") { }.buttonStyle(.ds(.primary, fullWidth: true))

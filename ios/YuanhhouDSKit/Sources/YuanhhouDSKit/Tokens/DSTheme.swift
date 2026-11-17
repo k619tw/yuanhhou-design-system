@@ -2,7 +2,12 @@ import SwiftUI
 
 /// The six Figma color modes of the Tokens library: each brand in Light and Dark.
 public nonisolated enum DSThemeMode: String, CaseIterable, Sendable {
-    case light, dark, evaLight, evaDark, heritageLuxuryLight, heritageLuxuryDark
+    case light, dark, evaLight, evaDark, cedarLight, cedarDark
+
+    @available(*, deprecated, renamed: "cedarLight")
+    public static let heritageLuxuryLight = DSThemeMode.cedarLight
+    @available(*, deprecated, renamed: "cedarDark")
+    public static let heritageLuxuryDark = DSThemeMode.cedarDark
 }
 
 /// Which brand palette a view tree uses. Every brand has a Light and a Dark mode and follows the
@@ -10,11 +15,17 @@ public nonisolated enum DSThemeMode: String, CaseIterable, Sendable {
 public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
     // The raw value stays "system" so settings saved by earlier versions still load.
     case `default` = "system"
-    case eva, heritageLuxury
+    case eva
+    // The raw value stays "heritageLuxury" so settings saved before the rename still load.
+    case cedar = "heritageLuxury"
 
     /// The Default brand was named `.system`, which read like the device setting.
     @available(*, deprecated, renamed: "default")
     public static let system = DSTheme.default
+
+    /// Cedar was named Heritage Luxury before 0.7.0.
+    @available(*, deprecated, renamed: "cedar")
+    public static let heritageLuxury = DSTheme.cedar
 
     public var id: String { rawValue }
 
@@ -26,7 +37,7 @@ public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .default: "Default"
         case .eva: "EVA"
-        case .heritageLuxury: "Heritage Luxury"
+        case .cedar: "Cedar"
         }
     }
 
@@ -35,7 +46,7 @@ public nonisolated enum DSTheme: String, CaseIterable, Identifiable, Sendable {
         switch self {
         case .default: return dark ? .dark : .light
         case .eva: return dark ? .evaDark : .evaLight
-        case .heritageLuxury: return dark ? .heritageLuxuryDark : .heritageLuxuryLight
+        case .cedar: return dark ? .cedarDark : .cedarLight
         }
     }
 }

@@ -1,13 +1,13 @@
 import SwiftUI
 
 public nonisolated extension EnvironmentValues {
-    /// The corner radii of the current brand: Default round, EVA sharp, Heritage Luxury soft.
+    /// The corner radii of the current brand: Default round, EVA sharp, Cedar soft.
     /// Set by ``SwiftUI/View/dsTheme(_:)``; read it with `@Environment(\.dsShape)`.
     var dsShape: DSShape { dsTheme.mode(for: colorScheme).shape }
 }
 
 /// A rounded rectangle for one `radius/*` token. A radius of half the height or more draws a capsule, so
-/// `radius/pill` (9999) stays a capsule at any size while EVA's 0 and Heritage Luxury's 10 draw corners.
+/// `radius/pill` (9999) stays a capsule at any size while EVA's 0 and Cedar's 10 draw corners.
 public nonisolated struct DSCornerShape: InsettableShape {
     public var radius: CGFloat
     private var inset: CGFloat = 0

@@ -22,7 +22,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 ## Conventions every component follows
 - **Icon rule:** an icon inside something already interactive is a Utility Icon (display only). An icon that triggers an action is an Icon Button.
 - **Icons** are chosen through instance swap properties (right panel); **slots** are only for free-form content (card image, accordion content, input trailing action).
-- **Color** binds only to the Tokens library (`02 Semantics`) and follows the pairing table in the rules file. All text pairs pass 4.5:1 in all six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark).
+- **Color** binds only to the Tokens library (`02 Semantics`) and follows the pairing table in the rules file. All text pairs pass 4.5:1 in all six modes (Light, Dark, EVA Light, EVA Dark, Cedar Light, Cedar Dark).
 - **Type** uses the text styles `<Style>/Regular|Emphasized` (Figtree on web; Platform mode `iOS` switches to SF Pro).
 - **States:** Pressed and Disabled are designed. Hover and Focus are not yet in Figma; implement focus as a 2px `--color-border-focus` outline.
 - **Sizes** use size tokens where they exist (icons: `size/icon/*`).
@@ -78,7 +78,7 @@ Triggers an action or submits a form. Figma: page `Button`, component set `Butto
 | Icon gap | 4 (`space/gap/tight`) | 8 (`spacing/100`) |
 | Icon size | Medium 20 | Small 16 |
 | Text style | `Button 1/Emphasized` (16/24) | `Button 2/Emphasized` (14/20) |
-| Corner radius | pill (`radius/pill`; follows the brand: capsule in Default, 0 in EVA, 10 in Heritage Luxury) | pill |
+| Corner radius | pill (`radius/pill`; follows the brand: capsule in Default, 0 in EVA, 10 in Cedar) | pill |
 
 Width hugs the label. Both sizes get their height from padding plus the line height (Large 12 + 24 + 12 = 48, Small 8 + 20 + 8 = 36), so they follow the text style: Large is 46 under the iOS typography mode (Platform = iOS, Default density), Small stays 36. Full-width is a layout decision in code, not a variant (`fullWidth` in SwiftUI). Labels wrap rather than truncate. On iOS, Small keeps its drawn 36 pt height with a 44 pt hit area.
 
@@ -163,7 +163,7 @@ An interactive button that shows only an icon. Figma: page `Icon Button`, compon
 |---|---|---|
 | Box | 48 × 48 | 32 × 32 |
 | Icon | 24 | 20 |
-| Corner radius | 12 (`radius/control`; follows the brand: 0 in EVA, 8 in Heritage Luxury) | 12 |
+| Corner radius | 12 (`radius/control`; follows the brand: 0 in EVA, 8 in Cedar) | 12 |
 
 ### Color tokens
 | Type / State | Fill | Outline | Icon |
@@ -309,7 +309,7 @@ Brand and Info currently share the same colors in the Tokens library, so they lo
 | Padding | 8 horizontal, 4 vertical | 8 horizontal, 2 vertical |
 | Gap (icon to label) | 4 (`spacing/50`) | 4 |
 | Text style | `Caption 1/Emphasized` (12) | `Caption 2/Emphasized` (11) |
-| Corner radius | pill (`radius/pill`; follows the brand: capsule in Default, 0 in EVA, 10 in Heritage Luxury) | pill |
+| Corner radius | pill (`radius/pill`; follows the brand: capsule in Default, 0 in EVA, 10 in Cedar) | pill |
 
 ### Color tokens
 | Style | Fill | Text and icon |
@@ -384,7 +384,7 @@ A content card with media, a title, a description, an optional badge and optiona
 | Image | full width, 180 high | 200 wide, full height |
 | Body padding | 16 (`spacing/200`) | 16 |
 | Gap in body | 8 (`spacing/100`) | 8 |
-| Corner radius | 16 (`radius/card`; follows the brand: 0 in EVA, 12 in Heritage Luxury) | 16 |
+| Corner radius | 16 (`radius/card`; follows the brand: 0 in EVA, 12 in Cedar) | 16 |
 | Elevation | `shadow/sm` | `shadow/sm` |
 | Border | 1px `border/primary` | same |
 | Title | `Headline/Emphasized` | same |
@@ -526,7 +526,7 @@ A single-line text field with a label and helper text. Figma: page `Input`, comp
 | Field padding | 12 horizontal (`spacing/150`) |
 | Gap inside field | 8 (`spacing/100`) |
 | Gap label, field, helper | 4 (`spacing/50`) |
-| Corner radius | 12 (`radius/control`; follows the brand: 0 in EVA, 8 in Heritage Luxury) |
+| Corner radius | 12 (`radius/control`; follows the brand: 0 in EVA, 8 in Cedar) |
 | Label | `Body 2/Emphasized` |
 | Value | `Body 1/Regular` |
 | Helper | `Caption 1/Regular` |
@@ -1031,7 +1031,7 @@ Apple has a native disclosure group, so there is no custom accordion on iOS (nat
 | Part | Value / token |
 |---|---|
 | Header | height 52 with the separator, padding 16 horizontal (`spacing/200`); label `Body 1/Regular`, `foreground/primary` |
-| Chevron | SF Symbol glyph in `Body 2/Emphasized` (15 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 3.0 EVA Light, 13.0 EVA Dark, 9.8 Heritage Luxury Light, 4.8 Heritage Luxury Dark), below the 3:1 used for UI icons. Reviewed with an accessibility specialist and accepted. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
+| Chevron | SF Symbol glyph in `Body 2/Emphasized` (15 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 3.0 EVA Light, 13.0 EVA Dark, 9.8 Cedar Light, 4.8 Cedar Dark), below the 3:1 used for UI icons. Reviewed with an accessibility specialist and accepted. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
 | Content | text row aligned with the label (16 padding), no top padding, `spacing/150` bottom padding, `Body 2/Regular`, `foreground/secondary` |
 | Separator | 1 (`border/width/thin`), inset 16, `border/primary` |
 
@@ -1073,7 +1073,7 @@ A dialog on top of the page that asks for a short decision or a small focused ta
 | Padding and gaps | 24 (16 under 480px) | `spacing/300` (`--spacing-xl`; `--spacing-lg` on a phone) |
 | Title to description | 8 | `spacing/100` |
 | Between actions | 12 | `spacing/150` |
-| Corners | follow the brand: Default 16, EVA 0, Heritage Luxury 12 | `radius/dialog` |
+| Corners | follow the brand: Default 16, EVA 0, Cedar 12 | `radius/dialog` |
 | Shadow | large | `shadow/lg` |
 
 On a phone (480px or narrower) the actions share the row equally. A field in the content slot fills the modal's width.

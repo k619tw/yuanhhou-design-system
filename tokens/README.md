@@ -4,13 +4,13 @@ One source for the theme tokens of both platforms, so web and iOS cannot drift a
 
 | File | What |
 |---|---|
-| `colors.json` | The Figma Tokens library, collection `02 Semantics`, in the six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark): every color as hex `RRGGBB` or `RRGGBBAA`, and every `radius/*` in points |
+| `colors.json` | The Figma Tokens library, collection `02 Semantics`, in the six modes (Light, Dark, EVA Light, EVA Dark, Cedar Light, Cedar Dark): every color as hex `RRGGBB` or `RRGGBBAA`, and every `radius/*` in points |
 | `export-figma.js` | Read-only Figma Plugin API script that produces `colors.json` |
-| `heritage-palette.py` | Generates the Heritage Luxury primitives (linen, oak, honey, sage, smoke, clay, fig). Each step keeps the luminance of the step it replaced, so the semantic pairs keep their contrast. The output is entered in the Tokens file by hand, then copied to `primitives.css` and `DSPrimitive.swift` |
+| `cedar-palette.py` | Generates the Cedar primitives (linen, oak, honey, sage, smoke, clay, fig). Each step keeps the luminance of the step it replaced, so the semantic pairs keep their contrast. The output is entered in the Tokens file by hand, then copied to `primitives.css` and `DSPrimitive.swift` |
 | `generate.mjs` | Writes `web/src/styles/colors.css`, `web/src/styles/shape.css`, `DSColor+Tokens.swift` and `DSShape+Tokens.swift` (in `ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Tokens/`) from `colors.json` |
 
 ## Brand shape
-The semantic radii (`radius/control`, `card`, `dialog`, `sheet`, `pill`) have a value per mode, so each brand has its own corners: Default is round, EVA is sharp (0), Heritage Luxury is soft. Light and Dark of one brand match. On web they are CSS variables per `data-theme`; on iOS, `@Environment(\.dsShape)` returns them for the current `DSTheme`. `radius/none` is 0 everywhere and stays with the Dimension scale.
+The semantic radii (`radius/control`, `card`, `dialog`, `sheet`, `pill`) have a value per mode, so each brand has its own corners: Default is round, EVA is sharp (0), Cedar is soft. Light and Dark of one brand match. On web they are CSS variables per `data-theme`; on iOS, `@Environment(\.dsShape)` returns them for the current `DSTheme`. `radius/none` is 0 everywhere and stays with the Dimension scale.
 
 ## When the colors or radii change in Figma
 1. Publish the Tokens library.

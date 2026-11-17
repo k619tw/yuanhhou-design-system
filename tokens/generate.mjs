@@ -18,8 +18,8 @@ const modeInfo = {
   Dark: { theme: 'dark', scheme: 'dark', swift: 'dark' },
   'EVA Light': { theme: 'eva-light', scheme: 'light', swift: 'evaLight' },
   'EVA Dark': { theme: 'eva-dark', scheme: 'dark', swift: 'evaDark' },
-  'Heritage Luxury Light': { theme: 'heritage-luxury-light', scheme: 'light', swift: 'heritageLuxuryLight' },
-  'Heritage Luxury Dark': { theme: 'heritage-luxury-dark', scheme: 'dark', swift: 'heritageLuxuryDark' },
+  'Cedar Light': { theme: 'cedar-light', scheme: 'light', swift: 'cedarLight' },
+  'Cedar Dark': { theme: 'cedar-dark', scheme: 'dark', swift: 'cedarDark' },
 }
 for (const mode of modes) if (!modeInfo[mode]) throw new Error(`Unknown mode "${mode}": add it to modeInfo`)
 
@@ -84,7 +84,7 @@ function shapeCss() {
     return `${selector} {\n${lines.join('\n')}\n}`
   })
   const comment = header.replace('the colors', 'the radii').split('\n').map((l) => ` * ${l}`).join('\n')
-  return `/*\n${comment}\n *\n * Corner radii follow the brand shape: Default round, EVA sharp, Heritage Luxury soft. Light and Dark match.\n */\n${blocks.join('\n\n')}\n`
+  return `/*\n${comment}\n *\n * Corner radii follow the brand shape: Default round, EVA sharp, Cedar soft. Light and Dark match.\n */\n${blocks.join('\n\n')}\n`
 }
 
 function shapeSwift() {

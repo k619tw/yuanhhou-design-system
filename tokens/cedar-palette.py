@@ -1,8 +1,8 @@
-"""The Heritage Luxury palette: woody, apothecary colours (linen, oak, sage, smoke, clay, fig, honey).
+"""The Cedar palette: woody, apothecary colours (linen, oak, sage, smoke, clay, fig, honey).
 
-Each step of each family has exactly the relative luminance of the step it replaced in the first Heritage palette
-(parchment, brass, forest, slate, bordeaux), so every contrast ratio the audit checked stays the same; only hue and
-chroma change. Run from the repo root: `python3 tokens/heritage-palette.py` prints the hex values as JSON.
+Each step of each family has exactly the relative luminance of the step it replaced in the Heritage Luxury palette
+that Cedar replaced in 0.7.0 (parchment, brass, forest, slate, bordeaux), so every contrast ratio the audit checked stays the same; only hue and
+chroma change. Run from the repo root: `python3 tokens/cedar-palette.py` prints the hex values as JSON.
 
 Hue is an OKLCH hue in degrees; chroma rises towards the middle of the scale and falls at both ends, so the lightest
 and darkest steps stay calm.
@@ -12,7 +12,7 @@ import math
 
 STEPS = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
-# The luminance ladders the new families keep: the original Heritage primitives.
+# The luminance ladders the families keep: the Heritage Luxury primitives Cedar replaced.
 SOURCE = {
     'parchment': ['fbf7ef', 'f1e8d8', 'e2d0b3', 'c3ac88', '9a7e5a', '72593e', '503b28', '322319', '1c140f'],
     'brass': ['fbf4e3', 'f2e1b7', 'ddbf7c', 'c4a05b', 'aa8240', '8b6832', '6e512a', '49351d', '2f2213'],
@@ -91,7 +91,7 @@ def palette():
             t = abs(i - 4) / 4
             c = peak * (1 - 0.7 * t ** 1.6)
             target = luminance_hex(SOURCE[ladder][i])
-            out[f'color/heritage/{name}/{step}'] = colour(target, hue, c)
+            out[f'color/cedar/{name}/{step}'] = colour(target, hue, c)
     return out
 
 

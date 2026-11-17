@@ -1,7 +1,7 @@
 // Read-only Figma Plugin API script that exports the `02 Semantics` colors and corner radii as tokens/colors.json.
 // Run it with the Figma MCP `use_figma` tool on the Tokens file (5iR1wP3qoTT4uD6d20ekVv), save the returned
 // JSON as tokens/colors.json, then run `node tokens/generate.mjs`.
-const order = ['Light', 'Dark', 'EVA Light', 'EVA Dark', 'Heritage Luxury Light', 'Heritage Luxury Dark']
+const order = ['Light', 'Dark', 'EVA Light', 'EVA Dark', 'Cedar Light', 'Cedar Dark']
 const collections = await figma.variables.getLocalVariableCollectionsAsync()
 const semantics = collections.find((c) => c.name === '02 Semantics')
 const all = await figma.variables.getLocalVariablesAsync()

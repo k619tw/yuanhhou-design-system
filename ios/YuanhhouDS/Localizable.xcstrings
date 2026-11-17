@@ -454,6 +454,10 @@
         }
       }
     },
+    "Cedar" : {
+      "extractionState" : "manual",
+      "shouldTranslate" : false
+    },
     "Checkbox" : {
       "localizations" : {
         "ja" : {
@@ -701,12 +705,12 @@
         }
       }
     },
-    "Corners follow the brand: Default is round, EVA is sharp, Heritage Luxury is soft." : {
+    "Corners follow the brand: Default is round, EVA is sharp, Cedar is soft." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "角の形はブランドに合わせて変わります。Defaultは丸く、EVAは角ばり、Heritage Luxuryはやわらかい角です。"
+            "value" : "角の形はブランドに合わせて変わります。Defaultは丸く、EVAは角ばり、Cedarはやわらかい角です。"
           }
         }
       }
@@ -1302,10 +1306,6 @@
           }
         }
       }
-    },
-    "Heritage Luxury" : {
-      "extractionState" : "manual",
-      "shouldTranslate" : false
     },
     "Home" : {
       "localizations" : {
