@@ -6,6 +6,7 @@ One source for the theme tokens of both platforms, so web and iOS cannot drift a
 |---|---|
 | `colors.json` | The Figma Tokens library, collection `02 Semantics`, in the six modes (Light, Dark, EVA Light, EVA Dark, Heritage Luxury Light, Heritage Luxury Dark): every color as hex `RRGGBB` or `RRGGBBAA`, and every `radius/*` in points |
 | `export-figma.js` | Read-only Figma Plugin API script that produces `colors.json` |
+| `heritage-palette.py` | Generates the Heritage Luxury primitives (linen, oak, honey, sage, smoke, clay, fig). Each step keeps the luminance of the step it replaced, so the semantic pairs keep their contrast. The output is entered in the Tokens file by hand, then copied to `primitives.css` and `DSPrimitive.swift` |
 | `generate.mjs` | Writes `web/src/styles/colors.css`, `web/src/styles/shape.css`, `DSColor+Tokens.swift` and `DSShape+Tokens.swift` (in `ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Tokens/`) from `colors.json` |
 
 ## Brand shape
