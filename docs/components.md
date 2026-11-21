@@ -14,7 +14,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Toggle](#toggle) | `Toggle (Web)`: on/off switch. iOS: `Toggle (iOS)` | Yes | `Toggle` |
 | [Checkbox](#checkbox) | `Checkbox (Web)`, `Checkbox Group (Web)`: choose any number of options. iOS: `Toggle (iOS)` or `Checkmark Row (iOS)` | Yes | `Checkbox` |
 | [Radio](#radio) | `Radio (Web)`, `Radio Group (Web)`: choose exactly one option. iOS: `Picker (iOS)` | Yes | `Radio` |
-| [Segmented Control](#segmented-control) | `Segmented Control (Web)`: pick one of 2 to 5 short options that switch a view. iOS: `Segmented Control (iOS)`, the native segmented picker | Yes | `Segmented Control` |
+| [Segmented Control](#segmented-control) | `Segmented Control (Web)`: pick one of 2 to 5 short options that switch a view. iOS: the native segmented `Picker`, in the iOS System Components file | Yes | `Segmented Control` |
 | [Accordion](#accordion) | `Accordion (Web)`: expandable section. iOS: `Accordion (iOS)`, the native disclosure group with text | Yes | `Accordion` |
 | [Modal](#modal) | `Modal (Web)`: a dialog for a short decision or task. iOS: the native sheet, alert or confirmation dialog | Yes | `Modal` |
 | [List Section (iOS)](#list-section-ios) | iOS only: groups iOS rows (Input, Toggle, Checkmark Row, Picker) with a header and footer | Via its rows | `List Section (iOS)` |
@@ -32,7 +32,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
   |---|---|---|
   | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card |
   | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Link (Web)`, `Modal (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)`, `Segmented Control (Web)`, `Segment (Web)` |
-  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Link (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `Segmented Control (iOS)`, `Segment (iOS)`, `List Section (iOS)` |
+  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Link (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
 
   An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
 
@@ -942,14 +942,14 @@ The native Picker, shown in Figma: component set `Picker (iOS)` (node `125:70`) 
 | Disabled | text and chevron `foreground/disabled` |
 | Row | width 402, height 52 with the separator, padding 16 horizontal (`spacing/200`), no fill |
 
-SwiftUI: `Picker("Delivery speed", selection: $speed) { … }` with `.pickerStyle(.menu)` or `.inline`. `.segmented` is shown as [Segmented Control (iOS)](#ios-segmented-control-ios) on the `Segmented Control` page.
+SwiftUI: `Picker("Delivery speed", selection: $speed) { … }` with `.pickerStyle(.menu)` or `.inline`. `.segmented` is shown on the Segmented Controls page of the iOS System Components file (`Ow4FgnInMQhUgn0LEz4ugM`, node `507:24683`); see [Segmented Control](#ios-segmented-control).
 
 ### Related
 [Checkbox](#checkbox) · [Toggle](#toggle)
 
 ## Segmented Control
 
-Picks one of 2 to 5 short options that switch a view or a setting right away. Figma: page `Segmented Control`, component sets `Segmented Control (Web)` (node `281:36`, 2 variants) and `Segment (Web)` (node `281:19`, 8 variants). **Web only.** On iOS use [Segmented Control (iOS)](#ios-segmented-control-ios), the native segmented `Picker`, on the same page. It follows the HIG segmented control and Material 3 single-select segmented buttons.
+Picks one of 2 to 5 short options that switch a view or a setting right away. Figma: page `Segmented Control`, component sets `Segmented Control (Web)` (node `281:36`, 2 variants) and `Segment (Web)` (node `281:19`, 8 variants). **Web only.** On iOS use the native segmented `Picker` ([iOS](#ios-segmented-control)). It follows the HIG segmented control and Material 3 single-select segmented buttons.
 
 ### When to use
 - Switch between 2 to 5 related views or modes of the same content: language, platform, Day / Week / Month.
@@ -1024,21 +1024,8 @@ import { SegmentedControl } from '@yuanhhou/ds'
 ```
 Controlled with `value`, uncontrolled with `defaultValue`. `size="small"` is Small, `fullWidth` stretches the track and `disabled` disables the whole control; an option can also be `disabled`. An option's `label` can be text or text with a small mark; give it `ariaLabel` when the visible text is abbreviated ("EN" for English) and `lang` when it is in another language. `onValueChange(value, event)` passes the change event too: its `currentTarget` is the chosen segment's radio, which covers the segment.
 
-### iOS: Segmented Control (iOS)
-Apple has a native segmented control, so there is no DS one on iOS (hard rule: native first). Figma shows `Picker` with `.pickerStyle(.segmented)`, copied from Apple's iOS kit and rebuilt locally: component sets `Segmented Control (iOS)` (node `281:67`, 2 variants) and `Segment (iOS)` (node `281:50`, 2 variants) on the `Segmented Control` page, `Platform` mode iOS. Apple draws it and `.tint` does not reach it, so its colors stay Apple's in every brand.
-
-| Property | Values | Notes |
-|---|---|---|
-| State | Default, Disabled | Disabled is the system 50% opacity |
-| Segments | slot, 2 to 5 | `Segment (iOS)` instances (`Selected` On, Off; `Label` text) |
-
-| Part | Value / token |
-|---|---|
-| Track | 32 high, padding 2, gap 4, capsule; `Fills/Tertiary` (iOS System Components file) |
-| Thumb | `Miscellaneous/Segmented Control - Selected Fill` (iOS System Components file), small shadow |
-| Label | SF Pro 13, Semibold when selected and Medium otherwise, `Labels/Primary` (iOS System Components file) |
-
-The sizes and font are Apple geometry, not tokens. SwiftUI: `Picker("Range", selection: $range) { … }.pickerStyle(.segmented)`. Do not redraw it. Shown in the app under iOS System > Selection.
+### iOS: Segmented Control
+Apple has a native segmented control, so there is no DS one on iOS (hard rule: native first), and DS - Components has no iOS copy of it: use the Segmented Control on the Segmented Controls page of the iOS System Components file (`Ow4FgnInMQhUgn0LEz4ugM`, node `507:24683`), as sheets are for Modal. Apple draws it, and `.tint` does not reach it, so it keeps Apple's colors and corners in every brand. SwiftUI: `Picker("Range", selection: $range) { … }.pickerStyle(.segmented)`. Do not redraw it. Shown in the app under iOS System > Selection.
 
 ### Related
 [Radio](#radio) · [Toggle](#toggle)
