@@ -4,6 +4,15 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.8.0 · 2026-11-21
+
+New Segmented Control for picking one of a few short options, on web and in Figma, with the native control on iOS.
+
+### Added
+- Web: `SegmentedControl` picks one of 2 to 5 short options that switch a view or a setting right away. Built on native radios, so Tab and the arrow keys work; segments share the width equally and one thumb slides under the choice. Sizes `large` and `small`, `fullWidth`, `disabled` per control or per option, and `ariaLabel` and `lang` for abbreviated or other-language labels.
+- Figma: page `Segmented Control` with `Segmented Control (Web)` and `Segment (Web)`, bound to the semantic tokens and following the brand's corners.
+- Figma: `Segmented Control (iOS)` shows the native segmented `Picker` with Apple's colours. On iOS, keep using `Picker` with `.pickerStyle(.segmented)`.
+
 ## 0.7.0 · 2026-11-17
 
 Heritage Luxury is now Cedar: a woody, apothecary palette with the same contrast as before.
