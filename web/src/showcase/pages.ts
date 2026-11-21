@@ -11,6 +11,7 @@ import {
   LinkPage,
   ModalPage,
   RadioPage,
+  SegmentedControlPage,
   TogglePage,
 } from './ComponentPages'
 import { ColorsPage, IconsPage, SpacingPage, TypographyPage } from './FoundationPages'
@@ -40,6 +41,7 @@ export const componentPages: PageEntry[] = [
   { id: 'link', title: 'section.link', Page: LinkPage },
   { id: 'modal', title: 'section.modal', Page: ModalPage },
   { id: 'radio', title: 'section.radio', Page: RadioPage },
+  { id: 'segmented-control', title: 'section.segmentedControl', Page: SegmentedControlPage },
   { id: 'toggle', title: 'section.toggle', Page: TogglePage },
 ]
 

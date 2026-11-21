@@ -12,6 +12,7 @@ import {
   Modal,
   Radio,
   RadioGroup,
+  SegmentedControl,
   Toggle,
 } from '@yuanhhou/ds'
 import { useI18n } from '@/i18n/i18n'
@@ -319,6 +320,46 @@ export function RadioPage() {
         />
         <Radio name="single-demo" label={t('checkbox.disabled')} disabled />
       </div>
+    </ShowcasePage>
+  )
+}
+
+export function SegmentedControlPage() {
+  const { t } = useI18n()
+  const range = [
+    { value: 'day', label: t('segmented.day') },
+    { value: 'week', label: t('segmented.week') },
+    { value: 'month', label: t('segmented.month') },
+  ]
+  const view = [
+    { value: 'list', label: t('segmented.list') },
+    { value: 'grid', label: t('segmented.grid') },
+  ]
+  return (
+    <ShowcasePage title={t('section.segmentedControl')}>
+      <ShowcaseSection title={t('size.large')} note={t('segmented.note')}>
+        <div className="showcase__row">
+          <SegmentedControl label={t('segmented.range')} defaultValue="day" options={range} />
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('size.small')}>
+        <div className="showcase__row">
+          <SegmentedControl label={t('segmented.view')} size="small" defaultValue="list" options={view} />
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('showcase.states')}>
+        <div className="showcase__row">
+          <SegmentedControl label={t('segmented.range')} defaultValue="week" options={range} disabled />
+          <SegmentedControl
+            label={t('segmented.range')}
+            defaultValue="day"
+            options={range.map((o) => ({ ...o, disabled: o.value === 'month' }))}
+          />
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('segmented.fullWidth')}>
+        <SegmentedControl label={t('segmented.range')} defaultValue="month" options={range} fullWidth />
+      </ShowcaseSection>
     </ShowcasePage>
   )
 }
