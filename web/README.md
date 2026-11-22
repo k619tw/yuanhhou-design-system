@@ -39,6 +39,7 @@ Use the same variables as the components. Never hardcode a color, and follow the
 | What | Use |
 |---|---|
 | Color | `--color-<role>-<name>`, named like the Figma variable: `color/background/primary` is `--color-background-primary` |
+| Accent | `--color-<role>-accent-<hue>[-<step>]`: `--color-foreground-accent-purple`, `--color-background-accent-blue-subtle`, `--color-foreground-accent-on-bolder`. Decorative only; the same in every brand |
 | Spacing | `--spacing-2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl` (2 to 48) |
 | Semantic space | `--space-inset-compact`, `default`, `comfortable`; `--space-gap-tight`, `inline`, `stack`, `section`; `--space-page-mobile`, `desktop` |
 | Radius, size, border | `--radius-*`, `--size-icon-*`, `--size-control-*`, `--border-width-*` in `src/styles/tokens.css`; the semantic radii that follow the brand (`--radius-control`, `card`, `dialog`, `sheet`, `pill`) in the generated `src/styles/shape.css` |

@@ -113,6 +113,17 @@
         }
       }
     },
+    "Accent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクセント"
+          }
+        }
+      }
+    },
     "Accessibility" : {
       "localizations" : {
         "ja" : {

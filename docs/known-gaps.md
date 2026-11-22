@@ -20,3 +20,4 @@ What the design system does not do yet, or does differently on purpose.
 - `DSColor` and `DSTheme` have a fixed set of brands, so adding one changes the public API. Apps cannot bring their own.
 - Below iOS 26 the accordion content uses fixed side insets (20 and 16) instead of the system value.
 - `DSPrimitive.swift` and `DSDimension.swift` are kept by hand, not generated from Figma.
+- No component uses the accent colors yet: Badge and Image Card have no accent option. Accents are for product UI such as category tags, illustrations and gradients (see Accent colors in `design-system-rules.md`).

@@ -6,10 +6,12 @@ struct ColorsPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     private var groups: [(String, [DSColor])] {
+        // Accent tokens (`color/<role>/accent/*`) get their own group, so the status roles stay apart from them.
+        let isAccent = { (token: DSColor) in token.name.contains("/accent/") }
         let prefixes = ["background", "foreground", "border", "action", "ai"]
         return prefixes.map { prefix in
-            (prefix.capitalized, DSColor.all.filter { $0.name.hasPrefix("color/\(prefix)/") })
-        }
+            (prefix.capitalized, DSColor.all.filter { $0.name.hasPrefix("color/\(prefix)/") && !isAccent($0) })
+        } + [("Accent", DSColor.all.filter(isAccent))]
     }
 
     var body: some View {

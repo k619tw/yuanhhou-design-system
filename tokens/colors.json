@@ -624,6 +624,494 @@
       "EVA Dark": "1A1A1A99",
       "Cedar Light": "1A1A1A66",
       "Cedar Dark": "1A1A1A99"
+    },
+    "color/background/accent/blue/subtler": {
+      "Light": "E9F2FE",
+      "Dark": "071935",
+      "EVA Light": "E9F2FE",
+      "EVA Dark": "071935",
+      "Cedar Light": "E9F2FE",
+      "Cedar Dark": "071935"
+    },
+    "color/background/accent/blue/subtle": {
+      "Light": "C9DEFF",
+      "Dark": "072755",
+      "EVA Light": "C9DEFF",
+      "EVA Dark": "072755",
+      "Cedar Light": "C9DEFF",
+      "Cedar Dark": "072755"
+    },
+    "color/background/accent/blue/bolder": {
+      "Light": "2C6ECB",
+      "Dark": "5395F6",
+      "EVA Light": "2C6ECB",
+      "EVA Dark": "5395F6",
+      "Cedar Light": "2C6ECB",
+      "Cedar Dark": "5395F6"
+    },
+    "color/foreground/accent/blue": {
+      "Light": "1B53A1",
+      "Dark": "82B4FF",
+      "EVA Light": "1B53A1",
+      "EVA Dark": "82B4FF",
+      "Cedar Light": "1B53A1",
+      "Cedar Dark": "82B4FF"
+    },
+    "color/foreground/accent/blue/bolder": {
+      "Light": "0A3A7A",
+      "Dark": "C9DEFF",
+      "EVA Light": "0A3A7A",
+      "EVA Dark": "C9DEFF",
+      "Cedar Light": "0A3A7A",
+      "Cedar Dark": "C9DEFF"
+    },
+    "color/border/accent/blue": {
+      "Light": "2C6ECB",
+      "Dark": "5395F6",
+      "EVA Light": "2C6ECB",
+      "EVA Dark": "5395F6",
+      "Cedar Light": "2C6ECB",
+      "Cedar Dark": "5395F6"
+    },
+    "color/background/accent/teal/subtler": {
+      "Light": "CEF9F7",
+      "Dark": "001D1D",
+      "EVA Light": "CEF9F7",
+      "EVA Dark": "001D1D",
+      "Cedar Light": "CEF9F7",
+      "Cedar Dark": "001D1D"
+    },
+    "color/background/accent/teal/subtle": {
+      "Light": "8EECE8",
+      "Dark": "022E2D",
+      "EVA Light": "8EECE8",
+      "EVA Dark": "022E2D",
+      "Cedar Light": "8EECE8",
+      "Cedar Dark": "022E2D"
+    },
+    "color/background/accent/teal/bolder": {
+      "Light": "077C7A",
+      "Dark": "06A6A3",
+      "EVA Light": "077C7A",
+      "EVA Dark": "06A6A3",
+      "Cedar Light": "077C7A",
+      "Cedar Dark": "06A6A3"
+    },
+    "color/foreground/accent/teal": {
+      "Light": "045F5C",
+      "Dark": "0BC7C3",
+      "EVA Light": "045F5C",
+      "EVA Dark": "0BC7C3",
+      "Cedar Light": "045F5C",
+      "Cedar Dark": "0BC7C3"
+    },
+    "color/foreground/accent/teal/bolder": {
+      "Light": "044342",
+      "Dark": "8EECE8",
+      "EVA Light": "044342",
+      "EVA Dark": "8EECE8",
+      "Cedar Light": "044342",
+      "Cedar Dark": "8EECE8"
+    },
+    "color/border/accent/teal": {
+      "Light": "077C7A",
+      "Dark": "06A6A3",
+      "EVA Light": "077C7A",
+      "EVA Dark": "06A6A3",
+      "Cedar Light": "077C7A",
+      "Cedar Dark": "06A6A3"
+    },
+    "color/background/accent/green/subtler": {
+      "Light": "DCF8DF",
+      "Dark": "001F07",
+      "EVA Light": "DCF8DF",
+      "EVA Dark": "001F07",
+      "Cedar Light": "DCF8DF",
+      "Cedar Dark": "001F07"
+    },
+    "color/background/accent/green/subtle": {
+      "Light": "B1EAB8",
+      "Dark": "00300E",
+      "EVA Light": "B1EAB8",
+      "EVA Dark": "00300E",
+      "Cedar Light": "B1EAB8",
+      "Cedar Dark": "00300E"
+    },
+    "color/background/accent/green/bolder": {
+      "Light": "028132",
+      "Dark": "39A954",
+      "EVA Light": "028132",
+      "EVA Dark": "39A954",
+      "Cedar Light": "028132",
+      "Cedar Dark": "39A954"
+    },
+    "color/foreground/accent/green": {
+      "Light": "046225",
+      "Dark": "6AC67A",
+      "EVA Light": "046225",
+      "EVA Dark": "6AC67A",
+      "Cedar Light": "046225",
+      "Cedar Dark": "6AC67A"
+    },
+    "color/foreground/accent/green/bolder": {
+      "Light": "004617",
+      "Dark": "B1EAB8",
+      "EVA Light": "004617",
+      "EVA Dark": "B1EAB8",
+      "Cedar Light": "004617",
+      "Cedar Dark": "B1EAB8"
+    },
+    "color/border/accent/green": {
+      "Light": "028132",
+      "Dark": "39A954",
+      "EVA Light": "028132",
+      "EVA Dark": "39A954",
+      "Cedar Light": "028132",
+      "Cedar Dark": "39A954"
+    },
+    "color/background/accent/lime/subtler": {
+      "Light": "E7F6D7",
+      "Dark": "111D00",
+      "EVA Light": "E7F6D7",
+      "EVA Dark": "111D00",
+      "Cedar Light": "E7F6D7",
+      "Cedar Dark": "111D00"
+    },
+    "color/background/accent/lime/subtle": {
+      "Light": "C9E6A6",
+      "Dark": "1D2D00",
+      "EVA Light": "C9E6A6",
+      "EVA Dark": "1D2D00",
+      "Cedar Light": "C9E6A6",
+      "Cedar Dark": "1D2D00"
+    },
+    "color/background/accent/lime/bolder": {
+      "Light": "557A03",
+      "Dark": "74A220",
+      "EVA Light": "557A03",
+      "EVA Dark": "74A220",
+      "Cedar Light": "557A03",
+      "Cedar Dark": "74A220"
+    },
+    "color/foreground/accent/lime": {
+      "Light": "405D02",
+      "Dark": "96C05A",
+      "EVA Light": "405D02",
+      "EVA Dark": "96C05A",
+      "Cedar Light": "405D02",
+      "Cedar Dark": "96C05A"
+    },
+    "color/foreground/accent/lime/bolder": {
+      "Light": "2C4202",
+      "Dark": "C9E6A6",
+      "EVA Light": "2C4202",
+      "EVA Dark": "C9E6A6",
+      "Cedar Light": "2C4202",
+      "Cedar Dark": "C9E6A6"
+    },
+    "color/border/accent/lime": {
+      "Light": "557A03",
+      "Dark": "74A220",
+      "EVA Light": "557A03",
+      "EVA Dark": "74A220",
+      "Cedar Light": "557A03",
+      "Cedar Dark": "74A220"
+    },
+    "color/background/accent/yellow/subtler": {
+      "Light": "FEF0D0",
+      "Dark": "221800",
+      "EVA Light": "FEF0D0",
+      "EVA Dark": "221800",
+      "Cedar Light": "FEF0D0",
+      "Cedar Dark": "221800"
+    },
+    "color/background/accent/yellow/subtle": {
+      "Light": "F6DA97",
+      "Dark": "342701",
+      "EVA Light": "F6DA97",
+      "EVA Dark": "342701",
+      "Cedar Light": "F6DA97",
+      "Cedar Dark": "342701"
+    },
+    "color/background/accent/yellow/bolder": {
+      "Light": "8A6B04",
+      "Dark": "B88F07",
+      "EVA Light": "8A6B04",
+      "EVA Dark": "B88F07",
+      "Cedar Light": "8A6B04",
+      "Cedar Dark": "B88F07"
+    },
+    "color/foreground/accent/yellow": {
+      "Light": "6A5100",
+      "Dark": "D9AD35",
+      "EVA Light": "6A5100",
+      "EVA Dark": "D9AD35",
+      "Cedar Light": "6A5100",
+      "Cedar Dark": "D9AD35"
+    },
+    "color/foreground/accent/yellow/bolder": {
+      "Light": "4C3901",
+      "Dark": "F6DA97",
+      "EVA Light": "4C3901",
+      "EVA Dark": "F6DA97",
+      "Cedar Light": "4C3901",
+      "Cedar Dark": "F6DA97"
+    },
+    "color/border/accent/yellow": {
+      "Light": "8A6B04",
+      "Dark": "B88F07",
+      "EVA Light": "8A6B04",
+      "EVA Dark": "B88F07",
+      "Cedar Light": "8A6B04",
+      "Cedar Dark": "B88F07"
+    },
+    "color/background/accent/orange/subtler": {
+      "Light": "FEEEE6",
+      "Dark": "301000",
+      "EVA Light": "FEEEE6",
+      "EVA Dark": "301000",
+      "Cedar Light": "FEEEE6",
+      "Cedar Dark": "301000"
+    },
+    "color/background/accent/orange/subtle": {
+      "Light": "FED4BF",
+      "Dark": "481B00",
+      "EVA Light": "FED4BF",
+      "EVA Dark": "481B00",
+      "Cedar Light": "FED4BF",
+      "Cedar Dark": "481B00"
+    },
+    "color/background/accent/orange/bolder": {
+      "Light": "B75104",
+      "Dark": "E67532",
+      "EVA Light": "B75104",
+      "EVA Dark": "E67532",
+      "Cedar Light": "B75104",
+      "Cedar Dark": "E67532"
+    },
+    "color/foreground/accent/orange": {
+      "Light": "8C3D02",
+      "Dark": "FF9963",
+      "EVA Light": "8C3D02",
+      "EVA Dark": "FF9963",
+      "Cedar Light": "8C3D02",
+      "Cedar Dark": "FF9963"
+    },
+    "color/foreground/accent/orange/bolder": {
+      "Light": "662A02",
+      "Dark": "FED4BF",
+      "EVA Light": "662A02",
+      "EVA Dark": "FED4BF",
+      "Cedar Light": "662A02",
+      "Cedar Dark": "FED4BF"
+    },
+    "color/border/accent/orange": {
+      "Light": "B75104",
+      "Dark": "E67532",
+      "EVA Light": "B75104",
+      "EVA Dark": "E67532",
+      "Cedar Light": "B75104",
+      "Cedar Dark": "E67532"
+    },
+    "color/background/accent/red/subtler": {
+      "Light": "FFEDEC",
+      "Dark": "320D0C",
+      "EVA Light": "FFEDEC",
+      "EVA Dark": "320D0C",
+      "Cedar Light": "FFEDEC",
+      "Cedar Dark": "320D0C"
+    },
+    "color/background/accent/red/subtle": {
+      "Light": "FED2CE",
+      "Dark": "4F1313",
+      "EVA Light": "FED2CE",
+      "EVA Dark": "4F1313",
+      "Cedar Light": "FED2CE",
+      "Cedar Dark": "4F1313"
+    },
+    "color/background/accent/red/bolder": {
+      "Light": "C14542",
+      "Dark": "ED6D67",
+      "EVA Light": "C14542",
+      "EVA Dark": "ED6D67",
+      "Cedar Light": "C14542",
+      "Cedar Dark": "ED6D67"
+    },
+    "color/foreground/accent/red": {
+      "Light": "98302F",
+      "Dark": "FF958E",
+      "EVA Light": "98302F",
+      "EVA Dark": "FF958E",
+      "Cedar Light": "98302F",
+      "Cedar Dark": "FF958E"
+    },
+    "color/foreground/accent/red/bolder": {
+      "Light": "721C1D",
+      "Dark": "FED2CE",
+      "EVA Light": "721C1D",
+      "EVA Dark": "FED2CE",
+      "Cedar Light": "721C1D",
+      "Cedar Dark": "FED2CE"
+    },
+    "color/border/accent/red": {
+      "Light": "C14542",
+      "Dark": "ED6D67",
+      "EVA Light": "C14542",
+      "EVA Dark": "ED6D67",
+      "Cedar Light": "C14542",
+      "Cedar Dark": "ED6D67"
+    },
+    "color/background/accent/magenta/subtler": {
+      "Light": "FFECF6",
+      "Dark": "2E0D21",
+      "EVA Light": "FFECF6",
+      "EVA Dark": "2E0D21",
+      "Cedar Light": "FFECF6",
+      "Cedar Dark": "2E0D21"
+    },
+    "color/background/accent/magenta/subtle": {
+      "Light": "FFCFE9",
+      "Dark": "491436",
+      "EVA Light": "FFCFE9",
+      "EVA Dark": "491436",
+      "Cedar Light": "FFCFE9",
+      "Cedar Dark": "491436"
+    },
+    "color/background/accent/magenta/bolder": {
+      "Light": "B3478B",
+      "Dark": "DE6EB2",
+      "EVA Light": "B3478B",
+      "EVA Dark": "DE6EB2",
+      "Cedar Light": "B3478B",
+      "Cedar Dark": "DE6EB2"
+    },
+    "color/foreground/accent/magenta": {
+      "Light": "8D316B",
+      "Dark": "F892CD",
+      "EVA Light": "8D316B",
+      "EVA Dark": "F892CD",
+      "Cedar Light": "8D316B",
+      "Cedar Dark": "F892CD"
+    },
+    "color/foreground/accent/magenta/bolder": {
+      "Light": "691E4F",
+      "Dark": "FFCFE9",
+      "EVA Light": "691E4F",
+      "EVA Dark": "FFCFE9",
+      "Cedar Light": "691E4F",
+      "Cedar Dark": "FFCFE9"
+    },
+    "color/border/accent/magenta": {
+      "Light": "B3478B",
+      "Dark": "DE6EB2",
+      "EVA Light": "B3478B",
+      "EVA Dark": "DE6EB2",
+      "Cedar Light": "B3478B",
+      "Cedar Dark": "DE6EB2"
+    },
+    "color/background/accent/purple/subtler": {
+      "Light": "F5EEFF",
+      "Dark": "221231",
+      "EVA Light": "F5EEFF",
+      "EVA Dark": "221231",
+      "Cedar Light": "F5EEFF",
+      "Cedar Dark": "221231"
+    },
+    "color/background/accent/purple/subtle": {
+      "Light": "E7D5FE",
+      "Dark": "361C4E",
+      "EVA Light": "E7D5FE",
+      "EVA Dark": "361C4E",
+      "Cedar Light": "E7D5FE",
+      "Cedar Dark": "361C4E"
+    },
+    "color/background/accent/purple/bolder": {
+      "Light": "8B56BE",
+      "Dark": "B17DE9",
+      "EVA Light": "8B56BE",
+      "EVA Dark": "B17DE9",
+      "Cedar Light": "8B56BE",
+      "Cedar Dark": "B17DE9"
+    },
+    "color/foreground/accent/purple": {
+      "Light": "6C3F97",
+      "Dark": "CC9FFF",
+      "EVA Light": "6C3F97",
+      "EVA Dark": "CC9FFF",
+      "Cedar Light": "6C3F97",
+      "Cedar Dark": "CC9FFF"
+    },
+    "color/foreground/accent/purple/bolder": {
+      "Light": "4E2A71",
+      "Dark": "E7D5FE",
+      "EVA Light": "4E2A71",
+      "EVA Dark": "E7D5FE",
+      "Cedar Light": "4E2A71",
+      "Cedar Dark": "E7D5FE"
+    },
+    "color/border/accent/purple": {
+      "Light": "8B56BE",
+      "Dark": "B17DE9",
+      "EVA Light": "8B56BE",
+      "EVA Dark": "B17DE9",
+      "Cedar Light": "8B56BE",
+      "Cedar Dark": "B17DE9"
+    },
+    "color/background/accent/gray/subtler": {
+      "Light": "EFF1F6",
+      "Dark": "18191C",
+      "EVA Light": "EFF1F6",
+      "EVA Dark": "18191C",
+      "Cedar Light": "EFF1F6",
+      "Cedar Dark": "18191C"
+    },
+    "color/background/accent/gray/subtle": {
+      "Light": "DADCE1",
+      "Dark": "27292C",
+      "EVA Light": "DADCE1",
+      "EVA Dark": "27292C",
+      "Cedar Light": "DADCE1",
+      "Cedar Dark": "27292C"
+    },
+    "color/background/accent/gray/bolder": {
+      "Light": "6E6F73",
+      "Dark": "939599",
+      "EVA Light": "6E6F73",
+      "EVA Dark": "939599",
+      "Cedar Light": "6E6F73",
+      "Cedar Dark": "939599"
+    },
+    "color/foreground/accent/gray": {
+      "Light": "535458",
+      "Dark": "B1B3B6",
+      "EVA Light": "535458",
+      "EVA Dark": "B1B3B6",
+      "Cedar Light": "535458",
+      "Cedar Dark": "B1B3B6"
+    },
+    "color/foreground/accent/gray/bolder": {
+      "Light": "3A3C3F",
+      "Dark": "DADCE1",
+      "EVA Light": "3A3C3F",
+      "EVA Dark": "DADCE1",
+      "Cedar Light": "3A3C3F",
+      "Cedar Dark": "DADCE1"
+    },
+    "color/border/accent/gray": {
+      "Light": "6E6F73",
+      "Dark": "939599",
+      "EVA Light": "6E6F73",
+      "EVA Dark": "939599",
+      "Cedar Light": "6E6F73",
+      "Cedar Dark": "939599"
+    },
+    "color/foreground/accent/on/bolder": {
+      "Light": "FFFFFF",
+      "Dark": "1A1A1A",
+      "EVA Light": "FFFFFF",
+      "EVA Dark": "1A1A1A",
+      "Cedar Light": "FFFFFF",
+      "Cedar Dark": "1A1A1A"
     }
   },
   "radii": {
