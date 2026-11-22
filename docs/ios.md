@@ -41,6 +41,7 @@ Tokens are Swift types named like the Figma variables; the iOS code syntax in Fi
 | Figma | Swift |
 |---|---|
 | `color/<role>/<name>` | `DSColor.<roleName>`, for example `DSColor.backgroundPrimary`, resolved for the current brand (`DSTheme`: `.default`, `.eva`, `.cedar`) in Light or Dark from the color scheme (the device, or `DSAppearance` in the showcase) |
+| `color/<role>/accent/<hue>/<step>` | `DSColor.<role>Accent<Hue><Step>`, for example `DSColor.foregroundAccentPurple`, `DSColor.backgroundAccentBlueSubtle`, `DSColor.foregroundAccentOnBolder`. Decorative only (see Accent colors in `design-system-rules.md`): the same in every brand, Light or Dark from the color scheme |
 | `spacing/*`, `space/*` | `DSSpacing.*`, `DSSpace.*` |
 | `radius/*` scale, `size/*`, `border/width/*` | `DSRadius`, `DSSize`, `DSBorderWidth` |
 | `radius/control|card|dialog|sheet|pill` (follow the brand) | `@Environment(\.dsShape)` (`DSShape`, set by `.dsTheme(_:)`), drawn with `DSCornerShape(radius:)`, which turns a radius of half the height or more into a capsule. `DSRadius.control`, `card`, `dialog`, `sheet` and `pill` are deprecated: they are the Default brand's values only and do not follow the brand |

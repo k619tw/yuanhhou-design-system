@@ -30,6 +30,7 @@ private func checkContrast(_ foreground: String, on background: String, minimum:
 }
 
 private let statuses = ["brand", "info", "success", "warning", "error", "promote"]
+private let accents = ["blue", "teal", "green", "lime", "yellow", "orange", "red", "magenta", "purple", "gray"]
 private var repoRoot: URL {
     // .../ios/YuanhhouDSKit/Tests/YuanhhouDSKitTests/TokenTests.swift
     var url = URL(fileURLWithPath: #filePath)
@@ -59,6 +60,21 @@ private var repoRoot: URL {
         for surface in ["background/primary", "background/secondary"] {
             for foreground in ["foreground/primary", "foreground/secondary"] + statuses.map({ "foreground/\($0)" }) {
                 try checkContrast(foreground, on: surface, minimum: 4.5)
+            }
+        }
+    }
+
+    /// The accent pairs in `design-system-rules.md` (Accent colors): text 4.5:1, bolder text 7:1, borders 3:1.
+    @Test func accentPairsPassContrast() throws {
+        for hue in accents {
+            let surfaces = ["background/primary", "background/secondary", "background/accent/\(hue)/subtler", "background/accent/\(hue)/subtle"]
+            for surface in surfaces {
+                try checkContrast("foreground/accent/\(hue)", on: surface, minimum: 4.5)
+                try checkContrast("foreground/accent/\(hue)/bolder", on: surface, minimum: 7)
+            }
+            try checkContrast("foreground/accent/on/bolder", on: "background/accent/\(hue)/bolder", minimum: 4.5)
+            for surface in ["background/primary", "background/secondary"] {
+                try checkContrast("border/accent/\(hue)", on: surface, minimum: 3)
             }
         }
     }

@@ -4,6 +4,17 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 0.9.0 · 2026-11-22
+
+Decorative accent colors in ten hues, kept apart from the status colors.
+
+### Added
+- All: accent colors for decoration with no meaning, such as category tags, illustrations, charts and gradients, in blue, teal, green, lime, yellow, orange, red, magenta, purple and gray. Each hue has a subtler, subtle and bolder background, a text color and a bolder text color, and a border color, plus one color for text on any bolder fill. They are the same in every brand and change between Light and Dark. Keep using success, warning, error and info for status only.
+- All: every accent pair passes WCAG AA in all six modes: accent text 5.48:1 or more on the page and on its own subtler and subtle fills, bolder text 8.06:1 or more, text on a bolder fill 5.0:1 or more, and borders 4.11:1 or more against the page. The pairing rules are in `design-system-rules.md` (Accent colors).
+- Web: CSS variables `--color-background-accent-<hue>-subtler`, `-subtle` and `-bolder`, `--color-foreground-accent-<hue>` and `-bolder`, `--color-border-accent-<hue>` and `--color-foreground-accent-on-bolder`, and the primitives `--yuanhhouColorAccent<Hue><Step>`. The demo Colors page shows them in an Accent group.
+- iOS: `DSColor.backgroundAccent<Hue>Subtler`, `Subtle` and `Bolder`, `DSColor.foregroundAccent<Hue>` and `<Hue>Bolder`, `DSColor.borderAccent<Hue>` and `DSColor.foregroundAccentOnBolder`, and the primitives `DSPrimitive.colorAccent<Hue><Step>`. The showcase Colors page has an Accent group.
+- Figma: the Tokens library has the accent variables in `02 Semantics` (`color/background/accent/<hue>/…`, `color/foreground/accent/<hue>…`, `color/border/accent/<hue>`), the primitives `color/accent/<hue>/100`–`900` and a `Token Documentation — Accent` frame. Accept the library update in your files.
+
 ## 0.8.0 · 2026-11-21
 
 New Segmented Control for picking one of a few short options, on web and in Figma; iOS keeps the native control.

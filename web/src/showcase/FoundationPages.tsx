@@ -37,7 +37,13 @@ const colorGroups: { role: string; title: MessageKey }[] = [
   { role: 'border', title: 'colors.border' },
   { role: 'action', title: 'colors.action' },
   { role: 'ai', title: 'colors.ai' },
+  { role: 'accent', title: 'colors.accent' },
 ]
+
+// Accent tokens (`--color-<role>-accent-*`) get their own group, so the status roles stay apart from them.
+const isAccent = (name: string) => name.includes('-accent-')
+const inGroup = (name: string, role: string) =>
+  role === 'accent' ? isAccent(name) : name.startsWith(`--color-${role}-`) && !isAccent(name)
 
 export function ColorsPage() {
   const { t } = useI18n()
@@ -48,10 +54,10 @@ export function ColorsPage() {
     <ShowcasePage title={t('page.colors')}>
       <p className="showcase-note text-body-2">{t('colors.note', { mode: theme })}</p>
       {colorGroups.map(({ role, title }) => (
-        <ShowcaseSection key={role} title={t(title)}>
+        <ShowcaseSection key={role} title={t(title)} note={role === 'accent' ? t('colors.accentNote') : undefined}>
           <div className="swatch-grid">
             {tokens
-              .filter((name) => name.startsWith(`--color-${role}-`))
+              .filter((name) => inGroup(name, role))
               .map((name) => (
                 <div className="swatch" key={name}>
                   <div className="swatch__color" style={{ background: `var(${name})` }} />

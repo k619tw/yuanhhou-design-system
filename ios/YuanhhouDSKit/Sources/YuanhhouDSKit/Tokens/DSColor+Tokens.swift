@@ -157,6 +157,128 @@ public nonisolated extension DSColor {
     static let borderFocus = DSColor("color/border/focus", light: "0069D1", dark: "57ABFF", evaLight: "8000C8", evaDark: "A0FF3C", cedarLight: "66533D", cedarDark: "D5BFA7")
     /// `color/background/scrim`
     static let backgroundScrim = DSColor("color/background/scrim", light: "1A1A1A66", dark: "1A1A1A99", evaLight: "1A1A1A66", evaDark: "1A1A1A99", cedarLight: "1A1A1A66", cedarDark: "1A1A1A99")
+    /// `color/background/accent/blue/subtler`
+    static let backgroundAccentBlueSubtler = DSColor("color/background/accent/blue/subtler", light: "E9F2FE", dark: "071935", evaLight: "E9F2FE", evaDark: "071935", cedarLight: "E9F2FE", cedarDark: "071935")
+    /// `color/background/accent/blue/subtle`
+    static let backgroundAccentBlueSubtle = DSColor("color/background/accent/blue/subtle", light: "C9DEFF", dark: "072755", evaLight: "C9DEFF", evaDark: "072755", cedarLight: "C9DEFF", cedarDark: "072755")
+    /// `color/background/accent/blue/bolder`
+    static let backgroundAccentBlueBolder = DSColor("color/background/accent/blue/bolder", light: "2C6ECB", dark: "5395F6", evaLight: "2C6ECB", evaDark: "5395F6", cedarLight: "2C6ECB", cedarDark: "5395F6")
+    /// `color/foreground/accent/blue`
+    static let foregroundAccentBlue = DSColor("color/foreground/accent/blue", light: "1B53A1", dark: "82B4FF", evaLight: "1B53A1", evaDark: "82B4FF", cedarLight: "1B53A1", cedarDark: "82B4FF")
+    /// `color/foreground/accent/blue/bolder`
+    static let foregroundAccentBlueBolder = DSColor("color/foreground/accent/blue/bolder", light: "0A3A7A", dark: "C9DEFF", evaLight: "0A3A7A", evaDark: "C9DEFF", cedarLight: "0A3A7A", cedarDark: "C9DEFF")
+    /// `color/border/accent/blue`
+    static let borderAccentBlue = DSColor("color/border/accent/blue", light: "2C6ECB", dark: "5395F6", evaLight: "2C6ECB", evaDark: "5395F6", cedarLight: "2C6ECB", cedarDark: "5395F6")
+    /// `color/background/accent/teal/subtler`
+    static let backgroundAccentTealSubtler = DSColor("color/background/accent/teal/subtler", light: "CEF9F7", dark: "001D1D", evaLight: "CEF9F7", evaDark: "001D1D", cedarLight: "CEF9F7", cedarDark: "001D1D")
+    /// `color/background/accent/teal/subtle`
+    static let backgroundAccentTealSubtle = DSColor("color/background/accent/teal/subtle", light: "8EECE8", dark: "022E2D", evaLight: "8EECE8", evaDark: "022E2D", cedarLight: "8EECE8", cedarDark: "022E2D")
+    /// `color/background/accent/teal/bolder`
+    static let backgroundAccentTealBolder = DSColor("color/background/accent/teal/bolder", light: "077C7A", dark: "06A6A3", evaLight: "077C7A", evaDark: "06A6A3", cedarLight: "077C7A", cedarDark: "06A6A3")
+    /// `color/foreground/accent/teal`
+    static let foregroundAccentTeal = DSColor("color/foreground/accent/teal", light: "045F5C", dark: "0BC7C3", evaLight: "045F5C", evaDark: "0BC7C3", cedarLight: "045F5C", cedarDark: "0BC7C3")
+    /// `color/foreground/accent/teal/bolder`
+    static let foregroundAccentTealBolder = DSColor("color/foreground/accent/teal/bolder", light: "044342", dark: "8EECE8", evaLight: "044342", evaDark: "8EECE8", cedarLight: "044342", cedarDark: "8EECE8")
+    /// `color/border/accent/teal`
+    static let borderAccentTeal = DSColor("color/border/accent/teal", light: "077C7A", dark: "06A6A3", evaLight: "077C7A", evaDark: "06A6A3", cedarLight: "077C7A", cedarDark: "06A6A3")
+    /// `color/background/accent/green/subtler`
+    static let backgroundAccentGreenSubtler = DSColor("color/background/accent/green/subtler", light: "DCF8DF", dark: "001F07", evaLight: "DCF8DF", evaDark: "001F07", cedarLight: "DCF8DF", cedarDark: "001F07")
+    /// `color/background/accent/green/subtle`
+    static let backgroundAccentGreenSubtle = DSColor("color/background/accent/green/subtle", light: "B1EAB8", dark: "00300E", evaLight: "B1EAB8", evaDark: "00300E", cedarLight: "B1EAB8", cedarDark: "00300E")
+    /// `color/background/accent/green/bolder`
+    static let backgroundAccentGreenBolder = DSColor("color/background/accent/green/bolder", light: "028132", dark: "39A954", evaLight: "028132", evaDark: "39A954", cedarLight: "028132", cedarDark: "39A954")
+    /// `color/foreground/accent/green`
+    static let foregroundAccentGreen = DSColor("color/foreground/accent/green", light: "046225", dark: "6AC67A", evaLight: "046225", evaDark: "6AC67A", cedarLight: "046225", cedarDark: "6AC67A")
+    /// `color/foreground/accent/green/bolder`
+    static let foregroundAccentGreenBolder = DSColor("color/foreground/accent/green/bolder", light: "004617", dark: "B1EAB8", evaLight: "004617", evaDark: "B1EAB8", cedarLight: "004617", cedarDark: "B1EAB8")
+    /// `color/border/accent/green`
+    static let borderAccentGreen = DSColor("color/border/accent/green", light: "028132", dark: "39A954", evaLight: "028132", evaDark: "39A954", cedarLight: "028132", cedarDark: "39A954")
+    /// `color/background/accent/lime/subtler`
+    static let backgroundAccentLimeSubtler = DSColor("color/background/accent/lime/subtler", light: "E7F6D7", dark: "111D00", evaLight: "E7F6D7", evaDark: "111D00", cedarLight: "E7F6D7", cedarDark: "111D00")
+    /// `color/background/accent/lime/subtle`
+    static let backgroundAccentLimeSubtle = DSColor("color/background/accent/lime/subtle", light: "C9E6A6", dark: "1D2D00", evaLight: "C9E6A6", evaDark: "1D2D00", cedarLight: "C9E6A6", cedarDark: "1D2D00")
+    /// `color/background/accent/lime/bolder`
+    static let backgroundAccentLimeBolder = DSColor("color/background/accent/lime/bolder", light: "557A03", dark: "74A220", evaLight: "557A03", evaDark: "74A220", cedarLight: "557A03", cedarDark: "74A220")
+    /// `color/foreground/accent/lime`
+    static let foregroundAccentLime = DSColor("color/foreground/accent/lime", light: "405D02", dark: "96C05A", evaLight: "405D02", evaDark: "96C05A", cedarLight: "405D02", cedarDark: "96C05A")
+    /// `color/foreground/accent/lime/bolder`
+    static let foregroundAccentLimeBolder = DSColor("color/foreground/accent/lime/bolder", light: "2C4202", dark: "C9E6A6", evaLight: "2C4202", evaDark: "C9E6A6", cedarLight: "2C4202", cedarDark: "C9E6A6")
+    /// `color/border/accent/lime`
+    static let borderAccentLime = DSColor("color/border/accent/lime", light: "557A03", dark: "74A220", evaLight: "557A03", evaDark: "74A220", cedarLight: "557A03", cedarDark: "74A220")
+    /// `color/background/accent/yellow/subtler`
+    static let backgroundAccentYellowSubtler = DSColor("color/background/accent/yellow/subtler", light: "FEF0D0", dark: "221800", evaLight: "FEF0D0", evaDark: "221800", cedarLight: "FEF0D0", cedarDark: "221800")
+    /// `color/background/accent/yellow/subtle`
+    static let backgroundAccentYellowSubtle = DSColor("color/background/accent/yellow/subtle", light: "F6DA97", dark: "342701", evaLight: "F6DA97", evaDark: "342701", cedarLight: "F6DA97", cedarDark: "342701")
+    /// `color/background/accent/yellow/bolder`
+    static let backgroundAccentYellowBolder = DSColor("color/background/accent/yellow/bolder", light: "8A6B04", dark: "B88F07", evaLight: "8A6B04", evaDark: "B88F07", cedarLight: "8A6B04", cedarDark: "B88F07")
+    /// `color/foreground/accent/yellow`
+    static let foregroundAccentYellow = DSColor("color/foreground/accent/yellow", light: "6A5100", dark: "D9AD35", evaLight: "6A5100", evaDark: "D9AD35", cedarLight: "6A5100", cedarDark: "D9AD35")
+    /// `color/foreground/accent/yellow/bolder`
+    static let foregroundAccentYellowBolder = DSColor("color/foreground/accent/yellow/bolder", light: "4C3901", dark: "F6DA97", evaLight: "4C3901", evaDark: "F6DA97", cedarLight: "4C3901", cedarDark: "F6DA97")
+    /// `color/border/accent/yellow`
+    static let borderAccentYellow = DSColor("color/border/accent/yellow", light: "8A6B04", dark: "B88F07", evaLight: "8A6B04", evaDark: "B88F07", cedarLight: "8A6B04", cedarDark: "B88F07")
+    /// `color/background/accent/orange/subtler`
+    static let backgroundAccentOrangeSubtler = DSColor("color/background/accent/orange/subtler", light: "FEEEE6", dark: "301000", evaLight: "FEEEE6", evaDark: "301000", cedarLight: "FEEEE6", cedarDark: "301000")
+    /// `color/background/accent/orange/subtle`
+    static let backgroundAccentOrangeSubtle = DSColor("color/background/accent/orange/subtle", light: "FED4BF", dark: "481B00", evaLight: "FED4BF", evaDark: "481B00", cedarLight: "FED4BF", cedarDark: "481B00")
+    /// `color/background/accent/orange/bolder`
+    static let backgroundAccentOrangeBolder = DSColor("color/background/accent/orange/bolder", light: "B75104", dark: "E67532", evaLight: "B75104", evaDark: "E67532", cedarLight: "B75104", cedarDark: "E67532")
+    /// `color/foreground/accent/orange`
+    static let foregroundAccentOrange = DSColor("color/foreground/accent/orange", light: "8C3D02", dark: "FF9963", evaLight: "8C3D02", evaDark: "FF9963", cedarLight: "8C3D02", cedarDark: "FF9963")
+    /// `color/foreground/accent/orange/bolder`
+    static let foregroundAccentOrangeBolder = DSColor("color/foreground/accent/orange/bolder", light: "662A02", dark: "FED4BF", evaLight: "662A02", evaDark: "FED4BF", cedarLight: "662A02", cedarDark: "FED4BF")
+    /// `color/border/accent/orange`
+    static let borderAccentOrange = DSColor("color/border/accent/orange", light: "B75104", dark: "E67532", evaLight: "B75104", evaDark: "E67532", cedarLight: "B75104", cedarDark: "E67532")
+    /// `color/background/accent/red/subtler`
+    static let backgroundAccentRedSubtler = DSColor("color/background/accent/red/subtler", light: "FFEDEC", dark: "320D0C", evaLight: "FFEDEC", evaDark: "320D0C", cedarLight: "FFEDEC", cedarDark: "320D0C")
+    /// `color/background/accent/red/subtle`
+    static let backgroundAccentRedSubtle = DSColor("color/background/accent/red/subtle", light: "FED2CE", dark: "4F1313", evaLight: "FED2CE", evaDark: "4F1313", cedarLight: "FED2CE", cedarDark: "4F1313")
+    /// `color/background/accent/red/bolder`
+    static let backgroundAccentRedBolder = DSColor("color/background/accent/red/bolder", light: "C14542", dark: "ED6D67", evaLight: "C14542", evaDark: "ED6D67", cedarLight: "C14542", cedarDark: "ED6D67")
+    /// `color/foreground/accent/red`
+    static let foregroundAccentRed = DSColor("color/foreground/accent/red", light: "98302F", dark: "FF958E", evaLight: "98302F", evaDark: "FF958E", cedarLight: "98302F", cedarDark: "FF958E")
+    /// `color/foreground/accent/red/bolder`
+    static let foregroundAccentRedBolder = DSColor("color/foreground/accent/red/bolder", light: "721C1D", dark: "FED2CE", evaLight: "721C1D", evaDark: "FED2CE", cedarLight: "721C1D", cedarDark: "FED2CE")
+    /// `color/border/accent/red`
+    static let borderAccentRed = DSColor("color/border/accent/red", light: "C14542", dark: "ED6D67", evaLight: "C14542", evaDark: "ED6D67", cedarLight: "C14542", cedarDark: "ED6D67")
+    /// `color/background/accent/magenta/subtler`
+    static let backgroundAccentMagentaSubtler = DSColor("color/background/accent/magenta/subtler", light: "FFECF6", dark: "2E0D21", evaLight: "FFECF6", evaDark: "2E0D21", cedarLight: "FFECF6", cedarDark: "2E0D21")
+    /// `color/background/accent/magenta/subtle`
+    static let backgroundAccentMagentaSubtle = DSColor("color/background/accent/magenta/subtle", light: "FFCFE9", dark: "491436", evaLight: "FFCFE9", evaDark: "491436", cedarLight: "FFCFE9", cedarDark: "491436")
+    /// `color/background/accent/magenta/bolder`
+    static let backgroundAccentMagentaBolder = DSColor("color/background/accent/magenta/bolder", light: "B3478B", dark: "DE6EB2", evaLight: "B3478B", evaDark: "DE6EB2", cedarLight: "B3478B", cedarDark: "DE6EB2")
+    /// `color/foreground/accent/magenta`
+    static let foregroundAccentMagenta = DSColor("color/foreground/accent/magenta", light: "8D316B", dark: "F892CD", evaLight: "8D316B", evaDark: "F892CD", cedarLight: "8D316B", cedarDark: "F892CD")
+    /// `color/foreground/accent/magenta/bolder`
+    static let foregroundAccentMagentaBolder = DSColor("color/foreground/accent/magenta/bolder", light: "691E4F", dark: "FFCFE9", evaLight: "691E4F", evaDark: "FFCFE9", cedarLight: "691E4F", cedarDark: "FFCFE9")
+    /// `color/border/accent/magenta`
+    static let borderAccentMagenta = DSColor("color/border/accent/magenta", light: "B3478B", dark: "DE6EB2", evaLight: "B3478B", evaDark: "DE6EB2", cedarLight: "B3478B", cedarDark: "DE6EB2")
+    /// `color/background/accent/purple/subtler`
+    static let backgroundAccentPurpleSubtler = DSColor("color/background/accent/purple/subtler", light: "F5EEFF", dark: "221231", evaLight: "F5EEFF", evaDark: "221231", cedarLight: "F5EEFF", cedarDark: "221231")
+    /// `color/background/accent/purple/subtle`
+    static let backgroundAccentPurpleSubtle = DSColor("color/background/accent/purple/subtle", light: "E7D5FE", dark: "361C4E", evaLight: "E7D5FE", evaDark: "361C4E", cedarLight: "E7D5FE", cedarDark: "361C4E")
+    /// `color/background/accent/purple/bolder`
+    static let backgroundAccentPurpleBolder = DSColor("color/background/accent/purple/bolder", light: "8B56BE", dark: "B17DE9", evaLight: "8B56BE", evaDark: "B17DE9", cedarLight: "8B56BE", cedarDark: "B17DE9")
+    /// `color/foreground/accent/purple`
+    static let foregroundAccentPurple = DSColor("color/foreground/accent/purple", light: "6C3F97", dark: "CC9FFF", evaLight: "6C3F97", evaDark: "CC9FFF", cedarLight: "6C3F97", cedarDark: "CC9FFF")
+    /// `color/foreground/accent/purple/bolder`
+    static let foregroundAccentPurpleBolder = DSColor("color/foreground/accent/purple/bolder", light: "4E2A71", dark: "E7D5FE", evaLight: "4E2A71", evaDark: "E7D5FE", cedarLight: "4E2A71", cedarDark: "E7D5FE")
+    /// `color/border/accent/purple`
+    static let borderAccentPurple = DSColor("color/border/accent/purple", light: "8B56BE", dark: "B17DE9", evaLight: "8B56BE", evaDark: "B17DE9", cedarLight: "8B56BE", cedarDark: "B17DE9")
+    /// `color/background/accent/gray/subtler`
+    static let backgroundAccentGraySubtler = DSColor("color/background/accent/gray/subtler", light: "EFF1F6", dark: "18191C", evaLight: "EFF1F6", evaDark: "18191C", cedarLight: "EFF1F6", cedarDark: "18191C")
+    /// `color/background/accent/gray/subtle`
+    static let backgroundAccentGraySubtle = DSColor("color/background/accent/gray/subtle", light: "DADCE1", dark: "27292C", evaLight: "DADCE1", evaDark: "27292C", cedarLight: "DADCE1", cedarDark: "27292C")
+    /// `color/background/accent/gray/bolder`
+    static let backgroundAccentGrayBolder = DSColor("color/background/accent/gray/bolder", light: "6E6F73", dark: "939599", evaLight: "6E6F73", evaDark: "939599", cedarLight: "6E6F73", cedarDark: "939599")
+    /// `color/foreground/accent/gray`
+    static let foregroundAccentGray = DSColor("color/foreground/accent/gray", light: "535458", dark: "B1B3B6", evaLight: "535458", evaDark: "B1B3B6", cedarLight: "535458", cedarDark: "B1B3B6")
+    /// `color/foreground/accent/gray/bolder`
+    static let foregroundAccentGrayBolder = DSColor("color/foreground/accent/gray/bolder", light: "3A3C3F", dark: "DADCE1", evaLight: "3A3C3F", evaDark: "DADCE1", cedarLight: "3A3C3F", cedarDark: "DADCE1")
+    /// `color/border/accent/gray`
+    static let borderAccentGray = DSColor("color/border/accent/gray", light: "6E6F73", dark: "939599", evaLight: "6E6F73", evaDark: "939599", cedarLight: "6E6F73", cedarDark: "939599")
+    /// `color/foreground/accent/on/bolder`
+    static let foregroundAccentOnBolder = DSColor("color/foreground/accent/on/bolder", light: "FFFFFF", dark: "1A1A1A", evaLight: "FFFFFF", evaDark: "1A1A1A", cedarLight: "FFFFFF", cedarDark: "1A1A1A")
 }
 
 public nonisolated extension DSColor {
@@ -239,5 +361,66 @@ public nonisolated extension DSColor {
         aiGradientEnd,
         borderFocus,
         backgroundScrim,
+        backgroundAccentBlueSubtler,
+        backgroundAccentBlueSubtle,
+        backgroundAccentBlueBolder,
+        foregroundAccentBlue,
+        foregroundAccentBlueBolder,
+        borderAccentBlue,
+        backgroundAccentTealSubtler,
+        backgroundAccentTealSubtle,
+        backgroundAccentTealBolder,
+        foregroundAccentTeal,
+        foregroundAccentTealBolder,
+        borderAccentTeal,
+        backgroundAccentGreenSubtler,
+        backgroundAccentGreenSubtle,
+        backgroundAccentGreenBolder,
+        foregroundAccentGreen,
+        foregroundAccentGreenBolder,
+        borderAccentGreen,
+        backgroundAccentLimeSubtler,
+        backgroundAccentLimeSubtle,
+        backgroundAccentLimeBolder,
+        foregroundAccentLime,
+        foregroundAccentLimeBolder,
+        borderAccentLime,
+        backgroundAccentYellowSubtler,
+        backgroundAccentYellowSubtle,
+        backgroundAccentYellowBolder,
+        foregroundAccentYellow,
+        foregroundAccentYellowBolder,
+        borderAccentYellow,
+        backgroundAccentOrangeSubtler,
+        backgroundAccentOrangeSubtle,
+        backgroundAccentOrangeBolder,
+        foregroundAccentOrange,
+        foregroundAccentOrangeBolder,
+        borderAccentOrange,
+        backgroundAccentRedSubtler,
+        backgroundAccentRedSubtle,
+        backgroundAccentRedBolder,
+        foregroundAccentRed,
+        foregroundAccentRedBolder,
+        borderAccentRed,
+        backgroundAccentMagentaSubtler,
+        backgroundAccentMagentaSubtle,
+        backgroundAccentMagentaBolder,
+        foregroundAccentMagenta,
+        foregroundAccentMagentaBolder,
+        borderAccentMagenta,
+        backgroundAccentPurpleSubtler,
+        backgroundAccentPurpleSubtle,
+        backgroundAccentPurpleBolder,
+        foregroundAccentPurple,
+        foregroundAccentPurpleBolder,
+        borderAccentPurple,
+        backgroundAccentGraySubtler,
+        backgroundAccentGraySubtle,
+        backgroundAccentGrayBolder,
+        foregroundAccentGray,
+        foregroundAccentGrayBolder,
+        borderAccentGray,
+        foregroundAccentOnBolder,
     ]
 }
