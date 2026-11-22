@@ -13,617 +13,617 @@
       "Light": "FFFFFF",
       "Dark": "000000",
       "EVA Light": "FFFFFF",
-      "EVA Dark": "320050",
-      "Cedar Light": "FAF7F3",
-      "Cedar Dark": "181513"
+      "EVA Dark": "400568",
+      "Cedar Light": "FAF6F3",
+      "Cedar Dark": "1D1813"
     },
     "color/background/secondary": {
-      "Light": "F6F4F4",
-      "Dark": "1A1A1A",
-      "EVA Light": "F6F4F4",
-      "EVA Dark": "1E0532",
-      "Cedar Light": "EEE8E0",
-      "Cedar Dark": "2A2520"
+      "Light": "F5F7FC",
+      "Dark": "18191C",
+      "EVA Light": "F5F7FC",
+      "EVA Dark": "280840",
+      "Cedar Light": "F6F0EA",
+      "Cedar Dark": "30271E"
     },
     "color/background/inverted-primary": {
       "Light": "000000",
       "Dark": "FFFFFF",
-      "EVA Light": "1E0532",
+      "EVA Light": "280840",
       "EVA Dark": "FFFFFF",
-      "Cedar Light": "181513",
-      "Cedar Dark": "FAF7F3"
+      "Cedar Light": "1D1813",
+      "Cedar Dark": "FAF6F3"
     },
     "color/background/inverted-secondary": {
-      "Light": "101274",
-      "Dark": "F6F4F4",
-      "EVA Light": "320050",
-      "EVA Dark": "EEDCFF",
-      "Cedar Light": "2A2520",
-      "Cedar Dark": "EEE8E0"
+      "Light": "072755",
+      "Dark": "F5F7FC",
+      "EVA Light": "280840",
+      "EVA Dark": "E7D5FE",
+      "Cedar Light": "30271E",
+      "Cedar Dark": "F6F0EA"
     },
     "color/background/overlay": {
-      "Light": "1A1A1A1A",
-      "Dark": "F6F4F433",
-      "EVA Light": "1A1A1A1A",
-      "EVA Dark": "F6F4F41A",
-      "Cedar Light": "1A1A1A1A",
-      "Cedar Dark": "F6F4F41A"
+      "Light": "18191C1A",
+      "Dark": "F5F7FC33",
+      "EVA Light": "18191C1A",
+      "EVA Dark": "F5F7FC1A",
+      "Cedar Light": "18191C1A",
+      "Cedar Dark": "F5F7FC1A"
     },
     "color/background/disabled": {
-      "Light": "BDC3C9",
-      "Dark": "6D6D73",
-      "EVA Light": "D2AAFF",
-      "EVA Dark": "4B0078",
-      "Cedar Light": "DAD1C7",
-      "Cedar Dark": "453E36"
+      "Light": "B1B3B6",
+      "Dark": "6E6F73",
+      "EVA Light": "CC9FFF",
+      "EVA Dark": "5D0194",
+      "Cedar Light": "E4DBD2",
+      "Cedar Dark": "46392C"
     },
     "color/background/brand/primary": {
-      "Light": "0073E5",
-      "Dark": "0073E5",
-      "EVA Light": "8000C8",
-      "EVA Dark": "8000C8",
-      "Cedar Light": "66533D",
-      "Cedar Dark": "D5BFA7"
+      "Light": "2C6ECB",
+      "Dark": "2C6ECB",
+      "EVA Light": "8100CB",
+      "EVA Dark": "8100CB",
+      "Cedar Light": "615242",
+      "Cedar Dark": "BDB1A5"
     },
     "color/background/brand/secondary": {
-      "Light": "F1F8FF",
-      "Dark": "F1F8FF",
-      "EVA Light": "DCFFB4",
-      "EVA Dark": "4B0078",
-      "Cedar Light": "FCF3E9",
-      "Cedar Dark": "433728"
+      "Light": "F3F7FE",
+      "Dark": "F3F7FE",
+      "EVA Light": "E1F9C7",
+      "EVA Dark": "5D0194",
+      "Cedar Light": "F6F0EA",
+      "Cedar Dark": "46392C"
     },
     "color/background/brand/primary-pressed": {
-      "Light": "101274",
-      "Dark": "101274",
-      "EVA Light": "6400A0",
-      "EVA Dark": "6400A0",
-      "Cedar Light": "433728",
-      "Cedar Dark": "BBA184"
+      "Light": "072755",
+      "Dark": "072755",
+      "EVA Light": "5D0194",
+      "EVA Dark": "5D0194",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "A19283"
     },
     "color/background/brand/secondary-pressed": {
-      "Light": "8FC7FF",
-      "Dark": "8FC7FF",
-      "EVA Light": "BEFF78",
-      "EVA Dark": "320050",
-      "Cedar Light": "F0E0CE",
-      "Cedar Dark": "2A231C"
+      "Light": "82B4FF",
+      "Dark": "82B4FF",
+      "EVA Light": "ABF10E",
+      "EVA Dark": "280840",
+      "Cedar Light": "E4DBD2",
+      "Cedar Dark": "30271E"
     },
     "color/background/info/primary": {
-      "Light": "0073E5",
-      "Dark": "0073E5",
-      "EVA Light": "0073E5",
-      "EVA Dark": "0073E5",
-      "Cedar Light": "35434B",
-      "Cedar Dark": "B8C8D3"
+      "Light": "2C6ECB",
+      "Dark": "2C6ECB",
+      "EVA Light": "2C6ECB",
+      "EVA Dark": "2C6ECB",
+      "Cedar Light": "0A3A7A",
+      "Cedar Dark": "82B4FF"
     },
     "color/background/info/secondary": {
-      "Light": "F1F8FF",
-      "Dark": "F1F8FF",
-      "EVA Light": "F1F8FF",
-      "EVA Dark": "0A0B52",
-      "Cedar Light": "ECF3F7",
-      "Cedar Dark": "252E34"
+      "Light": "F3F7FE",
+      "Dark": "F3F7FE",
+      "EVA Light": "F3F7FE",
+      "EVA Dark": "071935",
+      "Cedar Light": "E9F2FE",
+      "Cedar Dark": "072755"
     },
     "color/background/info/primary-pressed": {
-      "Light": "101274",
-      "Dark": "101274",
-      "EVA Light": "101274",
-      "EVA Dark": "005BBF",
-      "Cedar Light": "252E34",
-      "Cedar Dark": "95A9B4"
+      "Light": "072755",
+      "Dark": "072755",
+      "EVA Light": "072755",
+      "EVA Dark": "1B53A1",
+      "Cedar Light": "072755",
+      "Cedar Dark": "5395F6"
     },
     "color/background/info/secondary-pressed": {
-      "Light": "8FC7FF",
-      "Dark": "8FC7FF",
-      "EVA Light": "8FC7FF",
-      "EVA Dark": "101274",
-      "Cedar Light": "D6E2EA",
-      "Cedar Dark": "171C1F"
+      "Light": "82B4FF",
+      "Dark": "82B4FF",
+      "EVA Light": "82B4FF",
+      "EVA Dark": "072755",
+      "Cedar Light": "C9DEFF",
+      "Cedar Dark": "071935"
     },
     "color/background/success/primary": {
-      "Light": "08872E",
-      "Dark": "08872E",
-      "EVA Light": "4D7C0F",
-      "EVA Dark": "82E600",
-      "Cedar Light": "3C4129",
-      "Cedar Dark": "C1C7AC"
+      "Light": "028132",
+      "Dark": "028132",
+      "EVA Light": "557A03",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "004617",
+      "Cedar Dark": "6AC67A"
     },
     "color/background/success/secondary": {
-      "Light": "E9F9E9",
-      "Dark": "E9F9E9",
-      "EVA Light": "DCFFB4",
-      "EVA Dark": "3F6212",
-      "Cedar Light": "F1F4E8",
-      "Cedar Dark": "272B1B"
+      "Light": "EEFAEF",
+      "Dark": "EEFAEF",
+      "EVA Light": "E1F9C7",
+      "EVA Dark": "405D02",
+      "Cedar Light": "DCF8DF",
+      "Cedar Dark": "00300E"
     },
     "color/background/success/primary-pressed": {
-      "Light": "0E6027",
-      "Dark": "0E6027",
-      "EVA Light": "3F6212",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "272B1B",
-      "Cedar Dark": "A1A888"
+      "Light": "046225",
+      "Dark": "046225",
+      "EVA Light": "405D02",
+      "EVA Dark": "E1F9C7",
+      "Cedar Light": "00300E",
+      "Cedar Dark": "39A954"
     },
     "color/background/success/secondary-pressed": {
-      "Light": "9DDD96",
-      "Dark": "9DDD96",
-      "EVA Light": "BEFF78",
-      "EVA Dark": "365314",
-      "Cedar Light": "DEE2CE",
-      "Cedar Dark": "191B13"
+      "Light": "B1EAB8",
+      "Dark": "B1EAB8",
+      "EVA Light": "ABF10E",
+      "EVA Dark": "2C4202",
+      "Cedar Light": "B1EAB8",
+      "Cedar Dark": "001F07"
     },
     "color/background/warning/primary": {
-      "Light": "FDB487",
-      "Dark": "FDB487",
-      "EVA Light": "FDB487",
-      "EVA Dark": "FDB487",
-      "Cedar Light": "E6BB82",
-      "Cedar Dark": "CE9C56"
+      "Light": "FF9963",
+      "Dark": "FF9963",
+      "EVA Light": "FF9963",
+      "EVA Dark": "FF9963",
+      "Cedar Light": "D9AD35",
+      "Cedar Dark": "D9AD35"
     },
     "color/background/warning/secondary": {
-      "Light": "FEECE1",
-      "Dark": "FEECE1",
-      "EVA Light": "FEECE1",
-      "EVA Dark": "380400",
-      "Cedar Light": "FFF3E3",
-      "Cedar Dark": "4D340C"
+      "Light": "FEEEE6",
+      "Dark": "FEEEE6",
+      "EVA Light": "FEEEE6",
+      "EVA Dark": "301000",
+      "Cedar Light": "FCF6E8",
+      "Cedar Dark": "4C3901"
     },
     "color/background/warning/primary-pressed": {
-      "Light": "FB8E4B",
-      "Dark": "FB8E4B",
-      "EVA Light": "FB8E4B",
-      "EVA Dark": "FB8E4B",
-      "Cedar Light": "CE9C56",
-      "Cedar Dark": "E6BB82"
+      "Light": "E67532",
+      "Dark": "E67532",
+      "EVA Light": "E67532",
+      "EVA Dark": "E67532",
+      "Cedar Light": "B88F07",
+      "Cedar Dark": "F6DA97"
     },
     "color/background/warning/secondary-pressed": {
-      "Light": "FDB487",
-      "Dark": "FDB487",
-      "EVA Light": "FDB487",
-      "EVA Dark": "570D00",
-      "Cedar Light": "FDDDB4",
-      "Cedar Dark": "2F2211"
+      "Light": "FF9963",
+      "Dark": "FF9963",
+      "EVA Light": "FF9963",
+      "EVA Dark": "481B00",
+      "Cedar Light": "F6DA97",
+      "Cedar Dark": "342701"
     },
     "color/background/error/primary": {
-      "Light": "C41616",
-      "Dark": "C41616",
-      "EVA Light": "C41616",
-      "EVA Dark": "C41616",
-      "Cedar Light": "653120",
-      "Cedar Dark": "E2A38F"
+      "Light": "C14542",
+      "Dark": "C14542",
+      "EVA Light": "C14542",
+      "EVA Dark": "C14542",
+      "Cedar Light": "721C1D",
+      "Cedar Dark": "FF958E"
     },
     "color/background/error/secondary": {
-      "Light": "FCE2E2",
-      "Dark": "FCE2E2",
-      "EVA Light": "FCE2E2",
-      "EVA Dark": "330012",
-      "Cedar Light": "FFEDE8",
-      "Cedar Dark": "442015"
+      "Light": "FFEDEC",
+      "Dark": "FFEDEC",
+      "EVA Light": "FFEDEC",
+      "EVA Dark": "320D0C",
+      "Cedar Light": "FFEDEC",
+      "Cedar Dark": "4F1313"
     },
     "color/background/error/primary-pressed": {
-      "Light": "AD1818",
-      "Dark": "AD1818",
-      "EVA Light": "AD1818",
-      "EVA Dark": "AD1818",
-      "Cedar Light": "442015",
-      "Cedar Dark": "C27A63"
+      "Light": "98302F",
+      "Dark": "98302F",
+      "EVA Light": "98302F",
+      "EVA Dark": "98302F",
+      "Cedar Light": "4F1313",
+      "Cedar Dark": "ED6D67"
     },
     "color/background/error/secondary-pressed": {
-      "Light": "F67A7A",
-      "Dark": "F67A7A",
-      "EVA Light": "F67A7A",
-      "EVA Dark": "7A002B",
-      "Cedar Light": "FED1C2",
-      "Cedar Dark": "26150F"
+      "Light": "ED6D67",
+      "Dark": "ED6D67",
+      "EVA Light": "ED6D67",
+      "EVA Dark": "721C1D",
+      "Cedar Light": "FED2CE",
+      "Cedar Dark": "320D0C"
     },
     "color/background/promote/primary": {
-      "Light": "DE98FF",
-      "Dark": "DE98FF",
-      "EVA Light": "9446E1",
-      "EVA Dark": "8000C8",
-      "Cedar Light": "784B5D",
-      "Cedar Dark": "AF7F91"
+      "Light": "CC9FFF",
+      "Dark": "CC9FFF",
+      "EVA Light": "9E33F0",
+      "EVA Dark": "8100CB",
+      "Cedar Light": "8D316B",
+      "Cedar Dark": "DE6EB2"
     },
     "color/background/promote/secondary": {
-      "Light": "F7F2FC",
-      "Dark": "F7F2FC",
-      "EVA Light": "EEDCFF",
-      "EVA Dark": "4B0078",
-      "Cedar Light": "F3D2DD",
-      "Cedar Dark": "583543"
+      "Light": "F9F5FE",
+      "Dark": "F9F5FE",
+      "EVA Light": "E7D5FE",
+      "EVA Dark": "5D0194",
+      "Cedar Light": "FFCFE9",
+      "Cedar Dark": "691E4F"
     },
     "color/background/promote/primary-pressed": {
-      "Light": "B670FA",
-      "Dark": "B670FA",
-      "EVA Light": "8000C8",
-      "EVA Dark": "6400A0",
-      "Cedar Light": "583543",
-      "Cedar Dark": "D1A7B6"
+      "Light": "BA73FF",
+      "Dark": "BA73FF",
+      "EVA Light": "8100CB",
+      "EVA Dark": "5D0194",
+      "Cedar Light": "691E4F",
+      "Cedar Dark": "F892CD"
     },
     "color/background/promote/secondary-pressed": {
-      "Light": "DE98FF",
-      "Dark": "DE98FF",
-      "EVA Light": "D2AAFF",
-      "EVA Dark": "320050",
-      "Cedar Light": "D1A7B6",
-      "Cedar Dark": "784B5D"
+      "Light": "CC9FFF",
+      "Dark": "CC9FFF",
+      "EVA Light": "CC9FFF",
+      "EVA Dark": "280840",
+      "Cedar Light": "F892CD",
+      "Cedar Dark": "8D316B"
     },
     "color/foreground/hero": {
-      "Light": "101274",
+      "Light": "072755",
       "Dark": "FFFFFF",
-      "EVA Light": "4B0078",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "433728",
-      "Cedar Dark": "D5BFA7"
+      "EVA Light": "400568",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "BDB1A5"
     },
     "color/foreground/primary": {
       "Light": "000000",
       "Dark": "FFFFFF",
-      "EVA Light": "1E0532",
+      "EVA Light": "280840",
       "EVA Dark": "FFFFFF",
-      "Cedar Light": "181513",
-      "Cedar Dark": "FAF7F3"
+      "Cedar Light": "1D1813",
+      "Cedar Dark": "FAF6F3"
     },
     "color/foreground/secondary": {
-      "Light": "6D6D73",
-      "Dark": "BDC3C9",
-      "EVA Light": "4B5158",
-      "EVA Dark": "EEDCFF",
-      "Cedar Light": "453E36",
-      "Cedar Dark": "B8AEA2"
+      "Light": "6E6F73",
+      "Dark": "B1B3B6",
+      "EVA Light": "535458",
+      "EVA Dark": "E7D5FE",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "BDB1A5"
     },
     "color/foreground/inverted/primary": {
       "Light": "FFFFFF",
       "Dark": "000000",
       "EVA Light": "FFFFFF",
-      "EVA Dark": "1E0532",
-      "Cedar Light": "FAF7F3",
-      "Cedar Dark": "181513"
+      "EVA Dark": "280840",
+      "Cedar Light": "FAF6F3",
+      "Cedar Dark": "1D1813"
     },
     "color/foreground/inverted/secondary": {
-      "Light": "BDC3C9",
-      "Dark": "404040",
-      "EVA Light": "D2AAFF",
-      "EVA Dark": "4B0078",
-      "Cedar Light": "EEE8E0",
-      "Cedar Dark": "453E36"
+      "Light": "B1B3B6",
+      "Dark": "3A3C3F",
+      "EVA Light": "CC9FFF",
+      "EVA Dark": "5D0194",
+      "Cedar Light": "F6F0EA",
+      "Cedar Dark": "46392C"
     },
     "color/foreground/disabled": {
-      "Light": "BDC3C9",
-      "Dark": "6D6D73",
-      "EVA Light": "B478F5",
-      "EVA Dark": "D2AAFF",
-      "Cedar Light": "453E36",
-      "Cedar Dark": "655C52"
+      "Light": "B1B3B6",
+      "Dark": "6E6F73",
+      "EVA Light": "BA73FF",
+      "EVA Dark": "CC9FFF",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "615242"
     },
     "color/foreground/on-disabled": {
-      "Light": "6D6D73",
-      "Dark": "4B5158",
-      "EVA Light": "6400A0",
-      "EVA Dark": "EEDCFF",
-      "Cedar Light": "2A2520",
-      "Cedar Dark": "B8AEA2"
+      "Light": "535458",
+      "Dark": "3A3C3F",
+      "EVA Light": "5D0194",
+      "EVA Dark": "E7D5FE",
+      "Cedar Light": "30271E",
+      "Cedar Dark": "BDB1A5"
     },
     "color/foreground/brand": {
-      "Light": "0069D1",
-      "Dark": "57ABFF",
-      "EVA Light": "8000C8",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "433728",
-      "Cedar Dark": "D5BFA7"
+      "Light": "2C6ECB",
+      "Dark": "82B4FF",
+      "EVA Light": "8100CB",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "BDB1A5"
     },
     "color/foreground/brand/on/primary": {
       "Light": "FFFFFF",
       "Dark": "FFFFFF",
       "EVA Light": "FFFFFF",
       "EVA Dark": "FFFFFF",
-      "Cedar Light": "FAF7F3",
-      "Cedar Dark": "181513"
+      "Cedar Light": "FAF6F3",
+      "Cedar Dark": "1D1813"
     },
     "color/foreground/brand/on/secondary": {
-      "Light": "003F96",
-      "Dark": "003F96",
-      "EVA Light": "4B0078",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "433728",
-      "Cedar Dark": "F0E0CE"
+      "Light": "0A3A7A",
+      "Dark": "0A3A7A",
+      "EVA Light": "400568",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "E4DBD2"
     },
     "color/foreground/info": {
-      "Light": "0069D1",
-      "Dark": "57ABFF",
-      "EVA Light": "0069D1",
-      "EVA Dark": "8FC7FF",
-      "Cedar Light": "252E34",
-      "Cedar Dark": "B8C8D3"
+      "Light": "2C6ECB",
+      "Dark": "82B4FF",
+      "EVA Light": "2C6ECB",
+      "EVA Dark": "82B4FF",
+      "Cedar Light": "072755",
+      "Cedar Dark": "82B4FF"
     },
     "color/foreground/info/on/primary": {
       "Light": "FFFFFF",
       "Dark": "FFFFFF",
       "EVA Light": "FFFFFF",
       "EVA Dark": "FFFFFF",
-      "Cedar Light": "FAF7F3",
-      "Cedar Dark": "171C1F"
+      "Cedar Light": "FAF6F3",
+      "Cedar Dark": "071935"
     },
     "color/foreground/info/on/secondary": {
-      "Light": "003F96",
-      "Dark": "003F96",
-      "EVA Light": "003F96",
-      "EVA Dark": "8FC7FF",
-      "Cedar Light": "252E34",
-      "Cedar Dark": "D6E2EA"
+      "Light": "0A3A7A",
+      "Dark": "0A3A7A",
+      "EVA Light": "0A3A7A",
+      "EVA Dark": "82B4FF",
+      "Cedar Light": "072755",
+      "Cedar Dark": "C9DEFF"
     },
     "color/foreground/success": {
-      "Light": "038229",
-      "Dark": "7ECA6B",
-      "EVA Light": "3F6212",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "272B1B",
-      "Cedar Dark": "C1C7AC"
+      "Light": "028132",
+      "Dark": "6AC67A",
+      "EVA Light": "405D02",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "00300E",
+      "Cedar Dark": "6AC67A"
     },
     "color/foreground/success/on/primary": {
       "Light": "FFFFFF",
       "Dark": "FFFFFF",
       "EVA Light": "FFFFFF",
-      "EVA Dark": "1E0532",
-      "Cedar Light": "FAF7F3",
-      "Cedar Dark": "191B13"
+      "EVA Dark": "280840",
+      "Cedar Light": "FAF6F3",
+      "Cedar Dark": "001F07"
     },
     "color/foreground/success/on/secondary": {
-      "Light": "0E6027",
-      "Dark": "0E6027",
-      "EVA Light": "365314",
-      "EVA Dark": "DCFFB4",
-      "Cedar Light": "272B1B",
-      "Cedar Dark": "DEE2CE"
+      "Light": "046225",
+      "Dark": "046225",
+      "EVA Light": "405D02",
+      "EVA Dark": "E1F9C7",
+      "Cedar Light": "00300E",
+      "Cedar Dark": "B1EAB8"
     },
     "color/foreground/warning": {
-      "Light": "8F6425",
-      "Dark": "FDB487",
-      "EVA Light": "8F6425",
-      "EVA Dark": "FDDCB5",
-      "Cedar Light": "4D340C",
-      "Cedar Dark": "FDDDB4"
+      "Light": "B75104",
+      "Dark": "FF9963",
+      "EVA Light": "B75104",
+      "EVA Dark": "FED4BF",
+      "Cedar Light": "4C3901",
+      "Cedar Dark": "F6DA97"
     },
     "color/foreground/warning/on/primary": {
-      "Light": "1A1A1A",
-      "Dark": "1A1A1A",
-      "EVA Light": "1A1A1A",
-      "EVA Dark": "1E0532",
-      "Cedar Light": "2F2211",
-      "Cedar Dark": "2F2211"
+      "Light": "18191C",
+      "Dark": "18191C",
+      "EVA Light": "18191C",
+      "EVA Dark": "280840",
+      "Cedar Light": "342701",
+      "Cedar Dark": "342701"
     },
     "color/foreground/warning/on/secondary": {
-      "Light": "570D00",
-      "Dark": "570D00",
-      "EVA Light": "570D00",
-      "EVA Dark": "FDDCB5",
-      "Cedar Light": "4D340C",
-      "Cedar Dark": "FDDDB4"
+      "Light": "481B00",
+      "Dark": "481B00",
+      "EVA Light": "481B00",
+      "EVA Dark": "FED4BF",
+      "Cedar Light": "4C3901",
+      "Cedar Dark": "F6DA97"
     },
     "color/foreground/error": {
-      "Light": "C41616",
-      "Dark": "F67A7A",
-      "EVA Light": "C41616",
-      "EVA Dark": "FFCCCC",
-      "Cedar Light": "442015",
-      "Cedar Dark": "E2A38F"
+      "Light": "C14542",
+      "Dark": "ED6D67",
+      "EVA Light": "C14542",
+      "EVA Dark": "FED2CE",
+      "Cedar Light": "4F1313",
+      "Cedar Dark": "FF958E"
     },
     "color/foreground/error/on/primary": {
       "Light": "FFFFFF",
       "Dark": "FFFFFF",
       "EVA Light": "FFFFFF",
       "EVA Dark": "FFFFFF",
-      "Cedar Light": "FAF7F3",
-      "Cedar Dark": "26150F"
+      "Cedar Light": "FAF6F3",
+      "Cedar Dark": "320D0C"
     },
     "color/foreground/error/on/secondary": {
-      "Light": "330012",
-      "Dark": "330012",
-      "EVA Light": "330012",
-      "EVA Dark": "FFCCCC",
-      "Cedar Light": "442015",
-      "Cedar Dark": "FED1C2"
+      "Light": "320D0C",
+      "Dark": "320D0C",
+      "EVA Light": "320D0C",
+      "EVA Dark": "FED2CE",
+      "Cedar Light": "4F1313",
+      "Cedar Dark": "FED2CE"
     },
     "color/foreground/promote": {
-      "Light": "914CD4",
-      "Dark": "DE98FF",
-      "EVA Light": "8000C8",
-      "EVA Dark": "D2AAFF",
-      "Cedar Light": "583543",
-      "Cedar Dark": "F3D2DD"
+      "Light": "9E33F0",
+      "Dark": "CC9FFF",
+      "EVA Light": "8100CB",
+      "EVA Dark": "CC9FFF",
+      "Cedar Light": "691E4F",
+      "Cedar Dark": "FFCFE9"
     },
     "color/foreground/promote/on/primary": {
-      "Light": "1A1A1A",
-      "Dark": "1A1A1A",
+      "Light": "18191C",
+      "Dark": "18191C",
       "EVA Light": "FFFFFF",
       "EVA Dark": "FFFFFF",
-      "Cedar Light": "FAF7F3",
-      "Cedar Dark": "181513"
+      "Cedar Light": "FAF6F3",
+      "Cedar Dark": "1D1813"
     },
     "color/foreground/promote/on/secondary": {
-      "Light": "491D8B",
-      "Dark": "491D8B",
-      "EVA Light": "4B0078",
-      "EVA Dark": "EEDCFF",
-      "Cedar Light": "3B232C",
-      "Cedar Dark": "F3D2DD"
+      "Light": "5D0194",
+      "Dark": "5D0194",
+      "EVA Light": "400568",
+      "EVA Dark": "E7D5FE",
+      "Cedar Light": "491436",
+      "Cedar Dark": "FFCFE9"
     },
     "color/action/primary": {
-      "Light": "0069D1",
-      "Dark": "3A9DFF",
-      "EVA Light": "8000C8",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "433728",
-      "Cedar Dark": "D5BFA7"
+      "Light": "2C6ECB",
+      "Dark": "5395F6",
+      "EVA Light": "8100CB",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "BDB1A5"
     },
     "color/action/secondary": {
-      "Light": "BDC3C9",
-      "Dark": "6D6D73",
-      "EVA Light": "B478F5",
-      "EVA Dark": "EEDCFF",
-      "Cedar Light": "453E36",
-      "Cedar Dark": "8B8175"
+      "Light": "B1B3B6",
+      "Dark": "6E6F73",
+      "EVA Light": "BA73FF",
+      "EVA Dark": "E7D5FE",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "A19283"
     },
     "color/border/primary": {
-      "Light": "DDE1E6",
-      "Dark": "404040",
-      "EVA Light": "D2AAFF",
-      "EVA Dark": "D2AAFF",
-      "Cedar Light": "655C52",
-      "Cedar Dark": "453E36"
+      "Light": "DADCE1",
+      "Dark": "3A3C3F",
+      "EVA Light": "CC9FFF",
+      "EVA Dark": "CC9FFF",
+      "Cedar Light": "615242",
+      "Cedar Dark": "46392C"
     },
     "color/border/secondary": {
-      "Light": "BDC3C9",
-      "Dark": "6D6D73",
-      "EVA Light": "B478F5",
-      "EVA Dark": "EEDCFF",
-      "Cedar Light": "453E36",
-      "Cedar Dark": "655C52"
+      "Light": "B1B3B6",
+      "Dark": "6E6F73",
+      "EVA Light": "BA73FF",
+      "EVA Dark": "E7D5FE",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "615242"
     },
     "color/border/tertiary": {
-      "Light": "6D6D73",
-      "Dark": "BDC3C9",
-      "EVA Light": "9446E1",
-      "EVA Dark": "B478F5",
-      "Cedar Light": "66533D",
-      "Cedar Dark": "8B8175"
+      "Light": "6E6F73",
+      "Dark": "B1B3B6",
+      "EVA Light": "9E33F0",
+      "EVA Dark": "BA73FF",
+      "Cedar Light": "615242",
+      "Cedar Dark": "A19283"
     },
     "color/border/inverted": {
       "Light": "FFFFFF",
-      "Dark": "1A1A1A",
-      "EVA Light": "B478F5",
-      "EVA Dark": "4B0078",
-      "Cedar Light": "EEE8E0",
-      "Cedar Dark": "655C52"
+      "Dark": "18191C",
+      "EVA Light": "BA73FF",
+      "EVA Dark": "400568",
+      "Cedar Light": "F6F0EA",
+      "Cedar Dark": "615242"
     },
     "color/border/brand": {
-      "Light": "0073E5",
-      "Dark": "57ABFF",
-      "EVA Light": "8000C8",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "66533D",
-      "Cedar Dark": "D5BFA7"
+      "Light": "2C6ECB",
+      "Dark": "82B4FF",
+      "EVA Light": "8100CB",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "615242",
+      "Cedar Dark": "BDB1A5"
     },
     "color/border/brand/pressed": {
-      "Light": "101274",
-      "Dark": "0073E5",
-      "EVA Light": "4B0078",
-      "EVA Dark": "82E600",
-      "Cedar Light": "433728",
-      "Cedar Dark": "BBA184"
+      "Light": "072755",
+      "Dark": "2C6ECB",
+      "EVA Light": "400568",
+      "EVA Dark": "8AC405",
+      "Cedar Light": "46392C",
+      "Cedar Dark": "A19283"
     },
     "color/border/info": {
-      "Light": "0073E5",
-      "Dark": "57ABFF",
-      "EVA Light": "0073E5",
-      "EVA Dark": "8FC7FF",
-      "Cedar Light": "35434B",
-      "Cedar Dark": "B8C8D3"
+      "Light": "2C6ECB",
+      "Dark": "82B4FF",
+      "EVA Light": "2C6ECB",
+      "EVA Dark": "82B4FF",
+      "Cedar Light": "0A3A7A",
+      "Cedar Dark": "82B4FF"
     },
     "color/border/info/pressed": {
-      "Light": "101274",
-      "Dark": "0073E5",
-      "EVA Light": "101274",
-      "EVA Dark": "57ABFF",
-      "Cedar Light": "252E34",
-      "Cedar Dark": "95A9B4"
+      "Light": "072755",
+      "Dark": "2C6ECB",
+      "EVA Light": "072755",
+      "EVA Dark": "5395F6",
+      "Cedar Light": "072755",
+      "Cedar Dark": "5395F6"
     },
     "color/border/success": {
-      "Light": "08872E",
-      "Dark": "7ECA6B",
-      "EVA Light": "4D7C0F",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "3C4129",
-      "Cedar Dark": "C1C7AC"
+      "Light": "028132",
+      "Dark": "6AC67A",
+      "EVA Light": "557A03",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "004617",
+      "Cedar Dark": "6AC67A"
     },
     "color/border/success/pressed": {
-      "Light": "0E6027",
-      "Dark": "08872E",
-      "EVA Light": "3F6212",
-      "EVA Dark": "82E600",
-      "Cedar Light": "272B1B",
-      "Cedar Dark": "A1A888"
+      "Light": "046225",
+      "Dark": "028132",
+      "EVA Light": "405D02",
+      "EVA Dark": "8AC405",
+      "Cedar Light": "00300E",
+      "Cedar Dark": "39A954"
     },
     "color/border/warning": {
-      "Light": "EA5E00",
-      "Dark": "FDB487",
-      "EVA Light": "EA5E00",
-      "EVA Dark": "FDDCB5",
-      "Cedar Light": "744F12",
-      "Cedar Dark": "FDDDB4"
+      "Light": "B75104",
+      "Dark": "FF9963",
+      "EVA Light": "B75104",
+      "EVA Dark": "FED4BF",
+      "Cedar Light": "6A5100",
+      "Cedar Dark": "F6DA97"
     },
     "color/border/warning/pressed": {
-      "Light": "FB8E4B",
-      "Dark": "FB8E4B",
-      "EVA Light": "FB8E4B",
-      "EVA Dark": "FDB487",
-      "Cedar Light": "4D340C",
-      "Cedar Dark": "E6BB82"
+      "Light": "FF9963",
+      "Dark": "E67532",
+      "EVA Light": "FF9963",
+      "EVA Dark": "FF9963",
+      "Cedar Light": "4C3901",
+      "Cedar Dark": "D9AD35"
     },
     "color/border/error": {
-      "Light": "C41616",
-      "Dark": "F67A7A",
-      "EVA Light": "C41616",
-      "EVA Dark": "FFCCCC",
-      "Cedar Light": "653120",
-      "Cedar Dark": "E2A38F"
+      "Light": "C14542",
+      "Dark": "ED6D67",
+      "EVA Light": "C14542",
+      "EVA Dark": "FED2CE",
+      "Cedar Light": "721C1D",
+      "Cedar Dark": "FF958E"
     },
     "color/border/error/pressed": {
-      "Light": "AD1818",
-      "Dark": "C41616",
-      "EVA Light": "AD1818",
-      "EVA Dark": "F67A7A",
-      "Cedar Light": "442015",
-      "Cedar Dark": "C27A63"
+      "Light": "98302F",
+      "Dark": "C14542",
+      "EVA Light": "98302F",
+      "EVA Dark": "ED6D67",
+      "Cedar Light": "4F1313",
+      "Cedar Dark": "ED6D67"
     },
     "color/border/promote": {
-      "Light": "914CD4",
-      "Dark": "DE98FF",
-      "EVA Light": "9446E1",
-      "EVA Dark": "D2AAFF",
-      "Cedar Light": "583543",
-      "Cedar Dark": "F3D2DD"
+      "Light": "9E33F0",
+      "Dark": "CC9FFF",
+      "EVA Light": "9E33F0",
+      "EVA Dark": "CC9FFF",
+      "Cedar Light": "691E4F",
+      "Cedar Dark": "FFCFE9"
     },
     "color/border/promote/pressed": {
-      "Light": "B670FA",
-      "Dark": "B670FA",
-      "EVA Light": "8000C8",
-      "EVA Dark": "B478F5",
-      "Cedar Light": "3B232C",
-      "Cedar Dark": "D1A7B6"
+      "Light": "BA73FF",
+      "Dark": "BA73FF",
+      "EVA Light": "8100CB",
+      "EVA Dark": "BA73FF",
+      "Cedar Light": "491436",
+      "Cedar Dark": "F892CD"
     },
     "color/ai/gradient/start": {
-      "Light": "0069D1",
-      "Dark": "3A9DFF",
-      "EVA Light": "4D7C0F",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "66533D",
-      "Cedar Dark": "D5BFA7"
+      "Light": "2C6ECB",
+      "Dark": "5395F6",
+      "EVA Light": "557A03",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "615242",
+      "Cedar Dark": "BDB1A5"
     },
     "color/ai/gradient/end": {
-      "Light": "914CD4",
-      "Dark": "DE98FF",
-      "EVA Light": "8000C8",
-      "EVA Dark": "D2AAFF",
-      "Cedar Light": "583543",
-      "Cedar Dark": "D1A7B6"
+      "Light": "9E33F0",
+      "Dark": "CC9FFF",
+      "EVA Light": "8100CB",
+      "EVA Dark": "CC9FFF",
+      "Cedar Light": "691E4F",
+      "Cedar Dark": "F892CD"
     },
     "color/border/focus": {
-      "Light": "0069D1",
-      "Dark": "57ABFF",
-      "EVA Light": "8000C8",
-      "EVA Dark": "A0FF3C",
-      "Cedar Light": "66533D",
-      "Cedar Dark": "D5BFA7"
+      "Light": "2C6ECB",
+      "Dark": "82B4FF",
+      "EVA Light": "8100CB",
+      "EVA Dark": "ABF10E",
+      "Cedar Light": "615242",
+      "Cedar Dark": "BDB1A5"
     },
     "color/background/scrim": {
-      "Light": "1A1A1A66",
-      "Dark": "1A1A1A99",
-      "EVA Light": "1A1A1A66",
-      "EVA Dark": "1A1A1A99",
-      "Cedar Light": "1A1A1A66",
-      "Cedar Dark": "1A1A1A99"
+      "Light": "18191C66",
+      "Dark": "18191C99",
+      "EVA Light": "18191C66",
+      "EVA Dark": "18191C99",
+      "Cedar Light": "18191C66",
+      "Cedar Dark": "18191C99"
     },
     "color/background/accent/blue/subtler": {
       "Light": "E9F2FE",
@@ -770,52 +770,52 @@
       "Cedar Dark": "39A954"
     },
     "color/background/accent/lime/subtler": {
-      "Light": "E7F6D7",
+      "Light": "E1F9C7",
       "Dark": "111D00",
-      "EVA Light": "E7F6D7",
+      "EVA Light": "E1F9C7",
       "EVA Dark": "111D00",
-      "Cedar Light": "E7F6D7",
+      "Cedar Light": "E1F9C7",
       "Cedar Dark": "111D00"
     },
     "color/background/accent/lime/subtle": {
-      "Light": "C9E6A6",
+      "Light": "ABF10E",
       "Dark": "1D2D00",
-      "EVA Light": "C9E6A6",
+      "EVA Light": "ABF10E",
       "EVA Dark": "1D2D00",
-      "Cedar Light": "C9E6A6",
+      "Cedar Light": "ABF10E",
       "Cedar Dark": "1D2D00"
     },
     "color/background/accent/lime/bolder": {
       "Light": "557A03",
-      "Dark": "74A220",
+      "Dark": "73A308",
       "EVA Light": "557A03",
-      "EVA Dark": "74A220",
+      "EVA Dark": "73A308",
       "Cedar Light": "557A03",
-      "Cedar Dark": "74A220"
+      "Cedar Dark": "73A308"
     },
     "color/foreground/accent/lime": {
       "Light": "405D02",
-      "Dark": "96C05A",
+      "Dark": "8AC405",
       "EVA Light": "405D02",
-      "EVA Dark": "96C05A",
+      "EVA Dark": "8AC405",
       "Cedar Light": "405D02",
-      "Cedar Dark": "96C05A"
+      "Cedar Dark": "8AC405"
     },
     "color/foreground/accent/lime/bolder": {
       "Light": "2C4202",
-      "Dark": "C9E6A6",
+      "Dark": "ABF10E",
       "EVA Light": "2C4202",
-      "EVA Dark": "C9E6A6",
+      "EVA Dark": "ABF10E",
       "Cedar Light": "2C4202",
-      "Cedar Dark": "C9E6A6"
+      "Cedar Dark": "ABF10E"
     },
     "color/border/accent/lime": {
       "Light": "557A03",
-      "Dark": "74A220",
+      "Dark": "73A308",
       "EVA Light": "557A03",
-      "EVA Dark": "74A220",
+      "EVA Dark": "73A308",
       "Cedar Light": "557A03",
-      "Cedar Dark": "74A220"
+      "Cedar Dark": "73A308"
     },
     "color/background/accent/yellow/subtler": {
       "Light": "FEF0D0",
@@ -1010,52 +1010,52 @@
       "Cedar Dark": "DE6EB2"
     },
     "color/background/accent/purple/subtler": {
-      "Light": "F5EEFF",
-      "Dark": "221231",
-      "EVA Light": "F5EEFF",
-      "EVA Dark": "221231",
-      "Cedar Light": "F5EEFF",
-      "Cedar Dark": "221231"
+      "Light": "F5EEFE",
+      "Dark": "280840",
+      "EVA Light": "F5EEFE",
+      "EVA Dark": "280840",
+      "Cedar Light": "F5EEFE",
+      "Cedar Dark": "280840"
     },
     "color/background/accent/purple/subtle": {
       "Light": "E7D5FE",
-      "Dark": "361C4E",
+      "Dark": "400568",
       "EVA Light": "E7D5FE",
-      "EVA Dark": "361C4E",
+      "EVA Dark": "400568",
       "Cedar Light": "E7D5FE",
-      "Cedar Dark": "361C4E"
+      "Cedar Dark": "400568"
     },
     "color/background/accent/purple/bolder": {
-      "Light": "8B56BE",
-      "Dark": "B17DE9",
-      "EVA Light": "8B56BE",
-      "EVA Dark": "B17DE9",
-      "Cedar Light": "8B56BE",
-      "Cedar Dark": "B17DE9"
+      "Light": "9E33F0",
+      "Dark": "BA73FF",
+      "EVA Light": "9E33F0",
+      "EVA Dark": "BA73FF",
+      "Cedar Light": "9E33F0",
+      "Cedar Dark": "BA73FF"
     },
     "color/foreground/accent/purple": {
-      "Light": "6C3F97",
+      "Light": "8100CB",
       "Dark": "CC9FFF",
-      "EVA Light": "6C3F97",
+      "EVA Light": "8100CB",
       "EVA Dark": "CC9FFF",
-      "Cedar Light": "6C3F97",
+      "Cedar Light": "8100CB",
       "Cedar Dark": "CC9FFF"
     },
     "color/foreground/accent/purple/bolder": {
-      "Light": "4E2A71",
+      "Light": "5D0194",
       "Dark": "E7D5FE",
-      "EVA Light": "4E2A71",
+      "EVA Light": "5D0194",
       "EVA Dark": "E7D5FE",
-      "Cedar Light": "4E2A71",
+      "Cedar Light": "5D0194",
       "Cedar Dark": "E7D5FE"
     },
     "color/border/accent/purple": {
-      "Light": "8B56BE",
-      "Dark": "B17DE9",
-      "EVA Light": "8B56BE",
-      "EVA Dark": "B17DE9",
-      "Cedar Light": "8B56BE",
-      "Cedar Dark": "B17DE9"
+      "Light": "9E33F0",
+      "Dark": "BA73FF",
+      "EVA Light": "9E33F0",
+      "EVA Dark": "BA73FF",
+      "Cedar Light": "9E33F0",
+      "Cedar Dark": "BA73FF"
     },
     "color/background/accent/gray/subtler": {
       "Light": "EFF1F6",
@@ -1107,11 +1107,11 @@
     },
     "color/foreground/accent/on/bolder": {
       "Light": "FFFFFF",
-      "Dark": "1A1A1A",
+      "Dark": "27292C",
       "EVA Light": "FFFFFF",
-      "EVA Dark": "1A1A1A",
+      "EVA Dark": "27292C",
       "Cedar Light": "FFFFFF",
-      "Cedar Dark": "1A1A1A"
+      "Cedar Dark": "27292C"
     }
   },
   "radii": {

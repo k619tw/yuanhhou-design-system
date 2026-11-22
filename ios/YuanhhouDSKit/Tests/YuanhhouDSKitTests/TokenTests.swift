@@ -125,10 +125,10 @@ private var repoRoot: URL {
     }
 }
 
-/// A link is `action/primary` text with no fill behind it, so it must pass text contrast on its surface.
-/// Only `background/primary` is checked: on `background/secondary` the Default Dark mode is 3.8:1.
+/// A link is `action/primary` text with no fill behind it, so it must pass text contrast on both page surfaces.
 @Test func linkTintPassesTextContrast() throws {
     try checkContrast("action/primary", on: "background/primary", minimum: 4.5)
+    try checkContrast("action/primary", on: "background/secondary", minimum: 4.5)
 }
 
 @Test func defaultBrandKeepsItsSavedValue() {

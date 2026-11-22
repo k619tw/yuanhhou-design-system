@@ -4,159 +4,159 @@
 
 public nonisolated extension DSColor {
     /// `color/background/primary`
-    static let backgroundPrimary = DSColor("color/background/primary", light: "FFFFFF", dark: "000000", evaLight: "FFFFFF", evaDark: "320050", cedarLight: "FAF7F3", cedarDark: "181513")
+    static let backgroundPrimary = DSColor("color/background/primary", light: "FFFFFF", dark: "000000", evaLight: "FFFFFF", evaDark: "400568", cedarLight: "FAF6F3", cedarDark: "1D1813")
     /// `color/background/secondary`
-    static let backgroundSecondary = DSColor("color/background/secondary", light: "F6F4F4", dark: "1A1A1A", evaLight: "F6F4F4", evaDark: "1E0532", cedarLight: "EEE8E0", cedarDark: "2A2520")
+    static let backgroundSecondary = DSColor("color/background/secondary", light: "F5F7FC", dark: "18191C", evaLight: "F5F7FC", evaDark: "280840", cedarLight: "F6F0EA", cedarDark: "30271E")
     /// `color/background/inverted-primary`
-    static let backgroundInvertedPrimary = DSColor("color/background/inverted-primary", light: "000000", dark: "FFFFFF", evaLight: "1E0532", evaDark: "FFFFFF", cedarLight: "181513", cedarDark: "FAF7F3")
+    static let backgroundInvertedPrimary = DSColor("color/background/inverted-primary", light: "000000", dark: "FFFFFF", evaLight: "280840", evaDark: "FFFFFF", cedarLight: "1D1813", cedarDark: "FAF6F3")
     /// `color/background/inverted-secondary`
-    static let backgroundInvertedSecondary = DSColor("color/background/inverted-secondary", light: "101274", dark: "F6F4F4", evaLight: "320050", evaDark: "EEDCFF", cedarLight: "2A2520", cedarDark: "EEE8E0")
+    static let backgroundInvertedSecondary = DSColor("color/background/inverted-secondary", light: "072755", dark: "F5F7FC", evaLight: "280840", evaDark: "E7D5FE", cedarLight: "30271E", cedarDark: "F6F0EA")
     /// `color/background/overlay`
-    static let backgroundOverlay = DSColor("color/background/overlay", light: "1A1A1A1A", dark: "F6F4F433", evaLight: "1A1A1A1A", evaDark: "F6F4F41A", cedarLight: "1A1A1A1A", cedarDark: "F6F4F41A")
+    static let backgroundOverlay = DSColor("color/background/overlay", light: "18191C1A", dark: "F5F7FC33", evaLight: "18191C1A", evaDark: "F5F7FC1A", cedarLight: "18191C1A", cedarDark: "F5F7FC1A")
     /// `color/background/disabled`
-    static let backgroundDisabled = DSColor("color/background/disabled", light: "BDC3C9", dark: "6D6D73", evaLight: "D2AAFF", evaDark: "4B0078", cedarLight: "DAD1C7", cedarDark: "453E36")
+    static let backgroundDisabled = DSColor("color/background/disabled", light: "B1B3B6", dark: "6E6F73", evaLight: "CC9FFF", evaDark: "5D0194", cedarLight: "E4DBD2", cedarDark: "46392C")
     /// `color/background/brand/primary`
-    static let backgroundBrandPrimary = DSColor("color/background/brand/primary", light: "0073E5", dark: "0073E5", evaLight: "8000C8", evaDark: "8000C8", cedarLight: "66533D", cedarDark: "D5BFA7")
+    static let backgroundBrandPrimary = DSColor("color/background/brand/primary", light: "2C6ECB", dark: "2C6ECB", evaLight: "8100CB", evaDark: "8100CB", cedarLight: "615242", cedarDark: "BDB1A5")
     /// `color/background/brand/secondary`
-    static let backgroundBrandSecondary = DSColor("color/background/brand/secondary", light: "F1F8FF", dark: "F1F8FF", evaLight: "DCFFB4", evaDark: "4B0078", cedarLight: "FCF3E9", cedarDark: "433728")
+    static let backgroundBrandSecondary = DSColor("color/background/brand/secondary", light: "F3F7FE", dark: "F3F7FE", evaLight: "E1F9C7", evaDark: "5D0194", cedarLight: "F6F0EA", cedarDark: "46392C")
     /// `color/background/brand/primary-pressed`
-    static let backgroundBrandPrimaryPressed = DSColor("color/background/brand/primary-pressed", light: "101274", dark: "101274", evaLight: "6400A0", evaDark: "6400A0", cedarLight: "433728", cedarDark: "BBA184")
+    static let backgroundBrandPrimaryPressed = DSColor("color/background/brand/primary-pressed", light: "072755", dark: "072755", evaLight: "5D0194", evaDark: "5D0194", cedarLight: "46392C", cedarDark: "A19283")
     /// `color/background/brand/secondary-pressed`
-    static let backgroundBrandSecondaryPressed = DSColor("color/background/brand/secondary-pressed", light: "8FC7FF", dark: "8FC7FF", evaLight: "BEFF78", evaDark: "320050", cedarLight: "F0E0CE", cedarDark: "2A231C")
+    static let backgroundBrandSecondaryPressed = DSColor("color/background/brand/secondary-pressed", light: "82B4FF", dark: "82B4FF", evaLight: "ABF10E", evaDark: "280840", cedarLight: "E4DBD2", cedarDark: "30271E")
     /// `color/background/info/primary`
-    static let backgroundInfoPrimary = DSColor("color/background/info/primary", light: "0073E5", dark: "0073E5", evaLight: "0073E5", evaDark: "0073E5", cedarLight: "35434B", cedarDark: "B8C8D3")
+    static let backgroundInfoPrimary = DSColor("color/background/info/primary", light: "2C6ECB", dark: "2C6ECB", evaLight: "2C6ECB", evaDark: "2C6ECB", cedarLight: "0A3A7A", cedarDark: "82B4FF")
     /// `color/background/info/secondary`
-    static let backgroundInfoSecondary = DSColor("color/background/info/secondary", light: "F1F8FF", dark: "F1F8FF", evaLight: "F1F8FF", evaDark: "0A0B52", cedarLight: "ECF3F7", cedarDark: "252E34")
+    static let backgroundInfoSecondary = DSColor("color/background/info/secondary", light: "F3F7FE", dark: "F3F7FE", evaLight: "F3F7FE", evaDark: "071935", cedarLight: "E9F2FE", cedarDark: "072755")
     /// `color/background/info/primary-pressed`
-    static let backgroundInfoPrimaryPressed = DSColor("color/background/info/primary-pressed", light: "101274", dark: "101274", evaLight: "101274", evaDark: "005BBF", cedarLight: "252E34", cedarDark: "95A9B4")
+    static let backgroundInfoPrimaryPressed = DSColor("color/background/info/primary-pressed", light: "072755", dark: "072755", evaLight: "072755", evaDark: "1B53A1", cedarLight: "072755", cedarDark: "5395F6")
     /// `color/background/info/secondary-pressed`
-    static let backgroundInfoSecondaryPressed = DSColor("color/background/info/secondary-pressed", light: "8FC7FF", dark: "8FC7FF", evaLight: "8FC7FF", evaDark: "101274", cedarLight: "D6E2EA", cedarDark: "171C1F")
+    static let backgroundInfoSecondaryPressed = DSColor("color/background/info/secondary-pressed", light: "82B4FF", dark: "82B4FF", evaLight: "82B4FF", evaDark: "072755", cedarLight: "C9DEFF", cedarDark: "071935")
     /// `color/background/success/primary`
-    static let backgroundSuccessPrimary = DSColor("color/background/success/primary", light: "08872E", dark: "08872E", evaLight: "4D7C0F", evaDark: "82E600", cedarLight: "3C4129", cedarDark: "C1C7AC")
+    static let backgroundSuccessPrimary = DSColor("color/background/success/primary", light: "028132", dark: "028132", evaLight: "557A03", evaDark: "ABF10E", cedarLight: "004617", cedarDark: "6AC67A")
     /// `color/background/success/secondary`
-    static let backgroundSuccessSecondary = DSColor("color/background/success/secondary", light: "E9F9E9", dark: "E9F9E9", evaLight: "DCFFB4", evaDark: "3F6212", cedarLight: "F1F4E8", cedarDark: "272B1B")
+    static let backgroundSuccessSecondary = DSColor("color/background/success/secondary", light: "EEFAEF", dark: "EEFAEF", evaLight: "E1F9C7", evaDark: "405D02", cedarLight: "DCF8DF", cedarDark: "00300E")
     /// `color/background/success/primary-pressed`
-    static let backgroundSuccessPrimaryPressed = DSColor("color/background/success/primary-pressed", light: "0E6027", dark: "0E6027", evaLight: "3F6212", evaDark: "A0FF3C", cedarLight: "272B1B", cedarDark: "A1A888")
+    static let backgroundSuccessPrimaryPressed = DSColor("color/background/success/primary-pressed", light: "046225", dark: "046225", evaLight: "405D02", evaDark: "E1F9C7", cedarLight: "00300E", cedarDark: "39A954")
     /// `color/background/success/secondary-pressed`
-    static let backgroundSuccessSecondaryPressed = DSColor("color/background/success/secondary-pressed", light: "9DDD96", dark: "9DDD96", evaLight: "BEFF78", evaDark: "365314", cedarLight: "DEE2CE", cedarDark: "191B13")
+    static let backgroundSuccessSecondaryPressed = DSColor("color/background/success/secondary-pressed", light: "B1EAB8", dark: "B1EAB8", evaLight: "ABF10E", evaDark: "2C4202", cedarLight: "B1EAB8", cedarDark: "001F07")
     /// `color/background/warning/primary`
-    static let backgroundWarningPrimary = DSColor("color/background/warning/primary", light: "FDB487", dark: "FDB487", evaLight: "FDB487", evaDark: "FDB487", cedarLight: "E6BB82", cedarDark: "CE9C56")
+    static let backgroundWarningPrimary = DSColor("color/background/warning/primary", light: "FF9963", dark: "FF9963", evaLight: "FF9963", evaDark: "FF9963", cedarLight: "D9AD35", cedarDark: "D9AD35")
     /// `color/background/warning/secondary`
-    static let backgroundWarningSecondary = DSColor("color/background/warning/secondary", light: "FEECE1", dark: "FEECE1", evaLight: "FEECE1", evaDark: "380400", cedarLight: "FFF3E3", cedarDark: "4D340C")
+    static let backgroundWarningSecondary = DSColor("color/background/warning/secondary", light: "FEEEE6", dark: "FEEEE6", evaLight: "FEEEE6", evaDark: "301000", cedarLight: "FCF6E8", cedarDark: "4C3901")
     /// `color/background/warning/primary-pressed`
-    static let backgroundWarningPrimaryPressed = DSColor("color/background/warning/primary-pressed", light: "FB8E4B", dark: "FB8E4B", evaLight: "FB8E4B", evaDark: "FB8E4B", cedarLight: "CE9C56", cedarDark: "E6BB82")
+    static let backgroundWarningPrimaryPressed = DSColor("color/background/warning/primary-pressed", light: "E67532", dark: "E67532", evaLight: "E67532", evaDark: "E67532", cedarLight: "B88F07", cedarDark: "F6DA97")
     /// `color/background/warning/secondary-pressed`
-    static let backgroundWarningSecondaryPressed = DSColor("color/background/warning/secondary-pressed", light: "FDB487", dark: "FDB487", evaLight: "FDB487", evaDark: "570D00", cedarLight: "FDDDB4", cedarDark: "2F2211")
+    static let backgroundWarningSecondaryPressed = DSColor("color/background/warning/secondary-pressed", light: "FF9963", dark: "FF9963", evaLight: "FF9963", evaDark: "481B00", cedarLight: "F6DA97", cedarDark: "342701")
     /// `color/background/error/primary`
-    static let backgroundErrorPrimary = DSColor("color/background/error/primary", light: "C41616", dark: "C41616", evaLight: "C41616", evaDark: "C41616", cedarLight: "653120", cedarDark: "E2A38F")
+    static let backgroundErrorPrimary = DSColor("color/background/error/primary", light: "C14542", dark: "C14542", evaLight: "C14542", evaDark: "C14542", cedarLight: "721C1D", cedarDark: "FF958E")
     /// `color/background/error/secondary`
-    static let backgroundErrorSecondary = DSColor("color/background/error/secondary", light: "FCE2E2", dark: "FCE2E2", evaLight: "FCE2E2", evaDark: "330012", cedarLight: "FFEDE8", cedarDark: "442015")
+    static let backgroundErrorSecondary = DSColor("color/background/error/secondary", light: "FFEDEC", dark: "FFEDEC", evaLight: "FFEDEC", evaDark: "320D0C", cedarLight: "FFEDEC", cedarDark: "4F1313")
     /// `color/background/error/primary-pressed`
-    static let backgroundErrorPrimaryPressed = DSColor("color/background/error/primary-pressed", light: "AD1818", dark: "AD1818", evaLight: "AD1818", evaDark: "AD1818", cedarLight: "442015", cedarDark: "C27A63")
+    static let backgroundErrorPrimaryPressed = DSColor("color/background/error/primary-pressed", light: "98302F", dark: "98302F", evaLight: "98302F", evaDark: "98302F", cedarLight: "4F1313", cedarDark: "ED6D67")
     /// `color/background/error/secondary-pressed`
-    static let backgroundErrorSecondaryPressed = DSColor("color/background/error/secondary-pressed", light: "F67A7A", dark: "F67A7A", evaLight: "F67A7A", evaDark: "7A002B", cedarLight: "FED1C2", cedarDark: "26150F")
+    static let backgroundErrorSecondaryPressed = DSColor("color/background/error/secondary-pressed", light: "ED6D67", dark: "ED6D67", evaLight: "ED6D67", evaDark: "721C1D", cedarLight: "FED2CE", cedarDark: "320D0C")
     /// `color/background/promote/primary`
-    static let backgroundPromotePrimary = DSColor("color/background/promote/primary", light: "DE98FF", dark: "DE98FF", evaLight: "9446E1", evaDark: "8000C8", cedarLight: "784B5D", cedarDark: "AF7F91")
+    static let backgroundPromotePrimary = DSColor("color/background/promote/primary", light: "CC9FFF", dark: "CC9FFF", evaLight: "9E33F0", evaDark: "8100CB", cedarLight: "8D316B", cedarDark: "DE6EB2")
     /// `color/background/promote/secondary`
-    static let backgroundPromoteSecondary = DSColor("color/background/promote/secondary", light: "F7F2FC", dark: "F7F2FC", evaLight: "EEDCFF", evaDark: "4B0078", cedarLight: "F3D2DD", cedarDark: "583543")
+    static let backgroundPromoteSecondary = DSColor("color/background/promote/secondary", light: "F9F5FE", dark: "F9F5FE", evaLight: "E7D5FE", evaDark: "5D0194", cedarLight: "FFCFE9", cedarDark: "691E4F")
     /// `color/background/promote/primary-pressed`
-    static let backgroundPromotePrimaryPressed = DSColor("color/background/promote/primary-pressed", light: "B670FA", dark: "B670FA", evaLight: "8000C8", evaDark: "6400A0", cedarLight: "583543", cedarDark: "D1A7B6")
+    static let backgroundPromotePrimaryPressed = DSColor("color/background/promote/primary-pressed", light: "BA73FF", dark: "BA73FF", evaLight: "8100CB", evaDark: "5D0194", cedarLight: "691E4F", cedarDark: "F892CD")
     /// `color/background/promote/secondary-pressed`
-    static let backgroundPromoteSecondaryPressed = DSColor("color/background/promote/secondary-pressed", light: "DE98FF", dark: "DE98FF", evaLight: "D2AAFF", evaDark: "320050", cedarLight: "D1A7B6", cedarDark: "784B5D")
+    static let backgroundPromoteSecondaryPressed = DSColor("color/background/promote/secondary-pressed", light: "CC9FFF", dark: "CC9FFF", evaLight: "CC9FFF", evaDark: "280840", cedarLight: "F892CD", cedarDark: "8D316B")
     /// `color/foreground/hero`
-    static let foregroundHero = DSColor("color/foreground/hero", light: "101274", dark: "FFFFFF", evaLight: "4B0078", evaDark: "A0FF3C", cedarLight: "433728", cedarDark: "D5BFA7")
+    static let foregroundHero = DSColor("color/foreground/hero", light: "072755", dark: "FFFFFF", evaLight: "400568", evaDark: "ABF10E", cedarLight: "46392C", cedarDark: "BDB1A5")
     /// `color/foreground/primary`
-    static let foregroundPrimary = DSColor("color/foreground/primary", light: "000000", dark: "FFFFFF", evaLight: "1E0532", evaDark: "FFFFFF", cedarLight: "181513", cedarDark: "FAF7F3")
+    static let foregroundPrimary = DSColor("color/foreground/primary", light: "000000", dark: "FFFFFF", evaLight: "280840", evaDark: "FFFFFF", cedarLight: "1D1813", cedarDark: "FAF6F3")
     /// `color/foreground/secondary`
-    static let foregroundSecondary = DSColor("color/foreground/secondary", light: "6D6D73", dark: "BDC3C9", evaLight: "4B5158", evaDark: "EEDCFF", cedarLight: "453E36", cedarDark: "B8AEA2")
+    static let foregroundSecondary = DSColor("color/foreground/secondary", light: "6E6F73", dark: "B1B3B6", evaLight: "535458", evaDark: "E7D5FE", cedarLight: "46392C", cedarDark: "BDB1A5")
     /// `color/foreground/inverted/primary`
-    static let foregroundInvertedPrimary = DSColor("color/foreground/inverted/primary", light: "FFFFFF", dark: "000000", evaLight: "FFFFFF", evaDark: "1E0532", cedarLight: "FAF7F3", cedarDark: "181513")
+    static let foregroundInvertedPrimary = DSColor("color/foreground/inverted/primary", light: "FFFFFF", dark: "000000", evaLight: "FFFFFF", evaDark: "280840", cedarLight: "FAF6F3", cedarDark: "1D1813")
     /// `color/foreground/inverted/secondary`
-    static let foregroundInvertedSecondary = DSColor("color/foreground/inverted/secondary", light: "BDC3C9", dark: "404040", evaLight: "D2AAFF", evaDark: "4B0078", cedarLight: "EEE8E0", cedarDark: "453E36")
+    static let foregroundInvertedSecondary = DSColor("color/foreground/inverted/secondary", light: "B1B3B6", dark: "3A3C3F", evaLight: "CC9FFF", evaDark: "5D0194", cedarLight: "F6F0EA", cedarDark: "46392C")
     /// `color/foreground/disabled`
-    static let foregroundDisabled = DSColor("color/foreground/disabled", light: "BDC3C9", dark: "6D6D73", evaLight: "B478F5", evaDark: "D2AAFF", cedarLight: "453E36", cedarDark: "655C52")
+    static let foregroundDisabled = DSColor("color/foreground/disabled", light: "B1B3B6", dark: "6E6F73", evaLight: "BA73FF", evaDark: "CC9FFF", cedarLight: "46392C", cedarDark: "615242")
     /// `color/foreground/on-disabled`
-    static let foregroundOnDisabled = DSColor("color/foreground/on-disabled", light: "6D6D73", dark: "4B5158", evaLight: "6400A0", evaDark: "EEDCFF", cedarLight: "2A2520", cedarDark: "B8AEA2")
+    static let foregroundOnDisabled = DSColor("color/foreground/on-disabled", light: "535458", dark: "3A3C3F", evaLight: "5D0194", evaDark: "E7D5FE", cedarLight: "30271E", cedarDark: "BDB1A5")
     /// `color/foreground/brand`
-    static let foregroundBrand = DSColor("color/foreground/brand", light: "0069D1", dark: "57ABFF", evaLight: "8000C8", evaDark: "A0FF3C", cedarLight: "433728", cedarDark: "D5BFA7")
+    static let foregroundBrand = DSColor("color/foreground/brand", light: "2C6ECB", dark: "82B4FF", evaLight: "8100CB", evaDark: "ABF10E", cedarLight: "46392C", cedarDark: "BDB1A5")
     /// `color/foreground/brand/on/primary`
-    static let foregroundBrandOnPrimary = DSColor("color/foreground/brand/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF7F3", cedarDark: "181513")
+    static let foregroundBrandOnPrimary = DSColor("color/foreground/brand/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF6F3", cedarDark: "1D1813")
     /// `color/foreground/brand/on/secondary`
-    static let foregroundBrandOnSecondary = DSColor("color/foreground/brand/on/secondary", light: "003F96", dark: "003F96", evaLight: "4B0078", evaDark: "A0FF3C", cedarLight: "433728", cedarDark: "F0E0CE")
+    static let foregroundBrandOnSecondary = DSColor("color/foreground/brand/on/secondary", light: "0A3A7A", dark: "0A3A7A", evaLight: "400568", evaDark: "ABF10E", cedarLight: "46392C", cedarDark: "E4DBD2")
     /// `color/foreground/info`
-    static let foregroundInfo = DSColor("color/foreground/info", light: "0069D1", dark: "57ABFF", evaLight: "0069D1", evaDark: "8FC7FF", cedarLight: "252E34", cedarDark: "B8C8D3")
+    static let foregroundInfo = DSColor("color/foreground/info", light: "2C6ECB", dark: "82B4FF", evaLight: "2C6ECB", evaDark: "82B4FF", cedarLight: "072755", cedarDark: "82B4FF")
     /// `color/foreground/info/on/primary`
-    static let foregroundInfoOnPrimary = DSColor("color/foreground/info/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF7F3", cedarDark: "171C1F")
+    static let foregroundInfoOnPrimary = DSColor("color/foreground/info/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF6F3", cedarDark: "071935")
     /// `color/foreground/info/on/secondary`
-    static let foregroundInfoOnSecondary = DSColor("color/foreground/info/on/secondary", light: "003F96", dark: "003F96", evaLight: "003F96", evaDark: "8FC7FF", cedarLight: "252E34", cedarDark: "D6E2EA")
+    static let foregroundInfoOnSecondary = DSColor("color/foreground/info/on/secondary", light: "0A3A7A", dark: "0A3A7A", evaLight: "0A3A7A", evaDark: "82B4FF", cedarLight: "072755", cedarDark: "C9DEFF")
     /// `color/foreground/success`
-    static let foregroundSuccess = DSColor("color/foreground/success", light: "038229", dark: "7ECA6B", evaLight: "3F6212", evaDark: "A0FF3C", cedarLight: "272B1B", cedarDark: "C1C7AC")
+    static let foregroundSuccess = DSColor("color/foreground/success", light: "028132", dark: "6AC67A", evaLight: "405D02", evaDark: "ABF10E", cedarLight: "00300E", cedarDark: "6AC67A")
     /// `color/foreground/success/on/primary`
-    static let foregroundSuccessOnPrimary = DSColor("color/foreground/success/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "1E0532", cedarLight: "FAF7F3", cedarDark: "191B13")
+    static let foregroundSuccessOnPrimary = DSColor("color/foreground/success/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "280840", cedarLight: "FAF6F3", cedarDark: "001F07")
     /// `color/foreground/success/on/secondary`
-    static let foregroundSuccessOnSecondary = DSColor("color/foreground/success/on/secondary", light: "0E6027", dark: "0E6027", evaLight: "365314", evaDark: "DCFFB4", cedarLight: "272B1B", cedarDark: "DEE2CE")
+    static let foregroundSuccessOnSecondary = DSColor("color/foreground/success/on/secondary", light: "046225", dark: "046225", evaLight: "405D02", evaDark: "E1F9C7", cedarLight: "00300E", cedarDark: "B1EAB8")
     /// `color/foreground/warning`
-    static let foregroundWarning = DSColor("color/foreground/warning", light: "8F6425", dark: "FDB487", evaLight: "8F6425", evaDark: "FDDCB5", cedarLight: "4D340C", cedarDark: "FDDDB4")
+    static let foregroundWarning = DSColor("color/foreground/warning", light: "B75104", dark: "FF9963", evaLight: "B75104", evaDark: "FED4BF", cedarLight: "4C3901", cedarDark: "F6DA97")
     /// `color/foreground/warning/on/primary`
-    static let foregroundWarningOnPrimary = DSColor("color/foreground/warning/on/primary", light: "1A1A1A", dark: "1A1A1A", evaLight: "1A1A1A", evaDark: "1E0532", cedarLight: "2F2211", cedarDark: "2F2211")
+    static let foregroundWarningOnPrimary = DSColor("color/foreground/warning/on/primary", light: "18191C", dark: "18191C", evaLight: "18191C", evaDark: "280840", cedarLight: "342701", cedarDark: "342701")
     /// `color/foreground/warning/on/secondary`
-    static let foregroundWarningOnSecondary = DSColor("color/foreground/warning/on/secondary", light: "570D00", dark: "570D00", evaLight: "570D00", evaDark: "FDDCB5", cedarLight: "4D340C", cedarDark: "FDDDB4")
+    static let foregroundWarningOnSecondary = DSColor("color/foreground/warning/on/secondary", light: "481B00", dark: "481B00", evaLight: "481B00", evaDark: "FED4BF", cedarLight: "4C3901", cedarDark: "F6DA97")
     /// `color/foreground/error`
-    static let foregroundError = DSColor("color/foreground/error", light: "C41616", dark: "F67A7A", evaLight: "C41616", evaDark: "FFCCCC", cedarLight: "442015", cedarDark: "E2A38F")
+    static let foregroundError = DSColor("color/foreground/error", light: "C14542", dark: "ED6D67", evaLight: "C14542", evaDark: "FED2CE", cedarLight: "4F1313", cedarDark: "FF958E")
     /// `color/foreground/error/on/primary`
-    static let foregroundErrorOnPrimary = DSColor("color/foreground/error/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF7F3", cedarDark: "26150F")
+    static let foregroundErrorOnPrimary = DSColor("color/foreground/error/on/primary", light: "FFFFFF", dark: "FFFFFF", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF6F3", cedarDark: "320D0C")
     /// `color/foreground/error/on/secondary`
-    static let foregroundErrorOnSecondary = DSColor("color/foreground/error/on/secondary", light: "330012", dark: "330012", evaLight: "330012", evaDark: "FFCCCC", cedarLight: "442015", cedarDark: "FED1C2")
+    static let foregroundErrorOnSecondary = DSColor("color/foreground/error/on/secondary", light: "320D0C", dark: "320D0C", evaLight: "320D0C", evaDark: "FED2CE", cedarLight: "4F1313", cedarDark: "FED2CE")
     /// `color/foreground/promote`
-    static let foregroundPromote = DSColor("color/foreground/promote", light: "914CD4", dark: "DE98FF", evaLight: "8000C8", evaDark: "D2AAFF", cedarLight: "583543", cedarDark: "F3D2DD")
+    static let foregroundPromote = DSColor("color/foreground/promote", light: "9E33F0", dark: "CC9FFF", evaLight: "8100CB", evaDark: "CC9FFF", cedarLight: "691E4F", cedarDark: "FFCFE9")
     /// `color/foreground/promote/on/primary`
-    static let foregroundPromoteOnPrimary = DSColor("color/foreground/promote/on/primary", light: "1A1A1A", dark: "1A1A1A", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF7F3", cedarDark: "181513")
+    static let foregroundPromoteOnPrimary = DSColor("color/foreground/promote/on/primary", light: "18191C", dark: "18191C", evaLight: "FFFFFF", evaDark: "FFFFFF", cedarLight: "FAF6F3", cedarDark: "1D1813")
     /// `color/foreground/promote/on/secondary`
-    static let foregroundPromoteOnSecondary = DSColor("color/foreground/promote/on/secondary", light: "491D8B", dark: "491D8B", evaLight: "4B0078", evaDark: "EEDCFF", cedarLight: "3B232C", cedarDark: "F3D2DD")
+    static let foregroundPromoteOnSecondary = DSColor("color/foreground/promote/on/secondary", light: "5D0194", dark: "5D0194", evaLight: "400568", evaDark: "E7D5FE", cedarLight: "491436", cedarDark: "FFCFE9")
     /// `color/action/primary`
-    static let actionPrimary = DSColor("color/action/primary", light: "0069D1", dark: "3A9DFF", evaLight: "8000C8", evaDark: "A0FF3C", cedarLight: "433728", cedarDark: "D5BFA7")
+    static let actionPrimary = DSColor("color/action/primary", light: "2C6ECB", dark: "5395F6", evaLight: "8100CB", evaDark: "ABF10E", cedarLight: "46392C", cedarDark: "BDB1A5")
     /// `color/action/secondary`
-    static let actionSecondary = DSColor("color/action/secondary", light: "BDC3C9", dark: "6D6D73", evaLight: "B478F5", evaDark: "EEDCFF", cedarLight: "453E36", cedarDark: "8B8175")
+    static let actionSecondary = DSColor("color/action/secondary", light: "B1B3B6", dark: "6E6F73", evaLight: "BA73FF", evaDark: "E7D5FE", cedarLight: "46392C", cedarDark: "A19283")
     /// `color/border/primary`
-    static let borderPrimary = DSColor("color/border/primary", light: "DDE1E6", dark: "404040", evaLight: "D2AAFF", evaDark: "D2AAFF", cedarLight: "655C52", cedarDark: "453E36")
+    static let borderPrimary = DSColor("color/border/primary", light: "DADCE1", dark: "3A3C3F", evaLight: "CC9FFF", evaDark: "CC9FFF", cedarLight: "615242", cedarDark: "46392C")
     /// `color/border/secondary`
-    static let borderSecondary = DSColor("color/border/secondary", light: "BDC3C9", dark: "6D6D73", evaLight: "B478F5", evaDark: "EEDCFF", cedarLight: "453E36", cedarDark: "655C52")
+    static let borderSecondary = DSColor("color/border/secondary", light: "B1B3B6", dark: "6E6F73", evaLight: "BA73FF", evaDark: "E7D5FE", cedarLight: "46392C", cedarDark: "615242")
     /// `color/border/tertiary`
-    static let borderTertiary = DSColor("color/border/tertiary", light: "6D6D73", dark: "BDC3C9", evaLight: "9446E1", evaDark: "B478F5", cedarLight: "66533D", cedarDark: "8B8175")
+    static let borderTertiary = DSColor("color/border/tertiary", light: "6E6F73", dark: "B1B3B6", evaLight: "9E33F0", evaDark: "BA73FF", cedarLight: "615242", cedarDark: "A19283")
     /// `color/border/inverted`
-    static let borderInverted = DSColor("color/border/inverted", light: "FFFFFF", dark: "1A1A1A", evaLight: "B478F5", evaDark: "4B0078", cedarLight: "EEE8E0", cedarDark: "655C52")
+    static let borderInverted = DSColor("color/border/inverted", light: "FFFFFF", dark: "18191C", evaLight: "BA73FF", evaDark: "400568", cedarLight: "F6F0EA", cedarDark: "615242")
     /// `color/border/brand`
-    static let borderBrand = DSColor("color/border/brand", light: "0073E5", dark: "57ABFF", evaLight: "8000C8", evaDark: "A0FF3C", cedarLight: "66533D", cedarDark: "D5BFA7")
+    static let borderBrand = DSColor("color/border/brand", light: "2C6ECB", dark: "82B4FF", evaLight: "8100CB", evaDark: "ABF10E", cedarLight: "615242", cedarDark: "BDB1A5")
     /// `color/border/brand/pressed`
-    static let borderBrandPressed = DSColor("color/border/brand/pressed", light: "101274", dark: "0073E5", evaLight: "4B0078", evaDark: "82E600", cedarLight: "433728", cedarDark: "BBA184")
+    static let borderBrandPressed = DSColor("color/border/brand/pressed", light: "072755", dark: "2C6ECB", evaLight: "400568", evaDark: "8AC405", cedarLight: "46392C", cedarDark: "A19283")
     /// `color/border/info`
-    static let borderInfo = DSColor("color/border/info", light: "0073E5", dark: "57ABFF", evaLight: "0073E5", evaDark: "8FC7FF", cedarLight: "35434B", cedarDark: "B8C8D3")
+    static let borderInfo = DSColor("color/border/info", light: "2C6ECB", dark: "82B4FF", evaLight: "2C6ECB", evaDark: "82B4FF", cedarLight: "0A3A7A", cedarDark: "82B4FF")
     /// `color/border/info/pressed`
-    static let borderInfoPressed = DSColor("color/border/info/pressed", light: "101274", dark: "0073E5", evaLight: "101274", evaDark: "57ABFF", cedarLight: "252E34", cedarDark: "95A9B4")
+    static let borderInfoPressed = DSColor("color/border/info/pressed", light: "072755", dark: "2C6ECB", evaLight: "072755", evaDark: "5395F6", cedarLight: "072755", cedarDark: "5395F6")
     /// `color/border/success`
-    static let borderSuccess = DSColor("color/border/success", light: "08872E", dark: "7ECA6B", evaLight: "4D7C0F", evaDark: "A0FF3C", cedarLight: "3C4129", cedarDark: "C1C7AC")
+    static let borderSuccess = DSColor("color/border/success", light: "028132", dark: "6AC67A", evaLight: "557A03", evaDark: "ABF10E", cedarLight: "004617", cedarDark: "6AC67A")
     /// `color/border/success/pressed`
-    static let borderSuccessPressed = DSColor("color/border/success/pressed", light: "0E6027", dark: "08872E", evaLight: "3F6212", evaDark: "82E600", cedarLight: "272B1B", cedarDark: "A1A888")
+    static let borderSuccessPressed = DSColor("color/border/success/pressed", light: "046225", dark: "028132", evaLight: "405D02", evaDark: "8AC405", cedarLight: "00300E", cedarDark: "39A954")
     /// `color/border/warning`
-    static let borderWarning = DSColor("color/border/warning", light: "EA5E00", dark: "FDB487", evaLight: "EA5E00", evaDark: "FDDCB5", cedarLight: "744F12", cedarDark: "FDDDB4")
+    static let borderWarning = DSColor("color/border/warning", light: "B75104", dark: "FF9963", evaLight: "B75104", evaDark: "FED4BF", cedarLight: "6A5100", cedarDark: "F6DA97")
     /// `color/border/warning/pressed`
-    static let borderWarningPressed = DSColor("color/border/warning/pressed", light: "FB8E4B", dark: "FB8E4B", evaLight: "FB8E4B", evaDark: "FDB487", cedarLight: "4D340C", cedarDark: "E6BB82")
+    static let borderWarningPressed = DSColor("color/border/warning/pressed", light: "FF9963", dark: "E67532", evaLight: "FF9963", evaDark: "FF9963", cedarLight: "4C3901", cedarDark: "D9AD35")
     /// `color/border/error`
-    static let borderError = DSColor("color/border/error", light: "C41616", dark: "F67A7A", evaLight: "C41616", evaDark: "FFCCCC", cedarLight: "653120", cedarDark: "E2A38F")
+    static let borderError = DSColor("color/border/error", light: "C14542", dark: "ED6D67", evaLight: "C14542", evaDark: "FED2CE", cedarLight: "721C1D", cedarDark: "FF958E")
     /// `color/border/error/pressed`
-    static let borderErrorPressed = DSColor("color/border/error/pressed", light: "AD1818", dark: "C41616", evaLight: "AD1818", evaDark: "F67A7A", cedarLight: "442015", cedarDark: "C27A63")
+    static let borderErrorPressed = DSColor("color/border/error/pressed", light: "98302F", dark: "C14542", evaLight: "98302F", evaDark: "ED6D67", cedarLight: "4F1313", cedarDark: "ED6D67")
     /// `color/border/promote`
-    static let borderPromote = DSColor("color/border/promote", light: "914CD4", dark: "DE98FF", evaLight: "9446E1", evaDark: "D2AAFF", cedarLight: "583543", cedarDark: "F3D2DD")
+    static let borderPromote = DSColor("color/border/promote", light: "9E33F0", dark: "CC9FFF", evaLight: "9E33F0", evaDark: "CC9FFF", cedarLight: "691E4F", cedarDark: "FFCFE9")
     /// `color/border/promote/pressed`
-    static let borderPromotePressed = DSColor("color/border/promote/pressed", light: "B670FA", dark: "B670FA", evaLight: "8000C8", evaDark: "B478F5", cedarLight: "3B232C", cedarDark: "D1A7B6")
+    static let borderPromotePressed = DSColor("color/border/promote/pressed", light: "BA73FF", dark: "BA73FF", evaLight: "8100CB", evaDark: "BA73FF", cedarLight: "491436", cedarDark: "F892CD")
     /// `color/ai/gradient/start`
-    static let aiGradientStart = DSColor("color/ai/gradient/start", light: "0069D1", dark: "3A9DFF", evaLight: "4D7C0F", evaDark: "A0FF3C", cedarLight: "66533D", cedarDark: "D5BFA7")
+    static let aiGradientStart = DSColor("color/ai/gradient/start", light: "2C6ECB", dark: "5395F6", evaLight: "557A03", evaDark: "ABF10E", cedarLight: "615242", cedarDark: "BDB1A5")
     /// `color/ai/gradient/end`
-    static let aiGradientEnd = DSColor("color/ai/gradient/end", light: "914CD4", dark: "DE98FF", evaLight: "8000C8", evaDark: "D2AAFF", cedarLight: "583543", cedarDark: "D1A7B6")
+    static let aiGradientEnd = DSColor("color/ai/gradient/end", light: "9E33F0", dark: "CC9FFF", evaLight: "8100CB", evaDark: "CC9FFF", cedarLight: "691E4F", cedarDark: "F892CD")
     /// `color/border/focus`
-    static let borderFocus = DSColor("color/border/focus", light: "0069D1", dark: "57ABFF", evaLight: "8000C8", evaDark: "A0FF3C", cedarLight: "66533D", cedarDark: "D5BFA7")
+    static let borderFocus = DSColor("color/border/focus", light: "2C6ECB", dark: "82B4FF", evaLight: "8100CB", evaDark: "ABF10E", cedarLight: "615242", cedarDark: "BDB1A5")
     /// `color/background/scrim`
-    static let backgroundScrim = DSColor("color/background/scrim", light: "1A1A1A66", dark: "1A1A1A99", evaLight: "1A1A1A66", evaDark: "1A1A1A99", cedarLight: "1A1A1A66", cedarDark: "1A1A1A99")
+    static let backgroundScrim = DSColor("color/background/scrim", light: "18191C66", dark: "18191C99", evaLight: "18191C66", evaDark: "18191C99", cedarLight: "18191C66", cedarDark: "18191C99")
     /// `color/background/accent/blue/subtler`
     static let backgroundAccentBlueSubtler = DSColor("color/background/accent/blue/subtler", light: "E9F2FE", dark: "071935", evaLight: "E9F2FE", evaDark: "071935", cedarLight: "E9F2FE", cedarDark: "071935")
     /// `color/background/accent/blue/subtle`
@@ -194,17 +194,17 @@ public nonisolated extension DSColor {
     /// `color/border/accent/green`
     static let borderAccentGreen = DSColor("color/border/accent/green", light: "028132", dark: "39A954", evaLight: "028132", evaDark: "39A954", cedarLight: "028132", cedarDark: "39A954")
     /// `color/background/accent/lime/subtler`
-    static let backgroundAccentLimeSubtler = DSColor("color/background/accent/lime/subtler", light: "E7F6D7", dark: "111D00", evaLight: "E7F6D7", evaDark: "111D00", cedarLight: "E7F6D7", cedarDark: "111D00")
+    static let backgroundAccentLimeSubtler = DSColor("color/background/accent/lime/subtler", light: "E1F9C7", dark: "111D00", evaLight: "E1F9C7", evaDark: "111D00", cedarLight: "E1F9C7", cedarDark: "111D00")
     /// `color/background/accent/lime/subtle`
-    static let backgroundAccentLimeSubtle = DSColor("color/background/accent/lime/subtle", light: "C9E6A6", dark: "1D2D00", evaLight: "C9E6A6", evaDark: "1D2D00", cedarLight: "C9E6A6", cedarDark: "1D2D00")
+    static let backgroundAccentLimeSubtle = DSColor("color/background/accent/lime/subtle", light: "ABF10E", dark: "1D2D00", evaLight: "ABF10E", evaDark: "1D2D00", cedarLight: "ABF10E", cedarDark: "1D2D00")
     /// `color/background/accent/lime/bolder`
-    static let backgroundAccentLimeBolder = DSColor("color/background/accent/lime/bolder", light: "557A03", dark: "74A220", evaLight: "557A03", evaDark: "74A220", cedarLight: "557A03", cedarDark: "74A220")
+    static let backgroundAccentLimeBolder = DSColor("color/background/accent/lime/bolder", light: "557A03", dark: "73A308", evaLight: "557A03", evaDark: "73A308", cedarLight: "557A03", cedarDark: "73A308")
     /// `color/foreground/accent/lime`
-    static let foregroundAccentLime = DSColor("color/foreground/accent/lime", light: "405D02", dark: "96C05A", evaLight: "405D02", evaDark: "96C05A", cedarLight: "405D02", cedarDark: "96C05A")
+    static let foregroundAccentLime = DSColor("color/foreground/accent/lime", light: "405D02", dark: "8AC405", evaLight: "405D02", evaDark: "8AC405", cedarLight: "405D02", cedarDark: "8AC405")
     /// `color/foreground/accent/lime/bolder`
-    static let foregroundAccentLimeBolder = DSColor("color/foreground/accent/lime/bolder", light: "2C4202", dark: "C9E6A6", evaLight: "2C4202", evaDark: "C9E6A6", cedarLight: "2C4202", cedarDark: "C9E6A6")
+    static let foregroundAccentLimeBolder = DSColor("color/foreground/accent/lime/bolder", light: "2C4202", dark: "ABF10E", evaLight: "2C4202", evaDark: "ABF10E", cedarLight: "2C4202", cedarDark: "ABF10E")
     /// `color/border/accent/lime`
-    static let borderAccentLime = DSColor("color/border/accent/lime", light: "557A03", dark: "74A220", evaLight: "557A03", evaDark: "74A220", cedarLight: "557A03", cedarDark: "74A220")
+    static let borderAccentLime = DSColor("color/border/accent/lime", light: "557A03", dark: "73A308", evaLight: "557A03", evaDark: "73A308", cedarLight: "557A03", cedarDark: "73A308")
     /// `color/background/accent/yellow/subtler`
     static let backgroundAccentYellowSubtler = DSColor("color/background/accent/yellow/subtler", light: "FEF0D0", dark: "221800", evaLight: "FEF0D0", evaDark: "221800", cedarLight: "FEF0D0", cedarDark: "221800")
     /// `color/background/accent/yellow/subtle`
@@ -254,17 +254,17 @@ public nonisolated extension DSColor {
     /// `color/border/accent/magenta`
     static let borderAccentMagenta = DSColor("color/border/accent/magenta", light: "B3478B", dark: "DE6EB2", evaLight: "B3478B", evaDark: "DE6EB2", cedarLight: "B3478B", cedarDark: "DE6EB2")
     /// `color/background/accent/purple/subtler`
-    static let backgroundAccentPurpleSubtler = DSColor("color/background/accent/purple/subtler", light: "F5EEFF", dark: "221231", evaLight: "F5EEFF", evaDark: "221231", cedarLight: "F5EEFF", cedarDark: "221231")
+    static let backgroundAccentPurpleSubtler = DSColor("color/background/accent/purple/subtler", light: "F5EEFE", dark: "280840", evaLight: "F5EEFE", evaDark: "280840", cedarLight: "F5EEFE", cedarDark: "280840")
     /// `color/background/accent/purple/subtle`
-    static let backgroundAccentPurpleSubtle = DSColor("color/background/accent/purple/subtle", light: "E7D5FE", dark: "361C4E", evaLight: "E7D5FE", evaDark: "361C4E", cedarLight: "E7D5FE", cedarDark: "361C4E")
+    static let backgroundAccentPurpleSubtle = DSColor("color/background/accent/purple/subtle", light: "E7D5FE", dark: "400568", evaLight: "E7D5FE", evaDark: "400568", cedarLight: "E7D5FE", cedarDark: "400568")
     /// `color/background/accent/purple/bolder`
-    static let backgroundAccentPurpleBolder = DSColor("color/background/accent/purple/bolder", light: "8B56BE", dark: "B17DE9", evaLight: "8B56BE", evaDark: "B17DE9", cedarLight: "8B56BE", cedarDark: "B17DE9")
+    static let backgroundAccentPurpleBolder = DSColor("color/background/accent/purple/bolder", light: "9E33F0", dark: "BA73FF", evaLight: "9E33F0", evaDark: "BA73FF", cedarLight: "9E33F0", cedarDark: "BA73FF")
     /// `color/foreground/accent/purple`
-    static let foregroundAccentPurple = DSColor("color/foreground/accent/purple", light: "6C3F97", dark: "CC9FFF", evaLight: "6C3F97", evaDark: "CC9FFF", cedarLight: "6C3F97", cedarDark: "CC9FFF")
+    static let foregroundAccentPurple = DSColor("color/foreground/accent/purple", light: "8100CB", dark: "CC9FFF", evaLight: "8100CB", evaDark: "CC9FFF", cedarLight: "8100CB", cedarDark: "CC9FFF")
     /// `color/foreground/accent/purple/bolder`
-    static let foregroundAccentPurpleBolder = DSColor("color/foreground/accent/purple/bolder", light: "4E2A71", dark: "E7D5FE", evaLight: "4E2A71", evaDark: "E7D5FE", cedarLight: "4E2A71", cedarDark: "E7D5FE")
+    static let foregroundAccentPurpleBolder = DSColor("color/foreground/accent/purple/bolder", light: "5D0194", dark: "E7D5FE", evaLight: "5D0194", evaDark: "E7D5FE", cedarLight: "5D0194", cedarDark: "E7D5FE")
     /// `color/border/accent/purple`
-    static let borderAccentPurple = DSColor("color/border/accent/purple", light: "8B56BE", dark: "B17DE9", evaLight: "8B56BE", evaDark: "B17DE9", cedarLight: "8B56BE", cedarDark: "B17DE9")
+    static let borderAccentPurple = DSColor("color/border/accent/purple", light: "9E33F0", dark: "BA73FF", evaLight: "9E33F0", evaDark: "BA73FF", cedarLight: "9E33F0", cedarDark: "BA73FF")
     /// `color/background/accent/gray/subtler`
     static let backgroundAccentGraySubtler = DSColor("color/background/accent/gray/subtler", light: "EFF1F6", dark: "18191C", evaLight: "EFF1F6", evaDark: "18191C", cedarLight: "EFF1F6", cedarDark: "18191C")
     /// `color/background/accent/gray/subtle`
@@ -278,7 +278,7 @@ public nonisolated extension DSColor {
     /// `color/border/accent/gray`
     static let borderAccentGray = DSColor("color/border/accent/gray", light: "6E6F73", dark: "939599", evaLight: "6E6F73", evaDark: "939599", cedarLight: "6E6F73", cedarDark: "939599")
     /// `color/foreground/accent/on/bolder`
-    static let foregroundAccentOnBolder = DSColor("color/foreground/accent/on/bolder", light: "FFFFFF", dark: "1A1A1A", evaLight: "FFFFFF", evaDark: "1A1A1A", cedarLight: "FFFFFF", cedarDark: "1A1A1A")
+    static let foregroundAccentOnBolder = DSColor("color/foreground/accent/on/bolder", light: "FFFFFF", dark: "27292C", evaLight: "FFFFFF", evaDark: "27292C", cedarLight: "FFFFFF", cedarDark: "27292C")
 }
 
 public nonisolated extension DSColor {
