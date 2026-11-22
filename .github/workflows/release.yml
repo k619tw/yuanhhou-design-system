@@ -61,6 +61,7 @@ jobs:
       - name: Check, build and lint
         run: |
           node tokens/generate.mjs --check
+          node tokens/palette.mjs --check
           cd web
           npm ci
           npm run build:lib

@@ -460,7 +460,7 @@ A link has no padding of its own. When it stands alone (not inside a sentence), 
 | Text and underline | `action/primary` |
 | Focus outline (Web) | `border/focus`, 2px |
 
-`action/primary` is tint with no fill behind it. It passes 4.5:1 against `background/primary` (lowest: Light, 5.33:1) and `background/secondary` (lowest: Light, 4.86:1) in all six modes. Prefer `background/primary`. Do not put a link on a brand or inverted surface.
+`action/primary` is tint with no fill behind it. It passes 4.5:1 against `background/primary` (lowest: Light, 5.0:1) and `background/secondary` (lowest: Light, 4.67:1) in all six modes. Prefer `background/primary`. Do not put a link on a brand or inverted surface.
 
 ### Do
 - Write the destination, not "Click here": "Read the rebrand story".
@@ -649,7 +649,7 @@ An on/off switch for a setting that takes effect immediately. Figma: page `Toggl
 - `<button role="switch" aria-checked="true|false">` or `<input type="checkbox" role="switch">`.
 - Space and Enter toggle it.
 - Visible focus ring: `outline: 2px solid var(--color-border-focus)` (not yet in Figma).
-- Track contrast against the surface: both Off (`border/tertiary`) and On (`action/primary`) pass 3:1 in all six modes. Do not use `action/secondary` for the Off track; it is 1.8:1 in Light.
+- Track contrast against the surface: both Off (`border/tertiary`) and On (`action/primary`) pass 3:1 in all six modes. Do not use `action/secondary` for the Off track; it is 2.1:1 in Light.
 
 ### Code mapping
 Source: `web/src/components/Toggle`.
@@ -1115,7 +1115,7 @@ Apple has a native disclosure group, so there is no custom accordion on iOS (nat
 | Part | Value / token |
 |---|---|
 | Header | height 52 with the separator, padding 16 horizontal (`spacing/200`); label `Body 1/Regular`, `foreground/primary` |
-| Chevron | SF Symbol glyph in `Body 2/Emphasized` (15 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 1.78:1 against `background/primary` in Light (4.1 Dark, 3.0 EVA Light, 13.0 EVA Dark, 9.8 Cedar Light, 4.8 Cedar Dark), below the 3:1 used for UI icons. Reviewed with an accessibility specialist and accepted. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
+| Chevron | SF Symbol glyph in `Body 2/Emphasized` (15 pt Semibold), `action/secondary`; `foreground/disabled` when Disabled. `action/secondary` is 2.1:1 against `background/primary` in Light (4.2 Dark, 3.0 EVA Light, 10.7 EVA Dark, 10.4 Cedar Light, 5.8 Cedar Dark), below the 3:1 used for UI icons. Reviewed with an accessibility specialist and accepted. In SwiftUI this is the one thing the style changes, because the system chevron cannot be recolored |
 | Content | text row aligned with the label (16 padding), no top padding, `spacing/150` bottom padding, `Body 2/Regular`, `foreground/secondary` |
 | Separator | 1 (`border/width/thin`), inset 16, `border/primary` |
 

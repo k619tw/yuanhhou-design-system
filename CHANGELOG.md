@@ -4,6 +4,22 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 1.0.0 · 2026-11-23
+
+One colour palette for every brand: Default, EVA, Cedar and the accent colours now all use the same eleven hues, and the Default brand blue is the new blue 500.
+
+### Breaking
+- All: the colour primitives are one shared palette, `color/<hue>/<50-900>` for blue, teal, green, lime, yellow, orange, red, magenta, purple, gray and sand, plus `color/white`, `color/black` and `color/alpha/white|black/<10-90>`. The brand ramps `neutral`, `eva/purple`, `eva/lime` and `cedar/linen|oak|honey|sage|smoke|clay|fig`, the accent ramps `accent/<hue>` and the 550 steps are removed. Components only use semantic colours, so nothing changes for them; if you used a primitive directly, use the semantic colour for that job instead (or the shared hue at the same step).
+- Web: the CSS variables `--yuanhhouColorNeutral*`, `--yuanhhouColorEva*`, `--yuanhhouColorCedar*`, `--yuanhhouColorAccent*` and `--yuanhhouColor<Hue>550` are removed. New: `--yuanhhouColor<Hue><Step>` for the eleven hues (steps 50 to 900), `--yuanhhouColorWhite` and `--yuanhhouColorBlack`.
+- iOS: the matching `DSPrimitive.color…` constants are removed. New: `DSPrimitive.color<Hue><Step>`, `colorWhite` and `colorBlack`.
+
+### Changed
+- All: Default brand blue is `#2C6ECB` (was `#0073E5`), with the info, link and focus colours that follow it. Default neutrals are a slightly cool gray; pages stay white and black.
+- All: EVA keeps its violet; the neon lime is `#ABF10E`, and the EVA Dark page is a slightly lighter purple (`#400568`).
+- All: Cedar's neutrals and brand use the new warm sand hue and look the same; its status colours come from the shared green, blue, red, yellow and magenta, so they are a little more saturated.
+- All: every text, border and on-fill pair still passes WCAG AA in all six modes (1,050 pairs checked). Text on the disabled fill is darker in Default Light and Dark (3.6:1 and 2.2:1).
+- Figma: the Tokens library's `01 Primitives` has the new palette, and every Token Documentation frame (Primitives, Semantics, EVA, Cedar, Multi-theme, Accent) shows it. The early exploration frames are marked as archive. Accept the library update in your files.
+
 ## 0.9.0 · 2026-11-22
 
 Decorative accent colors in ten hues, kept apart from the status colors.
