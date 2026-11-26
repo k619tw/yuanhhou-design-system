@@ -14,6 +14,7 @@ One Figma design system, implemented twice: React in `web/` and SwiftUI in `ios/
 | Per-component docs | `docs/components.md` (also on each Figma page in a frame named `Component documentation`) |
 | iOS usage | `docs/ios.md` |
 | What is missing or accepted | `docs/known-gaps.md`: read it before calling something a bug |
+| Machine checks for repeat mistakes | `docs/checks.md`: a mistake made twice becomes a check |
 
 ## Packages
 - Web: `@yuanhhou/ds` from `web/`, public on npm. A plain folder install crashes hook components in production builds; see `web/README.md`.
@@ -34,7 +35,7 @@ Use `/sync-component <Component|tokens> [figma|code]` (`.claude/skills/sync-comp
 2. Apply to both platforms and, for a code-first change, to the Figma component.
 3. Update `docs/components.md`, `design-system-rules.md` and `docs/ios.md` as needed, and the `Component documentation` frame.
 4. Sweep every markdown file and every component page's frame for the old wording. The change is not done until the sweep is clean.
-5. Validate: `node tokens/generate.mjs --check` and `node tokens/palette.mjs --check`; `npm run build`, `build:lib` and `lint` in `web/`; `xcodebuild` for `ios/` and `xcodebuild test` in `ios/YuanhhouDSKit/`; check visual changes in the browser and the simulator.
+5. Validate: `node tokens/generate.mjs --check` and `node tokens/palette.mjs --check`; the rule checks `node scripts/check-docs.mjs`, `check-native-first.mjs` and `check-strings.mjs` (what each catches: `docs/checks.md`; CI runs them all on every pull request); `npm run build`, `build:lib` and `lint` in `web/`; `xcodebuild` for `ios/` and `xcodebuild test` in `ios/YuanhhouDSKit/`; check visual changes in the browser and the simulator.
 
 ## Team
 The main session is the GM of Design and can hand work to the subagents in `.claude/agents/`: content designer, web engineer, DS designer (Figma), iOS engineer, GM assistant (checks everything: native-first verdict before building, then that web, iOS, content, Figma and docs agree; read-only) and PM (summary, questions, release notes, portfolio framing). Only the main session commits, pushes or releases. Roles and the flow are in `docs/workflow.md`.
