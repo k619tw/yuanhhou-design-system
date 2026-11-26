@@ -1,0 +1,54 @@
+# Checks: run on every pull request and every push to main, so a broken rule is caught on the branch, not at release.
+#
+# Before this, the token checks ran only in release.yml, after the version was bumped. The rule checks in scripts/
+# each catch a mistake that reached main more than once (see docs/checks.md):
+#   check-docs.mjs          docs name only Swift API, CSS variables and colour tokens that exist
+#   check-native-first.mjs  no public iOS view redraws a native control, and each custom one says why in docs/ios.md
+#   check-strings.mjs       every iOS string has Japanese
+# iOS builds and tests (xcodebuild) still run on a Mac before release; this job is Linux only.
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Tokens are generated and pass contrast
+        run: |
+          node tokens/generate.mjs --check
+          node tokens/palette.mjs --check
+
+      - name: Docs name only what exists
+        run: node scripts/check-docs.mjs
+
+      - name: Native first on iOS
+        run: node scripts/check-native-first.mjs
+
+      - name: Every iOS string has Japanese
+        run: node scripts/check-strings.mjs
+
+      - name: Web builds and lints
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+          npm run build:lib
+          npm run lint

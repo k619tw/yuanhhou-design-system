@@ -24,7 +24,7 @@ You work at two points of every change:
 - Shared: tokens (color roles, spacing, radius), component names, states, content and strings, accessibility intent. Platform-owned: the control itself, its metrics, typography scale, icons (SF Symbols on iOS), navigation and motion.
 - Anything already listed in `docs/known-gaps.md` is accepted; do not raise it as new.
 - Read Figma read-only when you need to (`figma-use` skill, `create_session` first).
-- You may run read-only commands (`git diff`, `git grep`, `node tokens/generate.mjs --check`) to check; do not change anything.
+- You may run read-only commands (`git diff`, `git grep`, `node tokens/generate.mjs --check`, `node scripts/check-docs.mjs`, `node scripts/check-native-first.mjs`, `node scripts/check-strings.mjs`) to check; do not change anything.
 
 ## The cross-team checklist (run it after building)
 1. **Web and iOS agree**: same component names, states and property names where the control is shared; same token roles for color, spacing and radius; differences are on purpose and written in `docs/ios.md`.

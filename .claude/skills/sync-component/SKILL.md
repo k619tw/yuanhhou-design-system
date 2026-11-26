@@ -34,6 +34,7 @@ Everything is in this repo: React in `web/`, SwiftUI in `ios/`, shared docs in `
 
 ## 5. Validate
 - Docs: repeat the sweep with the old wording and confirm nothing stale is left in the markdown files or any Figma doc frame.
+- Rule checks from the repo root: `node scripts/check-docs.mjs`, `node scripts/check-native-first.mjs`, `node scripts/check-strings.mjs` (see `docs/checks.md`). They also run in CI on the pull request.
 - Web: `npm run build`, `npm run build:lib` and `npm run lint` in `web/`; check the demo in the browser when the change is visual.
 - iOS: in `ios/`, `xcodebuild -project YuanhhouDS.xcodeproj -scheme YuanhhouDS -destination 'generic/platform=iOS Simulator' -derivedDataPath <temp dir> build`. Then `xcodebuild test -scheme YuanhhouDSKit -destination 'platform=iOS Simulator,name=iPhone 17'` in `ios/YuanhhouDSKit/` (token contrast, icons, strings). Run in the simulator if the user wants to see it.
 - Colors changed: re-check contrast across all six modes (text 4.5:1, borders and control outlines 3:1) and run `node tokens/palette.mjs` (the AA audit of all six modes) and `node tokens/generate.mjs --check`, which fails if `colors.css` or `DSColor+Tokens.swift` no longer match `tokens/colors.json`.

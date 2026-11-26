@@ -68,7 +68,7 @@ flowchart TD
   AP --> DOC["4. Update docs<br/>components.md, ios.md, rules"]
   DOC --> FR["Update the Figma<br/>Component documentation frame"]
   FR --> SW["Sweep every .md and every<br/>page's doc frame for old wording"]
-  SW --> V["5. Validate<br/>generate.mjs --check · build · build:lib · lint<br/>xcodebuild · xcodebuild test · browser · simulator"]
+  SW --> V["5. Validate<br/>generate.mjs --check · rule checks · build · build:lib · lint<br/>xcodebuild · xcodebuild test · browser · simulator"]
   V --> OK{"All clean?"}
   OK -- no --> AP
   OK -- yes --> REP["6. Report<br/>what changed, what was not verified"]

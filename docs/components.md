@@ -717,11 +717,12 @@ Form {
     } footer: {
         Text("Use the email you signed up with.").dsTextFieldFooter()
     }
-    .dsListRowBackground()
+    .listRowBackground(Rectangle().fill(DSColor.backgroundPrimary))
 }
-.dsListBackground()
+.scrollContentBackground(.hidden)
+.background(DSColor.backgroundSecondary)
 ```
-SwiftUI draws the corners, separators and spacing itself; the tokens come from `.dsListBackground()`, `.dsListRowBackground()` and the row modifiers.
+SwiftUI draws the corners, separators and spacing itself; the tokens come from the page background (`.scrollContentBackground(.hidden)` and `.background(DSColor.backgroundSecondary)`), the row background (`.listRowBackground`) and the row modifiers. The demo app wraps the two backgrounds as `dsListBackground()` and `dsListRowBackground()`; they are not in the package.
 
 ### Related
 [Input](#input) · [Toggle](#toggle)

@@ -13,6 +13,7 @@ Figma: DS - Components `GLymoPHNnAmM4irCifF2Ei`, page `Release Note` (`158:362`)
 ## 1. Preflight (stop if any fails)
 - On `main` (or, in a cloud session, its own branch based on the latest `origin/main`), working tree clean, up to date (`git fetch`, `git status -sb`).
 - `node tokens/generate.mjs --check` and `node tokens/palette.mjs --check`.
+- `node scripts/check-docs.mjs`, `node scripts/check-native-first.mjs` and `node scripts/check-strings.mjs`.
 - Web, in `web/`: `npm run build`, `npm run build:lib`, `npm run lint`.
 - iOS: `xcodebuild` the app (it builds the package too) and `xcodebuild test` the package, as in `ios/CLAUDE.md`.
 - If anything fails, report it and do not release.
