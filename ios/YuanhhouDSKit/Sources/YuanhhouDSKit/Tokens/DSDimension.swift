@@ -40,6 +40,8 @@ public nonisolated enum DSRadius {
 
 /// Component and icon sizes (`size/*`).
 public nonisolated enum DSSize {
+    /// `size/icon/xs`: the Timeline marker.
+    public static let iconExtraSmall: CGFloat = 12
     public static let iconSmall: CGFloat = 16
     public static let iconMedium: CGFloat = 20
     public static let iconLarge: CGFloat = 24

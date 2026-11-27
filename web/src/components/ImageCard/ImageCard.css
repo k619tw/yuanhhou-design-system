@@ -1,10 +1,30 @@
+/* Image Card. Elevated, Outlined and Filled are the Card styles; Plain has no container and rounds the media instead. */
 .image-card {
+  position: relative;
   display: flex;
+  box-sizing: border-box;
   overflow: clip;
+  border-radius: var(--radius-card);
+}
+
+.image-card--elevated {
   background: var(--color-background-primary);
   border: var(--border-width-thin) solid var(--color-border-primary);
-  border-radius: var(--radius-card);
   box-shadow: var(--shadow-sm);
+}
+
+.image-card--outlined {
+  background: var(--color-background-primary);
+  border: var(--border-width-thin) solid var(--color-border-primary);
+}
+
+.image-card--filled {
+  background: var(--color-background-secondary);
+}
+
+.image-card--plain {
+  overflow: visible;
+  border-radius: 0;
 }
 
 .image-card--vertical {
@@ -19,20 +39,27 @@
 }
 
 .image-card__media {
+  position: relative;
   flex: none;
   background: var(--color-background-secondary);
   overflow: hidden;
 }
 
+.image-card--plain .image-card__media {
+  border-radius: var(--radius-card);
+}
+
 .image-card__media > img,
 .image-card__media > video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .image-card--vertical .image-card__media {
-  height: 180px;
+  width: 100%;
+  aspect-ratio: var(--image-card-ratio, 16 / 9);
 }
 
 .image-card--horizontal .image-card__media {
@@ -49,17 +76,116 @@
   padding: var(--spacing-lg);
 }
 
+.image-card--large .image-card__body {
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+}
+
+/* Plain: the text sits under the media on the page, with no side or bottom padding. */
+.image-card--plain .image-card__body {
+  padding: var(--spacing-lg) 0 0;
+}
+
+.image-card--horizontal.image-card--plain .image-card__body {
+  padding: 0 0 0 var(--spacing-lg);
+}
+
+.image-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.image-card--large .image-card__text {
+  gap: var(--spacing-md);
+}
+
+.image-card__badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
 .image-card__title {
+  margin: 0;
   color: var(--color-foreground-primary);
-  font-weight: var(--typography-headline-weight-emphasized);
-  letter-spacing: var(--typography-headline-letter-spacing);
 }
 
 .image-card__description {
+  margin: 0;
   color: var(--color-foreground-secondary);
 }
 
 .image-card__actions {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-sm);
+}
+
+/* The link row. The link is stretched over the whole card (::after), so the card is one tap target. */
+.image-card__link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm) var(--spacing-lg);
+}
+
+.image-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-action-primary);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.image-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.image-card__link:focus-visible {
+  outline: none;
+}
+
+.image-card__note {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-foreground-secondary);
+}
+
+/* Focus: the ring goes round the whole card (the media, for Plain, sits inside it with the text). */
+.image-card--linked:has(.image-card__link:focus-visible) {
+  outline: var(--border-width-focus) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.image-card--plain.image-card--linked:has(.image-card__link:focus-visible) {
+  outline-offset: 4px;
+  border-radius: var(--radius-card);
+}
+
+/* Pressed: the overlay token over the card, or over the media for Plain. */
+.image-card--linked::before,
+.image-card--plain.image-card--linked .image-card__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+  background: var(--color-background-overlay);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.image-card--plain.image-card--linked::before {
+  content: none;
+}
+
+.image-card--linked:has(.image-card__link:active)::before,
+.image-card--plain.image-card--linked:has(.image-card__link:active) .image-card__media::after {
+  opacity: 1;
 }

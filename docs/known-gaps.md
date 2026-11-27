@@ -15,9 +15,11 @@ What the design system does not do yet, or does differently on purpose.
 - The iOS Toggle knob is white and the Off track is the system grey, as iOS draws them, in both `Toggle (iOS)` and the iOS System Components file. A white knob on the On track is 1.4:1 in EVA Dark and 2.1:1 in Cedar Dark; the knob position still shows On or Off. Not reviewed with an accessibility specialist yet.
 - The iOS System Components file's Lists page was removed (it did not translate to SwiftUI); only `Index Bar` and `Header` are left on it. The `Row`, `Row - Button` and `_Separator` instances on other pages (Examples, Activity Views, Alerts, Sliders, Text Fields) no longer have a component behind them.
 - `Toggle (iOS)` in DS - Components binds its knob and Off track to variables of the iOS System Components file, while that file imports `Input (iOS)` from DS - Components, so the two libraries depend on each other.
-- Brand shape reaches only what the design system draws: Button, Badge, Icon Button, Image Card, Input (Web) and Segmented Control (Web). Native iOS controls (TextField rows, Toggle, segmented Picker, List sections, sheets) keep Apple's corners in every brand, and Checkbox, Radio and Toggle (Web) keep their box, circle and track.
+- Brand shape reaches only what the design system draws: Button, Badge, Icon Button, Card, Image Card, Input (Web) and Segmented Control (Web). Native iOS controls (TextField rows, Toggle, segmented Picker, List sections, sheets) keep Apple's corners in every brand, and Checkbox, Radio and Toggle (Web) keep their box, circle and track.
+- A Plain Image Card that is one link shows its pressed fill over the media on web, but over the whole card on iOS, where `.buttonStyle(.dsCard)` does not know the card style.
+- Timeline (web) does not drive its fill from scroll: the page sets `--timeline-progress` (iOS has `fill: .scroll`).
 - iOS does not respond to Increase Contrast: the Tokens library has no high-contrast values.
 - `DSColor` and `DSTheme` have a fixed set of brands, so adding one changes the public API. Apps cannot bring their own.
 - Below iOS 26 the accordion content uses fixed side insets (20 and 16) instead of the system value.
 - `DSPrimitive.swift` and `DSDimension.swift` are kept by hand, not generated from Figma.
-- No component uses the accent colors yet: Badge and Image Card have no accent option. Accents are for product UI such as category tags, illustrations and gradients (see Accent colors in `design-system-rules.md`).
+- No component uses the accent colors yet: Badge, Card and Image Card have no accent option. Accents are for product UI such as category tags, illustrations and gradients (see Accent colors in `design-system-rules.md`).

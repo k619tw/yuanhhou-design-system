@@ -41,6 +41,16 @@
         }
       }
     },
+    "Comfortable": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゆったり"
+          }
+        }
+      }
+    },
     "Compact": {
       "localizations": {
         "ja": {
@@ -91,6 +101,16 @@
         }
       }
     },
+    "Elevated": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "影付き"
+          }
+        }
+      }
+    },
     "Error": {
       "localizations": {
         "ja": {
@@ -107,6 +127,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "展開"
+          }
+        }
+      }
+    },
+    "Filled": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "塗りつぶし"
           }
         }
       }
@@ -167,6 +197,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "中"
+          }
+        }
+      }
+    },
+    "None": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "なし"
+          }
+        }
+      }
+    },
+    "Outlined": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アウトライン"
+          }
+        }
+      }
+    },
+    "Plain": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コンテナなし"
           }
         }
       }

@@ -91,10 +91,16 @@ private var repoRoot: URL {
         let file = repoRoot.appending(path: "ios/YuanhhouDSKit/Sources/YuanhhouDSKit/Resources/Localizable.xcstrings")
         let root = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: file)) as? [String: Any])
         let strings = try #require(root["strings"] as? [String: [String: Any]])
-        let titles = DSButtonStyle.Kind.allCases.map(\.title) + DSButtonStyle.Size.allCases.map(\.title)
-            + DSBadge.Kind.allCases.map(\.title) + DSBadge.Style.allCases.map(\.title) + DSBadge.Size.allCases.map(\.title)
-            + DSImageCardOrientation.allCases.map(\.title) + DSTheme.allCases.map(\.title)
-            + DSAppearance.allCases.map(\.title) + DSDensity.allCases.map(\.title)
+        // An array of arrays rather than one long `+` chain, which is slow to type-check.
+        let groups: [[String]] = [
+            DSButtonStyle.Kind.allCases.map(\.title), DSButtonStyle.Size.allCases.map(\.title),
+            DSBadge.Kind.allCases.map(\.title), DSBadge.Style.allCases.map(\.title), DSBadge.Size.allCases.map(\.title),
+            DSCardStyle.allCases.map(\.title), DSCardPadding.allCases.map(\.title), DSCardSurface.allCases.map(\.title),
+            DSImageCardOrientation.allCases.map(\.title), DSImageCardStyle.allCases.map(\.title),
+            DSImageCardSize.allCases.map(\.title), DSTimelineSize.allCases.map(\.title),
+            DSTheme.allCases.map(\.title), DSAppearance.allCases.map(\.title), DSDensity.allCases.map(\.title),
+        ]
+        let titles = groups.flatMap { $0 }
         for title in titles {
             let localizations = strings[title]?["localizations"] as? [String: Any]
             #expect(localizations?["ja"] != nil, "\(title)")

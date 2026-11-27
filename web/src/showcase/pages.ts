@@ -4,7 +4,9 @@ import {
   AccordionPage,
   BadgePage,
   ButtonPage,
+  CardPage,
   CheckboxPage,
+  DescriptionListPage,
   IconButtonPage,
   ImageCardPage,
   InputPage,
@@ -12,6 +14,7 @@ import {
   ModalPage,
   RadioPage,
   SegmentedControlPage,
+  TimelinePage,
   TogglePage,
 } from './ComponentPages'
 import { ColorsPage, IconsPage, SpacingPage, TypographyPage } from './FoundationPages'
@@ -34,7 +37,9 @@ export const componentPages: PageEntry[] = [
   { id: 'accordion', title: 'section.accordion', Page: AccordionPage },
   { id: 'badge', title: 'section.badge', Page: BadgePage },
   { id: 'button', title: 'section.button', Page: ButtonPage },
+  { id: 'card', title: 'section.card', Page: CardPage },
   { id: 'checkbox', title: 'section.checkbox', Page: CheckboxPage },
+  { id: 'description-list', title: 'section.descriptionList', Page: DescriptionListPage },
   { id: 'icon-button', title: 'section.iconButton', Page: IconButtonPage },
   { id: 'image-card', title: 'section.imageCard', Page: ImageCardPage },
   { id: 'input', title: 'section.input', Page: InputPage },
@@ -42,6 +47,7 @@ export const componentPages: PageEntry[] = [
   { id: 'modal', title: 'section.modal', Page: ModalPage },
   { id: 'radio', title: 'section.radio', Page: RadioPage },
   { id: 'segmented-control', title: 'section.segmentedControl', Page: SegmentedControlPage },
+  { id: 'timeline', title: 'section.timeline', Page: TimelinePage },
   { id: 'toggle', title: 'section.toggle', Page: TogglePage },
 ]
 

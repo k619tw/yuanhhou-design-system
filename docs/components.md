@@ -8,7 +8,8 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Icon Button](#icon-button) | Icon-only action | Yes | `Icon Button` |
 | [Utility Icon](#utility-icon) | Display-only icon (30 Material Rounded) | No | `Icons` |
 | [Badge](#badge) | Status label | No | `Badge` |
-| [Image Card](#image-card) | Media card with text and actions | Via inner controls | `Image Card` |
+| [Card](#card) | A surface that groups content, or one link | When it is a link | `Card` |
+| [Image Card](#image-card) | Media card with text and actions, or one link (link card) | Via inner controls, or as one link | `Image Card` |
 | [Link](#link) | `Link (Web)`: underlined text link. iOS: `Link (iOS)`, the native link with no underline | Yes | `Link` |
 | [Input](#input) | `Input (Web)`: single-line text field. iOS: `Input (iOS)` | Yes | `Input` |
 | [Toggle](#toggle) | `Toggle (Web)`: on/off switch. iOS: `Toggle (iOS)` | Yes | `Toggle` |
@@ -17,6 +18,8 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 | [Segmented Control](#segmented-control) | `Segmented Control (Web)`: pick one of 2 to 5 short options that switch a view. iOS: the native segmented `Picker`, in the iOS System Components file | Yes | `Segmented Control` |
 | [Accordion](#accordion) | `Accordion (Web)`: expandable section. iOS: `Accordion (iOS)`, the native disclosure group with text | Yes | `Accordion` |
 | [Modal](#modal) | `Modal (Web)`: a dialog for a short decision or task. iOS: the native sheet, alert or confirmation dialog | Yes | `Modal` |
+| [Description List](#description-list) | `Description List (Web)`: term and value pairs. iOS: `Labeled Content (iOS)`, the native `LabeledContent` | No | `Description List` |
+| [Timeline](#timeline) | Moments in order on a vertical line | No | `Timeline` |
 | [List Section (iOS)](#list-section-ios) | iOS only: groups iOS rows (Input, Toggle, Checkmark Row, Picker) with a header and footer | Via its rows | `List Section (iOS)` |
 
 
@@ -30,9 +33,9 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 - **Platform suffix in the name** tells you where a component can be used:
   | Name | Use on | Today |
   |---|---|---|
-  | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Image Card |
-  | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Link (Web)`, `Modal (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)`, `Segmented Control (Web)`, `Segment (Web)` |
-  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Link (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)` |
+  | no suffix | web and iOS (shared) | Button, Icon Button, Utility Icon, Badge, Card, Image Card, Timeline |
+  | `(Web)` | web only, because iOS has a native control | `Accordion (Web)`, `Input (Web)`, `Link (Web)`, `Modal (Web)`, `Toggle (Web)`, `Checkbox (Web)`, `Checkbox Group (Web)`, `Radio (Web)`, `Radio Group (Web)`, `Segmented Control (Web)`, `Segment (Web)`, `Description List (Web)` |
+  | `(iOS)` | iOS only: the native control shown with our tokens | `Accordion (iOS)`, `Input (iOS)`, `Link (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `List Section (iOS)`, `Labeled Content (iOS)` |
 
   An iOS screen uses no-suffix and `(iOS)` components, never `(Web)`; a web screen the reverse. When a platform has the control, no DS component is built there (hard rule, root `CLAUDE.md`): the `(iOS)` copy only shows the native control. Rows go in `List Section (iOS)`. Later, Android gets `(Android)`. Use a variant instead of a separate component only when the parts are the same and only sizes differ.
 
@@ -351,85 +354,227 @@ import { Badge } from '../components'
 ### Related
 [Image Card](#image-card) · [Utility Icon](#utility-icon)
 
-## Image Card
+## Card
 
-A content card with media, a title, a description, an optional badge and optional actions. Figma: page `Image Card`, component set `Image Card` (node `16:183`), 2 variants.
+A surface that groups related content: a summary, a demo, a list, a set of facts. Figma: page `Card` (node `309:2`), component set `Card` (node `309:76`), 18 variants (Style x Padding x Surface), with a content slot. Shared: the same component on web and iOS (SwiftUI has no card, so iOS has a small custom modifier; see [ios.md](ios.md)). The three styles are Material 3's card types.
 
 ### When to use
-- To present a self-contained item with a visual: article, product, event, listing.
-- In grids or lists where each item has an image and a short summary.
-- Not for dense data (use a table or list) or for a single big action (use a banner).
+- To group content that belongs together and set it apart from the page: a summary, a demo, a list of facts.
+- As one link or button when the whole card opens something (Card with `href` on web, a `Button` with the card style on iOS).
+- For a card led by an image or video, use [Image Card](#image-card) instead.
+- Not as page decoration around a single line of text, and not for a whole page section.
 
 ### Anatomy
-1. Container (border, radius, shadow)
-2. Image (slot)
-3. Badge row (optional)
-4. Title
-5. Description
-6. Actions row (optional, holds Buttons or Icon Buttons)
+1. Container: the fill, an optional hairline and an optional shadow, in the brand's card corners.
+2. Content (slot): anything.
 
 ### Properties
 | Property | Values | Notes |
 |---|---|---|
-| Orientation | Vertical, Horizontal | Vertical = image on top, Horizontal = image left |
-| Image | slot | Drop any image or media |
-| Title | text | |
-| Description | text | |
-| Show badge | boolean, default on | Contains a Badge instance |
-| Show actions | boolean, default on | Contains a Small Primary Button instance |
+| Style | Filled (default), Outlined, Elevated | Material 3's card types. Filled is one step off the surface it sits on; Outlined adds a hairline; Elevated adds a hairline and a small shadow |
+| Padding | Default (16), Comfortable (24), None (0) | None is for full-bleed media inside: the card clips it to its corners |
+| Surface | Primary (default), Secondary | The background the card sits on. Filled and Outlined take their fill from it, so the card always stands out |
+| Content | slot | Any content |
 
 ### Layout
-| | Vertical | Horizontal |
+| Part | Value | Token |
 |---|---|---|
-| Width | 320 (fill in code) | 520 (fill in code) |
-| Image | full width, 180 high | 200 wide, full height |
-| Body padding | 16 (`spacing/200`) | 16 |
-| Gap in body | 8 (`spacing/100`) | 8 |
-| Corner radius | 16 (`radius/card`; follows the brand: 0 in EVA, 12 in Cedar) | 16 |
-| Elevation | `shadow/sm` | `shadow/sm` |
-| Border | 1px `border/primary` | same |
-| Title | `Headline/Emphasized` | same |
-| Description | `Body 2/Regular` | same |
+| Padding | 16, 24 or 0 | `space/inset/default`, `space/inset/comfortable` |
+| Gap between children (web) | 16 | `space/gap/stack` (iOS: the content's own stack sets the spacing) |
+| Corner radius | follows the brand: Default 16, EVA 0, Cedar 12 | `radius/card` |
+| Border (Outlined, Elevated) | 1 | `border/width/thin` |
+| Shadow (Elevated) | small | `shadow/sm` |
+| Width | fills its container | |
 
-Colors: surface `background/primary`, title `foreground/primary`, description `foreground/secondary`, image placeholder `background/secondary`.
+### Color tokens
+| Style | On Primary | On Secondary |
+|---|---|---|
+| Filled | fill `background/secondary` | fill `background/primary` |
+| Outlined | fill `background/primary`, edge `border/primary` | fill `background/secondary`, edge `border/primary` |
+| Elevated | fill `background/primary`, edge `border/primary`, `shadow/sm` | same |
+
+Text on a card uses the foregrounds for that fill (pairing table in [design-system-rules.md](../design-system-rules.md)): `foreground/primary` and `foreground/secondary` work on both `background/primary` and `background/secondary` in all six modes. The edge is decorative and keeps Elevated visible in Dark, where shadows don't show. Pressed (card as one link or button): `background/overlay` over the whole card, as on Secondary and Tertiary buttons.
 
 ### Do
-- Use images with a consistent aspect ratio across cards in the same group (the design uses about 16:9).
+- Use one style per group of cards.
+- Use Filled for most cards; Outlined when cards sit close together or on a busy surface; Elevated for one card that should lift, such as a featured item.
+- Set Surface to Secondary when the card sits on `background/secondary`.
+- Keep a card that is one link short: its whole text is the link's name.
+
+### Don't
+- Don't nest cards inside cards.
+- Don't make a card one link and also put buttons or links inside it.
+- Don't use a card only to draw a box around one line of text.
+- Don't change the corners per card: they come from the brand (`radius/card`).
+
+### Accessibility
+- A card is a plain container (`<div>`, or `article`, `section` or `li` through `as`); its content carries the meaning.
+- A card that is one link renders an `<a>`: its whole text is the accessible name, so keep it short. Focus shows a 2px `border/focus` outline around the card. On iOS, wrap the card in a `Button` or `NavigationLink`: VoiceOver reads it as one button or link.
+- Pressed is a fill, not a color change of the text, so contrast holds.
+
+### Code mapping
+Source: `web/src/components/Card`.
+```tsx
+import { Card } from '@yuanhhou/ds'
+
+<Card variant="outlined" padding="comfortable">
+  <h3 className="text-headline text-emphasized">Card content</h3>
+  <p className="text-body-2">Any content goes in a card.</p>
+</Card>
+
+<Card href="/work/ds" variant="elevated">…</Card>
+```
+`variant` is the Figma `Style` (`filled`, `outlined`, `elevated`), `padding` is `default`, `comfortable` or `none`, and `surface` is `primary` or `secondary`. With `href` the card renders an `<a>` and gets the pressed fill and focus outline; without it, `as` picks the element (`div` by default).
+
+iOS: the `.dsCard(_:padding:on:)` modifier, and `.buttonStyle(.dsCard)` for a card that is one button or link:
+```swift
+VStack(alignment: .leading, spacing: DSSpacing.sm) { … }
+    .dsCard(.outlined, padding: .comfortable)
+
+NavigationLink { Detail() } label: {
+    VStack(alignment: .leading) { … }.dsCard()
+}
+.buttonStyle(.dsCard)
+```
+See [ios.md](ios.md).
+
+### Related
+[Image Card](#image-card) for a card with media · [Description List](#description-list) for facts inside a card
+
+## Image Card
+
+A card led by media (an image or a video), with badges, a title, a description, and either actions or a link row. Figma: page `Image Card`, component set `Image Card` (node `16:183`), 16 variants (Orientation x Style x Size). Shared: the same component on web and iOS.
+
+### When to use
+- To present a self-contained item with a visual: a case study, an article, a product, an event.
+- In grids or lists where each item has an image and a short summary.
+- As a **link card** when the whole card opens one page: give it a link row instead of actions.
+- Not for dense data (use a table or list), for content without media (use [Card](#card)), or for a single big action (use a banner).
+
+### Anatomy
+1. Container: the Card styles (fill, hairline, shadow); none for Plain
+2. Media (slot)
+3. Badge row (optional, wraps)
+4. Title
+5. Description
+6. Either the actions row (Buttons or Icon Buttons) or the link row: the link label with a `chevron_right` Utility Icon, and an optional note (such as "Password needed")
+
+### Properties
+| Property | Values | Notes |
+|---|---|---|
+| Orientation | Vertical, Horizontal | Vertical = media on top, Horizontal = media leading |
+| Style | Elevated (default), Outlined, Filled, Plain | Elevated, Outlined and Filled are the [Card](#card) styles (on `background/primary`). Plain has no container: no fill, edge or shadow; the media takes the card corners and the text sits under it on the page |
+| Size | Medium (default), Large | Large is for a feature card, such as a case study |
+| Media | slot | Any image or video. Vertical media keeps an aspect ratio: 16:9 by default, any ratio in code |
+| Title | text | |
+| Description | text | |
+| Show badge | boolean, default on | The `Badges` row wraps and holds up to three Badge instances: `Show badge 2` and `Show badge 3` (default off) turn on the others. Edit each label on its nested Badge |
+| Show actions | boolean, default on | A Small Primary Button. Off when the card has a link row |
+| Show link | boolean, default off | The link row: the whole card is one link |
+| Link label | text | Says where the card goes ("Read the case study") |
+| Show note | boolean, default off | A short note after the link, such as a lock icon and "Password needed". It sits in the link row, so it shows only with `Show link` on |
+| Note | text | |
+
+### Layout
+| | Medium | Large |
+|---|---|---|
+| Body padding | 16 (`spacing/200`) | 24 (`spacing/300`) |
+| Gap between rows (badges, text, actions or link) | 8 (`spacing/100`) | 16 (`spacing/200`) |
+| Gap between title and description | 8 (`spacing/100`) | 12 (`spacing/150`) |
+| Title | `Headline/Emphasized` | `Title 2/Emphasized` |
+| Description | `Body 2/Regular` | `Body 1/Regular` |
+
+| | Vertical | Horizontal |
+|---|---|---|
+| Width | 320 in Figma, 400 for Large. Code: 320, never wider than its container; give it `width: 100%` (a class) to fill a grid cell | 520 in Figma, 640 for Large. Code: 520, never wider than its container |
+| Media | full width, 16:9 by default (180 high at 320 wide) | 200 wide on web, 120 on iOS; full height |
+
+- Plain: the body has 16 top padding only (Vertical) or 16 leading padding only (Horizontal), in both sizes.
+- Badge row: 8 between badges and between rows of badges (`spacing/100`).
+- Link row: the label in `Body 2/Emphasized` with a Small `chevron_right` Utility Icon 4 after it (`spacing/50`); the note in `Caption 1/Regular`, 16 after the link (`spacing/200`); the row wraps with 8 between lines.
+- Corner radius: `radius/card` (Default 16, EVA 0, Cedar 12), on the card, or on the media for Plain.
+- Elevated: `shadow/sm`. Elevated and Outlined: 1px `border/primary`.
+
+### Color tokens
+| Part | Token |
+|---|---|
+| Container | Elevated and Outlined `background/primary` with a `border/primary` edge; Filled `background/secondary`; Plain none |
+| Media placeholder | `background/secondary` |
+| Title | `foreground/primary` |
+| Description | `foreground/secondary` |
+| Link label and chevron | `action/primary` |
+| Note | `foreground/secondary` |
+| Pressed (link card) | `background/overlay` over the whole card, or over the media for Plain |
+| Focus (link card, web) | 2px `border/focus` outline around the card (4 away for Plain, 2 for the others) |
+
+### Do
+- Use media with the same aspect ratio across cards in a group.
 - Keep titles to two lines and descriptions to two or three lines.
-- Give the image meaningful alt text, or empty alt if it is decorative.
+- Give the media meaningful alt text, or empty alt if it is decorative.
 - Use Vertical in grids and narrow layouts; use Horizontal in wide lists.
-- Make exactly one primary action per card.
+- Give a link card a label that says where it goes, and a note when something is needed to open it.
+- Use Plain when the cards sit in an open layout where a container would add noise.
 
 ### Don't
 - Don't put several Primary Buttons in one card.
-- Don't make the whole card and the buttons inside it both clickable without a clear link target.
-- Don't place text on top of the image without a contrast-safe scrim.
-- Don't stretch or crop images so faces or key content are cut.
+- Don't give one card both actions and a link row: a link card is one link.
+- Don't place text on top of the media without a contrast-safe scrim.
+- Don't stretch or crop media so faces or key content are cut.
 - Don't nest cards inside cards.
 
 ### Accessibility
-- If the whole card is a link, make the title the link (`<a>` around the title) and expand its hit area with CSS; keep other buttons separate.
-- Image: `<img alt="…">`. Decorative images: `alt=""`.
-- Heading level for the title should fit the page outline (`h2` or `h3`).
+- Web: the card is an `<article>` with the title as a heading (`h3` by default; set `titleAs` to fit the page outline).
+- Link card (web): the link is the label (`<a>`), stretched over the whole card, so the whole card is one tap target and one tab stop. Its accessible name is the link label and the title ("Read the case study, Pet insurance"); the note is its description.
+- Link card (iOS): wrap the card in one `Button` or `NavigationLink` with `.buttonStyle(.dsCard)`. The card reads as one element; the link row is display only.
+- Media: `<img alt="…">`, or `alt=""` when decorative. A video has its own controls and captions.
 
 ### Code mapping
 Source: `web/src/components/ImageCard`.
 ```tsx
-import { Badge, Button, ImageCard } from '../components'
+import { Badge, Button, ImageCard } from '@yuanhhou/ds'
 
 <ImageCard
-  orientation="vertical"
   media={<img src="…" alt="…" />}
   badge={<Badge type="brand" badgeStyle="subtle" size="small">New</Badge>}
   title="Card title"
   description="Short supporting description."
   actions={<Button size="small">Read more</Button>}
 />
+
+<ImageCard
+  variant="plain"
+  size="large"
+  mediaRatio="4 / 3"
+  media={<img src="…" alt="" />}
+  badge={<><Badge size="small">Design system</Badge><Badge size="small">iOS</Badge></>}
+  title="Pet insurance"
+  titleAs="h2"
+  description="One line on the problem and the outcome."
+  href="#/work/pet"
+  linkLabel="Read the case study"
+  linkNote="Password needed"
+/>
 ```
-`media` is the Figma Image slot. `badge` and `actions` are optional (Show badge / Show actions). The card renders an `<article>` with an `h3` title and is not clickable itself.
+`variant` is the Figma `Style` (`elevated`, `outlined`, `filled`, `plain`) and `size` is `medium` or `large`. `media` is the Media slot; `mediaRatio` is a CSS aspect ratio (default `16 / 9`). `badge` takes one or more Badges. With `href`, `linkLabel` (required) and `linkNote` draw the link row and make the whole card one link (`linkProps` go on the `<a>`, such as `target`); `actions` are then not shown.
+
+iOS: `DSImageCard` takes the same parts (`style:`, `size:`, `mediaAspectRatio:`, `badges:`, `link:`, `note:`):
+```swift
+NavigationLink { CaseStudy() } label: {
+    DSImageCard(
+        style: .plain, size: .large, mediaAspectRatio: 4 / 3,
+        title: "Pet insurance", description: "One line on the problem and the outcome.",
+        badges: [DSBadge("Design system", size: .small)],
+        link: "Read the case study", note: Text("Password needed")
+    ) {
+        Image("pet-cover").resizable().scaledToFill()
+    }
+}
+.buttonStyle(.dsCard)
+```
+See [ios.md](ios.md).
 
 ### Related
-[Badge](#badge) · [Button](#button) · [Icon Button](#icon-button)
+[Card](#card) · [Badge](#badge) · [Button](#button) · [Icon Button](#icon-button)
 
 ## Link
 
@@ -694,7 +839,7 @@ iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` insid
 | Property | Values | Notes |
 |---|---|---|
 | State | Default, Error | Error colors the footer `foreground/error`; also set the failing row to `State=Error` |
-| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)` and `Accordion (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
+| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `Accordion (iOS)` and `Labeled Content (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
 | Header / Show header | text, boolean (on) | |
 | Footer / Show footer | text, boolean (on) | Helper text, or the error message in Error |
 
@@ -1217,3 +1362,177 @@ iOS: `.sheet`, `.alert` or `.confirmationDialog`; see [ios.md](ios.md).
 
 ### Related
 [Button](#button) for the actions · [Icon Button](#icon-button) for close · [Input](#input) in the content slot
+
+## Description List
+
+Term and value pairs: project facts, order details, specifications. Figma: page `Description List` (node `309:974`), component set `Description List (Web)` (node `309:1011`, the web `<dl>`, with a nested `_Description Item`, node `309:975`) and component `Labeled Content (iOS)` (node `309:1012`, the native `LabeledContent` with our style). **Native on both platforms**, so there is no shared component: web uses the HTML description list, iOS uses `LabeledContent`. In Material 3 terms it is a list item with an overline.
+
+### When to use
+- To show a few facts as pairs: role, company, dates, platforms; size, price, delivery date.
+- Not for data people compare across rows (use a table), or for settings people change (use a form).
+
+### Anatomy
+1. Term (the label)
+2. Details (the value), under the term
+
+### Properties
+`Description List (Web)`:
+| Property | Values | Notes |
+|---|---|---|
+| Layout | Grid (default), Rows | Grid: pairs side by side, wrapping into as many columns as fit. Rows: one pair per row with a hairline between |
+| Items | `_Description Item` instances | Each has the text properties Term and Details |
+
+`Labeled Content (iOS)`: a bare row (label above value, SF Pro through the `Platform` mode iOS) with a `Show separator` boolean, for the Rows slot of [List Section (iOS)](#list-section-ios), like `Checkmark Row (iOS)`.
+
+### Layout
+| Part | Value | Token |
+|---|---|---|
+| Term to details | 4 | `spacing/50` |
+| Grid columns | as many as fit, at least 200 wide | fixed geometry |
+| Grid gap | 24 | `spacing/300` |
+| Rows | 12 above and below each pair, a 1px hairline between pairs (not above the first or below the last) | `spacing/150`, `border/width/thin` |
+| Term | `Caption 1/Regular` | |
+| Details | `Body 1/Regular` | |
+
+### Color tokens
+| Part | Token |
+|---|---|
+| Term | `foreground/secondary` |
+| Details | `foreground/primary` |
+| Hairline (Rows) | `border/primary` |
+
+Both pass 4.5:1 on `background/primary` and `background/secondary` in all six modes, so a list can sit on the page or on a [Card](#card).
+
+### Do
+- Keep terms short and consistent ("Role", "Company", "Dates").
+- Use Grid for three to six short facts; use Rows when values are long or in a narrow column.
+- Put a list on a Card when it summarises something, such as the facts at the top of a case study.
+
+### Don't
+- Don't use it for actions or links that need a tap target; use buttons or links.
+- Don't put headings or paragraphs in the details.
+- Don't build a custom fact row on iOS; use `LabeledContent` with `.dsStacked`.
+
+### Accessibility
+- Web: a real `<dl>` with each pair in a `<div>` (valid HTML), so screen readers announce terms and their values.
+- iOS: each `LabeledContent` reads as one element ("Role, Lead designer"), and the text scales with Dynamic Type.
+
+### Code mapping
+Source: `web/src/components/DescriptionList`.
+```tsx
+import { DescriptionList } from '@yuanhhou/ds'
+
+<DescriptionList
+  layout="grid"
+  items={[
+    { term: 'Role', details: 'Lead designer' },
+    { term: 'Dates', details: '2025 to 2026' },
+  ]}
+/>
+```
+`layout` is `grid` (default) or `rows`; each item has `term`, `details` and an optional `key`.
+
+iOS: the native `LabeledContent` with the `.dsStacked` style, in a `Form` section or in a stack on a `.dsCard`:
+```swift
+VStack(alignment: .leading, spacing: DSSpacing.md) {
+    LabeledContent("Role") { Text("Lead designer") }
+    LabeledContent("Dates") { Text("2025 to 2026") }
+}
+.labeledContentStyle(.dsStacked)
+.dsCard()
+```
+See [ios.md](ios.md).
+
+### Related
+[Card](#card) · [List Section (iOS)](#list-section-ios)
+
+## Timeline
+
+An ordered list of moments on a vertical line: experience, milestones, release history. Figma: page `Timeline` (node `310:2`), component set `Timeline` (node `310:61`; Size: Medium, Large) with a nested `_Timeline Item` (node `310:13`). Shared: the same component on web and iOS (SwiftUI has no timeline, so iOS has a small custom view; see [ios.md](ios.md)).
+
+### When to use
+- To show steps or moments in order: a work history, project milestones, a release history.
+- With a fill to show progress through the moments, or how far someone has scrolled.
+- Not for steps someone must complete now (use a stepper or a form), or for unrelated items (use a list).
+
+### Anatomy
+1. Line, with an optional fill from the top
+2. Marker: a ring on the line, one per item
+3. Label (optional, such as a date)
+4. Title
+5. Description (optional)
+
+### Properties
+| Property | Values | Notes |
+|---|---|---|
+| Size | Medium (default), Large | Medium for milestones in a page; Large for an experience section |
+| Items | `_Timeline Item` instances | Each has Label, Title and Description text, and `Show label` and `Show description` booleans |
+| Show fill | boolean, default off | The line fills in `action/primary` from the top. Figma shows it to the third marker as an example; code sets how far. Web: `progress` from 0 to 1, or set `--timeline-progress` yourself, for example from scroll. iOS: `fill: .none`, `.full` or `.scroll` |
+
+### Layout
+| Part | Medium | Large |
+|---|---|---|
+| Label | `Caption 1/Emphasized` | same |
+| Title | `Body 1/Regular` | `Title 3/Emphasized` |
+| Description | `Body 2/Regular` | `Body 1/Regular` |
+| Between label, title and description | 4 (`spacing/50`) | 4 |
+| Between items | 24 (`spacing/300`) | 32 (`space/gap/section`) |
+
+- Marker: a 12 circle (`size/icon/xs`), centred on the first line of its item, with a 2 ring (`border/width/focus`). It stays a circle in every brand.
+- Line: 2 wide (`border/width/focus`), rounded ends, centred under the markers, from the first marker to 8 above the bottom of the list (`spacing/100`).
+- Text starts 32 from the start of the line (`spacing/400`).
+
+### Color tokens
+| Part | Token |
+|---|---|
+| Label | `foreground/brand` |
+| Title | `foreground/primary` |
+| Description | `foreground/secondary` |
+| Marker | fill `background/primary`, ring `border/brand` |
+| Line | `border/primary` |
+| Fill | `action/primary` |
+
+### Do
+- Order items the way people read them: newest first for a work history, oldest first for milestones.
+- Keep titles to one line where you can; put the detail in the description.
+- Use the same Size for every timeline on a page.
+
+### Don't
+- Don't make markers interactive: the timeline is display only. Put links in the text.
+- Don't use the fill for anything that isn't progress.
+- Don't change the marker shape per brand.
+
+### Accessibility
+- Web: an ordered list (`<ol>`), so screen readers announce the number of moments and each position. The line, markers and fill are decorative (`aria-hidden`).
+- iOS: each item reads as one element (label, title and description); the line and markers are hidden from VoiceOver.
+- The scroll fill is motion: with Reduce Motion, iOS shows it full. On web, the page decides how `--timeline-progress` moves and should respect `prefers-reduced-motion`.
+- Text scales with the type styles (Dynamic Type on iOS), and the marker stays centred on the first line.
+
+### Code mapping
+Source: `web/src/components/Timeline`.
+```tsx
+import { Timeline } from '@yuanhhou/ds'
+
+<Timeline
+  size="large"
+  items={[
+    { title: 'Senior Designer', description: 'Company A · 2024 to present' },
+    { title: 'Designer', description: 'Company B · 2021 to 2024' },
+  ]}
+/>
+
+<Timeline progress={0.6} items={[{ label: 'Jan 2026', title: 'Kick-off and research' }, …]} />
+```
+`size` is `medium` or `large`; items have `label`, `title`, `description` and an optional `key`. `progress` (0 to 1) draws the fill; leave it out for no fill. To drive it from scroll, leave out `progress` and set `--timeline-progress` on the list or a parent, for example from a motion value.
+
+iOS:
+```swift
+DSTimeline([
+    DSTimelineItem("Senior Designer", description: "Company A · 2024 to present"),
+    DSTimelineItem("Designer", description: "Company B · 2021 to 2024"),
+], size: .large, fill: .scroll)
+```
+`DSTimelineItem` takes localized keys, or `Text` for the title, label and description. `fill: .scroll` grows the fill as the list scrolls: it reaches an item when the item is about two thirds of the way up the scroll view. See [ios.md](ios.md).
+
+### Related
+[Description List](#description-list) · [Card](#card)

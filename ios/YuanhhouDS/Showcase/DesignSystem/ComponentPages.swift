@@ -71,6 +71,57 @@ struct BadgePage: View {
     }
 }
 
+struct CardPage: View {
+    var body: some View {
+        DSShowcasePage(title: "Card") {
+            DSShowcaseSection(title: "Styles", note: "Filled, Outlined and Elevated, as in Material 3. Corners come from the brand (radius/card).") {
+                ForEach(DSCardStyle.allCases) { style in
+                    sample(LocalizedStringKey(style.title)).dsCard(style)
+                }
+            }
+            DSShowcaseSection(title: "Padding") {
+                ForEach(DSCardPadding.allCases) { padding in
+                    sample(LocalizedStringKey(padding.title)).dsCard(.outlined, padding: padding)
+                }
+            }
+            DSShowcaseSection(title: "On a secondary surface") {
+                VStack(spacing: DSSpacing.lg) {
+                    ForEach(DSCardStyle.allCases) { style in
+                        sample(LocalizedStringKey(style.title)).dsCard(style, on: .secondary)
+                    }
+                }
+                .padding(DSSpacing.lg)
+                .background(DSColor.backgroundSecondary)
+            }
+            DSShowcaseSection(title: "Link card", note: "The whole card is one button. Keep the text short: VoiceOver reads all of it.") {
+                Button {} label: {
+                    VStack(alignment: .leading, spacing: DSSpacing.sm) {
+                        Text("A card that is one link")
+                            .font(.ds(.headline, .emphasized))
+                            .foregroundStyle(DSColor.foregroundPrimary)
+                        Text("Any content goes in a card: text, a demo or a list.")
+                            .font(.ds(.body2))
+                            .foregroundStyle(DSColor.foregroundSecondary)
+                    }
+                    .dsCard(.outlined)
+                }
+                .buttonStyle(.dsCard)
+            }
+        }
+    }
+
+    private func sample(_ title: LocalizedStringKey) -> some View {
+        VStack(alignment: .leading, spacing: DSSpacing.xs) {
+            Text(title)
+                .font(.ds(.headline, .emphasized))
+                .foregroundStyle(DSColor.foregroundPrimary)
+            Text("Any content goes in a card: text, a demo or a list.")
+                .font(.ds(.body2))
+                .foregroundStyle(DSColor.foregroundSecondary)
+        }
+    }
+}
+
 struct ImageCardPage: View {
     var body: some View {
         DSShowcasePage(title: "Image Card") {
@@ -82,17 +133,62 @@ struct ImageCardPage: View {
                         description: "Short supporting description that explains the card content in a line or two.",
                         badge: DSBadge("New", kind: .brand, style: .subtle, size: .small)
                     ) {
-                        Image(systemName: "photo")
-                            .font(.largeTitle)
-                            .foregroundStyle(DSColor.foregroundSecondary)
-                            .accessibilityHidden(true)
+                        placeholder
                     } actions: {
                         Button("Read more") {}
                             .buttonStyle(.ds(.primary, size: .small))
                     }
                 }
             }
+            DSShowcaseSection(title: "Styles", note: "Elevated, Outlined and Filled are the Card styles. Plain has no container: the media takes the card corners.") {
+                ForEach(DSImageCardStyle.allCases) { style in
+                    DSImageCard(
+                        style: style,
+                        title: LocalizedStringKey(style.title),
+                        description: "Short supporting description that explains the card content in a line or two."
+                    ) {
+                        placeholder
+                    }
+                }
+            }
+            DSShowcaseSection(title: "Large", note: "Title 2 and Body 1, for a feature card such as a case study.") {
+                DSImageCard(
+                    size: .large,
+                    title: "Card title",
+                    description: "Short supporting description that explains the card content in a line or two."
+                ) {
+                    placeholder
+                }
+            }
+            DSShowcaseSection(title: "Link card", note: "The whole card is one button. Keep the text short: VoiceOver reads all of it.") {
+                Button {} label: {
+                    DSImageCard(
+                        style: .plain,
+                        size: .large,
+                        mediaAspectRatio: 4 / 3,
+                        title: "A card that is one link",
+                        description: "Short supporting description that explains the card content in a line or two.",
+                        badges: [
+                            DSBadge("Design system", size: .small),
+                            DSBadge("iOS", size: .small),
+                            DSBadge("Web", size: .small),
+                        ],
+                        link: "Read the case study",
+                        note: Text("\(Image(systemName: "lock.fill")) Password needed")
+                    ) {
+                        placeholder
+                    }
+                }
+                .buttonStyle(.dsCard)
+            }
         }
+    }
+
+    private var placeholder: some View {
+        Image(systemName: "photo")
+            .font(.largeTitle)
+            .foregroundStyle(DSColor.foregroundSecondary)
+            .accessibilityHidden(true)
     }
 }
 
@@ -133,6 +229,34 @@ struct InputPage: View {
         .dsListBackground()
         .navigationTitle("Input")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct TimelinePage: View {
+    var body: some View {
+        DSShowcasePage(title: "Timeline") {
+            DSShowcaseSection(title: "Medium: milestones") {
+                DSTimeline([
+                    DSTimelineItem("Kick-off and research", label: "Jan 2026"),
+                    DSTimelineItem("First release to a small group", label: "Mar 2026"),
+                    DSTimelineItem("Released to everyone", label: "Jun 2026"),
+                ])
+            }
+            DSShowcaseSection(title: "Large: experience") {
+                DSTimeline([
+                    DSTimelineItem("Senior Designer", description: "Company A · 2024 to present"),
+                    DSTimelineItem("Designer", description: "Company B · 2021 to 2024"),
+                    DSTimelineItem("Junior Designer", description: "Company C · 2019 to 2021"),
+                ], size: .large)
+            }
+            DSShowcaseSection(title: "Fill that follows scroll", note: "The line fills as you scroll. With Reduce Motion it is full.") {
+                DSTimeline([
+                    DSTimelineItem("Kick-off and research", label: "Jan 2026"),
+                    DSTimelineItem("First release to a small group", label: "Mar 2026"),
+                    DSTimelineItem("Released to everyone", label: "Jun 2026"),
+                ], fill: .scroll)
+            }
+        }
     }
 }
 
