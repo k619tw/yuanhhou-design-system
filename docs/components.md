@@ -486,7 +486,7 @@ A card led by media (an image or a video), with badges, a title, a description, 
 
 | | Vertical | Horizontal |
 |---|---|---|
-| Width | 320 in Figma, 400 for Large (fills its container in code) | 520 in Figma, 640 for Large (fills in code) |
+| Width | 320 in Figma, 400 for Large. Code: 320, never wider than its container; give it `width: 100%` (a class) to fill a grid cell | 520 in Figma, 640 for Large. Code: 520, never wider than its container |
 | Media | full width, 16:9 by default (180 high at 320 wide) | 200 wide on web, 120 on iOS; full height |
 
 - Plain: the body has 16 top padding only (Vertical) or 16 leading padding only (Horizontal), in both sizes.
