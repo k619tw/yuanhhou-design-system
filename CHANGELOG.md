@@ -4,6 +4,22 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 1.1.0 · 2026-11-27
+
+New Card, Timeline and Description List, and Image Card becomes a link card, on web, iOS and in Figma.
+
+### Added
+- All: Card groups related content on a surface, in Material 3's three styles (Filled, Outlined, Elevated), with Default, Comfortable or no padding, and a Surface setting so it always stands out from what it sits on. Corners follow the brand (`radius/card`). A card can also be one link or button, with the pressed fill and focus ring.
+- All: Timeline shows moments in order on a line: experience, milestones, release history. Medium and Large sizes, markers centred on the first line at every text size, and an optional fill in `action/primary`.
+- All: Description List shows term and value pairs, such as project facts, as a grid or as rows.
+- All: Image Card has Style (Elevated, Outlined, Filled, Plain) and Size (Medium, Large), keeps any media ratio (16:9 by default), takes several badges that wrap, and can be a link card: a link row ("Read the case study") with an optional note ("Password needed") that makes the whole card one link.
+- Web: `Card` (`variant`, `padding`, `surface`, `href`), `Timeline` (`size`, `progress`, or `--timeline-progress` from the page, for example from scroll) and `DescriptionList` (`layout="grid" | "rows"`, a real `<dl>`). `ImageCard` gains `variant`, `size`, `mediaRatio`, `titleAs`, `href`, `linkLabel`, `linkNote` and `linkProps`.
+- iOS: `.dsCard(_:padding:on:)` and `.buttonStyle(.dsCard)` for a card that is one button or link, `DSTimeline` with `fill: .none`, `.full` or `.scroll` (full with Reduce Motion), and `.labeledContentStyle(.dsStacked)` for the native `LabeledContent`, the iOS Description List. `DSImageCard` gains `style:`, `size:`, `mediaAspectRatio:`, `badges:`, `link:` and `note:`. New `DSSize.iconExtraSmall` (12) for the Timeline marker.
+- Figma: pages `Card`, `Description List` (`Description List (Web)`, `Labeled Content (iOS)`) and `Timeline`, each with a `Component documentation` frame; `Image Card` has the new Style, Size, link and note properties. Publish DS - Components and accept the update in your files.
+
+### Changed
+- All: Image Card media keeps a 16:9 ratio instead of a fixed 180 height, which is the same size at 320 wide.
+
 ## 1.0.0 · 2026-11-23
 
 One colour palette for every brand: Default, EVA, Cedar and the accent colours now all use the same eleven hues, and the Default brand blue is the new blue 500.
