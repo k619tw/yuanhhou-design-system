@@ -50,6 +50,7 @@ struct SystemCatalogView: View {
             Section {
                 NavigationLink("List") { ListDemo() }
                 NavigationLink("Form") { FormDemo() }
+                NavigationLink("Labeled content") { LabeledContentDemo() }
                 NavigationLink("Disclosure group") { DisclosureGroupDemo() }
                 NavigationLink("Labels and SF Symbols") { LabelsDemo() }
                 NavigationLink("Content unavailable") { ContentUnavailableDemo() }

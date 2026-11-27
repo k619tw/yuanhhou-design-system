@@ -1,0 +1,85 @@
+/* Timeline: a ring for each item on a 2px line. The text starts 32 in; the ring keeps its circle in every brand.
+   The ring is centred on the item's first line (the label, or the title when there is no label).
+   --timeline-progress (0 to 1) fills the line from the top in action/primary; unset, the fill is 0. */
+.timeline {
+  --_ring: var(--size-icon-xs);
+  --_line: var(--border-width-focus);
+  --_title-line: var(--typography-body-1-line-height);
+  --_first-line: var(--_title-line);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  margin: 0;
+  padding: 0 0 0 var(--spacing-2xl);
+  list-style: none;
+}
+
+.timeline--large {
+  --_title-line: var(--typography-title-3-line-height);
+  gap: var(--space-gap-section);
+}
+
+.timeline:has(> .timeline__item:first-of-type > .timeline__label) {
+  --_first-line: var(--typography-caption-1-line-height);
+}
+
+/* The line runs from the first ring's centre to just above the end of the list. */
+.timeline::before,
+.timeline__fill {
+  content: '';
+  position: absolute;
+  left: calc((var(--_ring) - var(--_line)) / 2);
+  top: calc(var(--_first-line) / 2);
+  bottom: var(--spacing-sm);
+  width: var(--_line);
+  border-radius: var(--_line);
+}
+
+.timeline::before {
+  background: var(--color-border-primary);
+}
+
+.timeline__fill {
+  background: var(--color-action-primary);
+  transform-origin: top;
+  transform: scaleY(var(--timeline-progress, 0));
+}
+
+.timeline__item {
+  --_item-first-line: var(--_title-line);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  min-width: 0;
+}
+
+.timeline__item:has(> .timeline__label) {
+  --_item-first-line: var(--typography-caption-1-line-height);
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--spacing-2xl));
+  top: calc((var(--_item-first-line) - var(--_ring)) / 2);
+  width: var(--_ring);
+  height: var(--_ring);
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: var(--color-background-primary);
+  border: var(--_line) solid var(--color-border-brand);
+}
+
+.timeline__label {
+  color: var(--color-foreground-brand);
+}
+
+.timeline__title {
+  color: var(--color-foreground-primary);
+}
+
+.timeline__description {
+  color: var(--color-foreground-secondary);
+}

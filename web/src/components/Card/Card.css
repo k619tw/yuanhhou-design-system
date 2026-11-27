@@ -1,0 +1,72 @@
+/* Card: a surface for free-form content. Corners follow the brand (radius/card). */
+.card {
+  --card-fill: var(--color-background-secondary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-gap-stack);
+  box-sizing: border-box;
+  min-width: 0;
+  background: var(--card-fill);
+  border-radius: var(--radius-card);
+  color: var(--color-foreground-primary);
+}
+
+/* Filled: one step off the surface it sits on. */
+.card--filled {
+  --card-fill: var(--color-background-secondary);
+}
+.card--filled.card--on-secondary {
+  --card-fill: var(--color-background-primary);
+}
+
+/* Outlined: the surface's own fill with a hairline. */
+.card--outlined {
+  --card-fill: var(--color-background-primary);
+  border: var(--border-width-thin) solid var(--color-border-primary);
+}
+.card--outlined.card--on-secondary {
+  --card-fill: var(--color-background-secondary);
+}
+
+/* Elevated: a hairline as well as the shadow, so the edge still shows in Dark, where shadows don't. */
+.card--elevated {
+  --card-fill: var(--color-background-primary);
+  border: var(--border-width-thin) solid var(--color-border-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--pad-default {
+  padding: var(--space-inset-default);
+}
+.card--pad-comfortable {
+  padding: var(--space-inset-comfortable);
+}
+.card--pad-none {
+  padding: 0;
+  overflow: clip;
+}
+
+/* The whole card is one link. Pressed = the overlay token over the card; focus = the focus ring around it. */
+.card--interactive {
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.card--interactive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-background-overlay);
+  opacity: 0;
+  pointer-events: none;
+}
+.card--interactive:active::after {
+  opacity: 1;
+}
+.card--interactive:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-border-focus);
+  outline-offset: 2px;
+}

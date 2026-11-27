@@ -17,11 +17,13 @@ struct DesignSystemCatalogView: View {
                 NavigationLink("Accordion") { AccordionPage() }
                 NavigationLink("Badge") { BadgePage() }
                 NavigationLink("Button") { ButtonPage() }
+                NavigationLink("Card") { CardPage() }
                 NavigationLink("Checkbox") { CheckboxPage() }
                 NavigationLink("Icon Button") { IconButtonPage() }
                 NavigationLink("Image Card") { ImageCardPage() }
                 NavigationLink("Input") { InputPage() }
                 NavigationLink("Radio") { RadioPage() }
+                NavigationLink("Timeline") { TimelinePage() }
                 NavigationLink("Toggle") { TogglePage() }
             } header: {
                 Text("Components")

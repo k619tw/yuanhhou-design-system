@@ -1,0 +1,39 @@
+/* Description List (Web): Caption 1 terms over Body 1 values. 200 is the narrowest grid column (fixed geometry). */
+.description-list {
+  margin: 0;
+}
+
+.description-list--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: var(--spacing-xl);
+}
+
+.description-list--rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.description-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  min-width: 0;
+}
+
+.description-list--rows .description-list__item {
+  padding: var(--spacing-md) 0;
+}
+
+.description-list--rows .description-list__item + .description-list__item {
+  border-top: var(--border-width-thin) solid var(--color-border-primary);
+}
+
+.description-list__term {
+  color: var(--color-foreground-secondary);
+}
+
+.description-list__details {
+  margin: 0;
+  color: var(--color-foreground-primary);
+}

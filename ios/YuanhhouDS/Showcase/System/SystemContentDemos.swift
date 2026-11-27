@@ -53,6 +53,30 @@ struct FormDemo: View {
     }
 }
 
+struct LabeledContentDemo: View {
+    var body: some View {
+        Form {
+            HIGNote("Labeled content pairs a label with a value. For facts such as a role or a period, the design system puts the label above the value with the dsStacked style.")
+            Section("Side by side (default)") {
+                LabeledContent("Role") { Text("Lead designer") }
+                LabeledContent("Company") { Text("Example Co.") }
+            }
+            Section {
+                LabeledContent("Role") { Text("Lead designer") }
+                LabeledContent("Company") { Text("Example Co.") }
+                LabeledContent("Dates") { Text("2025 to 2026") }
+                LabeledContent("Platforms") { Text("iOS, Android and web") }
+            } header: {
+                Text("Label above the value")
+            } footer: {
+                Text("On a card, put the same rows in a stack with dsCard.")
+            }
+            .labeledContentStyle(.dsStacked)
+        }
+        .navigationTitle("Labeled content")
+    }
+}
+
 struct DisclosureGroupDemo: View {
     @State private var expanded = true
 

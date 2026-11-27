@@ -3,8 +3,11 @@ import {
   Accordion,
   Badge,
   Button,
+  Card,
   Checkbox,
   CheckboxGroup,
+  DescriptionList,
+  Icon,
   IconButton,
   ImageCard,
   Input,
@@ -13,6 +16,7 @@ import {
   Radio,
   RadioGroup,
   SegmentedControl,
+  Timeline,
   Toggle,
 } from '@yuanhhou/ds'
 import { useI18n } from '@/i18n/i18n'
@@ -158,23 +162,161 @@ export function IconButtonPage() {
 
 export function ImageCardPage() {
   const { t } = useI18n()
+  const badge = (
+    <Badge size="small" badgeStyle="subtle">
+      {t('card.badge')}
+    </Badge>
+  )
   return (
     <ShowcasePage title={t('section.imageCard')}>
       {(['vertical', 'horizontal'] as const).map((orientation) => (
         <ShowcaseSection key={orientation} title={t(`card.${orientation}`)}>
           <ImageCard
             orientation={orientation}
-            badge={
-              <Badge size="small" badgeStyle="subtle">
-                {t('card.badge')}
-              </Badge>
-            }
+            badge={badge}
             title={t('card.title')}
             description={t('card.description')}
             actions={<Button size="small">{t('card.button')}</Button>}
           />
         </ShowcaseSection>
       ))}
+      <ShowcaseSection title={t('card.styles')}>
+        <div className="showcase__row showcase__row--top">
+          {(['elevated', 'outlined', 'filled', 'plain'] as const).map((variant) => (
+            <ImageCard key={variant} variant={variant} badge={badge} title={t(`card.${variant}`)} description={t('card.description')} />
+          ))}
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('card.sizes')}>
+        <div className="showcase__row showcase__row--top">
+          {(['medium', 'large'] as const).map((size) => (
+            <ImageCard key={size} size={size} badge={badge} title={t(`card.${size}`)} description={t('card.description')} />
+          ))}
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('card.linkCard')}>
+        <ImageCard
+          variant="plain"
+          size="large"
+          mediaRatio="4 / 3"
+          badge={
+            <>
+              <Badge size="small" badgeStyle="solid">{t('card.badge')}</Badge>
+              <Badge size="small">{t('card.badge')}</Badge>
+              <Badge size="small">{t('card.badge')}</Badge>
+            </>
+          }
+          title={t('card.title')}
+          description={t('card.description')}
+          href="#image-card"
+          linkLabel={t('card.readMore')}
+          linkNote={
+            <>
+              <Icon name="lock" size="sm" />
+              {t('card.note')}
+            </>
+          }
+        />
+      </ShowcaseSection>
+    </ShowcasePage>
+  )
+}
+
+export function CardPage() {
+  const { t } = useI18n()
+  const content = (
+    <>
+      <span className="text-headline text-emphasized">{t('card.sampleTitle')}</span>
+      <span className="text-body-2">{t('card.sampleBody')}</span>
+    </>
+  )
+  return (
+    <ShowcasePage title={t('section.card')}>
+      <ShowcaseSection title={t('card.styles')}>
+        <div className="showcase__row showcase__row--top">
+          {(['filled', 'outlined', 'elevated'] as const).map((variant) => (
+            <Card key={variant} variant={variant} style={{ width: 240 }}>
+              <span className="text-caption-1 text-emphasized">{t(`card.${variant}`)}</span>
+              {content}
+            </Card>
+          ))}
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('card.padding')}>
+        <div className="showcase__row showcase__row--top">
+          {(['default', 'comfortable', 'none'] as const).map((padding) => (
+            <Card key={padding} variant="outlined" padding={padding} style={{ width: 240 }}>
+              <span className="text-caption-1 text-emphasized">
+                {t(`card.padding${padding[0].toUpperCase()}${padding.slice(1)}` as 'card.paddingDefault')}
+              </span>
+              {content}
+            </Card>
+          ))}
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('card.onSecondary')}>
+        <div className="showcase__row showcase__row--top showcase__band">
+          {(['filled', 'outlined', 'elevated'] as const).map((variant) => (
+            <Card key={variant} variant={variant} surface="secondary" style={{ width: 240 }}>
+              <span className="text-caption-1 text-emphasized">{t(`card.${variant}`)}</span>
+              {content}
+            </Card>
+          ))}
+        </div>
+      </ShowcaseSection>
+      <ShowcaseSection title={t('card.linkTitle')}>
+        <Card href="#card" style={{ width: 320 }}>
+          <span className="text-headline text-emphasized">{t('card.linkTitle')}</span>
+          <span className="text-body-2">{t('card.linkBody')}</span>
+        </Card>
+      </ShowcaseSection>
+    </ShowcasePage>
+  )
+}
+
+export function DescriptionListPage() {
+  const { t } = useI18n()
+  const items = [
+    { term: t('dl.role'), details: t('dl.roleValue') },
+    { term: t('dl.company'), details: t('dl.companyValue') },
+    { term: t('dl.period'), details: t('dl.periodValue') },
+    { term: t('dl.platforms'), details: t('dl.platformsValue') },
+  ]
+  return (
+    <ShowcasePage title={t('section.descriptionList')}>
+      <ShowcaseSection title={t('dl.grid')}>
+        <DescriptionList items={items} />
+      </ShowcaseSection>
+      <ShowcaseSection title={t('dl.rows')}>
+        <Card padding="none" style={{ maxWidth: 400, paddingInline: 'var(--space-inset-default)' }}>
+          <DescriptionList layout="rows" items={items} />
+        </Card>
+      </ShowcaseSection>
+    </ShowcasePage>
+  )
+}
+
+export function TimelinePage() {
+  const { t } = useI18n()
+  const milestones = [1, 2, 3].map((n) => ({
+    label: t(`timeline.when${n}` as 'timeline.when1'),
+    title: t(`timeline.what${n}` as 'timeline.what1'),
+  }))
+  const roles = [1, 2, 3].map((n) => ({
+    title: t(`timeline.role${n}` as 'timeline.role1'),
+    description: t(`timeline.org${n}` as 'timeline.org1'),
+  }))
+  return (
+    <ShowcasePage title={t('section.timeline')}>
+      <ShowcaseSection title={t('timeline.medium')}>
+        <Timeline items={milestones} />
+      </ShowcaseSection>
+      <ShowcaseSection title={t('timeline.large')}>
+        <Timeline size="large" items={roles} />
+      </ShowcaseSection>
+      <ShowcaseSection title={t('timeline.withFill')}>
+        <Timeline items={milestones} progress={0.6} />
+      </ShowcaseSection>
     </ShowcasePage>
   )
 }
