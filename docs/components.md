@@ -356,7 +356,7 @@ import { Badge } from '../components'
 
 ## Card
 
-A surface that groups related content: a summary, a demo, a list, a set of facts. Figma: page `Card`, component set `Card`, 18 variants (Style x Padding x Surface), with a content slot. Shared: the same component on web and iOS (SwiftUI has no card, so iOS has a small custom modifier; see [ios.md](ios.md)). The three styles are Material 3's card types.
+A surface that groups related content: a summary, a demo, a list, a set of facts. Figma: page `Card` (node `309:2`), component set `Card` (node `309:76`), 18 variants (Style x Padding x Surface), with a content slot. Shared: the same component on web and iOS (SwiftUI has no card, so iOS has a small custom modifier; see [ios.md](ios.md)). The three styles are Material 3's card types.
 
 ### When to use
 - To group content that belongs together and set it apart from the page: a summary, a demo, a list of facts.
@@ -468,11 +468,11 @@ A card led by media (an image or a video), with badges, a title, a description, 
 | Media | slot | Any image or video. Vertical media keeps an aspect ratio: 16:9 by default, any ratio in code |
 | Title | text | |
 | Description | text | |
-| Show badge | boolean, default on | The badge row holds one or more Badge instances and wraps |
+| Show badge | boolean, default on | The `Badges` row wraps and holds up to three Badge instances: `Show badge 2` and `Show badge 3` (default off) turn on the others. Edit each label on its nested Badge |
 | Show actions | boolean, default on | A Small Primary Button. Off when the card has a link row |
 | Show link | boolean, default off | The link row: the whole card is one link |
 | Link label | text | Says where the card goes ("Read the case study") |
-| Show note | boolean, default off | A short note after the link, such as a lock icon and "Password needed" |
+| Show note | boolean, default off | A short note after the link, such as a lock icon and "Password needed". It sits in the link row, so it shows only with `Show link` on |
 | Note | text | |
 
 ### Layout
@@ -486,7 +486,7 @@ A card led by media (an image or a video), with badges, a title, a description, 
 
 | | Vertical | Horizontal |
 |---|---|---|
-| Width | 320 in Figma (fills its container in code) | 520 in Figma (fills in code) |
+| Width | 320 in Figma, 400 for Large (fills its container in code) | 520 in Figma, 640 for Large (fills in code) |
 | Media | full width, 16:9 by default (180 high at 320 wide) | 200 wide on web, 120 on iOS; full height |
 
 - Plain: the body has 16 top padding only (Vertical) or 16 leading padding only (Horizontal), in both sizes.
@@ -839,7 +839,7 @@ iOS only. The native grouping of rows in a Form or List (SwiftUI `Section` insid
 | Property | Values | Notes |
 |---|---|---|
 | State | Default, Error | Error colors the footer `foreground/error`; also set the failing row to `State=Error` |
-| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)` and `Accordion (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
+| Rows | slot | `Input (iOS)`, `Toggle (iOS)`, `Checkmark Row (iOS)`, `Picker (iOS)`, `Accordion (iOS)` and `Labeled Content (iOS)` instances, as many as needed. Turn `Show separator` off on the last row |
 | Header / Show header | text, boolean (on) | |
 | Footer / Show footer | text, boolean (on) | Helper text, or the error message in Error |
 
@@ -1365,7 +1365,7 @@ iOS: `.sheet`, `.alert` or `.confirmationDialog`; see [ios.md](ios.md).
 
 ## Description List
 
-Term and value pairs: project facts, order details, specifications. Figma: page `Description List`, component `Description List (Web)` (the web `<dl>`) and `Labeled Content (iOS)` (the native `LabeledContent` with our style). **Native on both platforms**, so there is no shared component: web uses the HTML description list, iOS uses `LabeledContent`. In Material 3 terms it is a list item with an overline.
+Term and value pairs: project facts, order details, specifications. Figma: page `Description List` (node `309:974`), component set `Description List (Web)` (node `309:1011`, the web `<dl>`, with a nested `_Description Item`, node `309:975`) and component `Labeled Content (iOS)` (node `309:1012`, the native `LabeledContent` with our style). **Native on both platforms**, so there is no shared component: web uses the HTML description list, iOS uses `LabeledContent`. In Material 3 terms it is a list item with an overline.
 
 ### When to use
 - To show a few facts as pairs: role, company, dates, platforms; size, price, delivery date.
@@ -1448,7 +1448,7 @@ See [ios.md](ios.md).
 
 ## Timeline
 
-An ordered list of moments on a vertical line: experience, milestones, release history. Figma: page `Timeline`, component set `Timeline` (Size: Medium, Large) with a nested `_Timeline Item`. Shared: the same component on web and iOS (SwiftUI has no timeline, so iOS has a small custom view; see [ios.md](ios.md)).
+An ordered list of moments on a vertical line: experience, milestones, release history. Figma: page `Timeline` (node `310:2`), component set `Timeline` (node `310:61`; Size: Medium, Large) with a nested `_Timeline Item` (node `310:13`). Shared: the same component on web and iOS (SwiftUI has no timeline, so iOS has a small custom view; see [ios.md](ios.md)).
 
 ### When to use
 - To show steps or moments in order: a work history, project milestones, a release history.
@@ -1467,7 +1467,7 @@ An ordered list of moments on a vertical line: experience, milestones, release h
 |---|---|---|
 | Size | Medium (default), Large | Medium for milestones in a page; Large for an experience section |
 | Items | `_Timeline Item` instances | Each has Label, Title and Description text, and `Show label` and `Show description` booleans |
-| Fill | none by default | Code only: the line fills in `action/primary` from the top. Web: `progress` from 0 to 1, or set `--timeline-progress` yourself, for example from scroll. iOS: `fill: .none`, `.full` or `.scroll` |
+| Show fill | boolean, default off | The line fills in `action/primary` from the top. Figma shows it to the third marker as an example; code sets how far. Web: `progress` from 0 to 1, or set `--timeline-progress` yourself, for example from scroll. iOS: `fill: .none`, `.full` or `.scroll` |
 
 ### Layout
 | Part | Medium | Large |
