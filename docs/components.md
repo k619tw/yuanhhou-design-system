@@ -1523,7 +1523,7 @@ import { Timeline } from '@yuanhhou/ds'
 
 <Timeline progress={0.6} items={[{ label: 'Jan 2026', title: 'Kick-off and research' }, …]} />
 ```
-`size` is `medium` or `large`; items have `label`, `title`, `description` and an optional `key`. `progress` (0 to 1) draws the fill; leave it out for no fill. A page can also set `--timeline-progress` on the list itself, for example from scroll.
+`size` is `medium` or `large`; items have `label`, `title`, `description` and an optional `key`. `progress` (0 to 1) draws the fill; leave it out for no fill. To drive it from scroll, leave out `progress` and set `--timeline-progress` on the list or a parent, for example from a motion value.
 
 iOS:
 ```swift
