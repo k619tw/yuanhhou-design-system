@@ -90,6 +90,8 @@ public struct DSImageCard<Media: View, Actions: View>: View {
                         .aspectRatio(mediaAspectRatio, contentMode: .fit)
                     content
                 }
+                // Always as tall as its content: a parent that offers less height must not narrow the media.
+                .fixedSize(horizontal: false, vertical: true)
             } else {
                 HStack(alignment: .top, spacing: 0) {
                     mediaArea.frame(width: 120)

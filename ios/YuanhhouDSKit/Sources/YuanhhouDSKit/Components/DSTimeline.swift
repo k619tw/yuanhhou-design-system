@@ -55,15 +55,20 @@ public struct DSTimeline: View {
         self.fill = fill
     }
 
+    /// The height of the first item's first line. The line starts at its middle, the first marker's centre, at
+    /// every Dynamic Type size. 16 (a Caption 1 line at the default size) until it is measured.
+    @State private var firstLineHeight: CGFloat = DSSpacing.sm * 2
+
     public var body: some View {
         VStack(alignment: .leading, spacing: size == .large ? DSSpace.gapSection : DSSpacing.xl) {
             ForEach(items.indices, id: \.self) { index in
-                DSTimelineRow(item: items[index], size: size)
+                DSTimelineRow(item: items[index], size: size, firstLineHeight: index == 0 ? $firstLineHeight : nil)
             }
         }
         .background(alignment: .topLeading) {
             DSTimelineLine(fill: fill)
-                .padding(.vertical, DSSpacing.sm)
+                .padding(.top, firstLineHeight / 2)
+                .padding(.bottom, DSSpacing.sm)
                 .padding(.leading, (DSSize.iconExtraSmall - DSBorderWidth.focus) / 2)
         }
     }
@@ -72,6 +77,8 @@ public struct DSTimeline: View {
 private struct DSTimelineRow: View {
     let item: DSTimelineItem
     let size: DSTimelineSize
+    /// Set on the first row only: reports the height of its first line to the list.
+    var firstLineHeight: Binding<CGFloat>?
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
@@ -82,6 +89,7 @@ private struct DSTimelineRow: View {
                 DSTimelineMarker()
             }
             .frame(width: DSSpacing.xxl, alignment: .leading)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { firstLineHeight?.wrappedValue = $0 }
             VStack(alignment: .leading, spacing: DSSpacing.xs) {
                 if let label = item.label {
                     label
