@@ -28,7 +28,6 @@ export function Timeline({ items, size = 'medium', progress, className, style, .
   const fill = progress === undefined ? undefined : ({ '--timeline-progress': Math.min(Math.max(progress, 0), 1) } as CSSProperties)
   return (
     <ol className={classes} style={{ ...fill, ...style }} {...rest}>
-      <span className="timeline__fill" aria-hidden="true" />
       {items.map((item, i) => (
         <li key={item.key ?? i} className="timeline__item">
           {item.label && <span className="timeline__label text-caption-1 text-emphasized">{item.label}</span>}

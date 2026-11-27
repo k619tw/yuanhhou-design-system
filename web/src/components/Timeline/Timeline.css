@@ -26,7 +26,7 @@
 
 /* The line runs from the first ring's centre to just above the end of the list. */
 .timeline::before,
-.timeline__fill {
+.timeline::after {
   content: '';
   position: absolute;
   left: calc((var(--_ring) - var(--_line)) / 2);
@@ -40,7 +40,8 @@
   background: var(--color-border-primary);
 }
 
-.timeline__fill {
+/* The fill is a pseudo-element, so the list holds only its items. */
+.timeline::after {
   background: var(--color-action-primary);
   transform-origin: top;
   transform: scaleY(var(--timeline-progress, 0));
