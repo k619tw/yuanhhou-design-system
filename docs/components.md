@@ -1479,7 +1479,7 @@ An ordered list of moments on a vertical line: experience, milestones, release h
 | Between items | 24 (`spacing/300`) | 32 (`space/gap/section`) |
 
 - Marker: a 12 circle (`size/icon/xs`), centred on the first line of its item, with a 2 ring (`border/width/focus`). It stays a circle in every brand.
-- Line: 2 wide (`border/width/focus`), centred under the markers, from the first line of the first item to 8 above the bottom (`spacing/100`).
+- Line: 2 wide (`border/width/focus`), rounded ends, centred under the markers, from the first marker to 8 above the bottom of the list (`spacing/100`).
 - Text starts 32 from the start of the line (`spacing/400`).
 
 ### Color tokens
