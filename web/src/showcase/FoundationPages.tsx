@@ -150,12 +150,12 @@ export function SpacingPage() {
   )
 }
 
-// The 30 Utility Icons (Figma page `Icons`), by Material Symbols name.
+// The 31 Utility Icons (Figma page `Icons`), by Material Symbols name.
 const utilityIcons = [
   'home', 'search', 'menu', 'close', 'settings', 'person', 'favorite', 'star', 'add', 'remove',
   'check', 'arrow_back', 'arrow_forward', 'chevron_left', 'chevron_right', 'expand_more', 'expand_less',
   'more_horiz', 'more_vert', 'delete', 'edit', 'share', 'info', 'warning', 'error', 'notifications',
-  'mail', 'calendar_today', 'visibility', 'download',
+  'mail', 'calendar_today', 'visibility', 'download', 'lock',
 ]
 
 export function IconsPage() {

@@ -31,8 +31,8 @@ public enum DSImageCardSize: String, CaseIterable, Identifiable {
 /// Figma `Image Card`: media, badges, title, description, then either actions or a link row.
 ///
 /// - Actions: put real buttons in `actions`; the card itself is not a button.
-/// - Link card: when the whole card opens something, give it a `link` (and an optional `note`, such as "Password
-///   needed") and wrap it in one `Button` or `NavigationLink` with `.buttonStyle(.dsCard)`. The link row is display
+/// - Link card: when the whole card opens something, give it a `link` (and an optional `note`, such as
+///   `Text("\(Image(systemName: DSIcon.lock.systemName)) Password needed")`) and wrap it in one `Button` or `NavigationLink` with `.buttonStyle(.dsCard)`. The link row is display
 ///   only, and VoiceOver reads the card as one element.
 public struct DSImageCard<Media: View, Actions: View>: View {
     public typealias Orientation = DSImageCardOrientation
