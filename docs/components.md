@@ -454,7 +454,7 @@ A card led by media (an image or a video), with badges, a title, a description, 
 ### Anatomy
 1. Container: the Card styles (fill, hairline, shadow); none for Plain
 2. Media (slot)
-3. Badge row (optional, wraps)
+3. Badge row (optional, a slot that wraps)
 4. Title
 5. Description
 6. Either the actions row (Buttons or Icon Buttons) or the link row: the link label with a `chevron_right` Utility Icon, and an optional note (such as "Password needed")
@@ -468,7 +468,8 @@ A card led by media (an image or a video), with badges, a title, a description, 
 | Media | slot | Any image or video. Vertical media keeps an aspect ratio: 16:9 by default, any ratio in code |
 | Title | text | |
 | Description | text | |
-| Show badge | boolean, default on | The `Badges` row wraps and holds up to three Badge instances: `Show badge 2` and `Show badge 3` (default off) turn on the others. Edit each label on its nested Badge |
+| Show badge | boolean, default on | Shows the badge row |
+| Badges | slot | Any number of Badge instances (one by default); the row wraps. Add, remove or edit them in the instance |
 | Show actions | boolean, default on | A Small Primary Button. Off when the card has a link row |
 | Show link | boolean, default off | The link row: the whole card is one link |
 | Link label | text | Says where the card goes ("Read the case study") |
@@ -1380,7 +1381,7 @@ Term and value pairs: project facts, order details, specifications. Figma: page 
 | Property | Values | Notes |
 |---|---|---|
 | Layout | Grid (default), Rows | Grid: pairs side by side, wrapping into as many columns as fit. Rows: one pair per row with a hairline between |
-| Items | `_Description Item` instances | Each has the text properties Term and Details |
+| Items | slot | Any number of pairs. Grid: `_Description Item` instances, each with the text properties Term and Details. Rows: `Row` frames (a `_Description Item` with 12 above and below) with a `Divider` between them |
 
 `Labeled Content (iOS)`: a bare row (label above value, SF Pro through the `Platform` mode iOS) with a `Show separator` boolean, for the Rows slot of [List Section (iOS)](#list-section-ios), like `Checkmark Row (iOS)`.
 
