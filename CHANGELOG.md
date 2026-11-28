@@ -4,6 +4,18 @@ Every release of the yuanhhou design system: the web package `@yuanhhou/ds`, the
 
 Versions follow [semantic versioning](https://semver.org): a breaking change (a removed or renamed component, property, token or API) is a major release, or a minor one while the version is 0.x; a new component, token or feature is a minor release; fixes and doc-only changes are a patch.
 
+## 1.2.0 · 2026-11-28
+
+A `lock` Utility Icon that the Image Card note can show, slots for Image Card badges and Description List items in Figma, and a Toggle knob that follows `radius/full`.
+
+### Added
+- All: the `lock` Utility Icon (31 Utility Icons now). Figma `Utility Icon/lock` in Small and Medium, web `<Icon name="lock" />`, iOS `DSIcon.lock`.
+- Figma: Image Card has `Show note icon`, on by default: a Small `lock` before the note, for notes about access such as "Password needed". Turn it off for a note that is not about access. In code, pass the icon with the note (web `linkNote`, iOS `note:`).
+
+### Changed
+- Figma: Image Card `Badges` and Description List (Web) `Items` are slots, so you add, remove and reorder badges and items in the instance. `Show badge 2` and `Show badge 3` are gone. Publish DS - Components and accept the update in your files.
+- Figma: the Toggle (Web) knob is a 20 × 20 shape with `radius/full` corners, as in code. It still draws a circle with the default tokens, and now squares up in a product that sets `radius/full` to 0.
+
 ## 1.1.0 · 2026-11-27
 
 New Card, Timeline and Description List, and Image Card becomes a link card, on web, iOS and in Figma.
