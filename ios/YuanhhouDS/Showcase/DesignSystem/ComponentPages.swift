@@ -174,7 +174,7 @@ struct ImageCardPage: View {
                             DSBadge("Web", size: .small),
                         ],
                         link: "Read the case study",
-                        note: Text("\(Image(systemName: "lock.fill")) Password needed")
+                        note: Text("\(Image(systemName: DSIcon.lock.systemName)) Password needed")
                     ) {
                         placeholder
                     }

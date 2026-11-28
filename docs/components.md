@@ -6,7 +6,7 @@ Component documentation for the DS - Components Figma file (`GLymoPHNnAmM4irCifF
 |---|---|---|---|
 | [Button](#button) | Trigger an action | Yes | `Button` |
 | [Icon Button](#icon-button) | Icon-only action | Yes | `Icon Button` |
-| [Utility Icon](#utility-icon) | Display-only icon (30 Material Rounded) | No | `Icons` |
+| [Utility Icon](#utility-icon) | Display-only icon (31 Material Rounded) | No | `Icons` |
 | [Badge](#badge) | Status label | No | `Badge` |
 | [Card](#card) | A surface that groups content, or one link | When it is a link | `Card` |
 | [Image Card](#image-card) | Media card with text and actions, or one link (link card) | Via inner controls, or as one link | `Image Card` |
@@ -215,14 +215,14 @@ import { IconButton } from '../components'
 
 ## Utility Icon
 
-A display-only icon from Material Symbols Rounded. Figma: page `Icons`, 30 component sets named `Utility Icon/<name>`, each with a `Size` variant.
+A display-only icon from Material Symbols Rounded. Figma: page `Icons`, 31 component sets named `Utility Icon/<name>`, each with a `Size` variant.
 
 ### When to use
 - To support a label or status inside something that is already interactive or purely informational: Button, Badge, Input, list rows.
 - Not clickable. If the icon needs to trigger an action, use an [Icon Button](#icon-button).
 
-### Icons (v1, 30)
-`home` `search` `menu` `close` `settings` `person` `favorite` `star` `add` `remove` `check` `arrow_back` `arrow_forward` `chevron_left` `chevron_right` `expand_more` `expand_less` `more_horiz` `more_vert` `delete` `edit` `share` `info` `warning` `error` `notifications` `mail` `calendar_today` `visibility` `download`
+### Icons (v1, 31)
+`home` `search` `menu` `close` `settings` `person` `favorite` `star` `add` `remove` `check` `arrow_back` `arrow_forward` `chevron_left` `chevron_right` `expand_more` `expand_less` `more_horiz` `more_vert` `delete` `edit` `share` `info` `warning` `error` `notifications` `mail` `calendar_today` `visibility` `download` `lock`
 
 The set name is the Material Symbols ligature name, so `Utility Icon/search` maps to the text `search` in the Material Symbols Rounded font.
 
@@ -473,8 +473,9 @@ A card led by media (an image or a video), with badges, a title, a description, 
 | Show actions | boolean, default on | A Small Primary Button. Off when the card has a link row |
 | Show link | boolean, default off | The link row: the whole card is one link |
 | Link label | text | Says where the card goes ("Read the case study") |
-| Show note | boolean, default off | A short note after the link, such as a lock icon and "Password needed". It sits in the link row, so it shows only with `Show link` on |
+| Show note | boolean, default off | A short note after the link, such as "Password needed". It sits in the link row, so it shows only with `Show link` on |
 | Note | text | |
+| Show note icon | boolean, default on | A Small `lock` Utility Icon before the note. Turn it off for a note that is not about access. In code, pass the icon with the note (web `linkNote`, iOS `note:`) |
 
 ### Layout
 | | Medium | Large |
@@ -492,7 +493,7 @@ A card led by media (an image or a video), with badges, a title, a description, 
 
 - Plain: the body has 16 top padding only (Vertical) or 16 leading padding only (Horizontal), in both sizes.
 - Badge row: 8 between badges and between rows of badges (`spacing/100`).
-- Link row: the label in `Body 2/Emphasized` with a Small `chevron_right` Utility Icon 4 after it (`spacing/50`); the note in `Caption 1/Regular`, 16 after the link (`spacing/200`); the row wraps with 8 between lines.
+- Link row: the label in `Body 2/Emphasized` with a Small `chevron_right` Utility Icon 4 after it (`spacing/50`); the note in `Caption 1/Regular` with its Small `lock` icon 4 before the text (`spacing/50`), 16 after the link (`spacing/200`); the row wraps with 8 between lines.
 - Corner radius: `radius/card` (Default 16, EVA 0, Cedar 12), on the card, or on the media for Plain.
 - Elevated: `shadow/sm`. Elevated and Outlined: 1px `border/primary`.
 
@@ -504,7 +505,7 @@ A card led by media (an image or a video), with badges, a title, a description, 
 | Title | `foreground/primary` |
 | Description | `foreground/secondary` |
 | Link label and chevron | `action/primary` |
-| Note | `foreground/secondary` |
+| Note and its icon | `foreground/secondary` |
 | Pressed (link card) | `background/overlay` over the whole card, or over the media for Plain |
 | Focus (link card, web) | 2px `border/focus` outline around the card (4 away for Plain, 2 for the others) |
 
@@ -553,10 +554,10 @@ import { Badge, Button, ImageCard } from '@yuanhhou/ds'
   description="One line on the problem and the outcome."
   href="#/work/pet"
   linkLabel="Read the case study"
-  linkNote="Password needed"
+  linkNote={<><Icon name="lock" size="sm" />Password needed</>}
 />
 ```
-`variant` is the Figma `Style` (`elevated`, `outlined`, `filled`, `plain`) and `size` is `medium` or `large`. `media` is the Media slot; `mediaRatio` is a CSS aspect ratio (default `16 / 9`). `badge` takes one or more Badges. With `href`, `linkLabel` (required) and `linkNote` draw the link row and make the whole card one link (`linkProps` go on the `<a>`, such as `target`); `actions` are then not shown.
+`variant` is the Figma `Style` (`elevated`, `outlined`, `filled`, `plain`) and `size` is `medium` or `large`. `media` is the Media slot; `mediaRatio` is a CSS aspect ratio (default `16 / 9`). `badge` takes one or more Badges. With `href`, `linkLabel` (required) and `linkNote` (text, with the Small `lock` Icon when the note is about access) draw the link row and make the whole card one link (`linkProps` go on the `<a>`, such as `target`); `actions` are then not shown.
 
 iOS: `DSImageCard` takes the same parts (`style:`, `size:`, `mediaAspectRatio:`, `badges:`, `link:`, `note:`):
 ```swift
@@ -565,7 +566,7 @@ NavigationLink { CaseStudy() } label: {
         style: .plain, size: .large, mediaAspectRatio: 4 / 3,
         title: "Pet insurance", description: "One line on the problem and the outcome.",
         badges: [DSBadge("Design system", size: .small)],
-        link: "Read the case study", note: Text("Password needed")
+        link: "Read the case study", note: Text("\(Image(systemName: DSIcon.lock.systemName)) Password needed")
     ) {
         Image("pet-cover").resizable().scaledToFill()
     }

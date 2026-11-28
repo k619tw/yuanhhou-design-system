@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The 30 Utility Icons from Figma. Figma draws them with Material Symbols Rounded; on iOS the
+/// The 31 Utility Icons from Figma. Figma draws them with Material Symbols Rounded; on iOS the
 /// HIG asks for SF Symbols, so each icon maps to the closest SF Symbol.
 public nonisolated enum DSIcon: String, CaseIterable, Identifiable, Sendable {
     case home, search, menu, close, settings, person, favorite, star, add, remove
@@ -9,7 +9,7 @@ public nonisolated enum DSIcon: String, CaseIterable, Identifiable, Sendable {
     case expandMore = "expand_more", expandLess = "expand_less"
     case moreHoriz = "more_horiz", moreVert = "more_vert"
     case delete, edit, share, info, warning, error, notifications, mail
-    case calendarToday = "calendar_today", visibility, download
+    case calendarToday = "calendar_today", visibility, download, lock
 
     public var id: String { rawValue }
 
@@ -48,6 +48,7 @@ public nonisolated enum DSIcon: String, CaseIterable, Identifiable, Sendable {
         case .calendarToday: "calendar"
         case .visibility: "eye"
         case .download: "arrow.down.to.line"
+        case .lock: "lock"
         }
     }
 
